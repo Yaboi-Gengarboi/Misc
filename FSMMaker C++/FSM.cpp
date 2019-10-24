@@ -7,8 +7,10 @@ Source file for FSM struct
 */
 
 #include "FSM.hpp"
+#include <sstream>
 
 using std::string;
+using std::stringstream;
 
 struct FSM
 {
@@ -18,7 +20,11 @@ struct FSM
 	float multiplier;
 	std::string toHexString()
 	{
+		string hexStr;
 
+		stringstream stream;
+
+		return hexStr;
 	}
 	std::string toString()
 	{
