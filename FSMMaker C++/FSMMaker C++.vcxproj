@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{B1590335-9B07-42BD-B386-4EF953E2972C}</ProjectGuid>
-    <RootNamespace>Keyinputs</RootNamespace>
+    <ProjectGuid>{FDA659AF-21CB-4013-ABC8-44D4ED77852E}</ProjectGuid>
+    <RootNamespace>FSMMakerC</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -87,12 +87,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Yaboi\Desktop\OpenGL64\GLEW\include; C:\Users\Yaboi\Desktop\OpenGL64\GLFW\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>C:\Users\Yaboi\Desktop\OpenGL64\GLEW\lib\Release\x64; C:\Users\Yaboi\Desktop\OpenGL64\GLFW\lib-vc2019</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -126,11 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MathLine.cpp" />
+    <ClInclude Include="FSM.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MathLine.h" />
+    <ClCompile Include="FSM.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
