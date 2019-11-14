@@ -6,6 +6,7 @@ Last updated on 11/9/2019
 */
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <sstream>
 #include <vector>
@@ -18,11 +19,17 @@ using std::endl;
 using std::getline;
 using std::transform;
 using std::hex;
+using std::sort;
+using std::stoi;
+using std::stof;
+using std::to_string;
+using std::ifstream;
+using std::ofstream;
 using std::string;
-using std::stringstream;
+using std::ostringstream;
 using std::vector;
 
-vector<string> characters =
+const string characters[] =
 {
 	"Captain Falcon", "Donkey Kong", "Fox",
 	"Game&Watch", "Kirby", "Bowser",
@@ -35,18 +42,86 @@ vector<string> characters =
 	"Pichu", "Ganondorf", "Popo"
 };
 
-unsigned short int getCharacter(const string& in)
+const string actions[] =
 {
-	if (in == "Repeat")
-	{
+	"Spot Dodge", "Forward Roll", "Back Roll",
+	"Air Dodge", "Jab 1", "Jab 2", "Jab 3",
+	"Rapid Jab Start", "Rapid Jab Loop",
+	"Rapid Jab End", "Dash Attack",
+	"Side Tilt High", "Side Tilt Midhigh",
+	"Side Tilt Middle", "Side Tilt Midlow",
+	"Side Tilt Low", "Up Tilt", "Down Tilt",
+	"Side Smash High", "Side Smash Midhigh", 
+	"Side Smash Middle", "Side Smash Midlow", 
+	"Side Smash Low", "Up Smash", "Down Smash",
+	"Neutral Aerial", "Foward Aerial", "Back Aerial",
+	"Up Aerial", "Down Aerial", "Neutral Tech",
+	"Forward Tech", "Back Tech", "Wall Tech",
+    "Wall Jump Tech", "Ceiling Tech",
+	"Ledge Getup Slow", "Ledge Getup Fast",
+	"Ledge Attack Slow", "Ledge Attack Fast",
+	"Ledge Roll Slow", "Ledge Roll Fast",
+	"Ledge Jump 1 Slow", "Ledge Jump 2 Slow",
+	"Ledge Jump 1 Fast", "Ledge Jump 2 Fast",
+	"Left Taunt", "Right Taunt",
+	"Grab", "Dash Grab", "Forward Throw",
+	"Back Throw", "Up Throw", "Down Throw"
+};
 
-		return 0;
-	}
-	if (in == "Quit")
-	{
+/*
 
-		return 0;
-	}
+*/
+struct FSM
+{
+	unsigned int character;
+	unsigned int frame;
+	unsigned int action;
+	float multiplier;
+	string hexStr;
+	string engStr;
+};
+
+/*
+
+*/
+FSM createFSM(unsigned int character,
+	unsigned int frame,
+	unsigned int action,
+	float multiplier, 
+	string engStr)
+{
+	string hexStr;
+	ostringstream stream;
+
+	if (character < 16)
+		stream << "0";
+	stream << hex << character;
+
+	if (frame < 16)
+		stream << "0";
+	stream << hex << frame;
+
+	stream << 8;
+	if (action < 256)
+		stream << "0";
+	if (action < 16)
+		stream << "0";
+	stream << hex << action;
+
+	stream << " ";
+
+	int* pMult = (int*)&multiplier;
+	stream << hex << *pMult;
+	hexStr = stream.str();
+
+	transform(hexStr.begin(), hexStr.end(), hexStr.begin(), ::toupper);
+
+	FSM newFSM{ character, frame, action, multiplier, hexStr, engStr };
+	return newFSM;
+}
+
+unsigned int getCharacter(const string& in)
+{
 	if (in == "Captain Falcon") return 0;
 	if (in == "Donkey Kong") return 1;
 	if (in == "Fox") return 2;
@@ -74,26 +149,16 @@ unsigned short int getCharacter(const string& in)
 	if (in == "Pichu") return 24;
 	if (in == "Ganondorf") return 25;
 	if (in == "Popo") return 26;
-	if (in == "All") return 0;
+	if (in == "All") return 255;
 	else
 	{
-
+		cout << "Invalid input. Try again" << endl;
 	}
-	return 0;
+	return 256;
 }
 
-unsigned short int getAction(const string& in)
+unsigned int getAction(const string& in)
 {
-	if (in == "Repeat")
-	{
-
-		return 0;
-	}
-	if (in == "Quit")
-	{
-
-		return 0;
-	}
 	if (in == "Spot Dodge") return 41;
 	if (in == "Forward Roll") return 42;
 	if (in == "Back Roll") return 43;
@@ -150,75 +215,46 @@ unsigned short int getAction(const string& in)
 	if (in == "Down Throw") return 250;
 	else
 	{
-
+		cout << "Invalid input. Try again" << endl;
 	}
-	return 0;
+	return 256;
+}
+
+bool compareFSM(const FSM& A, const FSM& B)
+{
+	if (A.character > B.character)
+		return true;
+	if (A.character == B.character)
+	{
+		if (A.frame > B.frame)
+			return true;
+		if (A.frame == B.frame)
+		{
+			if (A.action > B.action)
+				return true;
+		}
+	}
+
+	return false;
 }
 
 /*
 
 */
-struct FSM
+void printFSMVectorHex(vector<FSM>& vec)
 {
-	unsigned short int character;
-	unsigned short int frame;
-	unsigned short int action;
-	float multiplier;
-	string hexStr;
-	string engStr;
-};
-
-/*
-
-*/
-FSM createFSM(unsigned short int character,
-	unsigned short int frame,
-	unsigned short int action,
-	float multiplier)
-{
-	stringstream stream;
-	string hexStr = "";
-
-	if (character < 16)
-		stream << "0";
-	stream << hex << character;
-
-	if (frame < 16)
-		stream << "0";
-	stream << hex << frame;
-
-	stream << 8;
-	if (action < 256)
-		stream << "0";
-	if (action < 16)
-		stream << "0";
-	stream << hex << action;
-
-	stream << " ";
-
-	int* pMult = (int*)&multiplier;
-	stream << hex << *pMult;
-	hexStr = stream.str();
-
-	transform(hexStr.begin(), hexStr.end(), hexStr.begin(), ::toupper);
-
-}
-
-/*
-
-*/
-void printFSMVectorHex(const vector<FSM>& fsmVec)
-{
-	for (FSM fsm : fsmVec)
+	sort(vec.rbegin(), vec.rend(), compareFSM);
+	for (FSM fsm : vec)
 		cout << fsm.hexStr << endl;
 }
 
 /*
 
 */
-void printFSMVectorEng(const vector<FSM>& fsmVec)
+void printFSMVectorEng(vector<FSM>& vec)
 {
-	for (FSM fsm : fsmVec)
+	sort(vec.rbegin(), vec.rend(), compareFSM);
+	for (FSM fsm : vec)
 		cout << fsm.engStr << endl;
 }
 
@@ -232,51 +268,136 @@ string getInput()
 	return str;
 }
 
-/*
-
-*/
-unsigned short int getCharacter()
+int main()
 {
-	unsigned short int ch = 0;
+	//ofstream fout("FSM.txt");
+	//ifstream fin("FSM.txt");
+
+	vector<FSM> fsmList;
+
+	unsigned int character = 256;
+	unsigned int frame = 256;
+	unsigned int action = 256;
+	float multiplier = 0.0;
+	string engStr;
+
 	bool cont = true;
-	string str;
+	int dummy = 0;
+	float dummy2 = 0.0;
+	string temp = "";
+
+	string in = "";
 
 	while (cont)
 	{
-		str = getInput();
-		for (unsigned short i = 0; i < characters.size(); ++i)
+		cout << "Enter \"Make FSM\" to create a FSM" << endl;
+		cout << "Enter \"Print FSMs\" to print your FSMs" << endl;
+		cout << "Enter \"Quit\" to quit" << endl;
+		in = getInput();
+
+		if (in == "Print FSMs")
 		{
-			if (str.compare(characters[i]) == 0)
-			{
-				ch = i;
-				cont = false;
-			}
+			printFSMVectorHex(fsmList);
+			printFSMVectorEng(fsmList);
+			cout << endl;
 		}
-		if (cont)
+		else if (in == "Quit")
 		{
-			cout << "Invalid input. Try again." << endl;
+			cont = false;
+		}
+		else if (in == "Make FSM")
+		{
+			in = "";
+			character = 256;
+			frame = 256;
+			action = 256;
+			multiplier = 0.0;
+			engStr = "";
+			//256 = Retry
+
+			while (character == 256)
+			{
+				cout << "Enter a character. Valid characters are:" << endl;
+				for (unsigned int i = 0; i < 27; ++i)
+					cout << characters[i] << endl;
+				in = getInput();
+				character = getCharacter(in);
+				cout << endl;
+			}
+			engStr += in;
+			engStr += ", ";
+
+			while (action == 256)
+			{
+				cout << "Enter an action. Valid actions are:" << endl;
+				for (unsigned int i = 0; i < 27; ++i)
+					cout << actions[i] << endl;
+				in = getInput();
+				action = getAction(in);
+				cout << endl;
+			}
+			engStr += in;
+			engStr += ", ";
+
+			while (frame == 256)
+			{
+				cout << "Enter a frame" << endl;
+				in = getInput();
+
+				try
+				{
+					dummy = stoi(in, nullptr);
+					if (dummy < 0)
+					{
+						cout << "Invalid input. Try again" << endl;
+						frame = 256;
+					}
+					else
+						frame = dummy;
+				}
+				catch (const std::invalid_argument& error)
+				{
+					cout << "Invalid input. Try again" << endl;
+					frame = 256;
+				}
+
+				cout << endl;
+			}
+			engStr += "Frame ";
+			engStr += to_string(frame);
+			engStr += " @ ";
+
+			while (multiplier <= 0.0f)
+			{
+				cout << "Enter a multiplier" << endl;
+				in = getInput();
+
+				try
+				{
+					dummy2 = stof(in, nullptr);
+					if (dummy2 <= 0.0f)
+					{
+						cout << "Invalid input. Try again" << endl;
+						multiplier = 0.0f;
+					}
+					else
+						multiplier = dummy2;
+				}
+				catch (const std::invalid_argument & error)
+				{
+					cout << "Invalid input. Try again" << endl;
+					multiplier = 0.0f;
+				}
+
+				cout << endl;
+			}
+			engStr += to_string(multiplier);
+			fsmList.push_back(createFSM(character, frame, action, multiplier, engStr));
 		}
 	}
 	
-	return ch;
-}
-
-int main()
-{
-	//unsigned short int ch;
-	//bool cont = true;
-	//while (cont)
-	//{
-
-	//}
 	
-	//cout << "Enter a character. Valid characters include: " << endl;
-	//for (string character : characters)
-		//cout << character << endl;
-	//ch = getCharacter();
-	//cout << ch << endl;
 
-	cout << floatToHex(1.0);
 
 	return 0;
 }
