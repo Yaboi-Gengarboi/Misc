@@ -259,6 +259,36 @@ void printFSMVectorEng(vector<FSM>& vec)
 }
 
 /*
+*/
+void writeFSMsToFile(const vector<string>& fsmList)
+{
+	string line;
+	string fsm;
+	ifstream fin;
+	bool cont = true;
+
+	//Check if file exists
+	if (fin) //Get FSMs from file
+	{
+		while (cont)
+		{
+			getline(fin, line);
+			if (line.empty())
+				cont = false;
+			else
+			{
+
+			}
+		}
+	}
+	else //Go ahead and create new file
+	{
+
+	}
+}
+
+
+/*
 
 */
 string getInput()
