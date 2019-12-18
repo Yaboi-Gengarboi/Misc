@@ -138,10 +138,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Error.hpp" />
+    <ClInclude Include="Functions.hpp" />
     <ClInclude Include="Includer.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Calculator_main.cpp" />
+    <ClCompile Include="Error.cpp" />
+    <ClCompile Include="Functions.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

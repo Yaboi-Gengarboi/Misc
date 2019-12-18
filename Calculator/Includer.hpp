@@ -3,6 +3,9 @@
 //Created on 12/5/2019
 //Last Updated on 12/6/2019
 
+#ifndef INCLUDER_HPP
+#define INCLUDER_HPP
+
 #include <FL/Fl.H>
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Output.H>
@@ -36,3 +39,5 @@ using std::tgamma;
 
 #include <stdexcept>
 using std::invalid_argument;
+
+#endif //#ifndef INCLUDER_HPP

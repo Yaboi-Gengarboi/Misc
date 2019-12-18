@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Into The Ring", "Into The Ring.vcxproj", "{545D8A12-CE3D-45E4-B097-54FD76E2E2AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{545D8A12-CE3D-45E4-B097-54FD76E2E2AD}.Debug|x64.ActiveCfg = Debug|x64
+		{545D8A12-CE3D-45E4-B097-54FD76E2E2AD}.Debug|x64.Build.0 = Debug|x64
+		{545D8A12-CE3D-45E4-B097-54FD76E2E2AD}.Debug|x86.ActiveCfg = Debug|Win32
+		{545D8A12-CE3D-45E4-B097-54FD76E2E2AD}.Debug|x86.Build.0 = Debug|Win32
+		{545D8A12-CE3D-45E4-B097-54FD76E2E2AD}.Release|x64.ActiveCfg = Release|x64
+		{545D8A12-CE3D-45E4-B097-54FD76E2E2AD}.Release|x64.Build.0 = Release|x64
+		{545D8A12-CE3D-45E4-B097-54FD76E2E2AD}.Release|x86.ActiveCfg = Release|Win32
+		{545D8A12-CE3D-45E4-B097-54FD76E2E2AD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF8C95C5-2514-48DE-94AB-734C71A43FD8}
+	EndGlobalSection
+EndGlobal
