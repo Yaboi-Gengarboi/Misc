@@ -2,13 +2,13 @@
 //error_handling.cpp
 //Justyn P. Durnford
 //Created on 12/17/2019
-//Last Updated on 12/17/2019
+//Last Updated on 12/18/2019
 
 #include "error_handling.hpp"
 
 #include <FL/Fl.H>
 #include <FL/Fl_Window.H>
-#include <FL/Fl_Multiline_Output.H>
+#include <FL/Fl_Output.H>
 
 #include <string>
 using std::string;
