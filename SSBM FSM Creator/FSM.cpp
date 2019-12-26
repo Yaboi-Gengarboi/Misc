@@ -2,7 +2,7 @@
 //FSM.cpp
 //Justyn P. Durnford
 //Created on 12/18/2019
-//Last Updated on 12/18/2019
+//Last Updated on 12/24/2019
 
 #include "FSM.hpp"
 
@@ -12,46 +12,47 @@ using std::to_string;
 using std::stoi;
 using std::stof;
 
-#include <array>
-using std::array;
+#include <sstream>
+using std::ostringstream;
 
-#include <utility>
-using std::pair;
-using std::make_pair;
+#include <algorithm>
+using std::find;
+using std::distance;
+using std::transform;
+
+#include <cctype>
+using std::toupper;
 
 #include <stdexcept>
 using std::invalid_argument;
 
+#include <iostream>
+using std::hex;
+
+FSM::FSM() { /*Default values*/ }
+
+FSM::FSM(int& param_int1, int& param_int2,
+		 int& param_int3, float& param_float,
+		 string& param_str)
+{
+	FSM_character = param_int1;
+	FSM_frame = param_int2;
+	FSM_subaction = param_int3;
+	FSM_multiplier = param_float;
+	FSM_str = param_str;
+}
+
 void FSM::set_character(const string& param_str)
 {
-	if (param_str == "Captain Falcon") FSM_character = 0;
-	else if (param_str == "Donkey Kong") FSM_character = 1;
-	else if (param_str == "Fox") FSM_character = 2;
-	else if (param_str == "Game&Watch") FSM_character = 3;
-	else if (param_str == "Kirby") FSM_character = 4;
-	else if (param_str == "Bowser") FSM_character = 5;
-	else if (param_str == "Link") FSM_character = 6;
-	else if (param_str == "Luigi") FSM_character = 7;
-	else if (param_str == "Mario") FSM_character = 8;
-	else if (param_str == "Marth") FSM_character = 9;
-	else if (param_str == "Mewtwo") FSM_character = 10;
-	else if (param_str == "Ness") FSM_character = 11;
-	else if (param_str == "Peach") FSM_character = 12;
-	else if (param_str == "Pikachu") FSM_character = 13;
-	else if (param_str == "Ice Climbers") FSM_character = 14;
-	else if (param_str == "Jigglypuff") FSM_character = 15;
-	else if (param_str == "Samus") FSM_character = 16;
-	else if (param_str == "Yoshi") FSM_character = 17;
-	else if (param_str == "Zelda") FSM_character = 18;
-	else if (param_str == "Sheik") FSM_character = 19;
-	else if (param_str == "Falco") FSM_character = 20;
-	else if (param_str == "Young Link") FSM_character = 21;
-	else if (param_str == "Dr. Mario") FSM_character = 22;
-	else if (param_str == "Roy") FSM_character = 23;
-	else if (param_str == "Pichu") FSM_character = 24;
-	else if (param_str == "Ganondorf") FSM_character = 25;
-	else if (param_str == "Popo") FSM_character = 26;
-	else if (param_str == "All") FSM_character = 255;
+	for (unsigned short int i = 0; i < characters.size(); ++i)
+	{
+		if (characters[i] == param_str)
+		{
+			FSM_character = i;
+			FSM_str += param_str + ", ";
+		}
+	}
+	/*Default character is 0*/
 }
 
 void FSM::set_frame(const string& param_str)
@@ -60,20 +61,76 @@ void FSM::set_frame(const string& param_str)
 	{
 		int frame = stoi(param_str);
 		if (frame > 0 && frame < 256)
+		{
 			FSM_frame = frame;
+			FSM_str += "Frame " + frame;
+		}
 	}
-	catch (invalid_argument& ia)
-	{
-		FSM_frame = 0;
-	}
+	catch (invalid_argument& ia) {/*Default frame is 0*/}
 }
 
 void FSM::set_subaction(const string& param_str)
 {
-	
+	auto iter = find(subaction_names.begin(), subaction_names.end(), param_str);
+	if (iter != subaction_names.end())
+	{
+		auto i = distance(subaction_names.begin(), iter);
+		FSM_subaction = subaction_ids[i];
+		FSM_str += subaction_ids[i] + ", ";
+	}
+	/*Default subaction is 0*/
 }
 
-string FSM::to_str()
+void FSM::set_multiplier(const string& param_str)
 {
-	return to_string(FSM_subaction);
+	try
+	{
+		FSM_multiplier = stof(param_str);
+		FSM_str += "x" + param_str + ", ";
+	}
+	catch (invalid_argument & ia) {/*Default multiplier is 0.0f*/}
+}
+
+void FSM::clear()
+{
+	FSM_character = 0;
+	FSM_frame = 0;
+	FSM_subaction = 0;
+	FSM_multiplier = 0.0f;
+	FSM_str = "";
+}
+
+string FSM::to_hex() const
+{
+	string hex_str = "";
+	ostringstream hex_str_stream;
+
+	if (FSM_character < 16)
+		hex_str_stream << "0";
+	hex_str_stream << hex << FSM_character;
+
+	if (FSM_frame < 16)
+		hex_str_stream << "0";
+	hex_str_stream << hex << FSM_frame;
+
+	hex_str_stream << 8;
+	if (FSM_subaction < 256)
+		hex_str_stream << "0";
+	if (FSM_subaction < 16)
+		hex_str_stream << "0";
+	hex_str_stream << hex << FSM_subaction;
+
+	hex_str_stream << " ";
+
+	int* pMult = (int*)&FSM_multiplier;
+	hex_str_stream << hex << *pMult;
+
+	hex_str = hex_str_stream.str();
+	transform(hex_str.begin(), hex_str.end(), hex_str.begin(), ::toupper);
+	return hex_str;
+}
+
+string FSM::to_str() const
+{
+	return FSM_str;
 }
