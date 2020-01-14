@@ -1,7 +1,8 @@
 //Fraction.cpp
 //Justyn P. Durnford
 //Created on 12/14/2019
-//Last Updated on 12/28/2019
+//Last Updated on 1/14/2020
+//Found at https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
 
 #include "Fraction.hpp"
 

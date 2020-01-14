@@ -1,7 +1,8 @@
 //Flag_Byte.hpp
 //Justyn P. Durnford
 //Created on 1/10/2020
-//Last Updated on 1/11/2020
+//Last Updated on 1/14/2020
+//Found at https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
 
 #ifndef FLAG_BYTE_HPP
 #define FLAG_BYTE_HPP

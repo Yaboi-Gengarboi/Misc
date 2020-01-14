@@ -1,7 +1,8 @@
 //Small_Int.cpp
 //Justyn P. Durnford
 //Created on 12/27/2019
-//Last Updated on 1/1/2020
+//Last Updated on 1/14/2020
+//Found at https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
 
 #include "Small_Int.hpp"
 
