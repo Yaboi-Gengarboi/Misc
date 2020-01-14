@@ -2,7 +2,7 @@
 //main_file.cpp
 //Justyn P. Durnford
 //Created on 12/17/2019
-//Last Updated on 12/24/2019
+//Last Updated on 12/25/2019
 
 #include "FSM.hpp"
 #include "error_handling.hpp"
@@ -30,8 +30,11 @@ using std::strcmp;
 #include <vector>
 using std::vector;
 
+#include <stdexcept>
+using std::invalid_argument;
+
 #include <algorithm>
-using std::sort;
+using std::find;
 
 #include <iostream>
 using std::cout;
@@ -46,6 +49,7 @@ Fl_Input_Choice* character_choice;
 Fl_Input_Choice* subaction_choice;
 Fl_Input* multiplier_input;
 Fl_Input* frame_input;
+Fl_Multiline_Output* fsm_output;
 
 //Allows the window to close
 void window_callback(Fl_Widget* window)
@@ -77,32 +81,69 @@ void character_choice_callback(Fl_Widget* window)
 	}
 }
 
+void add_FSM_button_callback(Fl_Widget* window)
+{
+	bool does_fsm_exist = false;
+
+	if (strcmp(character_choice->value(), "") != 0 &&
+		strcmp(subaction_choice->value(), "") != 0 &&
+		strcmp(multiplier_input->value(), "") != 0 &&
+		strcmp(frame_input->value(), "") != 0)
+	{
+		string str = "";
+		str = character_choice->value();
+		fsm.set_character(str);
+		
+		str = subaction_choice->value();
+		fsm.set_subaction(str);
+
+		str = multiplier_input->value();
+		fsm.set_multiplier(str);
+
+		str = frame_input->value();
+		fsm.set_frame(str);
+
+		fsm.set_string();
+
+		if (fsm.get_multiplier() != -1.0f && fsm.get_frame() != -1)
+		{
+			for (size_t i = 0; i < FSM_list.size(); ++i)
+			{
+				string debug = fsm.to_str();
+				fsm_output->value(debug.c_str());
+				if (FSM_list[i].to_str() == fsm.to_str())
+				{
+					does_fsm_exist = true;
+					break;
+				}
+			}
+
+			if (!does_fsm_exist)
+			{
+				FSM_list.push_back(fsm);
+				sort_FSMs(FSM_list);
+				string FSM_list_str = "";
+
+				for (size_t i = 0; i < FSM_list.size(); ++i)
+				{
+					if (i % 2 == 0 && i != 0)
+						FSM_list_str += "\n";
+					FSM_list_str += FSM_list[i].to_hex() + " ";
+				}
+
+				fsm_output->value(FSM_list_str.c_str());
+			}
+		}
+	}
+}
+
 int main()
 {
-	/*
-	Fl_Window* window = new Fl_Window(800, 400);
-
-	Fl_Box* character_box = new Fl_Box(20, 20, 140, 30, "Character");;
-	character_choice = new Fl_Input_Choice(20, 50, 140, 30);
-	for (string str : characters)
-		character_choice->add(str.c_str());
-	character_choice->callback(character_choice_callback);
-
-
-	Fl_Box* subaction_box = new Fl_Box(160, 20, 300, 30, "Subaction");
-	subaction_choice = new Fl_Input_Choice(160, 50, 300, 30);
-	
-	window->callback(window_callback);
-
-	window->end();
-	window->show();
-	return Fl::run();
-	*/
-
-	read_FSMS_from_file(FSM_list, fsm);
-	for (size_t i = 0; i < FSM_list.size(); ++i)
+	for (int i = 146; i <= 299; ++i)
 	{
-		cout << FSM_list[i].to_str() << endl;
+		cout << "         \"";
+		cout << subaction_names[i];
+		cout << "\"," << endl;
 	}
 
 	return 0;

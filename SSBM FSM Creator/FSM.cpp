@@ -2,7 +2,7 @@
 //FSM.cpp
 //Justyn P. Durnford
 //Created on 12/18/2019
-//Last Updated on 12/24/2019
+//Last Updated on 12/25/2019
 
 #include "FSM.hpp"
 
@@ -42,6 +42,11 @@ FSM::FSM(int& param_int1, int& param_int2,
 	FSM_str = param_str;
 }
 
+int FSM::get_character() const
+{
+	return FSM_character;
+}
+
 void FSM::set_character(const string& param_str)
 {
 	for (unsigned short int i = 0; i < characters.size(); ++i)
@@ -49,10 +54,15 @@ void FSM::set_character(const string& param_str)
 		if (characters[i] == param_str)
 		{
 			FSM_character = i;
-			FSM_str += param_str + ", ";
+			break;
 		}
 	}
 	/*Default character is 0*/
+}
+
+int FSM::get_frame() const
+{
+	return FSM_frame;
 }
 
 void FSM::set_frame(const string& param_str)
@@ -60,13 +70,20 @@ void FSM::set_frame(const string& param_str)
 	try
 	{
 		int frame = stoi(param_str);
-		if (frame > 0 && frame < 256)
+		if (frame >= 0 && frame < 256)
 		{
 			FSM_frame = frame;
-			FSM_str += "Frame " + frame;
 		}
 	}
-	catch (invalid_argument& ia) {/*Default frame is 0*/}
+	catch (invalid_argument& ia)
+	{
+		FSM_frame = -1; //Represents error
+	}
+}
+
+int FSM::get_subaction() const
+{
+	return FSM_subaction;
 }
 
 void FSM::set_subaction(const string& param_str)
@@ -76,9 +93,13 @@ void FSM::set_subaction(const string& param_str)
 	{
 		auto i = distance(subaction_names.begin(), iter);
 		FSM_subaction = subaction_ids[i];
-		FSM_str += subaction_ids[i] + ", ";
 	}
 	/*Default subaction is 0*/
+}
+
+float FSM::get_multiplier() const
+{
+	return FSM_multiplier;
 }
 
 void FSM::set_multiplier(const string& param_str)
@@ -86,9 +107,11 @@ void FSM::set_multiplier(const string& param_str)
 	try
 	{
 		FSM_multiplier = stof(param_str);
-		FSM_str += "x" + param_str + ", ";
 	}
-	catch (invalid_argument & ia) {/*Default multiplier is 0.0f*/}
+	catch (invalid_argument & ia) 
+	{
+		FSM_multiplier = -1.0f; //Represents error
+	}
 }
 
 void FSM::clear()
@@ -98,6 +121,16 @@ void FSM::clear()
 	FSM_subaction = 0;
 	FSM_multiplier = 0.0f;
 	FSM_str = "";
+}
+
+void FSM::set_string()
+{
+	
+}
+
+string FSM::to_str() const
+{
+	return FSM_str;
 }
 
 string FSM::to_hex() const
@@ -128,9 +161,4 @@ string FSM::to_hex() const
 	hex_str = hex_str_stream.str();
 	transform(hex_str.begin(), hex_str.end(), hex_str.begin(), ::toupper);
 	return hex_str;
-}
-
-string FSM::to_str() const
-{
-	return FSM_str;
 }

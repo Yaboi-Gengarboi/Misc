@@ -2,7 +2,7 @@
 //data.cpp
 //Justyn P. Durnford
 //Created on 12/21/2019
-//Last Updated on 12/21/2019
+//Last Updated on 12/25/2019
 
 #include "FSM.hpp"
 
@@ -26,19 +26,6 @@ vector<string> characters =
     "Zelda", "Sheik", "Falco",
     "Young Link", "Dr. Mario", "Roy",
     "Pichu", "Ganondorf", "Popo"
-};
-
-vector<pair<int, int>> character_subaction_indexes =
-{
-    { 54, 69 }, { 70, 91 }, { 92, 117 },
-    { 118, 145 }, { 146, 299 }, { 300, 320 },
-    { 321, 339 }, { 340, 349 }, { 350, 357 },
-    { 358, 389 }, { 390, 408 }, { 409, 434 },
-    { 435, 449 }, { 450, 474 }, { 475, 488 },
-    { 489, 515 }, { 516, 531 }, { 532, 550 },
-    { 551, 566 }, { 567, 588 }, { 589, 614 },
-    { 615, 633 }, { 634, 641 }, { 642, 673 },
-    { 674, 698 }, { 699, 714 }, { 475, 488 },
 };
 
 //0-53: Common
@@ -68,6 +55,19 @@ vector<pair<int, int>> character_subaction_indexes =
 //642-673: Roy
 //674-698: Pichu
 //699-714: Ganondorf
+vector<pair<int, int>> character_subaction_indexes =
+{
+    { 54, 69 }, { 70, 91 }, { 92, 117 },
+    { 118, 145 }, { 146, 299 }, { 300, 320 },
+    { 321, 339 }, { 340, 349 }, { 350, 357 },
+    { 358, 389 }, { 390, 408 }, { 409, 434 },
+    { 435, 449 }, { 450, 474 }, { 475, 488 },
+    { 489, 515 }, { 516, 531 }, { 532, 550 },
+    { 551, 566 }, { 567, 588 }, { 589, 614 },
+    { 615, 633 }, { 634, 641 }, { 642, 673 },
+    { 674, 698 }, { 699, 714 }, { 475, 488 },
+};
+
 vector<string> subaction_names =
 {
     "Spot Dodge",
