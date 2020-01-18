@@ -1,64 +1,157 @@
 //Fraction.cpp
 //Justyn P. Durnford
 //Created on 12/14/2019
-//Last Updated on 1/14/2020
+//Last Updated on 1/18/2020
 //Found at https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
 
 #include "Fraction.hpp"
+
+#include <array>
+using std::array;
 
 #include <string>
 using std::string;
 using std::to_string;
 
-Fraction::Fraction()
+Fraction::Fraction() {/* Default values are 0 and 1. */}
+
+Fraction::Fraction(int numer, int denom)
 {
-	Fraction_numerator = 0;
-	Fraction_denominator = 0;
+	_numerator = numer;
+
+	if (denom != 0)
+		_denominator = denom;
 }
 
-Fraction::Fraction(const int& numer, const int& denom)
+Fraction::Fraction(int f_arr[2])
 {
-	Fraction_numerator = numer;
-	Fraction_denominator = denom;
+	_numerator = f_arr[0];
+
+	if (f_arr[1] != 0)
+		_denominator = f_arr[1];
+}
+
+Fraction::Fraction(array<int, 2> f_arr)
+{
+	_numerator = f_arr[0];
+
+	if (f_arr[1] != 0)
+		_denominator = f_arr[1];
 }
 
 Fraction::~Fraction() {/* Destructor */}
 
 int Fraction::get_numerator() const
 {
-	return Fraction_numerator;
+	return _numerator;
 }
 
 int Fraction::get_denominator() const
 {
-	return Fraction_denominator;
+	return _denominator;
 }
 
-void Fraction::set_numerator(const int& numer)
+void Fraction::set_numerator(int numer)
 {
-	Fraction_numerator = numer;
+	_numerator = numer;
 }
 
-void Fraction::set_denominator(const int& denom)
+void Fraction::set_denominator(int denom)
 {
-	Fraction_denominator = denom;
+	if (denom != 0)
+		_denominator = denom;
 }
 
 int Fraction::int_result() const
 {
-	return Fraction_numerator / Fraction_denominator;
+	return _numerator / _denominator;
+}
+
+void Fraction::add(int num)
+{
+	num *= _denominator;
+	_numerator += num;
+}
+
+void Fraction::subtract(int num)
+{
+	num *= _denominator;
+	_numerator -= num;
+}
+
+void Fraction::multiply(int num)
+{
+	_numerator *= num;
+}
+
+void Fraction::divide(int num)
+{
+	if (num != 0)
+		_denominator *= num;
+}
+
+void Fraction::add(const Fraction& frac)
+{
+	array<int, 2> frac_arr = frac.to_arr();
+	int temp = 0;
+
+	if (_denominator != frac_arr[1])
+	{
+		_numerator *= frac_arr[1];
+		frac_arr[0] *= _denominator;
+
+		temp = _denominator;
+		_denominator *= frac_arr[1];
+		frac_arr[1] *= temp;
+	}
+
+	_numerator += frac_arr[0];
+}
+
+void Fraction::subtract(const Fraction& frac)
+{
+	array<int, 2> frac_arr = frac.to_arr();
+	int temp = 0;
+
+	if (_denominator != frac_arr[1])
+	{
+		_numerator *= frac_arr[1];
+		frac_arr[0] *= _denominator;
+
+		temp = _denominator;
+		_denominator *= frac_arr[1];
+		frac_arr[1] *= temp;
+	}
+
+	_numerator -= frac_arr[0];
+}
+
+void Fraction::multiply(const Fraction& frac)
+{
+	_numerator *= frac.get_numerator();
+}
+
+void Fraction::divide(const Fraction& frac)
+{
+	_denominator *= frac.get_denominator();
 }
 
 double Fraction::double_result() const
 {
-	return (long double)(Fraction_numerator / Fraction_denominator);
+	return (double)(_numerator / _denominator);
+}
+
+array<int, 2> Fraction::to_arr() const
+{
+	array<int, 2> arr = { _numerator, _denominator };
+	return arr;
 }
 
 string Fraction::to_str() const
 {
 	string str = "";
-	str += to_string(Fraction_numerator);
+	str += to_string(_numerator);
 	str += " / ";
-	str += to_string(Fraction_denominator);
+	str += to_string(_denominator);
 	return str;
 }
