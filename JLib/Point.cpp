@@ -1,7 +1,7 @@
 //Point.cpp
 //Justyn P. Durnford
 //Created on 1/13/2020
-//Last Updated on 1/14/2020
+//Last Updated on 1/18/2020
 //Found at https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
 
 #include "Point.hpp"
@@ -21,46 +21,61 @@ Point::Point() {/* Default values are 0.0 */}
 
 Point::Point(double x, double y, double z)
 {
-	Point_x = x;
-	Point_y = y;
-	Point_z = z;
+	_x = x;
+	_y = y;
+	_z = z;
+}
+
+Point::Point(double pt_arr[3])
+{
+	_x = pt_arr[0];
+	_y = pt_arr[1];
+	_z = pt_arr[2];
 }
 
 Point::Point(array<double, 3> pt_arr)
 {
-	Point_x = pt_arr[0];
-	Point_y = pt_arr[1];
-	Point_z = pt_arr[2];
+	_x = pt_arr[0];
+	_y = pt_arr[1];
+	_z = pt_arr[2];
 }
+
+Point::~Point() {/* Destructor */}
 
 double Point::get_x() const
 {
-	return Point_x;
+	return _x;
 }
 
 void Point::set_x(const double& x)
 {
-	Point_x = x;
+	_x = x;
 }
 
 double Point::get_y() const
 {
-	return Point_y;
+	return _y;
 }
 
 void Point::set_y(const double& y)
 {
-	Point_y = y;
+	_y = y;
 }
 
 double Point::get_z() const
 {
-	return Point_z;
+	return _z;
 }
 
 void Point::set_z(const double& z)
 {
-	Point_z = z;
+	_z = z;
+}
+
+array<double, 3> Point::to_arr() const
+{
+	array<double, 3> arr = { _x, _y, _z };
+	return arr;
 }
 
 string Point::to_str() const
@@ -68,11 +83,11 @@ string Point::to_str() const
 	string str = "";
 
 	str += "(";
-	str += to_string(Point_x);
+	str += to_string(_x);
 	str += ", ";
-	str += to_string(Point_y);
+	str += to_string(_y);
 	str += ", ";
-	str += to_string(Point_z);
+	str += to_string(_z);
 	str += ")";
 
 	return str;

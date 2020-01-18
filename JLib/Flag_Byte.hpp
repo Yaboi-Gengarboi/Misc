@@ -33,6 +33,9 @@ class Flag_Byte
 		//Primary Constructor
 		Flag_Byte(const unsigned char& param_c);
 
+		//Destructor
+		~Flag_Byte();
+
 		unsigned char get_value();
 
 		void set_value(const unsigned char& param_c);

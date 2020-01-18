@@ -20,6 +20,8 @@ class Complex_Number
 
 		Complex_Number(const long double& param_ld1, const long double& param_ld2);
 
+		~Complex_Number();
+
 		void change_real_to(const long double& param_ld);
 
 		friend Complex_Number operator + (const Complex_Number& param_cn1, const Complex_Number& param_cn2);

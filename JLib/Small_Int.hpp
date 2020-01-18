@@ -21,6 +21,9 @@ class Small_Int
 		//Primary Small_Int constructor.
 		Small_Int(const char& value);
 
+		//Destructor.
+		~Small_Int();
+
 		//Returns the value of Small_Int_value.
 		char get_value() const;
 

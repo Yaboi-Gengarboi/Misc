@@ -1,7 +1,7 @@
 //Point.hpp
 //Justyn P. Durnford
 //Created on 1/13/2020
-//Last Updated on 1/14/2020
+//Last Updated on 1/18/2020
 //Found at https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
 
 #ifndef POINT_HPP
@@ -12,20 +12,20 @@
 
 class Point
 {
-	double Point_x = 0.0;
-	double Point_y = 0.0;
-	double Point_z = 0.0;
+	double _x = 0.0;
+	double _y = 0.0;
+	double _z = 0.0;
 
 	public:
 
-		//Default Constructor.
+		//Constructors.
 		Point();
-
-		//Primary Constructor.
 		Point(double x, double y, double z);
-
-		//Seconsary Constructor.
+		Point(double pt_arr[3]);
 		Point(std::array<double, 3> pt_arr);
+
+		//Destructor.
+		~Point();
 
 		//Returns Point_x.
 		double get_x() const;
@@ -45,7 +45,10 @@ class Point
 		//Sets the value of Point_z to z.
 		void set_z(const double& z);
 
-		//Returns a string representation of the Point.
+		//Returns a std::array representation of the Point.
+		std::array<double, 3> to_arr() const;
+
+		//Returns a std::string representation of the Point.
 		std::string to_str() const;
 };
 

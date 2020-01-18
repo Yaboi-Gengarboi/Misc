@@ -24,6 +24,8 @@ Small_Int::Small_Int(const char& value)
 	Small_Int_value = value;
 }
 
+Small_Int::~Small_Int() {/* Destructor */}
+
 char Small_Int::get_value() const
 {
 	return Small_Int_value;

@@ -22,6 +22,8 @@ Flag_Byte::Flag_Byte(const unsigned char& param_c)
 	Flag_Byte_value = param_c;
 }
 
+Flag_Byte::~Flag_Byte() {/* Destructor */}
+
 unsigned char Flag_Byte::get_value()
 {
 	return Flag_Byte_value;

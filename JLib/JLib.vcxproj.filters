@@ -36,6 +36,12 @@
     <ClInclude Include="Point.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Print.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Space_Vector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Fraction.cpp">

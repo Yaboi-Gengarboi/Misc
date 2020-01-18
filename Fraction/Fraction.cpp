@@ -21,6 +21,8 @@ Fraction::Fraction(const int& numer, const int& denom)
 	Fraction_denominator = denom;
 }
 
+Fraction::~Fraction() {/* Destructor */}
+
 int Fraction::get_numerator() const
 {
 	return Fraction_numerator;

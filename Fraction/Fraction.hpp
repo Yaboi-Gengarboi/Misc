@@ -17,6 +17,8 @@ class Fraction
 
 		Fraction(const int& numer, const int& denom);
 
+		~Fraction();
+
 		int get_numerator() const;
 
 		int get_denominator() const;
