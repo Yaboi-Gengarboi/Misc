@@ -1,8 +1,8 @@
 //Point.hpp
 //Justyn P. Durnford
 //Created on 1/13/2020
-//Last Updated on 1/18/2020
-//Found at https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
+//Last Updated on 1/21/2020
+//https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
 
 #ifndef POINT_HPP
 #define POINT_HPP
@@ -27,22 +27,22 @@ class Point
 		//Destructor.
 		~Point();
 
-		//Returns Point_x.
+		//Returns _x.
 		double get_x() const;
 
-		//Sets the value of Point_x to x.
+		//Sets the value of _x to x.
 		void set_x(const double& x);
 
-		//Returns Point_y.
+		//Returns _y.
 		double get_y() const;
 
-		//Sets the value of Point_y to y.
+		//Sets the value of _y to y.
 		void set_y(const double& y);
 
-		//Returns Point_z.
+		//Returns _z.
 		double get_z() const;
 
-		//Sets the value of Point_z to z.
+		//Sets the value of _z to z.
 		void set_z(const double& z);
 
 		//Returns a std::array representation of the Point.

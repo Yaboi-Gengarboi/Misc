@@ -2,7 +2,7 @@
 //Justyn P. Durnford
 //Created on 12/14/2019
 //Last Updated on 1/18/2020
-//Found at https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
+//https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
 
 #include "Fraction.hpp"
 
@@ -13,7 +13,7 @@ using std::array;
 using std::string;
 using std::to_string;
 
-Fraction::Fraction() {/* Default values are 0 and 1. */}
+Fraction::Fraction() {/* Default values are 0 and 1. */ }
 
 Fraction::Fraction(int numer, int denom)
 {
@@ -39,7 +39,7 @@ Fraction::Fraction(array<int, 2> f_arr)
 		_denominator = f_arr[1];
 }
 
-Fraction::~Fraction() {/* Destructor */}
+Fraction::~Fraction() {/* Destructor */ }
 
 int Fraction::get_numerator() const
 {
@@ -65,6 +65,11 @@ void Fraction::set_denominator(int denom)
 int Fraction::int_result() const
 {
 	return _numerator / _denominator;
+}
+
+double Fraction::double_result() const
+{
+	return ((1.0 * _numerator) / (1.0 * _denominator));
 }
 
 void Fraction::add(int num)
@@ -134,11 +139,6 @@ void Fraction::multiply(const Fraction& frac)
 void Fraction::divide(const Fraction& frac)
 {
 	_denominator *= frac.get_denominator();
-}
-
-double Fraction::double_result() const
-{
-	return (double)(_numerator / _denominator);
 }
 
 array<int, 2> Fraction::to_arr() const

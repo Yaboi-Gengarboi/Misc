@@ -1,8 +1,8 @@
 //Point.cpp
 //Justyn P. Durnford
 //Created on 1/13/2020
-//Last Updated on 1/18/2020
-//Found at https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
+//Last Updated on 1/21/2020
+//https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
 
 #include "Point.hpp"
 
