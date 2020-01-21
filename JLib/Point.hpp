@@ -20,9 +20,9 @@ class Point
 
 		//Constructors.
 		Point();
-		Point(double x, double y, double z);
-		Point(double pt_arr[3]);
-		Point(std::array<double, 3> pt_arr);
+		Point(const double& x, const double& y, const double& z);
+		Point(const double pt_arr[3]);
+		Point(const std::array<double, 3>& pt_arr);
 
 		//Destructor.
 		~Point();

@@ -17,20 +17,14 @@ using std::endl;
 
 int main()
 {
-	Point A(-3, 0, 0);
-	Point B(-1, 5, 0);
-	Point C(7, 4, 0);
-	Point D(5, -1, 0);
+	Vector A(1, 5, -2);
+	Vector B(2, -1, 0);
+	Vector C(4, 9, -4);
 
-	Vector U(A, B);
-	println(U.to_str());
+	Vector D = cross_product(A, B);
+	double d = dot_product(C, D);
 
-	Vector V(A, D);
-	println(V.to_str());
-
-	Vector W = cross_product(U, V);
-	println(W.to_str());
-	println(W.length());
+	printDoub(d);
 
 	return 0;
 }

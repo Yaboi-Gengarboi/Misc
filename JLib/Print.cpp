@@ -10,31 +10,48 @@
 using std::string;
 using std::to_string;
 
+#include <vector>
+using std::vector;
+
 #include <iostream>
 using std::cout;
 using std::endl;
 
-void println(const char* cstr)
+void printCstr(const char* cstr)
 {
 	cout << cstr << endl;
 }
 
-void println(const string& str)
+void printStr(const string& str)
 {
 	cout << str << endl;
 }
 
-void println(const int& num_int)
+void printInt(const int& num_int)
 {
 	cout << to_string(num_int) << endl;
 }
 
-void println(const double& num_double)
+void printDoub(const double& num_double)
 {
 	cout << to_string(num_double) << endl;
 }
 
-void println(const char& ch)
+void printChar(const char& ch)
 {
 	cout << ch << endl;
+}
+
+template <typename Type>
+void printArr(const Type arr[])
+{
+	for (const auto& item : arr)
+		cout << item << endl;
+}
+
+template <typename Type>
+void printArr(const vector<Type>& vec)
+{
+	for (const auto& item : vec)
+		cout << item << endl;
 }

@@ -149,6 +149,15 @@ string Vector::to_str() const
 	return str;
 }
 
+double dot_product(const Vector& vec1, const Vector& vec2)
+{
+	double d = 0.0;
+	d = (vec1.get_x() * vec2.get_x());
+	d += (vec1.get_y() * vec2.get_y());
+	d += (vec1.get_z() * vec2.get_z());
+	return d;
+}
+
 Vector cross_product(const Vector& vec1, const Vector& vec2)
 {
 	double x = (vec1.get_y() * vec2.get_z()) - (vec1.get_z() * vec2.get_y());

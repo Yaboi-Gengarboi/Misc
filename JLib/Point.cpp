@@ -19,21 +19,21 @@ using std::sqrt;
 
 Point::Point() {/* Default values are 0.0 */}
 
-Point::Point(double x, double y, double z)
+Point::Point(const double& x, const double& y, const double& z)
 {
 	_x = x;
 	_y = y;
 	_z = z;
 }
 
-Point::Point(double pt_arr[3])
+Point::Point(const double pt_arr[3])
 {
 	_x = pt_arr[0];
 	_y = pt_arr[1];
 	_z = pt_arr[2];
 }
 
-Point::Point(array<double, 3> pt_arr)
+Point::Point(const array<double, 3>& pt_arr)
 {
 	_x = pt_arr[0];
 	_y = pt_arr[1];

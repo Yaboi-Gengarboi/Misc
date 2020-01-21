@@ -8,20 +8,29 @@
 #define PRINT_HPP
 
 #include <string>
+#include <vector>
 
 //Prints the C-string to the iostream and end the line.
-void println(const char* cstr);
+void printCstr(const char* cstr);
 
 //Prints the string to the iostream and end the line.
-void println(const std::string& str);
+void printStr(const std::string& str);
 
 //Prints the int to the iostream and end the line.
-void println(const int& num_int);
+void printInt(const int& num_int);
 
 //Prints the double to the iostream and end the line.
-void println(const double& num_double);
+void printDoub(const double& num_double);
 
 //Prints the character to the iostream and end the line.
-void println(const char& ch);
+void printChar(const char& ch);
+
+//Prints the contents of the C-array to the iostream and end the line.
+template <typename Type>
+void printArr(const Type arr[]);
+
+//Prints the contents of the std::vector to the iostream and end the line.
+template <typename Type>
+void printArr(const std::vector<Type>& vec);
 
 #endif //#ifndef PRINT_HPP
