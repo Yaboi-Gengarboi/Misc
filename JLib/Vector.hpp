@@ -2,7 +2,7 @@
 //Justyn P. Durnford
 //Created on 1/18/2020
 //Last Updated on 1/31/2020
-//Original Code found at https://github.com/Yaboi-Gengarboi/Misc/blob/master/JLib/Vector.hpp
+//https://github.com/Yaboi-Gengarboi/Misc/blob/master/JLib/Vector.hpp
 
 #ifndef VECTOR_HPP
 #define VECTOR_HPP

@@ -1,8 +1,8 @@
 //Point.cpp
 //Justyn P. Durnford
 //Created on 1/13/2020
-//Last Updated on 1/21/2020
-//https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
+//Last Updated on 1/31/2020
+//https://github.com/Yaboi-Gengarboi/Misc/blob/master/JLib/Point.cpp
 
 #include "Point.hpp"
 
@@ -119,4 +119,14 @@ bool are_collinear(const Point& pt1, const Point& pt2, const Point& pt3)
 		return false;
 
 	return true;
+}
+
+bool operator == (const Point& pt1, const Point& pt2)
+{
+	return (pt1.get_x() == pt2.get_x()) && (pt1.get_y() == pt2.get_y()) && (pt1.get_z() == pt2.get_z());
+}
+
+bool operator != (const Point& pt1, const Point& pt2)
+{
+	return (pt1.get_x() != pt2.get_x()) || (pt1.get_y() != pt2.get_y()) || (pt1.get_z() != pt2.get_z());
 }

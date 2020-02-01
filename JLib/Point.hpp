@@ -1,8 +1,8 @@
 //Point.hpp
 //Justyn P. Durnford
 //Created on 1/13/2020
-//Last Updated on 1/21/2020
-//https://github.com/Yaboi-Gengarboi/Misc/tree/master/JLib
+//Last Updated on 1/31/2020
+//https://github.com/Yaboi-Gengarboi/Misc/blob/master/JLib/Point.hpp
 
 #ifndef POINT_HPP
 #define POINT_HPP
@@ -59,5 +59,11 @@ double distance(const Point& pt1, const Point& pt2);
 //Returns true if the three given points are all located
 //on the same line.
 bool are_collinear(const Point& pt1, const Point& pt2, const Point& pt3);
+
+//Equality operator
+bool operator == (const Point& pt1, const Point& pt2);
+
+//Inequality operator
+bool operator != (const Point& pt1, const Point& pt2);
 
 #endif //#ifndef POINT_HPP
