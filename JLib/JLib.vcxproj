@@ -138,12 +138,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Complex_Number.hpp" />
     <ClInclude Include="Flag_Byte.hpp" />
     <ClInclude Include="Fraction.hpp" />
     <ClInclude Include="Vector.hpp" />
     <ClInclude Include="JLib.hpp" />
-    <ClInclude Include="JMath.hpp" />
     <ClInclude Include="Point.hpp" />
     <ClInclude Include="Print.hpp" />
     <ClInclude Include="Small_Int.hpp" />

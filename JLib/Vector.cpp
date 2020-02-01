@@ -1,12 +1,14 @@
 //Vector.cpp
 //Justyn P. Durnford
 //Created on 1/20/2020
-//Last Updated on 1/20/2020
-//
+//Last Updated on 1/31/2020
+//https://github.com/Yaboi-Gengarboi/cs202/blob/master/Catch2%20Lab/Vector.cpp
 
+//User created headers
 #include "Vector.hpp"
 #include "Point.hpp"
 
+//Standard Library
 #include <array>
 using std::array;
 
@@ -94,7 +96,7 @@ void Vector::clear()
 	_z = 0;
 }
 
-double Vector::length()
+double Vector::magnitude()
 {
 	double length = 0.0;
 	length = pow(_x, 2) + pow(_y, 2) + pow(_z, 2);
@@ -104,12 +106,16 @@ double Vector::length()
 
 void Vector::add(const Vector& vec)
 {
-
+	_x += vec.get_x();
+	_y += vec.get_y();
+	_z += vec.get_z();
 }
 
 void Vector::subtract(const Vector& vec)
 {
-	
+	_x -= vec.get_x();
+	_y -= vec.get_y();
+	_z -= vec.get_z();
 }
 
 void Vector::scale(double scalar)
@@ -165,4 +171,14 @@ Vector cross_product(const Vector& vec1, const Vector& vec2)
 	double z = (vec1.get_x() * vec2.get_y()) - (vec1.get_y() * vec2.get_x());
 	Vector vec(x, y, z);
 	return vec;
+}
+
+bool operator == (const Vector& vec1, const Vector& vec2)
+{
+	return (vec1.get_x() == vec2.get_x()) && (vec1.get_y() == vec2.get_y()) && (vec1.get_z() == vec2.get_z());
+}
+
+bool operator != (const Vector& vec1, const Vector& vec2)
+{
+	return (vec1.get_x() != vec2.get_x()) || (vec1.get_y() != vec2.get_y()) || (vec1.get_z() != vec2.get_z());
 }

@@ -24,13 +24,7 @@
     <ClInclude Include="Small_Int.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Complex_Number.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Flag_Byte.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="JMath.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Point.hpp">

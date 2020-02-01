@@ -7,23 +7,7 @@
 #ifndef PRINT_HPP
 #define PRINT_HPP
 
-#include <string>
 #include <vector>
-
-//Prints the C-string to the iostream and end the line.
-void printCstr(const char* cstr);
-
-//Prints the string to the iostream and end the line.
-void printStr(const std::string& str);
-
-//Prints the int to the iostream and end the line.
-void printInt(const int& num_int);
-
-//Prints the double to the iostream and end the line.
-void printDoub(const double& num_double);
-
-//Prints the character to the iostream and end the line.
-void printChar(const char& ch);
 
 //Prints the contents of the C-array to the iostream and end the line.
 template <typename Type>

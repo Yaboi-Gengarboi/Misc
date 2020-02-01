@@ -7,8 +7,10 @@
 #ifndef JLIB_HPP
 #define JLIB_HPP
 
-#include "JMath.hpp"
-#include "Small_Int.hpp"
 #include "Flag_Byte.hpp"
+#include "Fraction.hpp"
+#include "Point.hpp"
+#include "Small_Int.hpp"
+#include "Vector.hpp"
 
 #endif //#ifndef JLIB_HPP
