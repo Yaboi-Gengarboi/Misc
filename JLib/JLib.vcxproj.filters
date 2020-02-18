@@ -24,13 +24,7 @@
     <ClInclude Include="Small_Int.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Flag_Byte.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Point.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Print.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Vector.hpp">
@@ -47,16 +41,10 @@
     <ClCompile Include="Small_Int.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Flag_Byte.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Point.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Vector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Print.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

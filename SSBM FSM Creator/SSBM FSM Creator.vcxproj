@@ -138,16 +138,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="error_handling.hpp" />
-    <ClInclude Include="file_handling.hpp" />
-    <ClInclude Include="FSM.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="data_storage.cpp" />
-    <ClCompile Include="error_handling.cpp" />
-    <ClCompile Include="file_handling.cpp" />
+    <ClCompile Include="data.cpp" />
     <ClCompile Include="FSM.cpp" />
     <ClCompile Include="main_file.cpp" />
+    <ClCompile Include="tools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FSM.hpp" />
+    <ClInclude Include="tools.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -13,7 +13,7 @@ using std::array;
 using std::string;
 using std::to_string;
 
-Fraction::Fraction() {/* Default values are 0 and 1. */ }
+Fraction::Fraction() {/* Default values are 0 and 1. */}
 
 Fraction::Fraction(int numer, int denom)
 {
@@ -31,7 +31,7 @@ Fraction::Fraction(int f_arr[2])
 		_denominator = f_arr[1];
 }
 
-Fraction::Fraction(array<int, 2> f_arr)
+Fraction::Fraction(const array<int, 2>& f_arr)
 {
 	_numerator = f_arr[0];
 
@@ -39,7 +39,7 @@ Fraction::Fraction(array<int, 2> f_arr)
 		_denominator = f_arr[1];
 }
 
-Fraction::~Fraction() {/* Destructor */ }
+Fraction::~Fraction() {/* Destructor */}
 
 int Fraction::get_numerator() const
 {

@@ -34,9 +34,9 @@ public:
 
 	//Constructors.
 	Fraction();
-	Fraction(int numer, int denom);
+	Fraction(int numer,int denom);
 	Fraction(int f_arr[2]);
-	Fraction(std::array<int, 2> f_arr);
+	Fraction(const std::array<int, 2>& f_arr);
 
 	//Destructor.
 	~Fraction();

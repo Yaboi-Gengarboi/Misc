@@ -5,6 +5,7 @@
 //https://github.com/Yaboi-Gengarboi/Misc/blob/master/JLib/Point.cpp
 
 #include "Point.hpp"
+#include "Vector.hpp"
 
 #include <array>
 using std::array;
@@ -19,14 +20,14 @@ using std::sqrt;
 
 Point::Point() {/* Default values are 0.0 */}
 
-Point::Point(const double& x, const double& y, const double& z)
+Point::Point(double x, double y, double z)
 {
 	_x = x;
 	_y = y;
 	_z = z;
 }
 
-Point::Point(const double pt_arr[3])
+Point::Point(double pt_arr[3])
 {
 	_x = pt_arr[0];
 	_y = pt_arr[1];
@@ -47,7 +48,7 @@ double Point::get_x() const
 	return _x;
 }
 
-void Point::set_x(const double& x)
+void Point::set_x(double x)
 {
 	_x = x;
 }
@@ -57,7 +58,7 @@ double Point::get_y() const
 	return _y;
 }
 
-void Point::set_y(const double& y)
+void Point::set_y(double y)
 {
 	_y = y;
 }
@@ -67,7 +68,7 @@ double Point::get_z() const
 	return _z;
 }
 
-void Point::set_z(const double& z)
+void Point::set_z(double z)
 {
 	_z = z;
 }

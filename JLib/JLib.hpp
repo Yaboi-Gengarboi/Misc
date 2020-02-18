@@ -7,7 +7,6 @@
 #ifndef JLIB_HPP
 #define JLIB_HPP
 
-#include "Flag_Byte.hpp"
 #include "Fraction.hpp"
 #include "Point.hpp"
 #include "Small_Int.hpp"

@@ -4,21 +4,25 @@
 //Last Updated on 1/21/2020
 //
 
-#include "Print.hpp"
+#include "Vector.hpp"
 
 #include <string>
 using std::string;
-
-#include <typeinfo>
 
 #include <iostream>
 using std::cout;
 using std::endl;
 
+#include <bitset>
+using std::bitset;
+
 int main()
 {
-	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-	printArr(arr);
+	Vector u(1, -2, 3);
+	Vector v(-1, -1, 2);
+
+	Vector w = cross_product(u, v);
+	cout << w.to_str() << endl;
 
 	return 0;
 }
