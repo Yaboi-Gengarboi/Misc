@@ -93,22 +93,22 @@ bool set_subaction_Captain_Falcon(subaction& sub)
 {
     vector<subaction> Captain_Falcon_subaction_list =
     {
-        { "Falcon Punch (Ground)", 0x012d },
-        { "Falcon Punch (Aerial)", 0x012e },
-        { "Raptor Boost Start (Ground)", 0x012f },
-        { "Raptor Boost (Ground)", 0x0130 },
-        { "Raptor Boost Start (Aerial)", 0x0131 },
-        { "Raptor Boost (Aerial)", 0x0132 },
-        { "Falcon Dive (Ground)",  0x0133 },
-        { "Falcon Dive (Aerial)", 0x0134 },
-        { "Falcon Dive Grab", 0x0135 },
-        { "Falcon Dive Release", 0x0136 },
-        { "Falcon Kick (Ground)", 0x0137 },
-        { "Falcon Kick End (Ground)", 0x0138 },
-        { "Falcon Kick (Aerial)", 0x0139 },
-        { "Falcon Kick Aerial Landing", 0x013a },
-        { "Falcon Kick (Ground End in Air)", 0x013b },
-        { "Falcon Kick (Aerial End in Air)", 0x013c }
+        { "Falcon Punch (Ground)", 0x12d },
+        { "Falcon Punch (Aerial)", 0x12e },
+        { "Raptor Boost Start (Ground)", 0x12f },
+        { "Raptor Boost (Ground)", 0x130 },
+        { "Raptor Boost Start (Aerial)", 0x131 },
+        { "Raptor Boost (Aerial)", 0x132 },
+        { "Falcon Dive (Ground)",  0x133 },
+        { "Falcon Dive (Aerial)", 0x134 },
+        { "Falcon Dive Grab", 0x135 },
+        { "Falcon Dive Release", 0x136 },
+        { "Falcon Kick (Ground)", 0x137 },
+        { "Falcon Kick End (Ground)", 0x138 },
+        { "Falcon Kick (Aerial)", 0x139 },
+        { "Falcon Kick Aerial Landing", 0x13a },
+        { "Falcon Kick (Ground End in Air)", 0x13b },
+        { "Falcon Kick (Aerial End in Air)", 0x13c }
     };
 
     for (size_t i = 0; i < Captain_Falcon_subaction_list.size(); ++i)
@@ -416,27 +416,27 @@ vector<subaction> Kirby_subaction_list =
 /*
 vector<subaction> Bowser_subaction_list =
 {
-    { "Fire Breath Start (Ground)", 0x
-    { "Fire Breath Loop (Ground)", 0x
-    { "Fire Breath End (Ground)", 0x
-    { "Fire Breath Start (Aerial)", 0x
-    { "Fire Breath Loop (Aerial)", 0x
-    { "Fire Breath End (Aerial)", 0x
-    { "Koopa Claw Start (Ground)", 0x
-    { "Koopa Claw Hit 1 (Ground)", 0x
-    { "Koopa Claw Hit 2 (Ground)", 0x
-    { "Koopa Claw Foward Throw (Ground)", 0x
-    { "Koopa Claw Back Throw (Ground)", 0x
-    { "Koopa Claw Start (Aerial)", 0x
-    { "Koopa Claw Hit 1 (Aerial)", 0x
-    { "Koopa Claw Hit 2 (Aerial)", 0x
-    { "Koopa Claw Foward Throw (Aerial)", 0x
-    { "Koopa Claw Back Throw (Aerial)", 0x
-    { "Whirling Fortress (Ground)", 0x
-    { "Whirling Fortress (Aerial)", 0x
-    { "Bowser Bomb (Ground)", 0x
-    { "Bowser Bomb (Aerial)", 0x
-    { "Bowser Bomb Landing", 0x
+    { "Fire Breath Start (Ground)", 0x127-
+    { "Fire Breath Loop (Ground)", 0x128-
+    { "Fire Breath End (Ground)", 0x129-
+    { "Fire Breath Start (Aerial)", 0x12a-
+    { "Fire Breath Loop (Aerial)", 0x12b-
+    { "Fire Breath End (Aerial)", 0x12c-
+    { "Koopa Claw Start (Ground)", 0x12d-
+    { "Koopa Claw Hit 1 (Ground)", 0x12e-
+    { "Koopa Claw Hit 2 (Ground)", 0x12f-
+    { "Koopa Claw Foward Throw (Ground)", 0x130-
+    { "Koopa Claw Back Throw (Ground)", 0x131-
+    { "Koopa Claw Start (Aerial)", 0x132-
+    { "Koopa Claw Hit 1 (Aerial)", 0x133-
+    { "Koopa Claw Hit 2 (Aerial)", 0x134-
+    { "Koopa Claw Foward Throw (Aerial)", 0x135-
+    { "Koopa Claw Back Throw (Aerial)", 0x136-
+    { "Whirling Fortress (Ground)", 0x137-
+    { "Whirling Fortress (Aerial)", 0x138-
+    { "Bowser Bomb (Ground)", 0x139-
+    { "Bowser Bomb (Aerial)", 0x13a-
+    { "Bowser Bomb Landing", 0x13b-
 };
 */
 
@@ -505,38 +505,38 @@ vector<subaction> Mario_subaction_list =
 /*
 vector<subaction> Marth_subaction_list =
 {
-    { "Shield Breaker Start (Ground)", 0x
-    { "Shield Breaker Loop (Ground)", 0x
-    { "Shield Breaker End 1 (Ground)", 0x
-    { "Shield Breaker End 2 (Ground)", 0x
-    { "Shield Breaker Start (Aerial)", 0x
-    { "Shield Breaker Loop (Aerial)", 0x
-    { "Shield Breaker End 1 (Aerial)", 0x
-    { "Shield Breaker End 2 (Aerial)", 0x
-    { "Dancing Blade 1 (Ground)", 0x
-    { "Dancing Blade 2 (High) (Ground)", 0x
-    { "Dancing Blade 2 (Middle) (Ground)", 0x
-    { "Dancing Blade 3 (High) (Ground)", 0x
-    { "Dancing Blade 3 (Middle) (Ground)", 0x
-    { "Dancing Blade 3 (Low) (Ground)", 0x
-    { "Dancing Blade 4 (High) (Ground)", 0x
-    { "Dancing Blade 4 (Middle) (Ground)", 0x
-    { "Dancing Blade 4 (Low) (Ground)", 0x
-    { "Dancing Blade 1 (Aerial)", 0x
-    { "Dancing Blade 2 (High) (Aerial)", 0x
-    { "Dancing Blade 2 (Middle) (Aerial)", 0x
-    { "Dancing Blade 3 (High) (Aerial)", 0x
-    { "Dancing Blade 3 (Middle) (Aerial)", 0x
-    { "Dancing Blade 3 (Low) (Aerial)", 0x
-    { "Dancing Blade 4 (High) (Aerial)", 0x
-    { "Dancing Blade 4 (Middle) (Aerial)", 0x
-    { "Dancing Blade 4 (Low) (Aerial)", 0x
-    { "Dolphin Slash (Ground)", 0x
-    { "Dolphin Slash (Aerial)", 0x
-    { "Counter (Ground)", 0x
-    { "Counter Hit (Ground)", 0x
-    { "Counter (Aerial)", 0x
-    { "Counter Hit (Aerial)", 0x
+    { "Shield Breaker Start (Ground)", 0x127-
+    { "Shield Breaker Loop (Ground)", 0x128-
+    { "Shield Breaker End 1 (Ground)", 0x129-
+    { "Shield Breaker End 2 (Ground)", 0x12a-
+    { "Shield Breaker Start (Aerial)", 0x12b-
+    { "Shield Breaker Loop (Aerial)", 0x12c-
+    { "Shield Breaker End 1 (Aerial)", 0x12d-
+    { "Shield Breaker End 2 (Aerial)", 0x12e-
+    { "Dancing Blade 1 (Ground)", 0x12f-
+    { "Dancing Blade 2 (High) (Ground)", 0x130-
+    { "Dancing Blade 2 (Middle) (Ground)", 0x131-
+    { "Dancing Blade 3 (High) (Ground)", 0x132-
+    { "Dancing Blade 3 (Middle) (Ground)", 0x133-
+    { "Dancing Blade 3 (Low) (Ground)", 0x134-
+    { "Dancing Blade 4 (High) (Ground)", 0x135-
+    { "Dancing Blade 4 (Middle) (Ground)", 0x136-
+    { "Dancing Blade 4 (Low) (Ground)", 0x137-
+    { "Dancing Blade 1 (Aerial)", 0x138-
+    { "Dancing Blade 2 (High) (Aerial)", 0x139-
+    { "Dancing Blade 2 (Middle) (Aerial)", 0x13a-
+    { "Dancing Blade 3 (High) (Aerial)", 0x13b-
+    { "Dancing Blade 3 (Middle) (Aerial)", 0x13c-
+    { "Dancing Blade 3 (Low) (Aerial)", 0x13d-
+    { "Dancing Blade 4 (High) (Aerial)", 0x13e-
+    { "Dancing Blade 4 (Middle) (Aerial)", 0x13f-
+    { "Dancing Blade 4 (Low) (Aerial)", 0x140-
+    { "Dolphin Slash (Ground)", 0x141-
+    { "Dolphin Slash (Aerial)", 0x142-
+    { "Counter (Ground)", 0x143-
+    { "Counter Hit (Ground)", 0x144-
+    { "Counter (Aerial)", 0x145-
+    { "Counter Hit (Aerial)", 0x146-
 };
 */
 
@@ -568,53 +568,57 @@ vector<subaction> Mewtwo_subaction_list =
 /*
 vector<subaction> Ness_subaction_list =
 {
-    { "PK Flash Start (Ground)", 0x
-    { "PK Flash Hold 1 (Ground)", 0x
-    { "PK Flash Hold 2 (Ground)", 0x
-    { "PK Flash End (Ground)", 0x
-    { "PK Flash Start (Aerial)", 0x
-    { "PK Flash Hold 1 (Aerial)", 0x
-    { "PK Flash Hold 2 (Aerial)", 0x
-    { "PK Flash End (Aerial)", 0x
-    { "PK Fire (Ground)", 0x
-    { "PK Fire (Aerial)", 0x
-    { "PK Thunder Start (Ground)", 0x
-    { "PK Thunder Hold (Ground)", 0x
-    { "PK Thunder End (Ground)", 0x
-    { "PK Thunder Launch (Ground)", 0x
-    { "PK Thunder Start (Aerial)", 0x
-    { "PK Thunder Hold (Aerial)", 0x
-    { "PK Thunder End (Aerial)", 0x
-    { "PK Thunder Launch (Aerial)", 0x
-    { "PSI Magnet Start (Ground)", 0x
-    { "PSI Magnet Hold (Ground)", 0x
-    { "PSI Magnet Absorb (Ground)", 0x
-    { "PSI Magnet End (Ground)", 0x
-    { "PSI Magnet Start (Aerial)", 0x
-    { "PSI Magnet Hold (Aerial)", 0x
-    { "PSI Magnet Absorb (Aerial)", 0x
-    { "PSI Magnet End (Aerial)", 0x
+    { "Up Smash 2", 0x127-
+    { "Up Smash 3", 0x128-
+    { "Down Smash 2", 0x129-
+    { "Down Smash 3", 0x12a-
+    { "PK Flash Start (Ground)", 0x12b-
+    { "PK Flash Hold 1 (Ground)", 0x12c-
+    { "PK Flash Hold 2 (Ground)", 0x12d-
+    { "PK Flash End (Ground)", 0x12e-
+    { "PK Flash Start (Aerial)", 0x12f-
+    { "PK Flash Hold 1 (Aerial)", 0x130-
+    { "PK Flash Hold 2 (Aerial)", 0x131-
+    { "PK Flash End (Aerial)", 0x132-
+    { "PK Fire (Ground)", 0x133-
+    { "PK Fire (Aerial)", 0x134-
+    { "PK Thunder Start (Ground)", 0x135-
+    { "PK Thunder Hold (Ground)", 0x136-
+    { "PK Thunder End (Ground)", 0x137-
+    { "PK Thunder Launch (Ground)", 0x138-
+    { "PK Thunder Start (Aerial)", 0x139-
+    { "PK Thunder Hold (Aerial)", 0x13a-
+    { "PK Thunder End (Aerial)", 0x13b-
+    { "PK Thunder Launch (Aerial)", 0x13c
+    { "PSI Magnet Start (Ground)", 0x13e-
+    { "PSI Magnet Hold (Ground)", 0x13f-
+    { "PSI Magnet Absorb (Ground)", 0x140-
+    { "PSI Magnet End (Ground)", 0x141-
+    { "PSI Magnet Start (Aerial)", 0x142-
+    { "PSI Magnet Hold (Aerial)", 0x143-
+    { "PSI Magnet Absorb (Aerial)", 0x144-
+    { "PSI Magnet End (Aerial)", 0x145-
 };
 */
 
 /*
 vector<subaction> Peach_subaction_list =
 {
-    { "Toad Counter (Ground)", 0x
-    { "Toad Hit (Ground)", 0x
-    { "Toad Counter (Aerial)", 0x
-    { "Toad Hit (Aerial)", 0x
-    { "Peach Bomber Start (Ground)", 0x
-    { "Peach Bomber End (Ground)", 0x
-    { "Peach Bomber Jump", 0x
-    { "Peach Bomber Start (Aerial)", 0x
-    { "Peach Bomber End 1 (Aerial)", 0x
-    { "Peach Bomber End 2 (Aerial)", 0x
-    { "Peach Parasol Start (Ground)", 0x
-    { "Peach Parasol End (Ground)", 0x
-    { "Peach Parasol Start (Aerial)", 0x
-    { "Peach Parasol End (Aerial)", 0x
-    { "Vegetable", 0x
+    { "Side Smash 1", 0x12a-
+    { "Side Smash 2", 0x12b-
+    { "Side Smash 3", 0x12c-
+    { "Toad Counter (Ground)", 0x12d-
+    { "Peach Bomber Start (Ground)", 0x12e-
+    { "Peach Bomber End (Ground)", 0x12f-
+    { "Peach Bomber Jump", 0x130-
+    { "Peach Bomber Start (Aerial)", 0x131-
+    { "Peach Bomber End 1 (Aerial)", 0x132-
+    { "Peach Bomber End 2 (Aerial)", 0x133-
+    { "Peach Parasol Start (Ground)", 0x134-
+    { "Peach Parasol End (Ground)", 0x135-
+    { "Peach Parasol Start (Aerial)", 0x136-
+    { "Peach Parasol End (Aerial)", 0x137-
+    { "Vegetable", 0x138-
 };
 */
 
@@ -652,20 +656,20 @@ vector<subaction> Pikachu_subaction_list =
 /*
 vector<subaction> Ice_Climbers_subaction_list =
 {
-    { "Ice Shot (Ground)", 0x
-    { "Ice Shot (Aerial)", 0x
-    { "Squall Hammer 1 (Ground)", 0x
-    { "Squall Hammer 2 (Ground)", 0x
-    { "Squall Hammer 1 (Aerial)", 0x
-    { "Squall Hammer 2 (Aerial)", 0x
-    { "Belay Start (Ground)", 0x
-    { "Belay Throw 1 (Ground)", 0x
-    { "Belay Throw 2 (Ground)", 0x
-    { "Belay Start (Aerial)", 0x
-    { "Belay Throw 1 (Aerial)", 0x
-    { "Belay Throw 2 (Aerial)", 0x
-    { "Blizzard (Ground)", 0x
-    { "Blizzard (Aerial)", 0x
+    { "Ice Shot (Ground)", 0x127-
+    { "Ice Shot (Aerial)", 0x128-
+    { "Squall Hammer 1 (Ground)", 0x129-
+    { "Squall Hammer 2 (Ground)", 0x12a-
+    { "Squall Hammer 1 (Aerial)", 0x12b-
+    { "Squall Hammer 2 (Aerial)", 0x12c-
+    { "Belay Start (Ground)", 0x12d-
+    { "Belay Throw 1 (Ground)", 0x12e-
+    { "Belay Throw 2 (Ground)", 0x12f-
+    { "Belay Start (Aerial)", 0x132-
+    { "Belay Throw 1 (Aerial)", 0x133-
+    { "Belay Throw 2 (Aerial)", 0x134-
+    { "Blizzard (Ground)", 0x137-
+    { "Blizzard (Aerial)", 0x138-
 };
 */
 
@@ -859,14 +863,14 @@ vector<subaction> Young_Link_subaction_list =
 /*
 vector<subaction> Dr_Mario_subaction_list =
 {
-    { "Megavitamin (Ground)", 0x
-    { "Megavitamin (Aerial)", 0x
-    { "Super Sheet (Ground)", 0x
-    { "Super Sheet (Aerial)", 0x
-    { "Super Jump Punch (Ground)", 0x
-    { "Super Jump Punch (Aerial)", 0x
-    { "Dr. Tornado (Ground)", 0x
-    { "Dr. Tornado (Aerial)", 0x
+    { "Megavitamin (Ground)", 0x127-
+    { "Megavitamin (Aerial)", 0x128-
+    { "Super Sheet (Ground)", 0x129-
+    { "Super Sheet (Aerial)", 0x12a-
+    { "Super Jump Punch (Ground)", 0x12b-
+    { "Super Jump Punch (Aerial)", 0x12c-
+    { "Dr. Tornado (Ground)", 0x12d-
+    { "Dr. Tornado (Aerial)", 0x12e-
 };
 */
 
@@ -939,24 +943,36 @@ vector<subaction> Pichu_subaction_list =
 };
 */
 
-/*
-vector<subaction> Ganondorf_subaction_list =
+bool set_subaction_Ganondorf(subaction& sub)
 {
-    { "Warlock Punch (Ground)", 0x
-    { "Warlock Punch (Aerial)", 0x
-    { "Gerudo Dragon Start (Ground)", 0x
-    { "Gerudo Dragon (Ground)", 0x
-    { "Gerudo Dragon Start (Aerial)", 0x
-    { "Gerudo Dragon (Aerial)", 0x
-    { "Dark Dive (Ground)", 0x
-    { "Dark Dive (Aerial)", 0x
-    { "Dark Dive Grab", 0x
-    { "Dark Dive Release", 0x
-    { "Wizard's Foot (Ground)", 0x
-    { "Wizard's Foot End (Ground)", 0x
-    { "Wizard's Foot (Aerial)", 0x
-    { "Wizard's Foot Aerial Landing", 0x
-    { "Wizard's Foot (Ground End in Air)", 0x
-    { "Wizard's Foot (Aerial End in Air)", 0x
-};
-*/
+    vector<subaction> Ganondorf_subaction_list =
+    {
+        { "Warlock Punch (Ground)", 0x12d },
+        { "Warlock Punch (Aerial)", 0x12e },
+        { "Gerudo Dragon Start (Ground)", 0x12f },
+        { "Gerudo Dragon (Ground)", 0x130 },
+        { "Gerudo Dragon Start (Aerial)", 0x131 },
+        { "Gerudo Dragon (Aerial)", 0x132 },
+        { "Dark Dive (Ground)",  0x133 },
+        { "Dark Dive (Aerial)", 0x134 },
+        { "Dark Dive Grab", 0x135 },
+        { "Dark Dive Release", 0x136 },
+        { "Wizard's Foot (Ground)", 0x137 },
+        { "Wizard's Foot End (Ground)", 0x138 },
+        { "Wizard's Foot (Aerial)", 0x139 },
+        { "Wizard's Foot Aerial Landing", 0x13a },
+        { "Wizard's Foot (Ground End in Air)", 0x13b },
+        { "Wizard's Foot (Aerial End in Air)", 0x13c }
+    };
+
+    for (size_t i = 0; i < Ganondorf_subaction_list.size(); ++i)
+    {
+        if (Ganondorf_subaction_list[i] == sub)
+        {
+            sub = Ganondorf_subaction_list[i];
+            return true;
+        }
+    }
+
+    return false;
+}

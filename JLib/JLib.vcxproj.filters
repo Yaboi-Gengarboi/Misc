@@ -24,10 +24,10 @@
     <ClInclude Include="Small_Int.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Point.hpp">
+    <ClInclude Include="Vector.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vector.hpp">
+    <ClInclude Include="JPoint.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
