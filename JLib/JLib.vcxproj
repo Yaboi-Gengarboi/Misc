@@ -142,13 +142,11 @@
     <ClInclude Include="Vector.hpp" />
     <ClInclude Include="JLib.hpp" />
     <ClInclude Include="JPoint.hpp" />
-    <ClInclude Include="Small_Int.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="main_file.cpp" />
-    <ClCompile Include="Point.cpp" />
-    <ClCompile Include="Small_Int.cpp" />
+    <ClCompile Include="JPoint.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

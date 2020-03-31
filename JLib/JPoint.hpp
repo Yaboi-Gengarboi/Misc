@@ -2,9 +2,23 @@
 // Justyn P. Durnford
 // Created on 1/13/2020
 // Last Updated on 3/31/2020
-// https://github.com/Yaboi-Gengarboi/Misc/blob/master/JLib/Point.hpp
 
+/* Class: JPoint
+   
+   This class allows for the representation of a
+   single point in 3 dimensional space. 
 
+   A JPoint can be constructed by default, with 3 doubles, with a
+   C-array or with another JPoint.
+
+   JPoints are not capable of arithmetic on their own due to
+   their static nature, but there are functions that work with
+   points.
+
+   JPoints can be compared to other JPoints or C-arrays of doubles.
+   
+   A JPoint can be represented as a std::string with the toString method.
+*/
 
 #ifndef JPOINT_HPP
 #define JPOINT_HPP
@@ -23,7 +37,7 @@ class JPoint
 	JPoint();
 	JPoint(double x, double y, double z);
 	JPoint(double pt_arr[3]);
-	JPoint& operator = (const JPoint& pt);
+	JPoint(const JPoint& pt);
 
 	// Destructor
 	~JPoint();
@@ -57,13 +71,15 @@ class JPoint
 };
 
 // Uses the distance formula to calculate the distance between
-// the two given points
+// the two given JPoints
 double distance(const JPoint& pt1, const JPoint& pt2);
 
 // Equality operator
 bool operator == (const JPoint& pt1, const JPoint& pt2);
+bool operator == (const JPoint& pt, double pt_arr[3]);
 
 // Inequality operator
 bool operator != (const JPoint& pt1, const JPoint& pt2);
+bool operator != (const JPoint& pt, double pt_arr[3]);
 
 #endif // JPOINT_HPP
