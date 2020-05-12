@@ -2,7 +2,7 @@
 // Monster.cpp
 // Justyn Durnford
 // Created on 5/5/2020
-// Last updated on 5/8/2020
+// Last updated on 5/11/2020
 
 #include "Monster.hpp"
 #include "Misc.hpp"
@@ -37,6 +37,16 @@ string Monster::name() const
 shared_ptr<Room> Monster::currentRoom() const
 {
 	return _currentRoom;
+}
+
+unsigned short int Monster::moveChanceTime() const
+{
+	return _moveChanceTime;
+}
+
+unsigned char Monster::difficultyLv() const
+{
+	return _difficultyLv;
 }
 
 void Monster::moveToNextRoom()

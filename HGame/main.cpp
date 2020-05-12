@@ -2,19 +2,30 @@
 // main.cpp
 // Justyn Durnford
 // Created on 3/23/2020
-// Last updated on 5/5/2020
+// Last updated on 5/11/2020
 
 #include "Room.hpp"
+#include "Monster.hpp"
+#include "Misc.hpp"
 
 // #include <memory>
 
 // #include <vector>
 using std::vector;
 
+// #include <string>
+using std::string;
+
 #include <random>
 using std::random_device;
 using std::default_random_engine;
 using std::uniform_int_distribution;
+
+#include <thread>
+using std::this_thread::sleep_for;
+
+#include <chrono> 
+using std::chrono::seconds;
 
 #include <iostream>
 using std::cout;
@@ -62,6 +73,15 @@ void init_rooms()
 	rooms[9].addNextRoom(rooms[8]);
 
 	rooms[10].addNextRoom(rooms[9]);
+}
+
+void try_move_monster(Monster& m)
+{
+	sleep_for(seconds(m.moveChanceTime()));
+	if (m.difficultyLv() >= rand_1_20())
+	{
+		m.moveToNextRoom();
+	}
 }
 
 int main()

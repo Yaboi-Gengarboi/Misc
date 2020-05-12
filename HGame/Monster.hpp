@@ -2,7 +2,7 @@
 // Monster.hpp
 // Justyn Durnford
 // Created on 5/5/2020
-// Last updated on 5/6/2020
+// Last updated on 5/11/2020
 
 #ifndef MONSTER_HPP
 #define MONSTER_HPP
@@ -31,6 +31,10 @@ class Monster
 	std::string name() const;
 
 	std::shared_ptr<Room> currentRoom() const;
+
+	unsigned short int moveChanceTime() const;
+
+	unsigned char difficultyLv() const;
 
 	void moveToNextRoom();
 };
