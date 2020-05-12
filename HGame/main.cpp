@@ -28,7 +28,7 @@ using std::thread;
 using std::this_thread::sleep_for;
 
 #include <chrono> 
-using std::chrono::seconds;
+using std::chrono::milliseconds;
 
 #include <iostream>
 using std::cout;
@@ -80,7 +80,7 @@ void init_rooms()
 
 void try_move_monster(Monster& m)
 {
-	sleep_for(seconds(m.moveChanceTime()));
+	sleep_for(milliseconds(m.moveChanceTime()));
 	if (m.difficultyLv() >= rand_1_20())
 	{
 		m.moveToNextRoom();
@@ -90,7 +90,14 @@ void try_move_monster(Monster& m)
 int main()
 {
 	bool play_game = true;
-	unique_ptr<Monster> m1 = make_unique<Monster>();
+	unsigned char night = 1;
+	unsigned char time = 0;
+
+	unique_ptr<Monster> denial = make_unique<Monster>("Yellow", rooms[0], 8000, 0);
+	unique_ptr<Monster> anger = make_unique<Monster>("Red", rooms[0], 8000, 0);
+	unique_ptr<Monster> bargaining = make_unique<Monster>("Green", rooms[0], 8000, 0);
+	unique_ptr<Monster> depression = make_unique<Monster>("Blue", rooms[0], 8000, 0);
+	unique_ptr<Monster> death = make_unique<Monster>("Black", rooms[0], 8000, 0);
 
 	while (play_game)
 	{

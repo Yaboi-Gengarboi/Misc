@@ -10,6 +10,7 @@
 // http://www.wtfpl.net/ for more details.
 
 #include "Jmatrix.hpp"
+
 // #include <string>
 
 Jmatrix::Jmatrix()
