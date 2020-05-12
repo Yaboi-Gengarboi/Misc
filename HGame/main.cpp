@@ -9,6 +9,8 @@
 #include "Misc.hpp"
 
 // #include <memory>
+using std::unique_ptr;
+using std::make_unique;
 
 // #include <vector>
 using std::vector;
@@ -22,6 +24,7 @@ using std::default_random_engine;
 using std::uniform_int_distribution;
 
 #include <thread>
+using std::thread;
 using std::this_thread::sleep_for;
 
 #include <chrono> 
@@ -86,5 +89,14 @@ void try_move_monster(Monster& m)
 
 int main()
 {
+	bool play_game = true;
+	unique_ptr<Monster> m1 = make_unique<Monster>();
+
+	while (play_game)
+	{
+		
+		play_game = false;
+	}
+
 	return 0;
 }
