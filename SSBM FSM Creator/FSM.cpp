@@ -1,16 +1,19 @@
-//SSBM FSM Creator
-//FSM.cpp
-//Justyn P. Durnford
-//Created on 12/18/2019
-//Last Updated on 2/1/2020
+// SSBM FSM Creator
+// FSM.cpp
+// Justyn Durnford
+// Created on 12/18/2019
+// Last updated on 5/3/2020
 
 #include "FSM.hpp"
 
-#include <string>
+// #include <string>
 using std::string;
 using std::to_string;
 using std::stoi;
 using std::stof;
+
+// #include <vector>
+using std::vector;
 
 #include <sstream>
 using std::ostringstream;
@@ -29,12 +32,30 @@ using std::invalid_argument;
 #include <iostream>
 using std::hex;
 
-#include <vector>
-using std::vector;
+character::character() {}
 
-FSM::FSM() {/* Default values */}
+character::character(const string& str, unsigned char uc)
+{
+	_name = str;
+	_id = uc;
+}
 
-FSM::FSM(const character& character, short frame,
+character::~character() {}
+
+subaction::subaction() {}
+
+subaction::subaction(const string& str, const character& ch, unsigned short us)
+{
+	_name = str;
+	_ch = ch;
+	_id = us;
+}
+
+subaction::~subaction() {}
+
+FSM::FSM() { /* Default Constructor */ }
+
+FSM::FSM(const character& character, unsigned char frame,
 	const subaction& subaction, float multiplier)
 {
 	_character = character;
@@ -43,810 +64,410 @@ FSM::FSM(const character& character, short frame,
 	_multiplier = multiplier;
 }
 
-character FSM::get_character() const
+FSM::~FSM() { /* Destructor */ }
+
+character FSM::getCharacter() const
 {
 	return _character;
 }
 
-void FSM::set_character(const character& character)
+void FSM::setCharacter(const character& ch)
 {
-	for (size_t i = 0; i < character_list.size(); ++i)
-	{
-		if (character_list[i] == character)
-		{
-			_character = character_list[i];
-			break;
-		}
-	}
-	/* Default character is { "", 0 } */
+	_character = ch;
 }
 
-short FSM::get_frame() const
+unsigned char FSM::getFrame() const
 {
 	return _frame;
 }
 
-void FSM::set_frame(short frame)
+void FSM::setFrame(unsigned char frame)
 {
-	if (frame >= 0 && frame < 256)
-	{
-		_frame = frame;
-	}
+	_frame = frame;
 }
 
-subaction FSM::get_subaction() const
+subaction FSM::getSubaction() const
 {
 	return _subaction;
 }
 
-void FSM::set_subaction(const subaction& sub)
+void FSM::setSubaction(const subaction& sub)
 {
-	vector<subaction> common_subaction_list =
+	if (sub._id <= 0x0fa)
 	{
-		{ "Spot Dodge", 0x029 },
-		{ "Forward Roll", 0x02a },
-		{ "Back Roll", 0x02b },
-		{ "Air Dodge", 0x02c },
-		{ "Jab 1", 0x02e },
-		{ "Jab 2", 0x02f },
-		{ "Jab 3", 0x030 },
-		{ "Rapid Jab Start", 0x031 },
-		{ "Rapid Jab Loop", 0x032 },
-		{ "Rapid Jab End", 0x033 },
-		{ "Dash Attack", 0x034 },
-		{ "Side Tilt High", 0x035 },
-		{ "Side Tilt Midhigh", 0x036 },
-		{ "Side Tilt Middle", 0x037 },
-		{ "Side Tilt Midlow", 0x038 },
-		{ "Side Tilt Low", 0x039 },
-		{ "Up Tilt", 0x03a },
-		{ "Down Tilt", 0x03Bb },
-		{ "Side Smash High", 0x03c },
-		{ "Side Smash Midhigh", 0x03d },
-		{ "Side Smash Middle", 0x03e },
-		{ "Side Smash Midlow", 0x03f },
-		{ "Side Smash Low", 0x040 },
-		{ "Up Smash", 0x042 },
-		{ "Down Smash", 0x043 },
-		{ "Neutral Aerial", 0x044 },
-		{ "Foward Aerial", 0x045 },
-		{ "Back Aerial", 0x046 },
-		{ "Up Aerial", 0x047 },
-		{ "Down Aerial", 0x049 },
-		{ "Neutral Tech", 0x0c7 },
-		{ "Forward Tech", 0x0c8 },
-		{ "Back Tech", 0x0c9 },
-		{ "Wall Tech", 0x0ca },
-		{ "Wall Jump Tech", 0x0cb },
-		{ "Ceiling Tech", 0x0cc },
-		{ "Ledge Getup Slow", 0x0db },
-		{ "Ledge Getup Fast", 0x0dc },
-		{ "Ledge Attack Slow", 0x0dd },
-		{ "Ledge Attack Fast", 0x0de },
-		{ "Ledge Roll Slow", 0x0df },
-		{ "Ledge Roll Fast", 0x0e0 },
-		{ "Ledge Jump 1 Slow", 0x0e1 },
-		{ "Ledge Jump 2 Slow", 0x0e2 },
-		{ "Ledge Jump 1 Fast", 0x0e3 },
-		{ "Ledge Jump 2 Fast", 0x0e4 },
-		{ "Left Taunt", 0x0eF },
-		{ "Right Taunt", 0x0f0 },
-		{ "Grab", 0x0f2 },
-		{ "Dash Grab", 0x0f3 },
-		{ "Forward Throw", 0x0f7 },
-		{ "Back Throw", 0x0f8 },
-		{ "Up Throw", 0x0f9 },
-		{ "Down Throw", 0x0fa }
-	};
-
-	bool found = false;
-
-	for (size_t i = 0; i < common_subaction_list.size(); ++i)
-	{
-		if (common_subaction_list[i] == sub)
-		{
-			_subaction = common_subaction_list[i];
-			found = true;
-			break;
-		}
+		_subaction = sub;
+		return;
 	}
 
-	if (!found)
+	if (sub._id > 0x0fa)
 	{
-		switch (_character.id)
+		switch (_character._id)
 		{
-			case 0x0: //Captain Falcon
+			case 0x0: // Captain Falcon
 
-
-
-				for (size_t i = 0; i < Captain_Falcon_subaction_list.size(); ++i)
+				for (unsigned short i = 0; i < Captain_Falcon_subaction_list.size(); ++i)
 				{
-					if (Captain_Falcon_subaction_list[i] == sub)
+					if (sub == Captain_Falcon_subaction_list[i])
 					{
-						_subaction = Captain_Falcon_subaction_list[i];
-						break;
+						_subaction = Donkey_Kong_subaction_list[i];
+						return;
 					}
 				}
 
 			break;
-		case 0x1: //Donkey Kong
 
-			for (size_t i = 0; i < Donkey_Kong_subaction_list.size(); ++i)
-			{
-				if (Donkey_Kong_subaction_list[i] == sub)
+			case 0x1: // Donkey Kong
+
+				for (unsigned short i = 0x0fa; i < Donkey_Kong_subaction_list.size(); ++i)
 				{
-					_subaction = Donkey_Kong_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x2: //Fox
-
-			for (size_t i = 0; i < Fox_subaction_list.size(); ++i)
-			{
-				if (Fox_subaction_list[i] == sub)
-				{
-					_subaction = Fox_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x3: //Game&Watch
-
-			for (size_t i = 0; i < Game_and_Watch_subaction_list.size(); ++i)
-			{
-				if (Game_and_Watch_subaction_list[i] == sub)
-				{
-					_subaction = Game_and_Watch_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x4: //Kirby
-
-			for (size_t i = 0; i < Kirby_subaction_list.size(); ++i)
-			{
-				if (Kirby_subaction_list[i] == sub)
-				{
-					_subaction = Kirby_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x5: //Bowser
-
-			for (size_t i = 0; i < Bowser_subaction_list.size(); ++i)
-			{
-				if (Bowser_subaction_list[i] == sub)
-				{
-					_subaction = Bowser_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x6: //Link
-
-			for (size_t i = 0; i < Link_subaction_list.size(); ++i)
-			{
-				if (Link_subaction_list[i] == sub)
-				{
-					_subaction = Link_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x7: //Luigi
-
-			for (size_t i = 0; i < Luigi_subaction_list.size(); ++i)
-			{
-				if (Luigi_subaction_list[i] == sub)
-				{
-					_subaction = Luigi_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x8: //Mario
-
-			for (size_t i = 0; i < Mario_subaction_list.size(); ++i)
-			{
-				if (Mario_subaction_list[i] == sub)
-				{
-					_subaction = Mario_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x9: //Marth
-
-			for (size_t i = 0; i < Marth_subaction_list.size(); ++i)
-			{
-				if (Marth_subaction_list[i] == sub)
-				{
-					_subaction = Marth_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0xA: //Mewtwo
-
-			for (size_t i = 0; i < Mewtwo_subaction_list.size(); ++i)
-			{
-				if (Mewtwo_subaction_list[i] == subaction)
-				{
-					_subaction = Mewtwo_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0xB: //Ness
-
-			for (size_t i = 0; i < Ness_subaction_list.size(); ++i)
-			{
-				if (Ness_subaction_list[i] == subaction)
-				{
-					_subaction = Ness_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0xC: //Peach
-
-			for (size_t i = 0; i < Peach_subaction_list.size(); ++i)
-			{
-				if (Peach_subaction_list[i] == subaction)
-				{
-					_subaction = Peach_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0xD: //Pikachu
-
-			for (size_t i = 0; i < Pikachu_subaction_list.size(); ++i)
-			{
-				if (Pikachu_subaction_list[i] == subaction)
-				{
-					_subaction = Pikachu_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0xE: //Ice Climbers
-
-			for (size_t i = 0; i < Ice_Climbers_subaction_list.size(); ++i)
-			{
-				if (Ice_Climbers_subaction_list[i] == subaction)
-				{
-					_subaction = Ice_Climbers_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0xF: //Jigglypuff
-
-			for (size_t i = 0; i < Jigglypuff_subaction_list.size(); ++i)
-			{
-				if (Jigglypuff_subaction_list[i] == subaction)
-				{
-					_subaction = Jigglypuff_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x10: //Samus
-
-			for (size_t i = 0; i < Samus_subaction_list.size(); ++i)
-			{
-				if (Samus_subaction_list[i] == subaction)
-				{
-					_subaction = Samus_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x11: //Yoshi
-
-			for (size_t i = 0; i < Yoshi_subaction_list.size(); ++i)
-			{
-				if (Yoshi_subaction_list[i] == subaction)
-				{
-					_subaction = Yoshi_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x12: //Zelda
-
-			for (size_t i = 0; i < Zelda_subaction_list.size(); ++i)
-			{
-				if (Zelda_subaction_list[i] == subaction)
-				{
-					_subaction = Zelda_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x13: //Sheik
-
-			for (size_t i = 0; i < Sheik_subaction_list.size(); ++i)
-			{
-				if (Sheik_subaction_list[i] == subaction)
-				{
-					_subaction = Sheik_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x14: //Falco
-
-			for (size_t i = 0; i < Falco_subaction_list.size(); ++i)
-			{
-				if (Falco_subaction_list[i] == subaction)
-				{
-					_subaction = Falco_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x15: //Young Link
-
-			for (size_t i = 0; i < Young_Link_subaction_list.size(); ++i)
-			{
-				if (Young_Link_subaction_list[i] == subaction)
-				{
-					_subaction = Young_Link_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x16: //Dr. Mario
-
-			for (size_t i = 0; i < Dr_Mario_subaction_list.size(); ++i)
-			{
-				if (Dr_Mario_subaction_list[i] == subaction)
-				{
-					_subaction = Dr_Mario_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x17: //Roy
-
-			for (size_t i = 0; i < Roy_subaction_list.size(); ++i)
-			{
-				if (Roy_subaction_list[i] == subaction)
-				{
-					_subaction = Roy_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x18: //Pichu
-
-			for (size_t i = 0; i < Pichu_subaction_list.size(); ++i)
-			{
-				if (Pichu_subaction_list[i] == subaction)
-				{
-					_subaction = Pichu_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x19: //Ganondorf
-
-			for (size_t i = 0; i < Ganondorf_subaction_list.size(); ++i)
-			{
-				if (Ganondorf_subaction_list[i] == subaction)
-				{
-					_subaction = Ganondorf_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		case 0x1A: //Popo
-
-			for (size_t i = 0; i < Ice_Climbers_subaction_list.size(); ++i)
-			{
-				if (Ice_Climbers_subaction_list[i] == subaction)
-				{
-					_subaction = Ice_Climbers_subaction_list[i];
-					break;
-				}
-			}
-
-			break;
-		default: //wtf?
-			break;
-		}
-	}
-
-		/* Default subaction is { "Spot Dodge", 0x0 } */
-
-	/*
-	bool found = false;
-
-	for (size_t i = 0; i < common_subaction_list.size(); ++i)
-	{
-		if (common_subaction_list[i] == subaction)
-		{
-			_subaction = common_subaction_list[i];
-			found = true;
-			break;
-		}
-	}
-
-	if (!found)
-	{
-		switch (_character.id)
-		{
-			case 0x0: //Captain Falcon
-
-				for (size_t i = 0; i < Captain_Falcon_subaction_list.size(); ++i)
-				{
-					if (Captain_Falcon_subaction_list[i] == subaction)
-					{
-						_subaction = Captain_Falcon_subaction_list[i];
-						break;
-					}
-				}
-
-				break;
-			case 0x1: //Donkey Kong
-
-				for (size_t i = 0; i < Donkey_Kong_subaction_list.size(); ++i)
-				{
-					if (Donkey_Kong_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Donkey_Kong_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x2: //Fox
+			break;
 
-				for (size_t i = 0; i < Fox_subaction_list.size(); ++i)
+			case 0x2: // Fox
+
+				for (unsigned short i = 0x0fa; i < Fox_subaction_list.size(); ++i)
 				{
-					if (Fox_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Fox_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x3: //Game&Watch
+			break;
 
-				for (size_t i = 0; i < Game_and_Watch_subaction_list.size(); ++i)
+			case 0x3: // Game&Watch
+
+				for (unsigned short i = 0x0fa; i < Game_and_Watch_subaction_list.size(); ++i)
 				{
-					if (Game_and_Watch_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Game_and_Watch_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x4: //Kirby
+			break;
 
-				for (size_t i = 0; i < Kirby_subaction_list.size(); ++i)
+			case 0x4: // Kirby
+
+				for (unsigned short i = 0x0fa; i < Kirby_subaction_list.size(); ++i)
 				{
-					if (Kirby_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Kirby_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x5: //Bowser
+			break;
 
-				for (size_t i = 0; i < Bowser_subaction_list.size(); ++i)
+			case 0x5: // Bowser
+
+				for (unsigned short i = 0x0fa; i < Bowser_subaction_list.size(); ++i)
 				{
-					if (Bowser_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Bowser_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x6: //Link
+			break;
 
-				for (size_t i = 0; i < Link_subaction_list.size(); ++i)
+			case 0x6: // Link
+
+				for (unsigned short i = 0x0fa; i < Link_subaction_list.size(); ++i)
 				{
-					if (Link_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Link_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x7: //Luigi
+			break;
 
-				for (size_t i = 0; i < Luigi_subaction_list.size(); ++i)
+			case 0x7: // Luigi
+
+				for (unsigned short i = 0x0fa; i < Luigi_subaction_list.size(); ++i)
 				{
-					if (Luigi_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Luigi_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x8: //Mario
+			break;
 
-				for (size_t i = 0; i < Mario_subaction_list.size(); ++i)
+			case 0x8: // Mario
+
+				for (unsigned short i = 0x0fa; i < Mario_subaction_list.size(); ++i)
 				{
-					if (Mario_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Mario_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x9: //Marth
+			break;
 
-				for (size_t i = 0; i < Marth_subaction_list.size(); ++i)
+			case 0x9: // Marth
+
+				for (unsigned short i = 0x0fa; i < Marth_subaction_list.size(); ++i)
 				{
-					if (Marth_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Marth_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0xA: //Mewtwo
+			break;
 
-				for (size_t i = 0; i < Mewtwo_subaction_list.size(); ++i)
+			case 0xA: // Mewtwo
+
+				for (unsigned short i = 0; i < Mewtwo_subaction_list.size(); ++i)
 				{
-					if (Mewtwo_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Mewtwo_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0xB: //Ness
+			break;
 
-				for (size_t i = 0; i < Ness_subaction_list.size(); ++i)
+			case 0xB: // Ness
+
+				for (unsigned short i = 0; i < Ness_subaction_list.size(); ++i)
 				{
-					if (Ness_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Ness_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0xC: //Peach
+			break;
 
-				for (size_t i = 0; i < Peach_subaction_list.size(); ++i)
+			case 0xC: // Peach
+
+				for (unsigned short i = 0; i < Peach_subaction_list.size(); ++i)
 				{
-					if (Peach_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Peach_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0xD: //Pikachu
+			break;
 
-				for (size_t i = 0; i < Pikachu_subaction_list.size(); ++i)
+			case 0xD: // Pikachu
+
+				for (unsigned short i = 0; i < Pikachu_subaction_list.size(); ++i)
 				{
-					if (Pikachu_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Pikachu_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0xE: //Ice Climbers
+			break;
 
-				for (size_t i = 0; i < Ice_Climbers_subaction_list.size(); ++i)
+			case 0xE: // Ice Climbers
+
+				for (unsigned short i = 0; i < Ice_Climbers_subaction_list.size(); ++i)
 				{
-					if (Ice_Climbers_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Ice_Climbers_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0xF: //Jigglypuff
+			break;
 
-				for (size_t i = 0; i < Jigglypuff_subaction_list.size(); ++i)
+			case 0xF: // Jigglypuff
+
+				for (unsigned short i = 0; i < Jigglypuff_subaction_list.size(); ++i)
 				{
-					if (Jigglypuff_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Jigglypuff_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x10: //Samus
+			break;
 
-				for (size_t i = 0; i < Samus_subaction_list.size(); ++i)
+			case 0x10: // Samus
+
+				for (unsigned short i = 0; i < Samus_subaction_list.size(); ++i)
 				{
-					if (Samus_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Samus_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x11: //Yoshi
+			break;
 
-				for (size_t i = 0; i < Yoshi_subaction_list.size(); ++i)
+			case 0x11: // Yoshi
+
+				for (unsigned short i = 0; i < Yoshi_subaction_list.size(); ++i)
 				{
-					if (Yoshi_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Yoshi_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x12: //Zelda
+			break;
 
-				for (size_t i = 0; i < Zelda_subaction_list.size(); ++i)
+			case 0x12: // Zelda
+
+				for (unsigned short i = 0; i < Zelda_subaction_list.size(); ++i)
 				{
-					if (Zelda_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Zelda_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x13: //Sheik
+			break;
 
-				for (size_t i = 0; i < Sheik_subaction_list.size(); ++i)
+			case 0x13: // Sheik
+
+				for (unsigned short i = 0; i < Sheik_subaction_list.size(); ++i)
 				{
-					if (Sheik_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Sheik_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x14: //Falco
+			break;
 
-				for (size_t i = 0; i < Falco_subaction_list.size(); ++i)
+			case 0x14: // Falco
+
+				for (unsigned short i = 0; i < Falco_subaction_list.size(); ++i)
 				{
-					if (Falco_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Falco_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x15: //Young Link
+			break;
 
-				for (size_t i = 0; i < Young_Link_subaction_list.size(); ++i)
+			case 0x15: // Young Link
+
+				for (unsigned short i = 0; i < Young_Link_subaction_list.size(); ++i)
 				{
-					if (Young_Link_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Young_Link_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x16: //Dr. Mario
+			break;
 
-				for (size_t i = 0; i < Dr_Mario_subaction_list.size(); ++i)
+			case 0x16: // Dr. Mario
+
+				for (unsigned short i = 0; i < Dr_Mario_subaction_list.size(); ++i)
 				{
-					if (Dr_Mario_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Dr_Mario_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x17: //Roy
+			break;
 
-				for (size_t i = 0; i < Roy_subaction_list.size(); ++i)
+			case 0x17: // Roy
+
+				for (unsigned short i = 0; i < Roy_subaction_list.size(); ++i)
 				{
-					if (Roy_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Roy_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x18: //Pichu
+			break;
 
-				for (size_t i = 0; i < Pichu_subaction_list.size(); ++i)
+			case 0x18: // Pichu
+
+				for (unsigned short i = 0; i < Pichu_subaction_list.size(); ++i)
 				{
-					if (Pichu_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Pichu_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x19: //Ganondorf
+			break;
 
-				for (size_t i = 0; i < Ganondorf_subaction_list.size(); ++i)
+			case 0x19: // Ganondorf
+
+				for (unsigned short i = 0; i < Ganondorf_subaction_list.size(); ++i)
 				{
-					if (Ganondorf_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Ganondorf_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			case 0x1A: //Popo
+			break;
 
-				for (size_t i = 0; i < Ice_Climbers_subaction_list.size(); ++i)
+			case 0x1A: // Popo
+
+				for (unsigned short i = 0; i < Ice_Climbers_subaction_list.size(); ++i)
 				{
-					if (Ice_Climbers_subaction_list[i] == subaction)
+					if (i == id)
 					{
 						_subaction = Ice_Climbers_subaction_list[i];
 						break;
 					}
 				}
 
-				break;
-			default: //wtf?
-				break;
+			break;
+
+			default: // wtf?
+			break;
 		}
 	}
-	*/
-	
-	/* Default subaction is { "Spot Dodge", 0x0 } */
 }
 
-float FSM::get_multiplier() const
+float FSM::getMultiplier() const
 {
 	return _multiplier;
 }
 
-void FSM::set_multiplier(float multiplier)
+void FSM::setMultiplier(float multiplier)
 {
-	if (multiplier > 0)
-		_multiplier = multiplier;
+	_multiplier = multiplier;
 }
 
 void FSM::clear()
@@ -857,7 +478,7 @@ void FSM::clear()
 	_multiplier = 0.0f;
 }
 
-string FSM::to_str() const
+string FSM::toString() const
 {
 	string str = "";
 
@@ -869,7 +490,7 @@ string FSM::to_str() const
 	return str;
 }
 
-string FSM::to_hex() const
+string FSM::toHex() const
 {
 	string hex_str = "";
 	ostringstream hex_str_stream;
@@ -900,53 +521,40 @@ string FSM::to_hex() const
 	return hex_str;
 }
 
-//
-bool compare_character(const character& ch1, const character& ch2)
+FSM FSM::operator = (FSM fsm)
 {
-	return ((ch1.name == ch2.name) && (ch1.id == ch2.id));
+	return fsm;
 }
+
 bool operator == (const character& ch1, const character& ch2)
 {
-	return ((ch1.name == ch2.name) && (ch1.id == ch2.id));
+	return !( ch1 != ch2 );
 }
+
 bool operator != (const character& ch1, const character& ch2)
 {
-	return ((ch1.name != ch2.name) || (ch1.id != ch2.id));
+	return ch1.id != ch2.id;
 }
 
-//
-bool compare_subaction(const subaction& sub1, const subaction& sub2)
-{
-	return ((sub1.name == sub2.name) && (sub1.id == sub2.id));
-}
 bool operator == (const subaction& sub1, const subaction& sub2)
 {
-	return ((sub1.name == sub2.name) && (sub1.id == sub2.id));
-}
-bool operator != (const subaction& sub1, const subaction& sub2)
-{
-	return ((sub1.name != sub2.name) || (sub1.id != sub2.id));
+	return !( sub1 != sub2 );
 }
 
-//
-bool compare_FSM(const FSM& fsm1, const FSM& fsm2)
+bool operator != (const subaction& sub1, const subaction& sub2)
 {
-	return ((fsm1.get_character() == fsm2.get_character()) &&
-		(fsm1.get_frame() == fsm2.get_frame()) &&
-		(fsm1.get_subaction() == fsm2.get_subaction()) &&
-		(fsm1.get_multiplier() == fsm2.get_multiplier()));
+	return sub1.id != sub2.id;
 }
+
 bool operator == (const FSM& fsm1, const FSM& fsm2)
 {
-	return ((fsm1.get_character() == fsm2.get_character()) &&
-		(fsm1.get_frame() == fsm2.get_frame()) &&
-		(fsm1.get_subaction() == fsm2.get_subaction()) &&
-		(fsm1.get_multiplier() == fsm2.get_multiplier()));
+	return !( fsm1 != fsm2 );
 }
+
 bool operator != (const FSM& fsm1, const FSM& fsm2)
 {
-	return ((fsm1.get_character() != fsm2.get_character()) ||
-		(fsm1.get_frame() != fsm2.get_frame()) ||
-		(fsm1.get_subaction() != fsm2.get_subaction()) ||
-		(fsm1.get_multiplier() != fsm2.get_multiplier()));
+	return ((fsm1.getCharacter() != fsm2.getCharacter()) ||
+		(fsm1.getFrame() != fsm2.getFrame()) ||
+		(fsm1.getSubaction() != fsm2.getSubaction()) ||
+		(fsm1.getMultiplier() != fsm2.getMultiplier()));
 }

@@ -1,0 +1,70 @@
+Spot Dodge                        0x029
+Forward Roll                      0x02a
+Back Roll                         0x02b
+Air Dodge                         0x02c
+Jab 1                             0x02e
+Jab 2                             0x02f
+Jab 3                             0x030
+Rapid Jab Start                   0x031
+Rapid Jab Loop                    0x032
+Rapid Jab End                     0x033
+Dash Attack                       0x034
+Side Tilt High                    0x035
+Side Tilt Midhigh                 0x036
+Side Tilt Middle                  0x037
+Side Tilt Midlow                  0x038
+Side Tilt Low                     0x039
+Up Tilt                           0x03a
+Down Tilt                         0x03b
+Side Smash High                   0x03c
+Side Smash Midhigh 		  0x03d
+Side Smash Middle 		  0x03e
+Side Smash Midlow 		  0x03f
+Side Smash Low    		  0x040
+Up Smash          		  0x042
+Down Smash        		  0x043
+Neutral Aerial    		  0x044
+Foward Aerial     		  0x045
+Back Aerial       		  0x046
+Up Aerial           		  0x047
+Down Aerial         		  0x049
+Neutral Tech        		  0x0c7
+Forward Tech        		  0x0c8
+Back Tech          		  0x0c9
+Wall Tech          		  0x0ca
+Wall Jump Tech   	 	  0x0cb
+Ceiling Tech       		  0x0cc
+Ledge Getup Slow    		  0x0db
+Ledge Getup Fast    		  0x0dc
+Ledge Attack Slow   		  0x0dd
+Ledge Attack Fast   		  0x0de
+Ledge Roll Slow     		  0x0df
+Ledge Roll Fast     		  0x0e0
+Ledge Jump 1 Slow		  0x0e1
+Ledge Jump 2 Slow   		  0x0e2
+Ledge Jump 1 Fast   		  0x0e3
+Ledge Jump 2 Fast   		  0x0e4
+Left Taunt          		  0x0ef
+Right Taunt         		  0x0f0
+Grab                		  0x0f2
+Dash Grab           		  0x0f3
+Forward Throw       		  0x0f7
+Back Throw          		  0x0f8
+Up Throw            		  0x0f9
+Down Throw                        0x0fa
+Falcon Punch (Ground)             0x12d
+Falcon Punch (Aerial)             0x12e
+Raptor Boost Start (Ground)       0x12f
+Raptor Boost (Ground)             0x130
+Raptor Boost Start (Aerial)       0x131
+Raptor Boost (Aerial)             0x132
+Falcon Dive (Ground)              0x133
+Falcon Dive (Aerial)              0x134
+Falcon Dive Grab                  0x135
+Falcon Dive Release               0x136
+Falcon Kick (Ground)              0x137
+Falcon Kick End (Ground)          0x138
+Falcon Kick (Aerial)              0x139
+Falcon Kick Aerial Landing        0x13a
+Falcon Kick (Ground End in Air)   0x13b
+Falcon Kick (Aerial End in Air)   0x13c

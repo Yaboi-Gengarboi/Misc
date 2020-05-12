@@ -1,6 +1,14 @@
+// SSBM FSM Creator
+// data.cpp
+// Justyn Durnford
+// Created on 5/3/2019
+// Last updated on 5/3/2020
+
 #include "FSM.hpp"
 
-#include <vector>
+// #include <string>
+
+// #include <vector>
 using std::vector;
 
 vector<character> character_list =
@@ -16,242 +24,171 @@ vector<character> character_list =
     { "Pichu", 0x18 }, { "Ganondorf", 0x19 }, { "Popo", 0x1a }
 };
 
-void set_subaction_common(FSM& fsm, const subaction& sub)
+vector<subaction> common_subaction_list =
 {
-    vector<subaction> common_subaction_list =
-    {
-        { "Spot Dodge", 0x029 },
-        { "Forward Roll", 0x02a },
-        { "Back Roll", 0x02b },
-        { "Air Dodge", 0x02c },
-        { "Jab 1", 0x02e },
-        { "Jab 2", 0x02f },
-        { "Jab 3", 0x030 },
-        { "Rapid Jab Start", 0x031 },
-        { "Rapid Jab Loop", 0x032 },
-        { "Rapid Jab End", 0x033 },
-        { "Dash Attack", 0x034 },
-        { "Side Tilt High", 0x035 },
-        { "Side Tilt Midhigh", 0x036 },
-        { "Side Tilt Middle", 0x037 },
-        { "Side Tilt Midlow", 0x038 },
-        { "Side Tilt Low", 0x039 },
-        { "Up Tilt", 0x03a },
-        { "Down Tilt", 0x03Bb },
-        { "Side Smash High", 0x03c },
-        { "Side Smash Midhigh", 0x03d },
-        { "Side Smash Middle", 0x03e },
-        { "Side Smash Midlow", 0x03f },
-        { "Side Smash Low", 0x040 },
-        { "Up Smash", 0x042 },
-        { "Down Smash", 0x043 },
-        { "Neutral Aerial", 0x044 },
-        { "Foward Aerial", 0x045 },
-        { "Back Aerial", 0x046 },
-        { "Up Aerial", 0x047 },
-        { "Down Aerial", 0x049 },
-        { "Neutral Tech", 0x0c7 },
-        { "Forward Tech", 0x0c8 },
-        { "Back Tech", 0x0c9 },
-        { "Wall Tech", 0x0ca },
-        { "Wall Jump Tech", 0x0cb },
-        { "Ceiling Tech", 0x0cc },
-        { "Ledge Getup Slow", 0x0db },
-        { "Ledge Getup Fast", 0x0dc },
-        { "Ledge Attack Slow", 0x0dd },
-        { "Ledge Attack Fast", 0x0de },
-        { "Ledge Roll Slow", 0x0df },
-        { "Ledge Roll Fast", 0x0e0 },
-        { "Ledge Jump 1 Slow", 0x0e1 },
-        { "Ledge Jump 2 Slow", 0x0e2 },
-        { "Ledge Jump 1 Fast", 0x0e3 },
-        { "Ledge Jump 2 Fast", 0x0e4 },
-        { "Left Taunt", 0x0eF },
-        { "Right Taunt", 0x0f0 },
-        { "Grab", 0x0f2 },
-        { "Dash Grab", 0x0f3 },
-        { "Forward Throw", 0x0f7 },
-        { "Back Throw", 0x0f8 },
-        { "Up Throw", 0x0f9 },
-        { "Down Throw", 0x0fa }
-    };
+    { "Spot Dodge", 0x029 },
+    { "Forward Roll", 0x02a },
+    { "Back Roll", 0x02b },
+    { "Air Dodge", 0x02c },
+    { "Jab 1", 0x02e },
+    { "Jab 2", 0x02f },
+    { "Jab 3", 0x030 },
+    { "Rapid Jab Start", 0x031 },
+    { "Rapid Jab Loop", 0x032 },
+    { "Rapid Jab End", 0x033 },
+    { "Dash Attack", 0x034 },
+    { "Side Tilt High", 0x035 },
+    { "Side Tilt Midhigh", 0x036 },
+    { "Side Tilt Middle", 0x037 },
+    { "Side Tilt Midlow", 0x038 },
+    { "Side Tilt Low", 0x039 },
+    { "Up Tilt", 0x03a },
+    { "Down Tilt", 0x03Bb },
+    { "Side Smash High", 0x03c },
+    { "Side Smash Midhigh", 0x03d },
+    { "Side Smash Middle", 0x03e },
+    { "Side Smash Midlow", 0x03f },
+    { "Side Smash Low", 0x040 },
+    { "Up Smash", 0x042 },
+    { "Down Smash", 0x043 },
+    { "Neutral Aerial", 0x044 },
+    { "Foward Aerial", 0x045 },
+    { "Back Aerial", 0x046 },
+    { "Up Aerial", 0x047 },
+    { "Down Aerial", 0x049 },
+    { "Neutral Tech", 0x0c7 },
+    { "Forward Tech", 0x0c8 },
+    { "Back Tech", 0x0c9 },
+    { "Wall Tech", 0x0ca },
+    { "Wall Jump Tech", 0x0cb },
+    { "Ceiling Tech", 0x0cc },
+    { "Ledge Getup Slow", 0x0db },
+    { "Ledge Getup Fast", 0x0dc },
+    { "Ledge Attack Slow", 0x0dd },
+    { "Ledge Attack Fast", 0x0de },
+    { "Ledge Roll Slow", 0x0df },
+    { "Ledge Roll Fast", 0x0e0 },
+    { "Ledge Jump 1 Slow", 0x0e1 },
+    { "Ledge Jump 2 Slow", 0x0e2 },
+    { "Ledge Jump 1 Fast", 0x0e3 },
+    { "Ledge Jump 2 Fast", 0x0e4 },
+    { "Left Taunt", 0x0eF },
+    { "Right Taunt", 0x0f0 },
+    { "Grab", 0x0f2 },
+    { "Dash Grab", 0x0f3 },
+    { "Forward Throw", 0x0f7 },
+    { "Back Throw", 0x0f8 },
+    { "Up Throw", 0x0f9 },
+    { "Down Throw", 0x0fa }
+};
 
-    bool found = false;
-
-    for (size_t i = 0; i < common_subaction_list.size(); ++i)
-    {
-        if (common_subaction_list[i] == sub)
-        {
-            fsm.set_subaction(common_subaction_list[i]);
-            found = true;
-            break;
-        }
-    }
-}
-
-bool set_subaction_Captain_Falcon(subaction& sub)
+vector<subaction> Captain_Falcon_subaction_list =
 {
-    vector<subaction> Captain_Falcon_subaction_list =
-    {
-        { "Falcon Punch (Ground)", 0x12d },
-        { "Falcon Punch (Aerial)", 0x12e },
-        { "Raptor Boost Start (Ground)", 0x12f },
-        { "Raptor Boost (Ground)", 0x130 },
-        { "Raptor Boost Start (Aerial)", 0x131 },
-        { "Raptor Boost (Aerial)", 0x132 },
-        { "Falcon Dive (Ground)",  0x133 },
-        { "Falcon Dive (Aerial)", 0x134 },
-        { "Falcon Dive Grab", 0x135 },
-        { "Falcon Dive Release", 0x136 },
-        { "Falcon Kick (Ground)", 0x137 },
-        { "Falcon Kick End (Ground)", 0x138 },
-        { "Falcon Kick (Aerial)", 0x139 },
-        { "Falcon Kick Aerial Landing", 0x13a },
-        { "Falcon Kick (Ground End in Air)", 0x13b },
-        { "Falcon Kick (Aerial End in Air)", 0x13c }
-    };
+    { "Falcon Punch (Ground)", 0x12d },
+    { "Falcon Punch (Aerial)", 0x12e },
+    { "Raptor Boost Start (Ground)", 0x12f },
+    { "Raptor Boost (Ground)", 0x130 },
+    { "Raptor Boost Start (Aerial)", 0x131 },
+    { "Raptor Boost (Aerial)", 0x132 },
+    { "Falcon Dive (Ground)",  0x133 },
+    { "Falcon Dive (Aerial)", 0x134 },
+    { "Falcon Dive Grab", 0x135 },
+    { "Falcon Dive Release", 0x136 },
+    { "Falcon Kick (Ground)", 0x137 },
+    { "Falcon Kick End (Ground)", 0x138 },
+    { "Falcon Kick (Aerial)", 0x139 },
+    { "Falcon Kick Aerial Landing", 0x13a },
+    { "Falcon Kick (Ground End in Air)", 0x13b },
+    { "Falcon Kick (Aerial End in Air)", 0x13c }
+};
 
-    for (size_t i = 0; i < Captain_Falcon_subaction_list.size(); ++i)
-    {
-        if (Captain_Falcon_subaction_list[i] == sub)
-        {
-            sub = Captain_Falcon_subaction_list[i];
-            return true;
-        }
-    }
-
-    return false;
-}
-
-bool set_subaction_Donkey_Kong(subaction& sub)
+vector<subaction> Donkey_Kong_subaction_list =
 {
-    vector<subaction> Donkey_Kong_subaction_list =
-    {
-        { "Cargo Foward Throw", 0x13b },
-        { "Cargo Back Throw", 0x13c },
-        { "Cargo Up Throw", 0x13d },
-        { "Cargo Down Throw", 0x13e },
-        { "Giant Punch Start (Ground)", 0x13f },
-        { "Giant Punch Loop (Ground)", 0x140 },
-        { "Giant Punch Cancel (Ground)", 0x141 },
-        { "Giant Punch (Ground)", 0x142 },
-        { "Giant Punch (2)(Ground)", 0x143 },
-        { "Giant Punch Start (Aerial)", 0x144 },
-        { "Giant Punch Loop (Aerial)", 0x145 },
-        { "Giant Punch Cancel (Aerial)", 0x146 },
-        { "Giant Punch (Aerial)", 0x147 },
-        { "Giant Punch (2)(Aerial)", 0x148 },
-        { "Headbutt (Ground)", 0x149 },
-        { "Headbutt (Aerial)", 0x14a },
-        { "Spinning Kong (Ground)", 0x14b },
-        { "Spinning Kong (Aerial)", 0x14c },
-        { "Hand Slap (Start)", 0x14d },
-        { "Hand Slap Loop", 0x14e },
-        { "Hand Slap End", 0x14f },
-        { "Hand Slap End 2", 0x150 }
-    };
+    { "Cargo Foward Throw", 0x13b },
+    { "Cargo Back Throw", 0x13c },
+    { "Cargo Up Throw", 0x13d },
+    { "Cargo Down Throw", 0x13e },
+    { "Giant Punch Start (Ground)", 0x13f },
+    { "Giant Punch Loop (Ground)", 0x140 },
+    { "Giant Punch Cancel (Ground)", 0x141 },
+    { "Giant Punch (Ground)", 0x142 },
+    { "Giant Punch (2)(Ground)", 0x143 },
+    { "Giant Punch Start (Aerial)", 0x144 },
+    { "Giant Punch Loop (Aerial)", 0x145 },
+    { "Giant Punch Cancel (Aerial)", 0x146 },
+    { "Giant Punch (Aerial)", 0x147 },
+    { "Giant Punch (2)(Aerial)", 0x148 },
+    { "Headbutt (Ground)", 0x149 },
+    { "Headbutt (Aerial)", 0x14a },
+    { "Spinning Kong (Ground)", 0x14b },
+    { "Spinning Kong (Aerial)", 0x14c },
+    { "Hand Slap (Start)", 0x14d },
+    { "Hand Slap Loop", 0x14e },
+    { "Hand Slap End", 0x14f },
+    { "Hand Slap End 2", 0x150 }
+};
 
-    for (size_t i = 0; i < Donkey_Kong_subaction_list.size(); ++i)
-    {
-        if (Donkey_Kong_subaction_list[i] == sub)
-        {
-            sub = Donkey_Kong_subaction_list[i];
-            return true;
-        }
-    }
-
-    return false;
-}
-
-bool set_subaction_Fox(subaction& sub)
+vector<subaction> Fox_subaction_list =
 {
-    vector<subaction> Fox_subaction_list =
-    {
-        { "Blaster Start (Ground)", 0x127 },
-        { "Blaster Loop (Ground)", 0x128 },
-        { "Blaster End (Ground)", 0x129 },
-        { "Blaster Start (Aerial)", 0x12a },
-        { "Blaster Loop (Aerial)", 0x12b },
-        { "Blaster End (Aerial)", 0x12c },
-        { "Fox Illusion Start (Ground)", 0x12d },
-        { "Fox Illusion (Ground)", 0x12e },
-        { "Fox Illusion End (Ground)", 0x12f },
-        { "Fox Illusion Start (Aerial)", 0x130 },
-        { "Fox Illusion (Aerial)", 0x131 },
-        { "Fox Illusion End (Aerial)", 0x132 },
-        { "Fire Fox Start (Ground)", 0x133 },
-        { "Fire Fox Start (Aerial)", 0x134 },
-        { "Fire Fox", 0x135 },
-        { "Fire Fox Landing", 0x136 },
-        { "Fire Fox Fall", 0x137 },
-        { "Fire Fox Bounce", 0x138 },
-        { "Reflector Start (Ground)", 0x139 },
-        { "Reflector Loop (Ground)", 0x13a },
-        { "Reflector Reflect (Ground)", 0x13b },
-        { "Reflector End (Ground)", 0x13c },
-        { "Reflector Start (Aerial)", 0x13d },
-        { "Reflector Loop (Aerial)", 0x13e },
-        { "Reflector Reflect (Aerial)", 0x13f },
-        { "Reflector End (Aerial)", 0x140 }
-    };
+    { "Blaster Start (Ground)", 0x127 },
+    { "Blaster Loop (Ground)", 0x128 },
+    { "Blaster End (Ground)", 0x129 },
+    { "Blaster Start (Aerial)", 0x12a },
+    { "Blaster Loop (Aerial)", 0x12b },
+    { "Blaster End (Aerial)", 0x12c },
+    { "Fox Illusion Start (Ground)", 0x12d },
+    { "Fox Illusion (Ground)", 0x12e },
+    { "Fox Illusion End (Ground)", 0x12f },
+    { "Fox Illusion Start (Aerial)", 0x130 },
+    { "Fox Illusion (Aerial)", 0x131 },
+    { "Fox Illusion End (Aerial)", 0x132 },
+    { "Fire Fox Start (Ground)", 0x133 },
+    { "Fire Fox Start (Aerial)", 0x134 },
+    { "Fire Fox", 0x135 },
+    { "Fire Fox Landing", 0x136 },
+    { "Fire Fox Fall", 0x137 },
+    { "Fire Fox Bounce", 0x138 },
+    { "Reflector Start (Ground)", 0x139 },
+    { "Reflector Loop (Ground)", 0x13a },
+    { "Reflector Reflect (Ground)", 0x13b },
+    { "Reflector End (Ground)", 0x13c },
+    { "Reflector Start (Aerial)", 0x13d },
+    { "Reflector Loop (Aerial)", 0x13e },
+    { "Reflector Reflect (Aerial)", 0x13f },
+    { "Reflector End (Aerial)", 0x140 }
+};
 
-    for (size_t i = 0; i < Fox_subaction_list.size(); ++i)
-    {
-        if (Fox_subaction_list[i] == sub)
-        {
-            sub = Fox_subaction_list[i];
-            return true;
-        }
-    }
-
-    return false;
-}
-
-bool set_subaction_Game_and_Watch(subaction& sub)
+vector<subaction> Game_and_Watch_subaction_list =
 {
-    vector<subaction> Game_and_Watch_subaction_list =
-    {
-        { "Chef (Ground)", 0x127 },
-        { "Chef (Aerial)", 0x128 },
-        { "Judge 1 (Ground)", 0x129 },
-        { "Judge 2 (Ground)", 0x12a },
-        { "Judge 3 (Ground)", 0x12b },
-        { "Judge 4 (Ground)", 0x12c },
-        { "Judge 5 (Ground)", 0x12d },
-        { "Judge 6 (Ground)", 0x12e },
-        { "Judge 7 (Ground)", 0x12f },
-        { "Judge 8 (Ground)", 0x130 },
-        { "Judge 9 (Ground)", 0x131 },
-        { "Judge 1 (Aerial)", 0x132 },
-        { "Judge 2 (Aerial)", 0x133 },
-        { "Judge 3 (Aerial)", 0x134 },
-        { "Judge 4 (Aerial)", 0x135 },
-        { "Judge 5 (Aerial)", 0x136 },
-        { "Judge 6 (Aerial)", 0x137 },
-        { "Judge 7 (Aerial)", 0x138 },
-        { "Judge 8 (Aerial)", 0x139 },
-        { "Judge 9 (Aerial)", 0x13a },
-        { "Fire (Ground)", 0x13b },
-        { "Fire (Aerial)", 0x13c },
-        { "Oil Panic (Ground)", 0x13d },
-        { "Oil Panic Absorb (Ground)", 0x13e },
-        { "Oil Panic Release (Ground)", 0x13f },
-        { "Oil Panic (Aerial)", 0x140 },
-        { "Oil Panic Absorb (Aerial)", 0x141 },
-        { "Oil Panic Release (Aerial)", 0x142 }
-    };
-
-    for (size_t i = 0; i < Game_and_Watch_subaction_list.size(); ++i)
-    {
-        if (Game_and_Watch_subaction_list[i] == sub)
-        {
-            sub = Game_and_Watch_subaction_list[i];
-            return true;
-        }
-    }
-
-    return false;
-}
+    { "Chef (Ground)", 0x127 },
+    { "Chef (Aerial)", 0x128 },
+    { "Judge 1 (Ground)", 0x129 },
+    { "Judge 2 (Ground)", 0x12a },
+    { "Judge 3 (Ground)", 0x12b },
+    { "Judge 4 (Ground)", 0x12c },
+    { "Judge 5 (Ground)", 0x12d },
+    { "Judge 6 (Ground)", 0x12e },
+    { "Judge 7 (Ground)", 0x12f },
+    { "Judge 8 (Ground)", 0x130 },
+    { "Judge 9 (Ground)", 0x131 },
+    { "Judge 1 (Aerial)", 0x132 },
+    { "Judge 2 (Aerial)", 0x133 },
+    { "Judge 3 (Aerial)", 0x134 },
+    { "Judge 4 (Aerial)", 0x135 },
+    { "Judge 5 (Aerial)", 0x136 },
+    { "Judge 6 (Aerial)", 0x137 },
+    { "Judge 7 (Aerial)", 0x138 },
+    { "Judge 8 (Aerial)", 0x139 },
+    { "Judge 9 (Aerial)", 0x13a },
+    { "Fire (Ground)", 0x13b },
+    { "Fire (Aerial)", 0x13c },
+    { "Oil Panic (Ground)", 0x13d },
+    { "Oil Panic Absorb (Ground)", 0x13e },
+    { "Oil Panic Release (Ground)", 0x13f },
+    { "Oil Panic (Aerial)", 0x140 },
+    { "Oil Panic Absorb (Aerial)", 0x141 },
+    { "Oil Panic Release (Aerial)", 0x142 }
+};
 
 /*
 vector<subaction> Kirby_subaction_list =
@@ -943,36 +880,22 @@ vector<subaction> Pichu_subaction_list =
 };
 */
 
-bool set_subaction_Ganondorf(subaction& sub)
+vector<subaction> Ganondorf_subaction_list =
 {
-    vector<subaction> Ganondorf_subaction_list =
-    {
-        { "Warlock Punch (Ground)", 0x12d },
-        { "Warlock Punch (Aerial)", 0x12e },
-        { "Gerudo Dragon Start (Ground)", 0x12f },
-        { "Gerudo Dragon (Ground)", 0x130 },
-        { "Gerudo Dragon Start (Aerial)", 0x131 },
-        { "Gerudo Dragon (Aerial)", 0x132 },
-        { "Dark Dive (Ground)",  0x133 },
-        { "Dark Dive (Aerial)", 0x134 },
-        { "Dark Dive Grab", 0x135 },
-        { "Dark Dive Release", 0x136 },
-        { "Wizard's Foot (Ground)", 0x137 },
-        { "Wizard's Foot End (Ground)", 0x138 },
-        { "Wizard's Foot (Aerial)", 0x139 },
-        { "Wizard's Foot Aerial Landing", 0x13a },
-        { "Wizard's Foot (Ground End in Air)", 0x13b },
-        { "Wizard's Foot (Aerial End in Air)", 0x13c }
-    };
-
-    for (size_t i = 0; i < Ganondorf_subaction_list.size(); ++i)
-    {
-        if (Ganondorf_subaction_list[i] == sub)
-        {
-            sub = Ganondorf_subaction_list[i];
-            return true;
-        }
-    }
-
-    return false;
-}
+    { "Warlock Punch (Ground)", 0x12d },
+    { "Warlock Punch (Aerial)", 0x12e },
+    { "Gerudo Dragon Start (Ground)", 0x12f },
+    { "Gerudo Dragon (Ground)", 0x130 },
+    { "Gerudo Dragon Start (Aerial)", 0x131 },
+    { "Gerudo Dragon (Aerial)", 0x132 },
+    { "Dark Dive (Ground)",  0x133 },
+    { "Dark Dive (Aerial)", 0x134 },
+    { "Dark Dive Grab", 0x135 },
+    { "Dark Dive Release", 0x136 },
+    { "Wizard's Foot (Ground)", 0x137 },
+    { "Wizard's Foot End (Ground)", 0x138 },
+    { "Wizard's Foot (Aerial)", 0x139 },
+    { "Wizard's Foot Aerial Landing", 0x13a },
+    { "Wizard's Foot (Ground End in Air)", 0x13b },
+    { "Wizard's Foot (Aerial End in Air)", 0x13c }
+};

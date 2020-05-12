@@ -15,10 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Room.hpp">
+    <ClInclude Include="Type.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Monster.hpp">
+    <ClInclude Include="Pokemon.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ability.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enviornment.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Move.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Misc.hpp">
@@ -26,16 +35,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Room.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Misc.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Monster.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{FD7EE0A5-8D53-40D8-A3C0-6D58267F21CF}</ProjectGuid>
-    <RootNamespace>HGame</RootNamespace>
+    <ProjectGuid>{3F60855C-0524-443C-8084-44B881AE9F69}</ProjectGuid>
+    <RootNamespace>JMath</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,15 +138,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Misc.cpp" />
-    <ClCompile Include="Monster.cpp" />
-    <ClCompile Include="Room.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Misc.hpp" />
-    <ClInclude Include="Monster.hpp" />
-    <ClInclude Include="Room.hpp" />
+    <ClInclude Include="JFraction.hpp" />
+    <ClInclude Include="JMath.hpp" />
+    <ClInclude Include="JMatrix.hpp" />
+    <ClInclude Include="JPoint.hpp" />
+    <ClInclude Include="JVector.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

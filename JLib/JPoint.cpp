@@ -1,10 +1,11 @@
-// JPoint.cpp
+// Jpoint.cpp
 // Justyn P. Durnford
 // Created on 1/13/2020
-// Last updated on 3/31/2020
+// Last updated on 4/27/2020
 
-#include "JPoint.hpp"
-// <string>
+#include "Jpoint.hpp"
+
+// include <string>
 using std::string;
 using std::to_string;
 
@@ -12,76 +13,76 @@ using std::to_string;
 using std::pow;
 using std::sqrt;
 
-JPoint::JPoint() { /* Default values are 0.0 */ }
+Jpoint::Jpoint() { /* Default values are 0 */ }
 
-JPoint::JPoint(double x, double y, double z)
+Jpoint::Jpoint(double x, double y, double z)
 {
 	_x = x;
 	_y = y;
 	_z = z;
 }
 
-JPoint::JPoint(double pt_arr[3])
+Jpoint::Jpoint(double pt_arr[3])
 {
 	_x = pt_arr[0];
 	_y = pt_arr[1];
 	_z = pt_arr[2];
 }
 
-JPoint::JPoint(const JPoint& pt)
+Jpoint::Jpoint(const Jpoint& pt)
 {
-	_x = pt.getX();
-	_y = pt.getY();
-	_z = pt.getZ();
+	_x = pt.x();
+	_y = pt.y();
+	_z = pt.z();
 }
 
-JPoint::~JPoint() { /* Destructor */ }
+Jpoint::~Jpoint() { /* Destructor */ }
 
-double JPoint::getX() const
+double Jpoint::x() const
 {
 	return _x;
 }
 
-double JPoint::getY() const
+double Jpoint::y() const
 {
 	return _y;
 }
 
-double JPoint::getZ() const
+double Jpoint::z() const
 {
 	return _z;
 }
 
-void JPoint::setX(double x)
+void Jpoint::setX(double x)
 {
 	_x = x;
 }
 
-void JPoint::setY(double y)
+void Jpoint::setY(double y)
 {
 	_y = y;
 }
 
-void JPoint::setZ(double z)
+void Jpoint::setZ(double z)
 {
 	_z = z;
 }
 
-void JPoint::clear()
+void Jpoint::clear()
 {
-	_x = 0.0;
-	_y = 0.0;
-	_z = 0.0;
+	_x = 0;
+	_y = 0;
+	_z = 0;
 }
 
-JPoint JPoint::copy() const
+Jpoint Jpoint::copy() const
 {
-	JPoint pt(_x, _y, _z);
+	Jpoint pt(_x, _y, _z);
 	return pt;
 }
 
 
-string JPoint::toString() const
+string Jpoint::toString() const
 {
 	string str = "";
 
@@ -96,34 +97,34 @@ string JPoint::toString() const
 	return str;
 }
 
-double distance(const JPoint& pt1, const JPoint& pt2)
+double distance(const Jpoint& pt1, const Jpoint& pt2)
 {
 	double dist = 0.0;
 
-	dist += pow((pt1.getX() - pt2.getX()), 2);
-	dist += pow((pt1.getY() - pt2.getY()), 2);
-	dist += pow((pt1.getZ() - pt2.getZ()), 2);
+	dist += pow(( pt1.x() - pt2.x() ), 2);
+	dist += pow(( pt1.y() - pt2.y() ), 2);
+	dist += pow(( pt1.z() - pt2.z() ), 2);
 	dist = sqrt(dist);
 
 	return dist;
 }
 
-bool operator == (const JPoint& pt1, const JPoint& pt2)
+bool operator == (const Jpoint& pt1, const Jpoint& pt2)
 {
-	return (pt1.getX() == pt2.getX()) && (pt1.getY() == pt2.getY()) && (pt1.getZ() == pt2.getZ());
+	return ( pt1.x() == pt2.x() ) && ( pt1.y() == pt2.y() ) && ( pt1.z() == pt2.z() );
 }
 
-bool operator == (const JPoint& pt, double pt_arr[3])
+bool operator == (const Jpoint& pt, double pt_arr[3])
 {
-	return (pt.getX() == pt_arr[0]) && (pt.getY() == pt_arr[1]) && (pt.getZ() == pt_arr[2]);
+	return ( pt.x() == pt_arr[0] ) && ( pt.y() == pt_arr[1] ) && ( pt.z() == pt_arr[2] );
 }
 
-bool operator != (const JPoint& pt1, const JPoint& pt2)
+bool operator != (const Jpoint& pt1, const Jpoint& pt2)
 {
-	return (pt1.getX() != pt2.getX()) || (pt1.getY() != pt2.getY()) || (pt1.getZ() != pt2.getZ());
+	return ( pt1.x() != pt2.x() ) || ( pt1.y() != pt2.y() ) || ( pt1.z() != pt2.z() );
 }
 
-bool operator != (const JPoint& pt, double pt_arr[3])
+bool operator != (const Jpoint& pt, double pt_arr[3])
 {
-	return (pt.getX() != pt_arr[0]) || (pt.getY() != pt_arr[1]) || (pt.getZ() != pt_arr[2]);
+	return ( pt.x() != pt_arr[0] ) || ( pt.y() != pt_arr[1] ) || ( pt.z() != pt_arr[2] );
 }

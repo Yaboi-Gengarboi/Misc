@@ -18,27 +18,48 @@
     <ClInclude Include="JLib.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Fraction.hpp">
+    <ClInclude Include="Jfraction.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vector.hpp">
+    <ClInclude Include="Jpoint.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JPoint.hpp">
+    <ClInclude Include="Jtimer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Jvector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Jmatrix.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Jint.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Jcolor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Fraction.cpp">
+    <ClCompile Include="test_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_file.cpp">
+    <ClCompile Include="Jfraction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Vector.cpp">
+    <ClCompile Include="Jpoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="JPoint.cpp">
+    <ClCompile Include="Jtimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Jvector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Jmatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Jint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

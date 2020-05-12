@@ -1,31 +1,36 @@
+// HGame
 // Room.hpp
 // Justyn Durnford
 // Created on 3/24/2020
-// Last updated on 3/24/2020
+// Last updated on 5/5/2020
 
 #ifndef ROOM_HPP
 #define ROOM_HPP
 
 #include <memory>
-#include <array>
+#include <vector>
 
 class Room
 {
-	unsigned char _dat = -1;
+	unsigned char _ID = -1;
 
-	std::array<std::shared_ptr<Room>, 4> _adjRooms =
-	{ nullptr, nullptr, nullptr, nullptr };
+	std::vector<std::shared_ptr<Room>> _nextRooms;
 
 	public:
 
 	Room();
-	Room(unsigned char num, unsigned char lv);
+	Room(unsigned char id);
 
 	~Room();
 
-	unsigned char getNum() const;
-	unsigned char getLv() const;
+	void addNextRoom(const Room& rm);
+
+	std::vector<std::shared_ptr<Room>> getNextRooms() const;
+
+	unsigned char ID() const;
 };
 
+bool operator == (const Room& rm, unsigned char ID);
+bool operator != (const Room& rm, unsigned char ID);
 
 #endif // ROOM_HPP

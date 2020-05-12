@@ -138,16 +138,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Fraction.hpp" />
-    <ClInclude Include="Vector.hpp" />
+    <ClInclude Include="Jcolor.hpp" />
+    <ClInclude Include="Jfraction.hpp" />
+    <ClInclude Include="Jint.hpp" />
+    <ClInclude Include="Jmatrix.hpp" />
+    <ClInclude Include="Jpoint.hpp" />
+    <ClInclude Include="Jtimer.hpp" />
     <ClInclude Include="JLib.hpp" />
-    <ClInclude Include="JPoint.hpp" />
+    <ClInclude Include="Jvector.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Fraction.cpp" />
-    <ClCompile Include="main_file.cpp" />
-    <ClCompile Include="JPoint.cpp" />
-    <ClCompile Include="Vector.cpp" />
+    <ClCompile Include="Jfraction.cpp" />
+    <ClCompile Include="Jint.cpp" />
+    <ClCompile Include="Jmatrix.cpp" />
+    <ClCompile Include="Jpoint.cpp" />
+    <ClCompile Include="Jtimer.cpp" />
+    <ClCompile Include="Jvector.cpp" />
+    <ClCompile Include="test_file.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

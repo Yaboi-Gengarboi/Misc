@@ -1,78 +1,118 @@
-//SSBM FSM Creator
-//FSM.hpp
-//Justyn P. Durnford
-//Created on 12/17/2019
-//Last Updated on 2/1/2020
+// SSBM FSM Creator
+// FSM.hpp
+// Justyn P. Durnford
+// Created on 12/17/2019
+// Last updated on 5/3/2020
 
 #ifndef FSM_HPP
 #define FSM_HPP
 
 #include <string>
 #include <vector>
+#include <memory>
 
 struct character
 {
-	std::string name = "";
-	short id = 0x0;
+	std::string _name = "";
+	unsigned char _id = 0x0;
+
+	character();
+	character(const std::string& str, unsigned char uc);
+
+	~character() {}
 };
 
 struct subaction
 {
-	std::string name = "";
-	short id = 0x0;
+	std::string _name = "";
+	character _ch;
+	unsigned short _id = 0x0;
+
+	subaction();
+	subaction(const std::string& str, const character& ch, unsigned short us);
+
+	~subaction() {}
 };
 
 class FSM
 {
 	character _character = { "Captain Falcon", 0x0 };
-	short _frame = 0;
-	subaction _subaction = { "Spot Dodge", 0x0 };
-	float _multiplier = 0.0f;
+	unsigned char _frame = 0;
+	subaction _subaction = { "Spot Dodge", _character, 0x0 };
+	float _multiplier = 0;
 
-public:
+	public:
 
 	FSM();
 
-	FSM(const character& character, short frame,
+	FSM(const character& character, unsigned char frame,
 		const subaction& subaction, float multiplier);
 
-	character get_character() const;
+	~FSM();
 
-	void set_character(const character& character);
+	character getCharacter() const;
 
-	short get_frame() const;
+	unsigned char getFrame() const;
 
-	void set_frame(short frame);
+	subaction getSubaction() const;
 
-	subaction get_subaction() const;
+	float getMultiplier() const;
 
-	void set_subaction(const subaction& subaction);
+	void setCharacter(const character& ch);
 
-	float get_multiplier() const;
+	void setFrame(unsigned char frame);
 
-	void set_multiplier(float multiplier);
+	void setSubaction(const subaction& sub);
+
+	void setMultiplier(float m);
 
 	void clear();
 
-	std::string to_str() const;
+	std::string toString() const;
 
-	std::string to_hex() const;
+	std::string toHex() const;
+
+	FSM operator = (FSM fsm);
+
+	bool friend operator == (const FSM& fsm1, const FSM& fsm2);
+
+	bool friend operator != (const FSM& fsm1, const FSM& fsm2);
 };
 
 //
-bool compare_character(const character& ch1, const character& ch2);
 bool operator == (const character& ch1, const character& ch2);
 bool operator != (const character& ch1, const character& ch2);
 
 //
-bool compare_subaction(const subaction& sub1, const subaction& sub2);
 bool operator == (const subaction& sub1, const subaction& sub2);
 bool operator != (const subaction& sub1, const subaction& sub2);
 
-//
-bool compare_FSM(const FSM& fsm1, const FSM& fsm2);
-bool operator == (const FSM& fsm1, const FSM& fsm2);
-bool operator != (const FSM& fsm1, const FSM& fsm2);
+extern character Captain_Falcon;
+extern character Donkey_Kong;
+extern character Fox;
+extern character Game_and_Watch;
+extern character Kirby;
+extern character Bowser;
+extern character Link;
+extern character Luigi;
+extern character Mario;
+extern character Marth;
+extern character Mewtwo;
+extern character Ness;
+extern character Peach;
+extern character Pikachu;
+extern character Ice_Climbers;
+extern character Jigglypuff;
+extern character Samus;
+extern character Yoshi;
+extern character Zelda;
+extern character Sheik;
+extern character Falco;
+extern character Young_Link;
+extern character Dr_Mario;
+extern character Roy;
+extern character Pichu;
+extern character Ganondorf;
 
 extern std::vector<character> character_list;
 extern std::vector<subaction> common_subaction_list;
