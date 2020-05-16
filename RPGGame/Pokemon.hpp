@@ -1,7 +1,8 @@
+// RPGGame
 // Pokemon.hpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 4/30/2020
+// Last updated on 5/15/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
@@ -9,6 +10,7 @@
 #include "Type.hpp"
 #include "Ability.hpp"
 
+class Type;
 class Ability;
 
 #include <string>
@@ -17,21 +19,24 @@ class Ability;
 
 class Pokemon
 {
-	std::string _name;
-	unsigned int _index;
-	std::shared_ptr<Type> _type1;
-	std::shared_ptr<Type> _type2;
-	std::array<unsigned char, 6> _baseStats;
-	float _height;
-	float _weight;
+	std::string _name = "";
+	unsigned int _index = -1;
+	std::shared_ptr<Type> _type1 = nullptr;
+	std::shared_ptr<Type> _type2 = nullptr;
+	std::array<unsigned char, 6> _baseStats = { 0, 0, 0, 0, 0, 0 };
+	float _height = 0;
+	float _weight = 0;
 
-	std::shared_ptr<Pokemon> _evol;
+	std::shared_ptr<Pokemon> _evol = nullptr;
 
 	public:
 
-	Pokemon(const std::string& name, unsigned int index, std::shared_ptr<Type> type1,
-			std::shared_ptr<Type> type2, const std::array<unsigned char, 6>& baseStats,
-			float height, float weight);
+	Pokemon();
+
+	Pokemon(const std::string& name, unsigned int index, const Type& type1,
+			const Type& type2, unsigned char baseHP, unsigned char baseAtk, unsigned char baseDef, 
+			unsigned char baseSpAtk, unsigned char baseSpDef, unsigned char baseSpd,
+			float height, float weight, std::shared_ptr<Pokemon> evol);
 
 	~Pokemon();
 
@@ -72,6 +77,9 @@ class Pokemon
 
 	// Returns _weight
 	float weight() const;
+
+	// Returns _evol
+	std::shared_ptr<Pokemon> evolution() const;
 };
 
 class Player_Pokemon : public Pokemon
@@ -79,8 +87,10 @@ class Player_Pokemon : public Pokemon
 	std::string _nickname;
 	std::shared_ptr<Type> _battleType1;
 	std::shared_ptr<Type> _battleType2;
-	std::array<unsigned char, 6> _battleStats;
-	float _battleWeight;
+	std::array<unsigned short int, 6> _battleStats;
 };
+
+extern std::unique_ptr<Pokemon> Jigglypuff;
+extern std::unique_ptr<Pokemon> Wigglytuff;
 
 #endif // POKEMON_HPP

@@ -21,9 +21,6 @@
     <ClInclude Include="Jfraction.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jpoint.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Jtimer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -39,15 +36,15 @@
     <ClInclude Include="Jcolor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Jpoint3D.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Jfraction.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Jpoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Jtimer.cpp">
@@ -60,6 +57,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Jint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpoint3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

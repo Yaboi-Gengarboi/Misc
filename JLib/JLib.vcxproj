@@ -142,7 +142,7 @@
     <ClInclude Include="Jfraction.hpp" />
     <ClInclude Include="Jint.hpp" />
     <ClInclude Include="Jmatrix.hpp" />
-    <ClInclude Include="Jpoint.hpp" />
+    <ClInclude Include="Jpoint3D.hpp" />
     <ClInclude Include="Jtimer.hpp" />
     <ClInclude Include="JLib.hpp" />
     <ClInclude Include="Jvector.hpp" />
@@ -151,7 +151,7 @@
     <ClCompile Include="Jfraction.cpp" />
     <ClCompile Include="Jint.cpp" />
     <ClCompile Include="Jmatrix.cpp" />
-    <ClCompile Include="Jpoint.cpp" />
+    <ClCompile Include="Jpoint3D.cpp" />
     <ClCompile Include="Jtimer.cpp" />
     <ClCompile Include="Jvector.cpp" />
     <ClCompile Include="test_file.cpp" />

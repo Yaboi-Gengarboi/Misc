@@ -2,7 +2,7 @@
 // FSM.cpp
 // Justyn Durnford
 // Created on 12/18/2019
-// Last updated on 5/3/2020
+// Last updated on 5/13/2020
 
 #include "FSM.hpp"
 
@@ -109,7 +109,7 @@ void FSM::setSubaction(const subaction& sub)
 				{
 					if (sub == Captain_Falcon_subaction_list[i])
 					{
-						_subaction = Donkey_Kong_subaction_list[i];
+						_subaction = Captain_Falcon_subaction_list[i];
 						return;
 					}
 				}
@@ -118,12 +118,12 @@ void FSM::setSubaction(const subaction& sub)
 
 			case 0x1: // Donkey Kong
 
-				for (unsigned short i = 0x0fa; i < Donkey_Kong_subaction_list.size(); ++i)
+				for (unsigned short i = 0; i < Donkey_Kong_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Donkey_Kong_subaction_list[i])
 					{
 						_subaction = Donkey_Kong_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -131,12 +131,12 @@ void FSM::setSubaction(const subaction& sub)
 
 			case 0x2: // Fox
 
-				for (unsigned short i = 0x0fa; i < Fox_subaction_list.size(); ++i)
+				for (unsigned short i = 0; i < Fox_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Fox_subaction_list[i])
 					{
 						_subaction = Fox_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -144,12 +144,12 @@ void FSM::setSubaction(const subaction& sub)
 
 			case 0x3: // Game&Watch
 
-				for (unsigned short i = 0x0fa; i < Game_and_Watch_subaction_list.size(); ++i)
+				for (unsigned short i = 0; i < Game_and_Watch_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Game_and_Watch_subaction_list[i])
 					{
 						_subaction = Game_and_Watch_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -157,12 +157,12 @@ void FSM::setSubaction(const subaction& sub)
 
 			case 0x4: // Kirby
 
-				for (unsigned short i = 0x0fa; i < Kirby_subaction_list.size(); ++i)
+				for (unsigned short i = 0; i < Kirby_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Kirby_subaction_list[i])
 					{
 						_subaction = Kirby_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -170,12 +170,12 @@ void FSM::setSubaction(const subaction& sub)
 
 			case 0x5: // Bowser
 
-				for (unsigned short i = 0x0fa; i < Bowser_subaction_list.size(); ++i)
+				for (unsigned short i = 0; i < Bowser_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Bowser_subaction_list[i])
 					{
 						_subaction = Bowser_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -183,12 +183,12 @@ void FSM::setSubaction(const subaction& sub)
 
 			case 0x6: // Link
 
-				for (unsigned short i = 0x0fa; i < Link_subaction_list.size(); ++i)
+				for (unsigned short i = 0; i < Link_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Link_subaction_list[i])
 					{
 						_subaction = Link_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -196,12 +196,12 @@ void FSM::setSubaction(const subaction& sub)
 
 			case 0x7: // Luigi
 
-				for (unsigned short i = 0x0fa; i < Luigi_subaction_list.size(); ++i)
+				for (unsigned short i = 0; i < Luigi_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Luigi_subaction_list[i])
 					{
 						_subaction = Luigi_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -209,12 +209,12 @@ void FSM::setSubaction(const subaction& sub)
 
 			case 0x8: // Mario
 
-				for (unsigned short i = 0x0fa; i < Mario_subaction_list.size(); ++i)
+				for (unsigned short i = 0; i < Mario_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Mario_subaction_list[i])
 					{
 						_subaction = Mario_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -222,12 +222,12 @@ void FSM::setSubaction(const subaction& sub)
 
 			case 0x9: // Marth
 
-				for (unsigned short i = 0x0fa; i < Marth_subaction_list.size(); ++i)
+				for (unsigned short i = 0; i < Marth_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Marth_subaction_list[i])
 					{
 						_subaction = Marth_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -237,10 +237,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Mewtwo_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Mewtwo_subaction_list[i])
 					{
 						_subaction = Mewtwo_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -250,10 +250,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Ness_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Ness_subaction_list[i])
 					{
 						_subaction = Ness_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -263,10 +263,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Peach_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Peach_subaction_list[i])
 					{
 						_subaction = Peach_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -276,10 +276,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Pikachu_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Pikachu_subaction_list[i])
 					{
 						_subaction = Pikachu_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -289,10 +289,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Ice_Climbers_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Ice_Climbers_subaction_list[i])
 					{
 						_subaction = Ice_Climbers_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -302,10 +302,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Jigglypuff_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Jigglypuff_subaction_list[i])
 					{
 						_subaction = Jigglypuff_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -315,10 +315,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Samus_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Samus_subaction_list[i])
 					{
 						_subaction = Samus_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -328,10 +328,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Yoshi_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Yoshi_subaction_list[i])
 					{
 						_subaction = Yoshi_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -341,10 +341,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Zelda_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Zelda_subaction_list[i])
 					{
 						_subaction = Zelda_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -354,10 +354,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Sheik_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Sheik_subaction_list[i])
 					{
 						_subaction = Sheik_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -367,10 +367,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Falco_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Falco_subaction_list[i])
 					{
 						_subaction = Falco_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -380,10 +380,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Young_Link_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Young_Link_subaction_list[i])
 					{
 						_subaction = Young_Link_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -393,10 +393,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Dr_Mario_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Dr_Mario_subaction_list[i])
 					{
 						_subaction = Dr_Mario_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -406,10 +406,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Roy_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Roy_subaction_list[i])
 					{
 						_subaction = Roy_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -419,10 +419,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Pichu_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Pichu_subaction_list[i])
 					{
 						_subaction = Pichu_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -432,10 +432,10 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Ganondorf_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Ganondorf_subaction_list[i])
 					{
 						_subaction = Ganondorf_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
@@ -445,16 +445,17 @@ void FSM::setSubaction(const subaction& sub)
 
 				for (unsigned short i = 0; i < Ice_Climbers_subaction_list.size(); ++i)
 				{
-					if (i == id)
+					if (sub == Ice_Climbers_subaction_list[i])
 					{
 						_subaction = Ice_Climbers_subaction_list[i];
-						break;
+						return;
 					}
 				}
 
 			break;
 
 			default: // wtf?
+			return;
 			break;
 		}
 	}

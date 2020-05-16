@@ -1,12 +1,13 @@
 // Ability.hpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 4/25/2020
+// Last updated on 5/15/2020
 
 #ifndef ABILITY_HPP
 #define ABILITY_HPP
 
 #include "Enviornment.hpp"
+class Enviornment;
 
 #include "Pokemon.hpp"
 class Pokemon;
@@ -15,7 +16,7 @@ class Player_Pokemon;
 class Ability
 {
 	std::string _name;
-	std:::string _desc;
+	std::string _desc;
 
 	public:
 

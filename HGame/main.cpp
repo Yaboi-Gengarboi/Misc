@@ -2,7 +2,7 @@
 // main.cpp
 // Justyn Durnford
 // Created on 3/23/2020
-// Last updated on 5/11/2020
+// Last updated on 5/13/2020
 
 #include "Room.hpp"
 #include "Monster.hpp"
@@ -28,6 +28,7 @@ using std::thread;
 using std::this_thread::sleep_for;
 
 #include <chrono> 
+using std::chrono::seconds;
 using std::chrono::milliseconds;
 
 #include <iostream>
@@ -87,6 +88,12 @@ void try_move_monster(Monster& m)
 	}
 }
 
+void advance_time(unsigned char& time)
+{
+	sleep_for(seconds(90));
+	++time;
+}
+
 int main()
 {
 	bool play_game = true;
@@ -101,7 +108,11 @@ int main()
 
 	while (play_game)
 	{
-		
+		while (time != 6)
+		{
+			
+		}
+
 		play_game = false;
 	}
 

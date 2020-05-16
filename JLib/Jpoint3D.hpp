@@ -1,7 +1,7 @@
-// Jpoint.hpp
+// Jpoint3D.hpp
 // Justyn P. Durnford
 // Created on 1/13/2020
-// Last updated on 5/11/2020
+// Last updated on 5/14/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -11,20 +11,20 @@
 
 // This class allows for the representation of a
 // single point in 3 dimensional space.
-// A Jpoint can be constructed by default, with 3 doubles, with a
-// C-array or with another Jpoint.
-// Jpoints are not capable of arithmetic on their own due to
+// A Jpoint3D can be constructed by default, with 3 doubles, with a
+// C-array or with another Jpoint3D.
+// Jpoint3Ds are not capable of arithmetic on their own due to
 // their static nature, but there are functions that work with
 // points.
-// Jpoints can be compared to other Jpoints or C-arrays of doubles.
-// A Jpoint can be represented as a std::string with the toString method.
+// Jpoint3Ds can be compared to other Jpoint3D3Ds or C-arrays of doubles.
+// A Jpoint3D can be represented as a std::string with the toString method.
 
-#ifndef JPOINT_HPP
-#define JPOINT_HPP
+#ifndef JPOINT3D_HPP
+#define JPOINT3D_HPP
 
 #include <string>
 
-class Jpoint
+class Jpoint3D
 {
 	double _x = 0;
 	double _y = 0;
@@ -33,13 +33,13 @@ class Jpoint
 	public:
 
 	//Constructors
-	Jpoint();
-	Jpoint(double x, double y, double z);
-	Jpoint(double pt_arr[3]);
-	Jpoint(const Jpoint& pt);
+	Jpoint3D();
+	Jpoint3D(double x, double y, double z);
+	Jpoint3D(double pt_arr[3]);
+	Jpoint3D(const Jpoint3D& pt);
 
 	// Destructor
-	~Jpoint();
+	~Jpoint3D();
 
 	// Returns _x
 	double x() const;
@@ -59,26 +59,26 @@ class Jpoint
 	// Sets the value of _z to z
 	void setZ(double z);
 
-	// Clears the values of the Jpoint
+	// Clears the values of the Jpoint3D
 	void clear();
 
-	// Returns a new copy of the Jpoint
-	Jpoint copy() const;
+	// Returns a new copy of the Jpoint3D
+	Jpoint3D copy() const;
 
-	// Returns a std::string representation of the Jpoint
+	// Returns a std::string representation of the Jpoint3D
 	std::string toString() const;
 };
 
 // Uses the distance formula to calculate the distance between
-// the two given Jpoints
-double distance(const Jpoint& pt1, const Jpoint& pt2);
+// the two given Jpoint3Ds
+double distance(const Jpoint3D& pt1, const Jpoint3D& pt2);
 
 // Equality operator
-bool operator == (const Jpoint& pt1, const Jpoint& pt2);
-bool operator == (const Jpoint& pt, double pt_arr[3]);
+bool operator == (const Jpoint3D& pt1, const Jpoint3D& pt2);
+bool operator == (const Jpoint3D& pt, double pt_arr[3]);
 
 // Inequality operator
-bool operator != (const Jpoint& pt1, const Jpoint& pt2);
-bool operator != (const Jpoint& pt, double pt_arr[3]);
+bool operator != (const Jpoint3D& pt1, const Jpoint3D& pt2);
+bool operator != (const Jpoint3D& pt, double pt_arr[3]);
 
-#endif // JPOINT_HPP
+#endif // JPOINT3D_HPP
