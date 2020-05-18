@@ -2,7 +2,7 @@
 // Pokemon.hpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 5/15/2020
+// Last updated on 5/17/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
@@ -10,15 +10,18 @@
 #include "Type.hpp"
 #include "Ability.hpp"
 
-class Type;
+struct Type;
 class Ability;
 
-#include <string>
+// #include <string>
+// #include <memory>
+
 #include <array>
-#include <memory>
 
 class Pokemon
 {
+	protected:
+
 	std::string _name = "";
 	unsigned int _index = -1;
 	std::shared_ptr<Type> _type1 = nullptr;
@@ -26,6 +29,9 @@ class Pokemon
 	std::array<unsigned char, 6> _baseStats = { 0, 0, 0, 0, 0, 0 };
 	float _height = 0;
 	float _weight = 0;
+
+	std::shared_ptr<Ability> _ability1 = nullptr;
+	std::shared_ptr<Ability> _ability2 = nullptr;
 
 	std::shared_ptr<Pokemon> _evol = nullptr;
 
@@ -36,11 +42,10 @@ class Pokemon
 	Pokemon(const std::string& name, unsigned int index, const Type& type1,
 			const Type& type2, unsigned char baseHP, unsigned char baseAtk, unsigned char baseDef, 
 			unsigned char baseSpAtk, unsigned char baseSpDef, unsigned char baseSpd,
-			float height, float weight, std::shared_ptr<Pokemon> evol);
+			float height, float weight, std::shared_ptr<Ability> ability1, std::shared_ptr<Ability> ability2,
+			std::shared_ptr<Pokemon> evol);
 
-	~Pokemon();
-
-	protected:
+	virtual ~Pokemon();
 
 	// Returns _name
 	std::string name() const;
@@ -87,10 +92,12 @@ class Player_Pokemon : public Pokemon
 	std::string _nickname;
 	std::shared_ptr<Type> _battleType1;
 	std::shared_ptr<Type> _battleType2;
-	std::array<unsigned short int, 6> _battleStats;
+	std::array<unsigned short int, 6> _stats;
 };
 
-extern std::unique_ptr<Pokemon> Jigglypuff;
-extern std::unique_ptr<Pokemon> Wigglytuff;
+extern std::shared_ptr<Pokemon> Jigglypuff;
+extern std::shared_ptr<Pokemon> Wigglytuff;
+
+extern std::shared_ptr<Pokemon> Azumarill;
 
 #endif // POKEMON_HPP

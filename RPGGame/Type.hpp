@@ -1,7 +1,8 @@
+// RPGGame
 // Type.hpp
 // Justyn Durnford
 // Created on 4/7/2020
-// Last updated on 4/25/2020
+// Last updated on 5/16/2020
 
 #ifndef TYPE_HPP
 #define TYPE_HPP
@@ -11,9 +12,10 @@
 
 struct Type
 {
-    std::string _name;
-    unsigned char _id;
+    std::string _name = "";
+    unsigned char _id = -1;
 
+    Type();
     Type(const std::string& name, unsigned char id);
 
     ~Type();
@@ -21,24 +23,26 @@ struct Type
 
 bool operator == (std::shared_ptr<Type> t1, std::shared_ptr<Type> t2);
 
-Type Normal("Normal", 0);
-Type Fighting("Fighting", 1);
-Type Flying("Flying", 2);
-Type Poison("Poison", 3);
-Type Ground("Ground", 4);
-Type Rock("Rock", 5);
-Type Bug("Bug", 6);
-Type Ghost("Ghost", 7);
-Type Steel("Steel", 8);
-Type Fire("Fire", 9);
-Type Water("Water", 10);
-Type Grass("Grass", 11);
-Type Electric("Electric", 12);
-Type Psychic("Psychic", 13);
-Type Ice("Ice", 14);
-Type Dragon("Dragon", 15);
-Type Dark("Dark", 16);
-Type Fairy("Fairy", 17);
+bool operator != (std::shared_ptr<Type> t1, std::shared_ptr<Type> t2);
+
+extern std::shared_ptr<Type> Normal;
+extern std::shared_ptr<Type> Fighting;
+extern std::shared_ptr<Type> Flying;
+extern std::shared_ptr<Type> Poison;
+extern std::shared_ptr<Type> Ground;
+extern std::shared_ptr<Type> Rock;
+extern std::shared_ptr<Type> Bug;
+extern std::shared_ptr<Type> Ghost;
+extern std::shared_ptr<Type> Steel;
+extern std::shared_ptr<Type> Fire;
+extern std::shared_ptr<Type> Water;
+extern std::shared_ptr<Type> Grass;
+extern std::shared_ptr<Type> Electric;
+extern std::shared_ptr<Type> Psychic;
+extern std::shared_ptr<Type> Ice;
+extern std::shared_ptr<Type> Dragon;
+extern std::shared_ptr<Type> Dark;
+extern std::shared_ptr<Type> Fairy;
 
 extern const float type_matchup[18][18];
 

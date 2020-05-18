@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Ability.hpp" />
+    <ClInclude Include="Effect.hpp" />
     <ClInclude Include="Enviornment.hpp" />
     <ClInclude Include="Misc.hpp" />
     <ClInclude Include="Move.hpp" />
@@ -146,6 +147,8 @@
     <ClInclude Include="Type.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Ability.cpp" />
+    <ClCompile Include="Enviornment.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="Type.cpp" />

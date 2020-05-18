@@ -2,22 +2,24 @@
 // Pokemon.cpp
 // Justyn Durnford
 // Created on 5/15/2020
-// Last updated on 5/15/2020
+// Last updated on 5/16/2020
 
 #include "Pokemon.hpp"
-// #include "Type.hpp"
-// #include "Ability.hpp"
 
-// #include <string>
+#include "Type.hpp"
+struct Type;
+
+#include "Ability.hpp"
+class Ability;
+
+#include <string>
 using std::string;
 
-// #include <array>
+#include <array>
 using std::array;
 
-// #include <memory>
-using std::unique_ptr;
+#include <memory>
 using std::shared_ptr;
-using std::make_unique;
 using std::make_shared;
 
 Pokemon::Pokemon()
@@ -45,7 +47,7 @@ Pokemon::Pokemon(const std::string& name, unsigned int index, const Type& type1,
 	_evol = evol;
 }
 
-Pokemon::~Pokemon() {}
+Pokemon::~Pokemon() { /* Destructor */ }
 
 string Pokemon::name() const
 {
@@ -112,12 +114,17 @@ shared_ptr<Pokemon> Pokemon::evolution() const
 	return _evol;
 }
 
-unique_ptr<Pokemon> Jigglypuff = make_unique<Pokemon>
+shared_ptr<Pokemon> Jigglypuff = make_shared<Pokemon>
 (
 	"Jigglypuff", 39, Normal, Fairy, 115, 60, 30, 60, 35, 30, 0.5f, 5.5f, Wigglytuff
 );
 
-unique_ptr<Pokemon> Wigglytuff = make_unique<Pokemon>
+shared_ptr<Pokemon> Wigglytuff = make_shared<Pokemon>
 (
 	"Wigglytuff", 40, Normal, Fairy, 140, 100, 55, 100, 60, 45, 1.0f, 12.0f, nullptr
+);
+
+shared_ptr<Pokemon> Azumarill = make_shared<Pokemon>
+(
+	"Azumarill", 184, Water, Fairy, 110, 50, 80, 90, 80, 50, 0.8f, 28.5f, nullptr
 );

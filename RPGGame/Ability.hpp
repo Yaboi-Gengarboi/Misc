@@ -1,7 +1,8 @@
+// RPGGame
 // Ability.hpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 5/15/2020
+// Last updated on 5/17/2020
 
 #ifndef ABILITY_HPP
 #define ABILITY_HPP
@@ -13,29 +14,32 @@ class Enviornment;
 class Pokemon;
 class Player_Pokemon;
 
+// #include <string>
+// #include <array>
+// #include <memory>
+
 class Ability
 {
-	std::string _name;
-	std::string _desc;
+	protected:
+
+	std::string _name = "";
+	std::string _desc = "";
+	unsigned short int _id = -1;
 
 	public:
 
-	Ability(const std::string& name, const std::string& desc);
-	~Ability();
+	Ability();
+	Ability(const std::string& name, const std::string& desc, unsigned short int id);
 
-	void effect(Enviornment& env);
+	virtual ~Ability();
+
+	std::string name() const;
+
+	std::string desc() const;
+
+	unsigned short int id() const;
 };
 
-void Drought();
-
-void Levitate(Player_Pokemon& a);
-
-void Magnet_Pull(Player_Pokemon& d);
-
-void Rough_Skin(Player_Pokemon& a, Player_Pokemon& d);
-
-void Sand_Stream();
-
-void Sand_Veil(Player_Pokemon& a);
+extern std::shared_ptr<Ability> Cute_Charm;
 
 #endif // ABILITY_HPP
