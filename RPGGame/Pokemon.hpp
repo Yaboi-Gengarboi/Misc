@@ -2,7 +2,7 @@
 // Pokemon.hpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 5/17/2020
+// Last updated on 5/20/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
@@ -20,7 +20,7 @@ class Ability;
 
 class Pokemon
 {
-	protected:
+	private:
 
 	std::string _name = "";
 	unsigned int _index = -1;
@@ -39,8 +39,8 @@ class Pokemon
 
 	Pokemon();
 
-	Pokemon(const std::string& name, unsigned int index, const Type& type1,
-			const Type& type2, unsigned char baseHP, unsigned char baseAtk, unsigned char baseDef, 
+	Pokemon(const std::string& name, unsigned int index, std::shared_ptr<Type> type1,
+			std::shared_ptr<Type> type2, unsigned char baseHP, unsigned char baseAtk, unsigned char baseDef, 
 			unsigned char baseSpAtk, unsigned char baseSpDef, unsigned char baseSpd,
 			float height, float weight, std::shared_ptr<Ability> ability1, std::shared_ptr<Ability> ability2,
 			std::shared_ptr<Pokemon> evol);

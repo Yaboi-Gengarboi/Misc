@@ -142,18 +142,18 @@
     <ClInclude Include="Jfraction.hpp" />
     <ClInclude Include="Jint.hpp" />
     <ClInclude Include="Jmatrix.hpp" />
-    <ClInclude Include="Jpoint3D.hpp" />
+    <ClInclude Include="Jpoint3f.hpp" />
     <ClInclude Include="Jtimer.hpp" />
     <ClInclude Include="JLib.hpp" />
-    <ClInclude Include="Jvector.hpp" />
+    <ClInclude Include="Jvector3f.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Jfraction.cpp" />
     <ClCompile Include="Jint.cpp" />
     <ClCompile Include="Jmatrix.cpp" />
-    <ClCompile Include="Jpoint3D.cpp" />
+    <ClCompile Include="Jpoint3f.cpp" />
     <ClCompile Include="Jtimer.cpp" />
-    <ClCompile Include="Jvector.cpp" />
+    <ClCompile Include="Jvector3f.cpp" />
     <ClCompile Include="test_file.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

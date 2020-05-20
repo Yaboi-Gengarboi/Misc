@@ -2,7 +2,7 @@
 // Enviornment.cpp
 // Justyn Durnford
 // Created on 5/16/2020
-// Last updated on 5/17/2020
+// Last updated on 5/20/2020
 
 #include "Enviornment.hpp"
 #include "Pokemon.hpp"
@@ -103,20 +103,23 @@ void Enviornment::setWeather(shared_ptr<Weather> weather)
 shared_ptr<Weather> Sunny_Weather = make_shared<Weather>
 (
 	"Harsh sunlight", "The sunlight turned harsh!", "The harsh sunlight faded.",
-	"The sunlight is strong.", " took damage from the harsh sunlight!", 1
+	"The sunlight is strong.", "", 1
 );
 
 shared_ptr<Weather> Rain_Weather = make_shared<Weather>
 (
-	
+	"Heavy rain", "Rain started to fall!", "The rain stopped.",
+	"The rain is pouring.", "", 2
 );
 
 shared_ptr<Weather> Sandstorm_Weather = make_shared<Weather>
 (
-	
+	"Sandstorm", "A sandstorm was wipped up!", "The sandstorm stopped.",
+	"The sandstorm rages on.", " took damage from the sandstorm.", 3
 );
 
 shared_ptr<Weather> Hail_Weather = make_shared<Weather>
 (
-
+	"Hail", "Hail began to fall!", "The hail stopped falling.",
+	"Hail continues to fall.", " took damage from the hail!", 4
 );

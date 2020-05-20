@@ -1,7 +1,7 @@
-// Jpoint3D.cpp
+// Jpoint3f.cpp
 // Justyn P. Durnford
 // Created on 1/13/2020
-// Last updated on 5/14/2020
+// Last updated on 5/18/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -9,9 +9,9 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#include "Jpoint3D.hpp"
+#include "Jpoint3f.hpp"
 
-// include <string>
+#include <string>
 using std::string;
 using std::to_string;
 
@@ -19,76 +19,76 @@ using std::to_string;
 using std::pow;
 using std::sqrt;
 
-Jpoint3D::Jpoint3D() { /* Default values are 0 */ }
+Jpoint3f::Jpoint3f() { /* Default values are 0 */ }
 
-Jpoint3D::Jpoint3D(double x, double y, double z)
+Jpoint3f::Jpoint3f(float x, float y, float z)
 {
 	_x = x;
 	_y = y;
 	_z = z;
 }
 
-Jpoint3D::Jpoint3D(double pt_arr[3])
+Jpoint3f::Jpoint3f(float pt_arr[3])
 {
 	_x = pt_arr[0];
 	_y = pt_arr[1];
 	_z = pt_arr[2];
 }
 
-Jpoint3D::Jpoint3D(const Jpoint3D& pt)
+Jpoint3f::Jpoint3f(const Jpoint3f& pt)
 {
 	_x = pt.x();
 	_y = pt.y();
 	_z = pt.z();
 }
 
-Jpoint3D::~Jpoint3D() { /* Destructor */ }
+Jpoint3f::~Jpoint3f() { /* Destructor */ }
 
-double Jpoint3D::x() const
+float Jpoint3f::x() const
 {
 	return _x;
 }
 
-double Jpoint3D::y() const
+float Jpoint3f::y() const
 {
 	return _y;
 }
 
-double Jpoint3D::z() const
+float Jpoint3f::z() const
 {
 	return _z;
 }
 
-void Jpoint3D::setX(double x)
+void Jpoint3f::setX(float x)
 {
 	_x = x;
 }
 
-void Jpoint3D::setY(double y)
+void Jpoint3f::setY(float y)
 {
 	_y = y;
 }
 
-void Jpoint3D::setZ(double z)
+void Jpoint3f::setZ(float z)
 {
 	_z = z;
 }
 
-void Jpoint3D::clear()
+void Jpoint3f::clear()
 {
 	_x = 0;
 	_y = 0;
 	_z = 0;
 }
 
-Jpoint3D Jpoint3D::copy() const
+Jpoint3f Jpoint3f::copy() const
 {
-	Jpoint3D pt(_x, _y, _z);
+	Jpoint3f pt(_x, _y, _z);
 	return pt;
 }
 
 
-string Jpoint3D::toString() const
+string Jpoint3f::toString() const
 {
 	string str = "";
 
@@ -103,9 +103,9 @@ string Jpoint3D::toString() const
 	return str;
 }
 
-double distance(const Jpoint3D& pt1, const Jpoint3D& pt2)
+float distance(const Jpoint3f& pt1, const Jpoint3f& pt2)
 {
-	double dist = 0.0;
+	float dist = 0.0f;
 
 	dist += pow(( pt1.x() - pt2.x() ), 2);
 	dist += pow(( pt1.y() - pt2.y() ), 2);
@@ -115,22 +115,22 @@ double distance(const Jpoint3D& pt1, const Jpoint3D& pt2)
 	return dist;
 }
 
-bool operator == (const Jpoint3D& pt1, const Jpoint3D& pt2)
+bool operator == (const Jpoint3f& pt1, const Jpoint3f& pt2)
 {
 	return ( pt1.x() == pt2.x() ) && ( pt1.y() == pt2.y() ) && ( pt1.z() == pt2.z() );
 }
 
-bool operator == (const Jpoint3D& pt, double pt_arr[3])
+bool operator == (const Jpoint3f& pt, double pt_arr[3])
 {
 	return ( pt.x() == pt_arr[0] ) && ( pt.y() == pt_arr[1] ) && ( pt.z() == pt_arr[2] );
 }
 
-bool operator != (const Jpoint3D& pt1, const Jpoint3D& pt2)
+bool operator != (const Jpoint3f& pt1, const Jpoint3f& pt2)
 {
 	return ( pt1.x() != pt2.x() ) || ( pt1.y() != pt2.y() ) || ( pt1.z() != pt2.z() );
 }
 
-bool operator != (const Jpoint3D& pt, double pt_arr[3])
+bool operator != (const Jpoint3f& pt, double pt_arr[3])
 {
 	return ( pt.x() != pt_arr[0] ) || ( pt.y() != pt_arr[1] ) || ( pt.z() != pt_arr[2] );
 }

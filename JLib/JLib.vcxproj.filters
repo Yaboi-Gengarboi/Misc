@@ -24,9 +24,6 @@
     <ClInclude Include="Jtimer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jvector.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Jmatrix.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -36,7 +33,10 @@
     <ClInclude Include="Jcolor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jpoint3D.hpp">
+    <ClInclude Include="Jvector3f.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpoint3f.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,16 +50,16 @@
     <ClCompile Include="Jtimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Jvector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Jmatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Jint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Jpoint3D.cpp">
+    <ClCompile Include="Jvector3f.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpoint3f.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
