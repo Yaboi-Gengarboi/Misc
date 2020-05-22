@@ -2,33 +2,30 @@
 // Ability.cpp
 // Justyn Durnford
 // Created on 5/15/2020
-// Last updated on 5/20/2020
+// Last updated on 5/22/2020
 
 #include "Ability.hpp"
 
-// #include "Pokemon.hpp"
+#include "Pokemon.hpp"
 class Pokemon;
 class Player_Pokemon;
 
-// #include "Type.hpp"
+#include "Type.hpp"
 struct Type;
 
-// #include "Enviornment.hpp"
+#include "Enviornment.hpp"
 class Enviornment;
 
-// #include <string>
+#include <string>
 using std::string;
 
-// #include <array>
+#include <array>
 
-// #include <memory>
+#include <memory>
 using std::shared_ptr;
 using std::make_shared;
 
-Ability::Ability()
-{
-	// See Ability.hpp for default values
-}
+Ability::Ability() { /* See Ability.hpp for default values */ }
 
 Ability::Ability(const string& name, const string& desc, unsigned short int id, unsigned char type)
 {

@@ -2,7 +2,7 @@
 // Pokemon.hpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 5/20/2020
+// Last updated on 5/22/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
@@ -13,15 +13,12 @@
 struct Type;
 class Ability;
 
-// #include <string>
-// #include <memory>
-
+#include <string>
+#include <memory>
 #include <array>
 
 class Pokemon
 {
-	private:
-
 	std::string _name = "";
 	unsigned int _index = -1;
 	std::shared_ptr<Type> _type1 = nullptr;
@@ -34,6 +31,9 @@ class Pokemon
 	std::shared_ptr<Ability> _ability2 = nullptr;
 
 	std::shared_ptr<Pokemon> _evol = nullptr;
+
+	std::string _spriteMaleFront = "";
+
 
 	public:
 

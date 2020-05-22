@@ -2,21 +2,18 @@
 // Type.cpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 5/16/2020
+// Last updated on 5/22/2020
 
 #include "Type.hpp"
 
-// #include <string>
+#include <string>
 using std::string;
 
-// #include <memory>
+#include <memory>
 using std::shared_ptr;
 using std::make_shared;
 
-Type::Type()
-{
-    // See Type.hpp for default values
-}
+Type::Type() { /* See Type.hpp for default values */ }
 
 Type::Type(const string& name, unsigned char id)
 {

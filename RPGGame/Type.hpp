@@ -2,7 +2,7 @@
 // Type.hpp
 // Justyn Durnford
 // Created on 4/7/2020
-// Last updated on 5/16/2020
+// Last updated on 5/22/2020
 
 #ifndef TYPE_HPP
 #define TYPE_HPP

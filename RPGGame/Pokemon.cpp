@@ -2,7 +2,7 @@
 // Pokemon.cpp
 // Justyn Durnford
 // Created on 5/15/2020
-// Last updated on 5/20/2020
+// Last updated on 5/22/2020
 
 #include "Pokemon.hpp"
 
@@ -22,10 +22,7 @@ using std::array;
 using std::shared_ptr;
 using std::make_shared;
 
-Pokemon::Pokemon()
-{
-	// See Pokemon.hpp for default values
-}
+Pokemon::Pokemon() { /* See Pokemon.hpp for default values */ }
 
 Pokemon::Pokemon(const string& name, unsigned int index, shared_ptr<Type> type1,
 				 shared_ptr<Type> type2, unsigned char baseHP, unsigned char baseAtk, unsigned char baseDef,

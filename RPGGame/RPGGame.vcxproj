@@ -143,6 +143,7 @@
     <ClInclude Include="Ability.hpp" />
     <ClInclude Include="Effect.hpp" />
     <ClInclude Include="Enviornment.hpp" />
+    <ClInclude Include="Timer.hpp" />
     <ClInclude Include="Misc.hpp" />
     <ClInclude Include="Move.hpp" />
     <ClInclude Include="Pokemon.hpp" />
@@ -151,7 +152,9 @@
   <ItemGroup>
     <ClCompile Include="Ability.cpp" />
     <ClCompile Include="Enviornment.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Misc.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="Type.cpp" />
   </ItemGroup>

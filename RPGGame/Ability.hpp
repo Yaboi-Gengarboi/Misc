@@ -2,7 +2,7 @@
 // Ability.hpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 5/20/2020
+// Last updated on 5/22/2020
 
 #ifndef ABILITY_HPP
 #define ABILITY_HPP
@@ -14,9 +14,9 @@ class Enviornment;
 class Pokemon;
 class Player_Pokemon;
 
-// #include <string>
-// #include <array>
-// #include <memory>
+#include <string>
+#include <array>
+#include <memory>
 
 class Ability
 {
