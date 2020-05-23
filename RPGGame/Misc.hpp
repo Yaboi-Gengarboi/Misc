@@ -7,6 +7,8 @@
 #ifndef MISC_HPP
 #define MISC_HPP
 
+#include <string>
+
 template <typename T>
 T copy(T t)
 {

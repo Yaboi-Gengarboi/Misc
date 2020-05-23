@@ -8,10 +8,12 @@
 #define POKEMON_HPP
 
 #include "Type.hpp"
-#include "Ability.hpp"
-
 struct Type;
+
+#include "Ability.hpp"
 class Ability;
+
+#include <SFML/Graphics/Sprite.hpp>
 
 #include <string>
 #include <memory>
@@ -32,8 +34,7 @@ class Pokemon
 
 	std::shared_ptr<Pokemon> _evol = nullptr;
 
-	std::string _spriteMaleFront = "";
-
+	
 
 	public:
 
