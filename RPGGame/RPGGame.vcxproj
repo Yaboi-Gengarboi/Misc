@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="Ability.cpp" />
     <ClCompile Include="Enviornment.cpp" />
+    <ClCompile Include="Move.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="main_file.cpp" />
     <ClCompile Include="Misc.cpp" />

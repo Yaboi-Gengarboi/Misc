@@ -2,12 +2,15 @@
 // Type.cpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 5/22/2020
+// Last updated on 5/27/2020
 
 #include "Type.hpp"
 
 #include <string>
 using std::string;
+
+#include <array>
+using std::array;
 
 #include <memory>
 using std::shared_ptr;
@@ -35,24 +38,27 @@ bool operator != (std::shared_ptr<Type> t1, std::shared_ptr<Type> t2)
     return !(t1 == t2);
 }
 
-shared_ptr<Type> Normal = make_shared<Type>("Normal", 0);
-shared_ptr<Type> Fighting = make_shared<Type>("Fighting", 1);
-shared_ptr<Type> Flying = make_shared<Type>("Flying", 2);
-shared_ptr<Type> Poison = make_shared<Type>("Poison", 3);
-shared_ptr<Type> Ground = make_shared<Type>("Ground", 4);
-shared_ptr<Type> Rock = make_shared<Type>("Rock", 5);
-shared_ptr<Type> Bug = make_shared<Type>("Bug", 6);
-shared_ptr<Type> Ghost = make_shared<Type>("Ghost", 7);
-shared_ptr<Type> Steel = make_shared<Type>("Steel", 8);
-shared_ptr<Type> Fire = make_shared<Type>("Fire", 9);
-shared_ptr<Type> Water = make_shared<Type>("Water", 10);
-shared_ptr<Type> Grass = make_shared<Type>("Grass", 11);
-shared_ptr<Type> Electric = make_shared<Type>("Electric", 12);
-shared_ptr<Type> Psychic = make_shared<Type>("Psychic", 13);
-shared_ptr<Type> Ice = make_shared<Type>("Ice", 14);
-shared_ptr<Type> Dragon = make_shared<Type>("Dragon", 15);
-shared_ptr<Type> Dark = make_shared<Type>("Dark", 16);
-shared_ptr<Type> Fairy = make_shared<Type>("Fairy", 17);
+array<std::shared_ptr<Type>, 18> types
+{
+    make_shared<Type>("Normal", 0),
+    make_shared<Type>("Fighting", 1),
+    make_shared<Type>("Flying", 2),
+    make_shared<Type>("Poison", 3),
+    make_shared<Type>("Ground", 4),
+    make_shared<Type>("Rock", 5),
+    make_shared<Type>("Bug", 6),
+    make_shared<Type>("Ghost", 7),
+    make_shared<Type>("Steel", 8),
+    make_shared<Type>("Fire", 9),
+    make_shared<Type>("Water", 10),
+    make_shared<Type>("Grass", 11),
+    make_shared<Type>("Electric", 12),
+    make_shared<Type>("Psychic", 13),
+    make_shared<Type>("Ice", 14),
+    make_shared<Type>("Dragon", 15),
+    make_shared<Type>("Dark", 16),
+    make_shared<Type>("Fairy", 17)
+};
 
 const float type_matchup[18][18] =
 {
