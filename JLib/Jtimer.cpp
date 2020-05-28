@@ -1,7 +1,7 @@
 // Jtimer.cpp
 // Justyn Durnford
 // Created on 4/2/2020
-// Last updated on 5/11/2020
+// Last updated on 5/27/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -11,11 +11,14 @@
 
 #include "Jtimer.hpp"
 
-// #include <chrono>
 #include <chrono>
+using std::chrono::milliseconds;
 using std::chrono::time_point;
 using std::chrono::system_clock;
 using std::chrono::duration;
+
+#include <thread>
+using std::this_thread::sleep_for;
 
 Jtimer::Jtimer()
 {
@@ -60,4 +63,9 @@ double Jtimer::millisecondsPassed() const
 		time_elapsed = system_clock::now() - _start;
 
 	return time_elapsed.count() * 1000;
+}
+
+void wait(unsigned int time)
+{
+	sleep_for(milliseconds(time));
 }

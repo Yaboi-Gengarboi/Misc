@@ -1,7 +1,7 @@
 // Jtimer.hpp
 // Justyn Durnford
 // Created on 4/2/2020
-// Last updated on 5/11/2020
+// Last updated on 5/27/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -12,7 +12,6 @@
 #ifndef JTIMER_HPP
 #define JTIMER_HPP
 
-#include <string>
 #include <chrono>
 
 class Jtimer
@@ -41,7 +40,7 @@ class Jtimer
 	// Returns the amount of milliseconds that have passed
 	double millisecondsPassed() const;
 
-	std::string toString() const;
+	void wait(unsigned int time);
 };
 
 #endif // JTIMER_HPP
