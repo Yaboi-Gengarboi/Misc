@@ -1,7 +1,7 @@
 // Jpoint3f.cpp
 // Justyn P. Durnford
 // Created on 1/13/2020
-// Last updated on 5/18/2020
+// Last updated on 5/27/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -90,15 +90,11 @@ Jpoint3f Jpoint3f::copy() const
 
 string Jpoint3f::toString() const
 {
-	string str = "";
+	string str = "(";
 
-	str += "(";
-	str += to_string(_x);
-	str += ", ";
-	str += to_string(_y);
-	str += ", ";
-	str += to_string(_z);
-	str += ")";
+	str += to_string(_x) + ", ";
+	str += to_string(_y) + ", ";
+	str += to_string(_z) + ")";
 
 	return str;
 }

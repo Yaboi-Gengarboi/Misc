@@ -1,7 +1,7 @@
 // Jvector3f.hpp
 // Justyn P. Durnford
 // Created on 1/18/2020
-// Last updated on 5/18/2020
+// Last updated on 5/27/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -27,8 +27,9 @@ class Jvector3f
 	public:
 
 	Jvector3f();
-	Jvector3f(double x, double y, double z);
-	Jvector3f(double vec_arr[3]);
+	Jvector3f(float x, float y, float z);
+	Jvector3f(const Jpoint3f& pt, float x, float y, float z);
+	Jvector3f(const Jpoint3f& pt, float vec_arr[3]);
 	Jvector3f(const Jvector3f& vec);
 
 	~Jvector3f();
@@ -54,6 +55,32 @@ class Jvector3f
 	float magnitude() const;
 
 	std::string toString() const;
+
+	Jpoint3f toPoint() const;
 };
+
+// Addition operator
+Jvector3f operator + (const Jvector3f& vec1, const Jvector3f& vec2);
+Jvector3f& operator += (Jvector3f& vec1, const Jvector3f& vec2);
+
+// Subtraction operator
+Jvector3f operator - (const Jvector3f& vec1, const Jvector3f& vec2);
+Jvector3f& operator -= (Jvector3f& vec1, const Jvector3f& vec2);
+
+// Muliplication operator
+Jvector3f operator * (const Jvector3f& vec1, const Jvector3f& vec2);
+Jvector3f& operator *= (Jvector3f& vec, float f);
+Jvector3f& operator *= (Jvector3f& vec1, const Jvector3f& vec2);
+
+// Division operator
+Jvector3f operator / (const Jvector3f& vec1, const Jvector3f& vec2);
+Jvector3f& operator /= (Jvector3f& vec, float f);
+Jvector3f& operator /= (Jvector3f& vec1, const Jvector3f& vec2);
+
+// Equality operator
+bool operator == (const Jvector3f& vec1, const Jvector3f& vec2);
+
+// Inequality operator
+bool operator != (const Jvector3f& vec1, const Jvector3f& vec2);
 
 #endif // JVECTOR3F_HPP

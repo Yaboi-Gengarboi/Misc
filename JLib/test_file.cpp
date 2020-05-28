@@ -1,7 +1,7 @@
 // test_file.cpp
 // Justyn P. Durnford
 // Created on 1/18/2020
-// Last updated on 5/11/2020
+// Last updated on 5/27/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -9,9 +9,9 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#include "JLib.hpp"
-// #include <string>
-// #include <chrono>
+#include "JVector3f.hpp"
+
+#include <string>
 using std::string;
 using std::to_string;
 
@@ -55,21 +55,23 @@ unsigned int str_length(const char* str)
 	return i;
 }
 
-vector<unsigned int> str_find_all(const char* str, const char* find)
-{
-	unsigned int strL = str_length(str);
-}
+//vector<unsigned int> str_find_all(const char* str, const char* find)
+//{
+//	unsigned int strL = str_length(str);
+//}
 
-/*
-char* str_replace(const char* str, const char* find, const char* repl)
-{
-
-}
-*/
+//char* str_replace(const char* str, const char* find, const char* repl)
+//{
+//
+//}
 
 int main(int argc, char** argv)
 {
+	Jvector3f vec1;
+	Jvector3f vec2 = vec1;
 
+	println(vec1.toString());
+	println(vec2.toString());
 
 	return 0;
 }
