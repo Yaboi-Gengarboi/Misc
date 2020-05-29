@@ -2,16 +2,16 @@
 // data.cpp
 // Justyn Durnford
 // Created on 5/3/2019
-// Last updated on 5/3/2020
+// Last updated on 5/27/2020
 
 #include "FSM.hpp"
 
-// #include <string>
+#include <string>
 
-// #include <vector>
+#include <vector>
 using std::vector;
 
-vector<character> character_list =
+vector<Character> character_list =
 {
     { "Captain Falcon", 0x0 }, { "Donkey Kong", 0x1 }, { "Fox", 0x2 },
     { "Game&Watch", 0x3 }, { "Kirby", 0x4 }, { "Bowser", 0x5 },
@@ -24,7 +24,9 @@ vector<character> character_list =
     { "Pichu", 0x18 }, { "Ganondorf", 0x19 }, { "Popo", 0x1a }
 };
 
-vector<subaction> common_subaction_list =
+character_list[0]
+
+vector<Subaction> common_subaction_list =
 {
     { "Spot Dodge", 0x029 },
     { "Forward Roll", 0x02a },
