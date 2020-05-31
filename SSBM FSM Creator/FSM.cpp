@@ -2,7 +2,7 @@
 // FSM.cpp
 // Justyn Durnford
 // Created on 12/18/2019
-// Last updated on 5/28/2020
+// Last updated on 5/31/2020
 
 #include "FSM.hpp"
 
@@ -228,7 +228,7 @@ bool operator != (const FSM& a, const FSM& b)
 vector<Character> character_list =
 {
 	{ "Captain Falcon", 0x0 }, { "Donkey Kong", 0x1 }, { "Fox", 0x2 },
-	{ "Game&Watch", 0x3 }, { "Kirby", 0x4 }, { "Bowser", 0x5 },
+	{ "Mr. Game & Watch", 0x3 }, { "Kirby", 0x4 }, { "Bowser", 0x5 },
 	{ "Link", 0x6 }, { "Luigi", 0x7 }, { "Mario", 0x8 },
 	{ "Marth", 0x9 }, { "Mewtwo", 0xa }, { "Ness", 0xb },
 	{ "Peach", 0xc }, { "Pikachu", 0xd }, { "Ice Climbers", 0xe },

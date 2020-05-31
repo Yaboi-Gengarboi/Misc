@@ -2,7 +2,7 @@
 // FSM.hpp
 // Justyn P. Durnford
 // Created on 12/17/2019
-// Last updated on 5/28/2020
+// Last updated on 5/31/2020
 
 #ifndef FSM_HPP
 #define FSM_HPP
@@ -90,5 +90,6 @@ extern std::vector<Subaction> Captain_Falcon_subaction_list;
 extern std::vector<Subaction> Donkey_Kong_subaction_list;
 extern std::vector<Subaction> Fox_subaction_list;
 extern std::vector<Subaction> Game_and_Watch_subaction_list;
+extern std::vector<Subaction> Ganondorf_subaction_list;
 
 #endif // FSM_HPP
