@@ -18,9 +18,6 @@ using std::vector;
 #include <sstream>
 using std::ostringstream;
 
-#include <cctype>
-using std::toupper;
-
 #include <stdexcept>
 using std::invalid_argument;
 
@@ -146,6 +143,11 @@ void FSM::setFrame(unsigned char frame)
 	_frame = frame;
 }
 
+void FSM::setSubaction(const Subaction& sub)
+{
+	_subaction = sub;
+}
+
 void FSM::setMultiplier(float multiplier)
 {
 	_multiplier = multiplier;
@@ -235,3 +237,4 @@ vector<Character> character_list =
 	{ "Young Link", 0x15 }, { "Dr. Mario", 0x16 }, { "Roy", 0x17 },
 	{ "Pichu", 0x18 }, { "Ganondorf", 0x19 }, { "Popo", 0x1a }
 };
+

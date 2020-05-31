@@ -2,7 +2,7 @@
 // Pokemon.hpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 5/22/2020
+// Last updated on 5/30/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
@@ -40,8 +40,8 @@ class Pokemon
 
 	Pokemon();
 
-	Pokemon(const std::string& name, unsigned int index, std::shared_ptr<Type> type1,
-			std::shared_ptr<Type> type2, unsigned char baseHP, unsigned char baseAtk, unsigned char baseDef, 
+	Pokemon(const std::string& name, unsigned int index, const std::shared_ptr<Type>& type1,
+			const std::shared_ptr<Type>& type2, unsigned char baseHP, unsigned char baseAtk, unsigned char baseDef,
 			unsigned char baseSpAtk, unsigned char baseSpDef, unsigned char baseSpd,
 			float height, float weight, std::shared_ptr<Ability> ability1, std::shared_ptr<Ability> ability2,
 			std::shared_ptr<Pokemon> evol);
@@ -91,9 +91,27 @@ class Pokemon
 class Player_Pokemon : public Pokemon
 {
 	std::string _nickname;
-	std::shared_ptr<Type> _battleType1;
-	std::shared_ptr<Type> _battleType2;
-	std::array<unsigned short int, 6> _stats;
+	std::array<float, 6> _stats;
+
+	std::string nickname() const;
+
+	// Returns _stats[0]
+	unsigned char HP() const;
+
+	// Returns _stats[1]
+	unsigned char Atk() const;
+
+	// Returns _stats[2]
+	unsigned char Def() const;
+
+	// Returns _stats[3]
+	unsigned char SpAtk() const;
+
+	// Returns _stats[4]
+	unsigned char SpDef() const;
+
+	// Returns _stats[5]
+	unsigned char Speed() const;
 };
 
 extern std::shared_ptr<Pokemon> Jigglypuff;

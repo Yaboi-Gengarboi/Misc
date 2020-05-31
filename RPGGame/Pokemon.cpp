@@ -24,8 +24,8 @@ using std::make_shared;
 
 Pokemon::Pokemon() { /* See Pokemon.hpp for default values */ }
 
-Pokemon::Pokemon(const string& name, unsigned int index, shared_ptr<Type> type1,
-				 shared_ptr<Type> type2, unsigned char baseHP, unsigned char baseAtk, unsigned char baseDef,
+Pokemon::Pokemon(const string& name, unsigned int index, const shared_ptr<Type>& type1,
+				 const shared_ptr<Type>& type2, unsigned char baseHP, unsigned char baseAtk, unsigned char baseDef,
 				 unsigned char baseSpAtk, unsigned char baseSpDef, unsigned char baseSpd,
 				 float height, float weight, shared_ptr<Ability> ability1, shared_ptr<Ability> ability2,
 				 shared_ptr<Pokemon> evol)
@@ -57,12 +57,12 @@ unsigned int Pokemon::index() const
 	return _index;
 }
 
-std::shared_ptr<Type> Pokemon::type1() const
+shared_ptr<Type> Pokemon::type1() const
 {
 	return _type1;
 }
 
-std::shared_ptr<Type> Pokemon::type2() const
+shared_ptr<Type> Pokemon::type2() const
 {
 	return _type2;
 }

@@ -2,7 +2,7 @@
 // main.cpp
 // Justyn Durnford
 // Created on 4/27/2020
-// Last updated on 5/27/2020
+// Last updated on 5/30/2020
 
 #include "Type.hpp"
 
@@ -18,39 +18,21 @@ using sf::Sprite;
 
 #include <string>
 using std::string;
+using std::size_t;
 using std::to_string;
 
 #include <cctype>
 using std::isdigit;
 
+#include <memory>
+using std::unique_ptr;
+using std::make_unique;
+
 #include <iostream>
 using std::cout;
 using std::endl;
 
-string modify(string& str)
-{
-	string new_str = "";
 
-	for (unsigned char i = 0; i < 4; ++i)
-	{
-		if (isdigit(str[i]))
-		{
-			new_str += str[i];
-		}
-		else
-		{
-			new_str += " || ";
-			break;
-		}
-	}
-
-	for (unsigned char i = 0; i < types.size(); ++i)
-	{
-
-	}
-
-
-}
 
 int main()
 {
@@ -75,7 +57,13 @@ int main()
 		window.display();
 	}*/
 
+	for (unsigned int i = 42; i <= 649; ++i)
+	{
+		if (i < 100)
+			cout << '0';
 
+		cout << i << " | " << endl;
+	}
 
 	return 0;
 }

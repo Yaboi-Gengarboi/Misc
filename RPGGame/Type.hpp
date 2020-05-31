@@ -2,14 +2,13 @@
 // Type.hpp
 // Justyn Durnford
 // Created on 4/7/2020
-// Last updated on 5/27/2020
+// Last updated on 5/29/2020
 
 #ifndef TYPE_HPP
 #define TYPE_HPP
 
 #include <string>
 #include <memory>
-#include <array>
 
 struct Type
 {
@@ -22,11 +21,28 @@ struct Type
     ~Type();
 };
 
-bool operator == (std::shared_ptr<Type> t1, std::shared_ptr<Type> t2);
+bool operator == (const std::shared_ptr<Type>& t1, const std::shared_ptr<Type>& t2);
 
-bool operator != (std::shared_ptr<Type> t1, std::shared_ptr<Type> t2);
+bool operator != (const std::shared_ptr<Type>& t1, const std::shared_ptr<Type>& t2);
 
-extern std::array<std::shared_ptr<Type>, 18> types;
+extern std::shared_ptr<Type> Normal;
+extern std::shared_ptr<Type> Fighting;
+extern std::shared_ptr<Type> Flying;
+extern std::shared_ptr<Type> Poison;
+extern std::shared_ptr<Type> Ground;
+extern std::shared_ptr<Type> Rock;
+extern std::shared_ptr<Type> Bug;
+extern std::shared_ptr<Type> Ghost;
+extern std::shared_ptr<Type> Steel;
+extern std::shared_ptr<Type> Fire;
+extern std::shared_ptr<Type> Water;
+extern std::shared_ptr<Type> Grass;
+extern std::shared_ptr<Type> Electric;
+extern std::shared_ptr<Type> Psychic;
+extern std::shared_ptr<Type> Ice;
+extern std::shared_ptr<Type> Dragon;
+extern std::shared_ptr<Type> Dark;
+extern std::shared_ptr<Type> Fairy;
 
 extern const float type_matchup[18][18];
 

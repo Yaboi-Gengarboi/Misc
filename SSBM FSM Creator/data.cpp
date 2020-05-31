@@ -11,21 +11,6 @@
 #include <vector>
 using std::vector;
 
-vector<Character> character_list =
-{
-    { "Captain Falcon", 0x0 }, { "Donkey Kong", 0x1 }, { "Fox", 0x2 },
-    { "Game&Watch", 0x3 }, { "Kirby", 0x4 }, { "Bowser", 0x5 },
-    { "Link", 0x6 }, { "Luigi", 0x7 }, { "Mario", 0x8 },
-    { "Marth", 0x9 }, { "Mewtwo", 0xa }, { "Ness", 0xb },
-    { "Peach", 0xc }, { "Pikachu", 0xd }, { "Ice Climbers", 0xe },
-    { "Jigglypuff", 0xf }, { "Samus", 0x10 }, { "Yoshi", 0x11 }, 
-    { "Zelda", 0x12 }, { "Sheik", 0x13 }, { "Falco", 0x14 },
-    { "Young Link", 0x15 }, { "Dr. Mario", 0x16 }, { "Roy", 0x17 },
-    { "Pichu", 0x18 }, { "Ganondorf", 0x19 }, { "Popo", 0x1a }
-};
-
-character_list[0]
-
 vector<Subaction> common_subaction_list =
 {
     { "Spot Dodge", 0x029 },
@@ -45,7 +30,7 @@ vector<Subaction> common_subaction_list =
     { "Side Tilt Midlow", 0x038 },
     { "Side Tilt Low", 0x039 },
     { "Up Tilt", 0x03a },
-    { "Down Tilt", 0x03Bb },
+    { "Down Tilt", 0x03b },
     { "Side Smash High", 0x03c },
     { "Side Smash Midhigh", 0x03d },
     { "Side Smash Middle", 0x03e },
@@ -84,7 +69,7 @@ vector<Subaction> common_subaction_list =
     { "Down Throw", 0x0fa }
 };
 
-vector<subaction> Captain_Falcon_subaction_list =
+vector<Subaction> Captain_Falcon_subaction_list =
 {
     { "Falcon Punch (Ground)", 0x12d },
     { "Falcon Punch (Aerial)", 0x12e },
@@ -104,7 +89,7 @@ vector<subaction> Captain_Falcon_subaction_list =
     { "Falcon Kick (Aerial End in Air)", 0x13c }
 };
 
-vector<subaction> Donkey_Kong_subaction_list =
+vector<Subaction> Donkey_Kong_subaction_list =
 {
     { "Cargo Foward Throw", 0x13b },
     { "Cargo Back Throw", 0x13c },
@@ -130,7 +115,7 @@ vector<subaction> Donkey_Kong_subaction_list =
     { "Hand Slap End 2", 0x150 }
 };
 
-vector<subaction> Fox_subaction_list =
+vector<Subaction> Fox_subaction_list =
 {
     { "Blaster Start (Ground)", 0x127 },
     { "Blaster Loop (Ground)", 0x128 },
@@ -160,7 +145,7 @@ vector<subaction> Fox_subaction_list =
     { "Reflector End (Aerial)", 0x140 }
 };
 
-vector<subaction> Game_and_Watch_subaction_list =
+vector<Subaction> Game_and_Watch_subaction_list =
 {
     { "Chef (Ground)", 0x127 },
     { "Chef (Aerial)", 0x128 },
@@ -882,7 +867,7 @@ vector<subaction> Pichu_subaction_list =
 };
 */
 
-vector<subaction> Ganondorf_subaction_list =
+vector<Subaction> Ganondorf_subaction_list =
 {
     { "Warlock Punch (Ground)", 0x12d },
     { "Warlock Punch (Aerial)", 0x12e },
