@@ -142,6 +142,7 @@
     <ClInclude Include="Jfraction.hpp" />
     <ClInclude Include="Jint.hpp" />
     <ClInclude Include="Jmatrix.hpp" />
+    <ClInclude Include="Jstring.hpp" />
     <ClInclude Include="Jpoint3f.hpp" />
     <ClInclude Include="Jtimer.hpp" />
     <ClInclude Include="JLib.hpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="Jfraction.cpp" />
     <ClCompile Include="Jint.cpp" />
     <ClCompile Include="Jmatrix.cpp" />
+    <ClCompile Include="Jstringcpp" />
     <ClCompile Include="Jpoint3f.cpp" />
     <ClCompile Include="Jtimer.cpp" />
     <ClCompile Include="Jvector3f.cpp" />

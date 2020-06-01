@@ -1,7 +1,7 @@
 // test_file.cpp
 // Justyn P. Durnford
 // Created on 1/18/2020
-// Last updated on 5/27/2020
+// Last updated on 5/31/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -9,7 +9,7 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#include "JVector3f.hpp"
+#include "Jmisc.hpp"
 
 #include <string>
 using std::string;
@@ -17,9 +17,6 @@ using std::to_string;
 
 #include <iostream>
 using std::cout;
-
-#include <vector>
-using std::vector;
 
 #include <random>
 using std::random_device;
@@ -47,9 +44,9 @@ void println(const string& str)
 	cout << str << '\n';
 }
 
-unsigned int str_length(const char* str)
+unsigned long long str_length(const char* str)
 {
-	unsigned int i = 0;
+	unsigned long long i = 0;
 	while (str[i] != '\0')
 		++i;
 	return i;
@@ -67,11 +64,10 @@ unsigned int str_length(const char* str)
 
 int main(int argc, char** argv)
 {
-	Jvector3f vec1;
-	Jvector3f vec2 = vec1;
-
-	println(vec1.toString());
-	println(vec2.toString());
+	for (unsigned long long i = 0; i <= 100; ++i)
+	{
+		println(to_hex(i));
+	}
 
 	return 0;
 }

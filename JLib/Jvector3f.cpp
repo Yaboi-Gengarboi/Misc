@@ -124,56 +124,56 @@ Jpoint3f Jvector3f::toPoint() const
 	return Jpoint3f(_x, _y, _z);
 }
 
-Jvector3f operator + (const Jvector3f& vec1, const Jvector3f& vec2)
-{
-	float x = vec1.x() + vec2.x();
-
-}
-
-Jvector3f& operator += (Jvector3f& vec1, const Jvector3f& vec2)
-{
-
-}
-
-Jvector3f operator - (const Jvector3f& vec1, const Jvector3f& vec2)
-{
-
-}
-
-Jvector3f& operator -= (Jvector3f& vec1, const Jvector3f& vec2)
-{
-
-}
-
-Jvector3f operator * (const Jvector3f& vec1, const Jvector3f& vec2)
-{
-
-}
-
-Jvector3f& operator *= (Jvector3f& vec, float f)
-{
-
-}
-
-Jvector3f& operator *= (Jvector3f& vec1, const Jvector3f& vec2)
-{
-
-}
-
-Jvector3f operator / (const Jvector3f& vec1, const Jvector3f& vec2)
-{
-
-}
-
-Jvector3f& operator /= (Jvector3f& vec, float f)
-{
-
-}
-
-Jvector3f& operator /= (Jvector3f& vec1, const Jvector3f& vec2)
-{
-
-}
+//Jvector3f operator + (const Jvector3f& vec1, const Jvector3f& vec2)
+//{
+//	float x = vec1.x() + vec2.x();
+//
+//}
+//
+//Jvector3f& operator += (Jvector3f& vec1, const Jvector3f& vec2)
+//{
+//
+//}
+//
+//Jvector3f operator - (const Jvector3f& vec1, const Jvector3f& vec2)
+//{
+//
+//}
+//
+//Jvector3f& operator -= (Jvector3f& vec1, const Jvector3f& vec2)
+//{
+//
+//}
+//
+//Jvector3f operator * (const Jvector3f& vec1, const Jvector3f& vec2)
+//{
+//
+//}
+//
+//Jvector3f& operator *= (Jvector3f& vec, float f)
+//{
+//
+//}
+//
+//Jvector3f& operator *= (Jvector3f& vec1, const Jvector3f& vec2)
+//{
+//
+//}
+//
+//Jvector3f operator / (const Jvector3f& vec1, const Jvector3f& vec2)
+//{
+//
+//}
+//
+//Jvector3f& operator /= (Jvector3f& vec, float f)
+//{
+//
+//}
+//
+//Jvector3f& operator /= (Jvector3f& vec1, const Jvector3f& vec2)
+//{
+//
+//}
 
 bool operator == (const Jvector3f& vec1, const Jvector3f& vec2)
 {
