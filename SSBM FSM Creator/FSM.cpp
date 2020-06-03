@@ -2,7 +2,7 @@
 // FSM.cpp
 // Justyn Durnford
 // Created on 12/18/2019
-// Last updated on 5/31/2020
+// Last updated on 6/3/2020
 
 #include "FSM.hpp"
 
@@ -237,4 +237,3 @@ vector<Character> character_list =
 	{ "Young Link", 0x15 }, { "Dr. Mario", 0x16 }, { "Roy", 0x17 },
 	{ "Pichu", 0x18 }, { "Ganondorf", 0x19 }, { "Popo", 0x1a }
 };
-

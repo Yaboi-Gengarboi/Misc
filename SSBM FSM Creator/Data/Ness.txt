@@ -1,0 +1,75 @@
+0x029 Spot Dodge
+0x02a Forward Roll
+0x02b Back Roll
+0x02c Air Dodge
+0x02e Jab 1
+0x02f Jab 2
+0x030 Jab 3
+0x034 Dash Attack
+0x035 Side Tilt High
+0x037 Side Tilt Middle
+0x039 Side Tilt Low
+0x03a Up Tilt
+0x03b Down Tilt
+0x03e Side Smash Middle
+0x042 Up Smash
+0x043 Down Smash
+0x044 Neutral Aerial
+0x045 Foward Aerial
+0x046 Back Aerial
+0x047 Up Aerial
+0x049 Down Aerial
+0x0c7 Neutral Tech
+0x0c8 Forward Tech
+0x0c9 Back Tech
+0x0ca Wall Tech
+0x0cb Wall Jump Tech
+0x0cc Ceiling Tech
+0x0db Ledge Getup Slow
+0x0dc Ledge Getup Fast
+0x0dd Ledge Attack Slow
+0x0de Ledge Attack Fast
+0x0df Ledge Roll Slow
+0x0e0 Ledge Roll Fast
+0x0e1 Ledge Jump 1 Slow
+0x0e2 Ledge Jump 2 Slow
+0x0e3 Ledge Jump 1 Fast
+0x0e4 Ledge Jump 2 Fast
+0x0ef Left Taunt
+0x0f0 Right Taunt
+0x0f2 Grab
+0x0f3 Dash Grab
+0x0f7 Forward Throw
+0x0f8 Back Throw
+0x0f9 Up Throw
+0x0fa Down Throw
+0x127 Up Smash 2
+0x128 Up Smash 3
+0x129 Down Smash 2
+0x12a Down Smash 3
+0x12b PK Flash Start (Ground)
+0x12c PK Flash Hold 1 (Ground)
+0x12d PK Flash Hold 2 (Ground)
+0x12e PK Flash End (Ground)
+0x12f PK Flash Start (Aerial)
+0x130 PK Flash Hold 1 (Aerial)
+0x131 PK Flash Hold 2 (Aerial)
+0x132 PK Flash End (Aerial)
+0x133 PK Fire (Ground)
+0x134 PK Fire (Aerial)
+0x135 PK Thunder Start (Ground)
+0x136 PK Thunder Hold (Ground)
+0x137 PK Thunder End (Ground)
+0x138 PK Thunder Launch (Ground)
+0x139 PK Thunder Start (Aerial)
+0x13a PK Thunder Hold (Aerial)
+0x13b PK Thunder End (Aerial)
+0x13c PK Thunder Launch (Aerial)
+0x13e PSI Magnet Start (Ground)
+0x13f PSI Magnet Hold (Ground)
+0x140 PSI Magnet Absorb (Ground)
+0x141 PSI Magnet End (Ground)
+0x142 PSI Magnet Start (Aerial)
+0x143 PSI Magnet Hold (Aerial)
+0x144 PSI Magnet Absorb (Aerial)
+0x145 PSI Magnet End (Aerial)

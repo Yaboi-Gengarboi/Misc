@@ -152,8 +152,8 @@
     <ClCompile Include="Jfraction.cpp" />
     <ClCompile Include="Jint.cpp" />
     <ClCompile Include="Jmatrix.cpp" />
-    <ClCompile Include="Jstringcpp" />
     <ClCompile Include="Jpoint3f.cpp" />
+    <ClCompile Include="Jstring.cpp" />
     <ClCompile Include="Jtimer.cpp" />
     <ClCompile Include="Jvector3f.cpp" />
     <ClCompile Include="test_file.cpp" />

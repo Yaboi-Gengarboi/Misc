@@ -1,0 +1,71 @@
+0x029 Spot Dodge
+0x02a Forward Roll
+0x02b Back Roll
+0x02c Air Dodge
+0x02e Jab 1
+0x02f Jab 2
+0x034 Dash Attack
+0x035 Side Tilt High
+0x037 Side Tilt Middle
+0x039 Side Tilt Low
+0x03a Up Tilt
+0x03b Down Tilt
+0x03e Side Smash Middle
+0x042 Up Smash
+0x043 Down Smash
+0x044 Neutral Aerial
+0x045 Foward Aerial
+0x046 Back Aerial
+0x047 Up Aerial
+0x049 Down Aerial
+0x0c7 Neutral Tech
+0x0c8 Forward Tech
+0x0c9 Back Tech
+0x0ca Wall Tech
+0x0cb Wall Jump Tech
+0x0cc Ceiling Tech
+0x0db Ledge Getup Slow
+0x0dc Ledge Getup Fast
+0x0dd Ledge Attack Slow
+0x0de Ledge Attack Fast
+0x0df Ledge Roll Slow
+0x0e0 Ledge Roll Fast
+0x0e1 Ledge Jump 1 Slow
+0x0e2 Ledge Jump 2 Slow
+0x0e3 Ledge Jump 1 Fast
+0x0e4 Ledge Jump 2 Fast
+0x0ef Left Taunt
+0x0f0 Right Taunt
+0x0f2 Grab
+0x0f3 Dash Grab
+0x0f7 Forward Throw
+0x0f8 Back Throw
+0x0f9 Up Throw
+0x0fa Down Throw
+0x12c Rollout Start Right (Ground)
+0x12d Rollout Start Left (Ground)
+0x12e Rollout 1 (Ground)
+0x12f Rollout 2 (Ground)
+0x130 Rollout 3 (Ground)
+0x131 Rollout 4 (Ground)
+0x132 Rollout End Right (Ground)
+0x133 Rollout End Left (Ground)
+0x134 Rollout Start Right (Aerial)
+0x135 Rollout Start Left (Aerial)
+0x136 Rollout 1 (Aerial)
+0x137 Rollout 2 (Aerial)
+0x138 Rollout 3 (Aerial)
+0x139 Rollout 4 (Aerial)
+0x13a Rollout End Right (Aerial)
+0x13b Rollout End Left (Aerial)
+0x13c Rollout 5
+0x13d Pound (Ground)
+0x13e Pound (Aerial)
+0x13f Sing Left (Ground)
+0x140 Sing Left (Aerial)
+0x141 Sing Right (Ground)
+0x142 Sing Right (Aerial)
+0x143 Rest Left (Ground)
+0x144 Rest Left (Aerial)
+0x145 Rest Right (Ground)
+0x146 Rest Right (Aerial)

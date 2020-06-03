@@ -1,0 +1,58 @@
+0x029 Spot Dodge
+0x02a Forward Roll
+0x02b Back Roll
+0x02c Air Dodge
+0x02e Jab 1
+0x02f Jab 2
+0x034 Dash Attack
+0x035 Side Tilt High
+0x037 Side Tilt Middle
+0x039 Side Tilt Low
+0x03a Up Tilt
+0x03b Down Tilt
+0x03e Side Smash Middle
+0x042 Up Smash
+0x043 Down Smash
+0x044 Neutral Aerial
+0x045 Foward Aerial
+0x046 Back Aerial
+0x047 Up Aerial
+0x049 Down Aerial
+0x0c7 Neutral Tech
+0x0c8 Forward Tech
+0x0c9 Back Tech
+0x0ca Wall Tech
+0x0cb Wall Jump Tech
+0x0cc Ceiling Tech
+0x0db Ledge Getup Slow
+0x0dc Ledge Getup Fast
+0x0dd Ledge Attack Slow
+0x0de Ledge Attack Fast
+0x0df Ledge Roll Slow
+0x0e0 Ledge Roll Fast
+0x0e1 Ledge Jump 1 Slow
+0x0e2 Ledge Jump 2 Slow
+0x0e3 Ledge Jump 1 Fast
+0x0e4 Ledge Jump 2 Fast
+0x0ef Left Taunt
+0x0f0 Right Taunt
+0x0f2 Grab
+0x0f3 Dash Grab
+0x0f7 Forward Throw
+0x0f8 Back Throw
+0x0f9 Up Throw
+0x0fa Down Throw
+0x127 Ice Shot (Ground)
+0x128 Ice Shot (Aerial)
+0x129 Squall Hammer 1 (Ground)
+0x12a Squall Hammer 2 (Ground)
+0x12b Squall Hammer 1 (Aerial)
+0x12c Squall Hammer 2 (Aerial)
+0x12d Belay Start (Ground)
+0x12e Belay Throw 1 (Ground)
+0x12f Belay Throw 2 (Ground)
+0x132 Belay Start (Aerial)
+0x133 Belay Throw 1 (Aerial)
+0x134 Belay Throw 2 (Aerial)
+0x137 Blizzard (Ground)
+0x138 Blizzard (Aerial)

@@ -138,7 +138,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="data.cpp" />
     <ClCompile Include="FSM.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

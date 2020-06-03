@@ -1,0 +1,203 @@
+0x029 Spot Dodge
+0x02a Forward Roll
+0x02b Back Roll
+0x02c Air Dodge
+0x02e Jab 1
+0x02f Jab 2
+0x031 Rapid Jab Start
+0x032 Rapid Jab Loop
+0x033 Rapid Jab End
+0x034 Dash Attack
+0x035 Side Tilt High
+0x037 Side Tilt Middle
+0x039 Side Tilt Low
+0x03a Up Tilt
+0x03b Down Tilt
+0x03c Side Smash High
+0x03e Side Smash Middle
+0x040 Side Smash Low
+0x042 Up Smash
+0x043 Down Smash
+0x044 Neutral Aerial
+0x045 Foward Aerial
+0x046 Back Aerial
+0x047 Up Aerial
+0x049 Down Aerial
+0x0c7 Neutral Tech
+0x0c8 Forward Tech
+0x0c9 Back Tech
+0x0ca Wall Tech
+0x0cb Wall Jump Tech
+0x0cc Ceiling Tech
+0x0db Ledge Getup Slow
+0x0dc Ledge Getup Fast
+0x0dd Ledge Attack Slow
+0x0de Ledge Attack Fast
+0x0df Ledge Roll Slow
+0x0e0 Ledge Roll Fast
+0x0e1 Ledge Jump 1 Slow
+0x0e2 Ledge Jump 2 Slow
+0x0e3 Ledge Jump 1 Fast
+0x0e4 Ledge Jump 2 Fast
+0x0ef Left Taunt
+0x0f0 Right Taunt
+0x0f2 Grab
+0x0f3 Dash Grab
+0x0f7 Forward Throw
+0x0f8 Back Throw
+0x0f9 Up Throw
+0x0fa Down Throw
+0x131 Inhale
+0x132 Inhale Loop
+0x133 Inhale End
+0x13e Inhale Swallow
+0x13f Inhale Spit
+0x142 Hammer (Ground)
+0x143 Hammer (Aerial)
+0x144 Final Cutter Start (Ground)
+0x145 Final Cutter (Ground)
+0x147 Final Cutter Landing (Ground)
+0x148 Final Cutter Start (Aerial)
+0x149 Final Cutter (Aerial)
+0x14b Final Cutter Landing (Aerial)
+0x14c Stone 1 (Ground)
+0x14d Stone 2 (Ground)
+0x14e Stone 3 (Ground)
+0x14f Stone 1 (Aerial)
+0x150 Stone 2 (Aerial)
+0x151 Stone 3 (Aerial)
+0x152 Fireball (Mario) (Ground)
+0x153 Fireball (Mario) (Aerial)
+0x154 Bow Start (Link) (Ground)
+0x155 Bow Loop (Link) (Ground)
+0x156 Bow Shoot (Link) (Ground)
+0x157 Bow Start (Link) (Aerial)
+0x158 Bow Loop (Link) (Aerial)
+0x159 Bow Shoot (Link) (Aerial)
+0x15a Charge Shot Start (Ground)
+0x15b Charge Shot Charging Loop (Ground)
+0x15c Charge Shot Cancel (Ground)
+0x15d Charge Shot Shoot (Ground)
+0x15e Charge Shot Start (Aerial)
+0x15f Charge Shot Shoot (Aerial)
+0x160 Egg Lay 1 (Ground)
+0x161 Egg Lay 2 (Ground)
+0x162 Egg Lay 3 (Ground)
+0x163 Egg Lay 1 (Aerial)
+0x164 Egg Lay 2 (Aerial)
+0x165 Egg Lay 3 (Aerial)
+0x166 Blaster Start (Fox) (Ground)
+0x167 Blaster Loop (Fox) (Ground)
+0x168 Blaster End (Fox) (Ground)
+0x169 Blaster Start (Fox) (Aerial)
+0x16a Blaster Loop (Fox) (Aerial)
+0x16b Blaster End (Fox) (Aerial)
+0x16c Thunder Jolt (Pikachu) (Ground)
+0x16d Thunder Jolt (Pikachu) (Aerial)
+0x16e Fireball (Luigi) (Ground)
+0x16f Fireball (Luigi) (Aerial)
+0x170 Falcon Punch (Ground)
+0x171 Falcon Punch (Aerial)
+0x172 PK Flash Start (Ground)
+0x173 PK Flash Hold 1 (Ground)
+0x174 PK Flash Hold 2 (Ground)
+0x175 PK Flash End (Ground)
+0x176 PK Flash Start (Aerial)
+0x177 PK Flash Hold 1 (Aerial)
+0x178 PK Flash Hold 2 (Aerial)
+0x179 PK Flash End (Aerial)
+0x17a Fire Breath Start (Ground)
+0x17b Fire Breath Loop (Ground)
+0x17c Fire Breath End (Ground)
+0x17d Fire Breath Start (Aerial)
+0x17e Fire Breath Loop (Aerial)
+0x17f Fire Breath End (Aerial)
+0x180 Toad Counter (Ground)
+0x181 Toad Hit (Ground)
+0x182 Toad Counter (Aerial)
+0x183 Toad Hit (Aerial)
+0x184 Ice Shot (Ground)
+0x185 Ice Shot (Aerial)
+0x186 Giant Punch Start (Ground)
+0x187 Giant Punch Loop (Ground)
+0x188 Giant Punch Cancel (Ground)
+0x189 Giant Punch (Ground)
+0x18a Giant Punch (2)(Ground)
+0x18b Giant Punch Start (Aerial)
+0x18c Giant Punch Loop (Aerial)
+0x18d Giant Punch Cancel (Aerial)
+0x18e Giant Punch (Aerial)
+0x18f Giant Punch (2)(Aerial)
+0x190 Nayru's Love (Ground)
+0x191 Nayru's Love (Aerial)
+0x192 Needle Storm Start (Ground)
+0x193 Needle Storm Charging Loop (Ground)
+0x194 Needle Storm Cancel (Ground)
+0x195 Needle Storm Shoot (Ground)
+0x196 Needle Storm Start (Aerial)
+0x197 Needle Storm Charging Loop (Aerial)
+0x198 Needle Storm Cancel (Aerial)
+0x199 Needle Storm Shoot (Aerial)
+0x19a Rollout Start Right (Ground)
+0x19b Rollout Start Left (Ground)
+0x19c Rollout 1 (Ground)
+0x19d Rollout 2 (Ground)
+0x19e Rollout 3 (Ground)
+0x19f Rollout 4 (Ground)
+0x1a0 Rollout End Right (Ground)
+0x1a1 Rollout End Left (Ground)
+0x1a2 Rollout Start Right (Aerial)
+0x1a3 Rollout Start Left (Aerial)
+0x1a4 Rollout 1 (Aerial)
+0x1a5 Rollout 2 (Aerial)
+0x1a6 Rollout 3 (Aerial)
+0x1a7 Rollout 4 (Aerial)
+0x1a8 Rollout End Right (Aerial)
+0x1a9 Rollout End Left (Aerial)
+0x1aa Rollout 5
+0x1ab Shield Breaker Start (Ground)
+0x1ac Shield Breaker Loop (Ground)
+0x1ad Shield Breaker End 1 (Ground)
+0x1ae Shield Breaker End 2 (Ground)
+0x1af Shield Breaker Start (Aerial)
+0x1b0 Shield Breaker Loop (Aerial)
+0x1b1 Shield Breaker End 1 (Aerial)
+0x1b2 Shield Breaker End 2 (Aerial)
+0x1b3 Shadow Ball Start (Ground)
+0x1b4 Shadow Ball Charging Loop (Ground)
+0x1b5 Shadow Ball Charged Loop (Ground)
+0x1b6 Shadow Ball Cancel (Ground)
+0x1b7 Shadow Ball End (Ground)
+0x1b8 Shadow Ball Start (Aerial)
+0x1b9 Shadow Ball Charging Loop (Aerial)
+0x1ba Shadow Ball Charged Loop (Aerial)
+0x1bb Shadow Ball Cancel (Aerial)
+0x1bc Shadow Ball End (Aerial)
+0x1bd Chef (Ground)
+0x1be Chef (Aerial)
+0x1bf Megavitamin (Ground)
+0x1c0 Megavitamin (Aerial)
+0x1c1 Bow Start (Young Link) (Ground)
+0x1c2 Bow Loop (Young Link) (Ground)
+0x1c3 Bow Shoot (Young Link) (Ground)
+0x1c4 Bow Start (Young Link) (Aerial)
+0x1c5 Bow Loop (Young Link) (Aerial)
+0x1c6 Bow Shoot (Young Link) (Aerial)
+0x1c7 Blaster Start (Falco) (Ground)
+0x1c8 Blaster Loop (Falco) (Ground)
+0x1c9 Blaster End (Falco) (Ground)
+0x1ca Blaster Start (Falco) (Aerial)
+0x1cb Blaster Loop (Falco) (Aerial)
+0x1cc Blaster End (Falco) (Aerial)
+0x1cd Thunder Jolt (Pichu) (Ground)
+0x1ce Thunder Jolt (Pichu) (Aerial)
+0x1cf Warlock Punch (Ground)
+0x1d0 Warlock Punch (Aerial)
+0x1d1 Flare Blade Start (Ground)
+0x1d2 Flare Blade Loop (Ground)
+0x1d3 Flare Blade End 1 (Ground)
+0x1d4 Flare Blade End 2 (Ground)
+0x1d5 Flare Blade Start (Aerial)
+0x1d6 Flare Blade Loop (Aerial)
+0x1d7 Flare Blade End 1 (Aerial)
+0x1d8 Flare Blade End 2 (Aerial)

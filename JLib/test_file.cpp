@@ -9,7 +9,7 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#include "Jmisc.hpp"
+#include "Jstring.hpp"
 
 #include <string>
 using std::string;

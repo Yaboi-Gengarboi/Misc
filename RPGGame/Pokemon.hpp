@@ -2,7 +2,7 @@
 // Pokemon.hpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 5/30/2020
+// Last updated on 6/2/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP

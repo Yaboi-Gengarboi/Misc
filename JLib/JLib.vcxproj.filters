@@ -65,7 +65,7 @@
     <ClCompile Include="Jpoint3f.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Jstringcpp">
+    <ClCompile Include="Jstring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

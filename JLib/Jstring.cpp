@@ -19,6 +19,18 @@ string reverse_str(const string& str)
 	return newstr;
 }
 
+string replace(const string& str, const string& find, const string& repl)
+{
+	string newstr = "";
+
+	while (str.find(find) != -1)
+	{
+		
+	}
+
+	return newstr;
+}
+
 string to_hex(unsigned long long i)
 {
 	string hexstr = "";
