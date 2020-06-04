@@ -83,6 +83,8 @@ class FSM
 	bool friend operator != (const FSM& a, const FSM& b);
 };
 
+std::string to_hex(unsigned long long i);
+
 extern std::vector<Character> character_list;
 
 #endif // FSM_HPP

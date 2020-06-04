@@ -1,4 +1,0 @@
------English-----
-Captain Falcon, Falcon Punch (Ground), x2.0, Frame 0
--------Hex-------
-0000812D 40000000

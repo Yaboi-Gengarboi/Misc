@@ -225,6 +225,65 @@ bool operator != (const FSM& a, const FSM& b)
 	return false;
 }
 
+string reverse_str(const string& str)
+{
+	string newstr = "";
+
+	for (unsigned long long i = str.size(); i > 0; --i)
+		newstr += str[i - 1];
+
+	return newstr;
+}
+
+string to_hex(unsigned long long i)
+{
+	string hexstr = "";
+	unsigned char rem = 0;
+
+	if (i == 0)
+		return "0";
+
+	while (i != 0)
+	{
+		rem = i % 16;
+
+		switch (rem)
+		{
+			case 10:
+				hexstr += 'a';
+				break;
+
+			case 11:
+				hexstr += 'b';
+				break;
+
+			case 12:
+				hexstr += 'c';
+				break;
+
+			case 13:
+				hexstr += 'd';
+				break;
+
+			case 14:
+				hexstr += 'e';
+				break;
+
+			case 15:
+				hexstr += 'f';
+				break;
+
+			default:
+				hexstr += rem + 48;
+				break;
+		}
+
+		i /= 16;
+	}
+
+	return reverse_str(hexstr);
+}
+
 vector<Character> character_list =
 {
 	{ "Captain Falcon", 0x0 }, { "Donkey Kong", 0x1 }, { "Fox", 0x2 },
@@ -235,5 +294,5 @@ vector<Character> character_list =
 	{ "Jigglypuff", 0xf }, { "Samus", 0x10 }, { "Yoshi", 0x11 },
 	{ "Zelda", 0x12 }, { "Sheik", 0x13 }, { "Falco", 0x14 },
 	{ "Young Link", 0x15 }, { "Dr. Mario", 0x16 }, { "Roy", 0x17 },
-	{ "Pichu", 0x18 }, { "Ganondorf", 0x19 }, { "Popo", 0x1a }
+	{ "Pichu", 0x18 }, { "Ganondorf", 0x19 }
 };
