@@ -149,6 +149,7 @@
     <ClInclude Include="Vector3f.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Color.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="Big_Int.cpp" />
     <ClCompile Include="UChar_Matrix.cpp" />

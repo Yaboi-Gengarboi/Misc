@@ -42,17 +42,17 @@ class Color
 
 	unsigned char alpha() const;
 
-	void setRed(unsigned char red);
+	void setRed(unsigned char r);
 
-	void setGreen(unsigned char green);
+	void setGreen(unsigned char g);
 
-	void setBlue(unsigned char blue);
+	void setBlue(unsigned char b);
 
 	void setAlpha(unsigned char alpha);
 
 	std::string toString() const;
 
-	std::string toHexString() const;
+	std::string toHex() const;
 
 	Color& operator = (const Color& fr);
 	Color& operator = (unsigned char c_arr[3]);
