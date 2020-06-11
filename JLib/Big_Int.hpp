@@ -1,7 +1,7 @@
-// Jint.hpp
+// Big_Int.hpp
 // Justyn Durnford
 // Created on 4/9/2020
-// Last updated on 5/11/2020
+// Last updated on 6/11/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -9,27 +9,27 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#ifndef JINT_HPP
-#define JINT_HPP
+#ifndef BIG_INT_HPP
+#define BIG_INT_HPP
 
 #include <string>
 
-class Jint
+class Big_Int
 {
 	long long _front = 0;
 	unsigned long long _back = 0;
 
 	public:
 
-	Jint();
-	Jint(long long front, unsigned long long back);
-	Jint(const Jint& ji);
+	Big_Int();
+	Big_Int(long long front, unsigned long long back);
+	Big_Int(const Big_Int& ji);
 
-	~Jint();
+	~Big_Int();
 
 	std::string toString();
 };
 
-bool operator == (const Jint& ji1, const Jint& ji2);
+bool operator == (const Big_Int& ji1, const Big_Int& ji2);
 
-#endif // JINT_HPP
+#endif // BIG_INT_HPP

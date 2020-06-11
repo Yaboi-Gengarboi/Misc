@@ -138,24 +138,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Jcolor.hpp" />
-    <ClInclude Include="Jfraction.hpp" />
-    <ClInclude Include="Jint.hpp" />
-    <ClInclude Include="Jmatrix.hpp" />
-    <ClInclude Include="Jstring.hpp" />
-    <ClInclude Include="Jpoint3f.hpp" />
-    <ClInclude Include="Jtimer.hpp" />
+    <ClInclude Include="Color.hpp" />
+    <ClInclude Include="Fraction.hpp" />
+    <ClInclude Include="Big_Int.hpp" />
+    <ClInclude Include="UChar_Matrix.hpp" />
+    <ClInclude Include="Misc.hpp" />
+    <ClInclude Include="Point3f.hpp" />
+    <ClInclude Include="Timer.hpp" />
     <ClInclude Include="JLib.hpp" />
-    <ClInclude Include="Jvector3f.hpp" />
+    <ClInclude Include="Vector3f.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Jfraction.cpp" />
-    <ClCompile Include="Jint.cpp" />
-    <ClCompile Include="Jmatrix.cpp" />
-    <ClCompile Include="Jpoint3f.cpp" />
-    <ClCompile Include="Jstring.cpp" />
-    <ClCompile Include="Jtimer.cpp" />
-    <ClCompile Include="Jvector3f.cpp" />
+    <ClCompile Include="Fraction.cpp" />
+    <ClCompile Include="Big_Int.cpp" />
+    <ClCompile Include="UChar_Matrix.cpp" />
+    <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="Point3f.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Vector3f.cpp" />
     <ClCompile Include="test_file.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

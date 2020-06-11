@@ -18,28 +18,28 @@
     <ClInclude Include="JLib.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jfraction.hpp">
+    <ClInclude Include="Fraction.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jtimer.hpp">
+    <ClInclude Include="Timer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jmatrix.hpp">
+    <ClInclude Include="Point3f.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jint.hpp">
+    <ClInclude Include="Vector3f.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jcolor.hpp">
+    <ClInclude Include="Color.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jvector3f.hpp">
+    <ClInclude Include="Misc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jpoint3f.hpp">
+    <ClInclude Include="Big_Int.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Jstring.hpp">
+    <ClInclude Include="UChar_Matrix.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,25 +47,25 @@
     <ClCompile Include="test_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Jfraction.cpp">
+    <ClCompile Include="Fraction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Jtimer.cpp">
+    <ClCompile Include="Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Jmatrix.cpp">
+    <ClCompile Include="Point3f.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Jint.cpp">
+    <ClCompile Include="Vector3f.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Jvector3f.cpp">
+    <ClCompile Include="Misc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Jpoint3f.cpp">
+    <ClCompile Include="Big_Int.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Jstring.cpp">
+    <ClCompile Include="UChar_Matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

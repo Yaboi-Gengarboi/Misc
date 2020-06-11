@@ -1,10 +1,15 @@
-// JLib
-// Jstring.cpp
+// Misc.cpp
 // Justyn Durnford
-// Created on 5/31/2020
-// Last updated on 5/31/2020
+// Created on 6/11/2020
+// Last updated on 6/11/2020
 
-#include "Jstring.hpp"
+// This program is free software. It comes without any warranty, to
+// the extent permitted by applicable law. You can redistribute it
+// and/or modify it under the terms of the Do What The Fuck You Want
+// To Public License, Version 2, as published by Sam Hocevar. See
+// http://www.wtfpl.net/ for more details.
+
+#include "Misc.hpp"
 
 #include <string>
 using std::string;
@@ -25,7 +30,7 @@ string replace(const string& str, const string& find, const string& repl)
 
 	while (str.find(find) != -1)
 	{
-		
+
 	}
 
 	return newstr;
@@ -37,7 +42,7 @@ string to_hex(unsigned long long i)
 	unsigned char rem = 0;
 
 	if (i == 0)
-		return "0x0";
+		return "0";
 
 	while (i != 0)
 	{
@@ -77,5 +82,5 @@ string to_hex(unsigned long long i)
 		i /= 16;
 	}
 
-	return "0x" + reverse_str(hexstr);
+	return reverse_str(hexstr);
 }

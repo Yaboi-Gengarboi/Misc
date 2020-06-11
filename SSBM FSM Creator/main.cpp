@@ -2,7 +2,7 @@
 // main.cpp
 // Justyn Durnford
 // Created on 5/4/2020
-// Last updated on 6/3/2020
+// Last updated on 6/4/2020
 
 #define WIN32
 
@@ -35,10 +35,41 @@ struct GUI
 	Fl_Window* window = nullptr;
 	Fl_Output* character_label = nullptr;
 	Fl_Input_Choice* character_choice = nullptr;
+	Fl_Output* subaction_label = nullptr;
+	Fl_Input_Choice* subaction_choice = nullptr;
 	Fl_Multiline_Output* output = nullptr;
 };
 
+struct DATA
+{
+	Character current_character;
+	Subaction current_subaction;
+	unsigned char current_frame = 0;
+	float current_multiplier = 0;
+};
+
 GUI gui;
+DATA data;
+
+void set_subaction_list(Fl_Widget* widget)
+{
+	string character = gui.character_choice->value();
+
+	if (character.empty())
+		return;
+
+	for (unsigned char i = 0; i < character_list.size(); ++i)
+	{
+		if (character_list[i]._name == character)
+		{
+			gui.subaction_choice->clear();
+			for (unsigned short p = 0; p < character_list[i]._subList.size(); ++p)
+				gui.subaction_choice->add(character_list[i]._subList[p]._name.c_str());
+
+			return;
+		}
+	}
+}
 
 int main()
 {
@@ -68,6 +99,9 @@ int main()
 	{
 		gui.character_choice->add(character_list[i]._name.c_str());
 	}
+	gui.character_choice->callback(set_subaction_list);
+
+	gui.subaction_choice = new Fl_Input_Choice(220, 50, 200, 30);
 
 	gui.window->end();
 	gui.window->show();

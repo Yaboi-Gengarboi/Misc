@@ -1,7 +1,7 @@
-// Jtimer.cpp
+// Timer.cpp
 // Justyn Durnford
 // Created on 4/2/2020
-// Last updated on 5/27/2020
+// Last updated on 6/11/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -9,7 +9,7 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#include "Jtimer.hpp"
+#include "Timer.hpp"
 
 #include <chrono>
 using std::chrono::milliseconds;
@@ -20,26 +20,26 @@ using std::chrono::duration;
 #include <thread>
 using std::this_thread::sleep_for;
 
-Jtimer::Jtimer()
+Timer::Timer()
 {
 	_start = system_clock::now();
 }
 
-Jtimer::~Jtimer() { /* Destructor */ }
+Timer::~Timer() { /* Destructor */ }
 
-void Jtimer::start()
+void Timer::start()
 {
 	_start = system_clock::now();
 	_is_stopped = false;
 }
 
-void Jtimer::stop()
+void Timer::stop()
 {
 	_end = system_clock::now();
 	_is_stopped = true;
 }
 
-double Jtimer::secondsPassed() const
+double Timer::secondsPassed() const
 {
 	duration<double> time_elapsed;
 
@@ -52,7 +52,7 @@ double Jtimer::secondsPassed() const
 	return time_elapsed.count();
 }
 
-double Jtimer::millisecondsPassed() const
+double Timer::millisecondsPassed() const
 {
 	duration<double> time_elapsed;
 
@@ -65,7 +65,7 @@ double Jtimer::millisecondsPassed() const
 	return time_elapsed.count() * 1000;
 }
 
-void wait(unsigned int time)
+void Timer::wait(unsigned int time)
 {
 	sleep_for(milliseconds(time));
 }

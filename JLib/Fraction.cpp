@@ -1,7 +1,7 @@
-// Jfraction.cpp
+// Fraction.cpp
 // Justyn P. Durnford
 // Created on 12/14/2019
-// Last updated on 5/11/2020
+// Last updated on 6/11/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -9,70 +9,70 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#include "Jfraction.hpp"
+#include "Fraction.hpp"
 
-// #include <string>
+#include <string>
 using std::string;
 using std::to_string;
 
-Jfraction::Jfraction() { /* Default values are 0 */ }
+Fraction::Fraction() { /* Default values are 0 */ }
 
-Jfraction::Jfraction(int numer, int denom)
+Fraction::Fraction(int numer, int denom)
 {
 	_numerator = numer;
 	_denominator = denom;
 }
 
-Jfraction::Jfraction(int fr_arr[2])
+Fraction::Fraction(int fr_arr[2])
 {
 	_numerator = fr_arr[0];
 	_denominator = fr_arr[1];
 }
 
-Jfraction::Jfraction(const Jfraction& fr)
+Fraction::Fraction(const Fraction& fr)
 {
 	_numerator = fr.getNumerator();
 	_denominator = fr.getDenominator();
 }
 
-Jfraction::~Jfraction() { /* Destructor */ }
+Fraction::~Fraction() { /* Destructor */ }
 
-int Jfraction::getNumerator() const
+int Fraction::getNumerator() const
 {
 	return _numerator;
 }
 
-int Jfraction::getDenominator() const
+int Fraction::getDenominator() const
 {
 	return _denominator;
 }
 
-void Jfraction::setNumerator(int numer)
+void Fraction::setNumerator(int numer)
 {
 	_numerator = numer;
 }
 
-void Jfraction::setDenominator(int denom)
+void Fraction::setDenominator(int denom)
 {
 	_denominator = denom;
 }
 
-int Jfraction::intResult() const
+int Fraction::intResult() const
 {
 	return _numerator / _denominator;
 }
 
-double Jfraction::doubleResult() const
+double Fraction::doubleResult() const
 {
 	return ( ( 1.0 * _numerator ) / ( 1.0 * _denominator ) );
 }
 
-bool Jfraction::isValid() const
+bool Fraction::isValid() const
 {
 	return _denominator == 0;
 }
 
-string Jfraction::toString() const
+string Fraction::toString() const
 {
 	string str = "";
 	str += to_string(_numerator);
@@ -81,21 +81,21 @@ string Jfraction::toString() const
 	return str;
 }
 
-Jfraction& Jfraction::operator = (const Jfraction& fr)
+Fraction& Fraction::operator = (const Fraction& fr)
 {
 	_numerator = fr.getNumerator();
 	_denominator = fr.getDenominator();
 	return *this;
 }
 
-Jfraction& Jfraction::operator = (int i)
+Fraction& Fraction::operator = (int i)
 {
 	_numerator = i;
 	_denominator = 1;
 	return *this;
 }
 
-Jfraction& Jfraction::operator += (const Jfraction& fr)
+Fraction& Fraction::operator += (const Fraction& fr)
 {
 	int fr_arr[2] = { fr.getNumerator(), fr.getDenominator() };
 	int temp = 0;
@@ -114,14 +114,14 @@ Jfraction& Jfraction::operator += (const Jfraction& fr)
 	return *this;
 }
 
-Jfraction& Jfraction::operator += (int i)
+Fraction& Fraction::operator += (int i)
 {
 	i *= _denominator;
 	_numerator += i;
 	return *this;
 }
 
-Jfraction& Jfraction::operator -= (const Jfraction& fr)
+Fraction& Fraction::operator -= (const Fraction& fr)
 {
 	int fr_arr[2] = { fr.getNumerator(), fr.getDenominator() };
 	int temp = 0;
@@ -140,40 +140,40 @@ Jfraction& Jfraction::operator -= (const Jfraction& fr)
 	return *this;
 }
 
-Jfraction& Jfraction::operator -= (int i)
+Fraction& Fraction::operator -= (int i)
 {
 	i *= _denominator;
 	_numerator -= i;
 	return *this;
 }
 
-Jfraction& Jfraction::operator *= (const Jfraction& fr)
+Fraction& Fraction::operator *= (const Fraction& fr)
 {
 	_numerator *= fr.getNumerator();
 	_denominator *= fr.getDenominator();
 	return *this;
 }
 
-Jfraction& Jfraction::operator *= (int i)
+Fraction& Fraction::operator *= (int i)
 {
 	_numerator *= i;
 	return *this;
 }
 
-Jfraction& Jfraction::operator /= (const Jfraction& fr)
+Fraction& Fraction::operator /= (const Fraction& fr)
 {
 	_numerator *= fr.getDenominator();
 	_denominator *= fr.getNumerator();
 	return *this;
 }
 
-Jfraction& Jfraction::operator /= (int i)
+Fraction& Fraction::operator /= (int i)
 {
 	_denominator *= i;
 	return *this;
 }
 
-Jfraction operator + (const Jfraction& fr1, const Jfraction& fr2)
+Fraction operator + (const Fraction& fr1, const Fraction& fr2)
 {
 	int numer = 0;
 	int denom = 0;
@@ -184,22 +184,22 @@ Jfraction operator + (const Jfraction& fr1, const Jfraction& fr2)
 		numer = fr1.getNumerator() * fr2.getDenominator() + fr2.getNumerator() * fr1.getDenominator();
 	}
 
-	Jfraction newfr(numer, denom);
+	Fraction newfr(numer, denom);
 	return newfr;
 }
 
-Jfraction operator + (const Jfraction& fr, int i)
+Fraction operator + (const Fraction& fr, int i)
 {
 	int numer = fr.getNumerator();
 	int denom = fr.getDenominator();
 
 	numer += i * fr.getDenominator();
 
-	Jfraction newfr(numer, denom);
+	Fraction newfr(numer, denom);
 	return newfr;
 }
 
-Jfraction operator - (const Jfraction& fr1, const Jfraction& fr2)
+Fraction operator - (const Fraction& fr1, const Fraction& fr2)
 {
 	int numer = 0;
 	int denom = 0;
@@ -210,83 +210,83 @@ Jfraction operator - (const Jfraction& fr1, const Jfraction& fr2)
 		numer = fr1.getNumerator() * fr2.getDenominator() - fr2.getNumerator() * fr1.getDenominator();
 	}
 
-	Jfraction newfr(numer, denom);
+	Fraction newfr(numer, denom);
 	return newfr;
 }
 
-Jfraction operator - (const Jfraction& fr, int i)
+Fraction operator - (const Fraction& fr, int i)
 {
 	int numer = fr.getNumerator();
 	int denom = fr.getDenominator();
 
 	numer -= i * fr.getDenominator();
 
-	Jfraction newfr(numer, denom);
+	Fraction newfr(numer, denom);
 	return newfr;
 }
 
-Jfraction operator * (const Jfraction& fr1, const Jfraction& fr2)
+Fraction operator * (const Fraction& fr1, const Fraction& fr2)
 {
 	int numer = fr1.getNumerator() * fr2.getNumerator();
 	int denom = fr1.getDenominator() * fr2.getDenominator();
 
-	Jfraction newfr(numer, denom);
+	Fraction newfr(numer, denom);
 	return newfr;
 }
 
-Jfraction operator * (const Jfraction& fr, int i)
+Fraction operator * (const Fraction& fr, int i)
 {
 	int numer = fr.getNumerator() * i;
 	int denom = fr.getDenominator();
 
-	Jfraction newfr(numer, denom);
+	Fraction newfr(numer, denom);
 	return newfr;
 }
 
-Jfraction operator / (const Jfraction& fr1, const Jfraction& fr2)
+Fraction operator / (const Fraction& fr1, const Fraction& fr2)
 {
 	int numer = fr1.getNumerator() * fr2.getDenominator();
 	int denom = fr1.getDenominator() * fr2.getNumerator();
 
-	Jfraction newfr(numer, denom);
+	Fraction newfr(numer, denom);
 	return newfr;
 }
 
-Jfraction operator / (const Jfraction& fr, int i)
+Fraction operator / (const Fraction& fr, int i)
 {
 	int numer = fr.getNumerator();
 	int denom = fr.getDenominator() * i;
 
-	Jfraction newfr(numer, denom);
+	Fraction newfr(numer, denom);
 	return newfr;
 }
 
-bool operator == (const Jfraction& fr1, const Jfraction& fr2)
+bool operator == (const Fraction& fr1, const Fraction& fr2)
 {
 	return false;
 }
 
-bool operator == (const Jfraction& fr, int i)
+bool operator == (const Fraction& fr, int i)
 {
 	return false;
 }
 
-bool operator == (const Jfraction& fr, double d)
+bool operator == (const Fraction& fr, double d)
 {
 	return false;
 }
 
-bool operator != (const Jfraction& fr1, const Jfraction& fr2)
+bool operator != (const Fraction& fr1, const Fraction& fr2)
 {
 	return false;
 }
 
-bool operator != (const Jfraction& fr, int i)
+bool operator != (const Fraction& fr, int i)
 {
 	return false;
 }
 
-bool operator != (const Jfraction& fr, double d)
+bool operator != (const Fraction& fr, double d)
 {
 	return false;
 }

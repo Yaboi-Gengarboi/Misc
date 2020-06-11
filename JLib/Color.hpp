@@ -1,7 +1,7 @@
-// Jcolor.hpp
+// Color.hpp
 // Justyn Durnford
 // Created on 4/17/2020
-// Last updated on 5/11/2020
+// Last updated on 6/11/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -9,12 +9,12 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#ifndef JCOLOR_HPP
-#define JCOLOR_HPP
+#ifndef COLOR_HPP
+#define COLOR_HPP
 
 #include <string>
 
-class Jcolor
+class Color
 {
 	unsigned char _r = 0;
 	unsigned char _g = 0;
@@ -25,14 +25,14 @@ class Jcolor
 
 	static const unsigned char MAX = 255;
 
-	Jcolor();
-	Jcolor(unsigned char r, unsigned char g, unsigned char b);
-	Jcolor(unsigned char c_arr[3]);
-	Jcolor(unsigned char r, unsigned char g, unsigned char b, unsigned char alpha);
-	Jcolor(unsigned char c_arr[4]);
-	Jcolor(const Jcolor& c);
+	Color();
+	Color(unsigned char r, unsigned char g, unsigned char b);
+	Color(unsigned char c_arr[3]);
+	Color(unsigned char r, unsigned char g, unsigned char b, unsigned char alpha);
+	Color(unsigned char c_arr[4]);
+	Color(const Color& c);
 
-	~Jcolor();
+	~Color();
 
 	unsigned char red() const;
 
@@ -54,12 +54,12 @@ class Jcolor
 
 	std::string toHexString() const;
 
-	Jcolor& operator = (const Jcolor& fr);
-	Jcolor& operator = (unsigned char c_arr[3]);
-	Jcolor& operator = (unsigned char c_arr[4]);
+	Color& operator = (const Color& fr);
+	Color& operator = (unsigned char c_arr[3]);
+	Color& operator = (unsigned char c_arr[4]);
 };
 
-bool operator == (const Jcolor& c1, const Jcolor& c2);
-bool operator == (const Jcolor& c, unsigned char c_arr[4]);
+bool operator == (const Color& c1, const Color& c2);
+bool operator == (const Color& c, unsigned char c_arr[4]);
 
-#endif // JCOLOR_HPP
+#endif // COLOR_HPP

@@ -1,7 +1,7 @@
 // RPGGame
 // Timer.hpp
 // Justyn Durnford
-// Created on 4/2/2020
+// Created on 5/22/2020
 // Last updated on 5/22/2020
 
 #ifndef TIMER_HPP

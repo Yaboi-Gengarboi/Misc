@@ -1,7 +1,7 @@
-// Jint.cpp
+// Big_Int.cpp
 // Justyn Durnford
 // Created on 4/15/2020
-// Last updated on 5/11/2020
+// Last updated on 6/11/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it

@@ -1,7 +1,7 @@
-// Jtimer.hpp
+// Timer.hpp
 // Justyn Durnford
 // Created on 4/2/2020
-// Last updated on 5/27/2020
+// Last updated on 6/11/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -9,12 +9,12 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#ifndef JTIMER_HPP
-#define JTIMER_HPP
+#ifndef TIMER_HPP
+#define TIMER_HPP
 
 #include <chrono>
 
-class Jtimer
+class Timer
 {
 	std::chrono::time_point<std::chrono::system_clock> _start;
 	std::chrono::time_point<std::chrono::system_clock> _end;
@@ -23,10 +23,10 @@ class Jtimer
 	public:
 
 	// Constructor
-	Jtimer();
+	Timer();
 
 	// Destructor
-	~Jtimer();
+	~Timer();
 
 	// Sets the value of _start
 	void start();
@@ -43,4 +43,4 @@ class Jtimer
 	void wait(unsigned int time);
 };
 
-#endif // JTIMER_HPP
+#endif // TIMER_HPP

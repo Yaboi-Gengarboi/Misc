@@ -1,7 +1,7 @@
 // JLib.hpp
 // Justyn P. Durnford
 // Created on 12/28/2019
-// Last updated on 5/11/2020
+// Last updated on 6/11/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -12,9 +12,13 @@
 #ifndef JLIB_HPP
 #define JLIB_HPP
 
-#include "Jfraction.hpp"
-#include "Jpoint.hpp"
-#include "Jvector.hpp"
-#include "Jtimer.hpp"
+#include "Big_Int.hpp"
+#include "Color.hpp"
+#include "Fraction.hpp"
+#include "Misc.hpp"
+#include "Point3f.hpp"
+#include "Timer.hpp"
+#include "UChar_Matrix.hpp"
+#include "Vector3f.hpp"
 
 #endif // JLIB_HPP

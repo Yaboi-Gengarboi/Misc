@@ -143,6 +143,8 @@
     <ClInclude Include="Ability.hpp" />
     <ClInclude Include="Effect.hpp" />
     <ClInclude Include="Enviornment.hpp" />
+    <ClInclude Include="Matrix.hpp" />
+    <ClInclude Include="Room.hpp" />
     <ClInclude Include="Timer.hpp" />
     <ClInclude Include="Misc.hpp" />
     <ClInclude Include="Move.hpp" />
@@ -152,7 +154,9 @@
   <ItemGroup>
     <ClCompile Include="Ability.cpp" />
     <ClCompile Include="Enviornment.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Move.cpp" />
+    <ClCompile Include="Room.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="main_file.cpp" />
     <ClCompile Include="Misc.cpp" />

@@ -2,9 +2,9 @@
 // main.cpp
 // Justyn Durnford
 // Created on 4/27/2020
-// Last updated on 5/30/2020
+// Last updated on 6/10/2020
 
-#include "Type.hpp"
+#include "Matrix.hpp"
 
 #include <SFML/Graphics.hpp>
 using sf::RenderWindow;
@@ -16,23 +16,9 @@ using sf::Color;
 using sf::Texture;
 using sf::Sprite;
 
-#include <string>
-using std::string;
-using std::size_t;
-using std::to_string;
-
-#include <cctype>
-using std::isdigit;
-
-#include <memory>
-using std::unique_ptr;
-using std::make_unique;
-
 #include <iostream>
 using std::cout;
 using std::endl;
-
-
 
 int main()
 {
@@ -57,13 +43,19 @@ int main()
 		window.display();
 	}*/
 
-	for (unsigned int i = 42; i <= 649; ++i)
-	{
-		if (i < 100)
-			cout << '0';
+	UChar_Matrix matrix(5, 5);
+	unsigned char i = 0;
 
-		cout << i << " | " << endl;
+	for (unsigned int r = 0; r < matrix.row(); ++r)
+	{
+		for (unsigned int c = 0; c < matrix.col(); ++c)
+		{
+			matrix.set(r, c, i);
+			++i;
+		}
 	}
+
+	cout << matrix.toString() << endl;
 
 	return 0;
 }

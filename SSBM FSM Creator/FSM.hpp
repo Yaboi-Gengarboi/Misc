@@ -2,7 +2,7 @@
 // FSM.hpp
 // Justyn P. Durnford
 // Created on 12/17/2019
-// Last updated on 6/3/2020
+// Last updated on 6/4/2020
 
 #ifndef FSM_HPP
 #define FSM_HPP
@@ -14,7 +14,7 @@
 struct Subaction
 {
 	std::string _name = "";
-	unsigned short _id = 0x0;
+	unsigned short _id = -1;
 
 	Subaction();
 	Subaction(const std::string& name, unsigned short id);
@@ -28,7 +28,7 @@ struct Subaction
 struct Character
 {
 	std::string _name = "";
-	unsigned char _id = 0x0;
+	unsigned char _id = -1;
 
 	std::vector<Subaction> _subList;
 
