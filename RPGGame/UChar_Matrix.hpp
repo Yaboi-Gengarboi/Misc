@@ -1,11 +1,11 @@
 // RPGGame
-// Matrix.hpp
+// UChar_Matrix.hpp
 // Justyn Durnford
 // Created on 6/8/2020
-// Last updated on 6/10/2020
+// Last updated on 6/11/2020
 
-#ifndef MATRIX_HPP
-#define MATRIX_HPP
+#ifndef UCHAR_MATRIX_HPP
+#define UCHAR_MATRIX_HPP
 
 #include <string>
 
@@ -53,4 +53,4 @@ class UChar_Matrix
 	std::string toString() const;
 };
 
-#endif // MATRIX_HPP
+#endif // UCHAR_MATRIX_HPP

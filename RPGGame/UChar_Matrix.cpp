@@ -1,10 +1,10 @@
 // RPGGame
-// Matrix.cpp
+// UChar_Matrix.cpp
 // Justyn Durnford
 // Created on 6/8/2020
-// Last updated on 6/10/2020
+// Last updated on 6/11/2020
 
-#include "Matrix.hpp"
+#include "UChar_Matrix.hpp"
 
 #include <string>
 using std::string;
