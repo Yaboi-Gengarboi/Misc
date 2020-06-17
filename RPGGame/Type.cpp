@@ -2,7 +2,7 @@
 // Type.cpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 6/8/2020
+// Last updated on 6/15/2020
 
 #include "Type.hpp"
 
@@ -23,14 +23,14 @@ Type::Type(const string& name, unsigned char id)
 
 Type::~Type() { /* Destructor */ }
 
-bool operator == (const std::shared_ptr<Type>& t1, const std::shared_ptr<Type>& t2)
+bool operator == (const shared_ptr<Type>& t1, const shared_ptr<Type>& t2)
 {
     if (t1->_id == t2->_id)
         return true;
     return false;
 }
 
-bool operator != (const std::shared_ptr<Type>& t1, const std::shared_ptr<Type>& t2)
+bool operator != (const shared_ptr<Type>& t1, const shared_ptr<Type>& t2)
 {
     if (t1->_id != t2->_id)
         return true;

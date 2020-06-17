@@ -2,9 +2,7 @@
 // main.cpp
 // Justyn Durnford
 // Created on 4/27/2020
-// Last updated on 6/10/2020
-
-#include "Matrix.hpp"
+// Last updated on 6/16/2020
 
 #include <SFML/Graphics.hpp>
 using sf::RenderWindow;
@@ -15,6 +13,13 @@ using sf::Event;
 using sf::Color;
 using sf::Texture;
 using sf::Sprite;
+
+#include <string>
+using std::string;
+using std::to_string;
+
+#include <fstream>
+using std::ofstream;
 
 #include <iostream>
 using std::cout;
@@ -43,19 +48,22 @@ int main()
 		window.display();
 	}*/
 
-	UChar_Matrix matrix(5, 5);
-	unsigned char i = 0;
+	string file = "";
 
-	for (unsigned int r = 0; r < matrix.row(); ++r)
+	for (unsigned int i = 1; i <= 621; ++i)
 	{
-		for (unsigned int c = 0; c < matrix.col(); ++c)
-		{
-			matrix.set(r, c, i);
-			++i;
-		}
-	}
+		if (i < 10)
+			file += '0';
 
-	cout << matrix.toString() << endl;
+		if (i < 100)
+			file += '0';
+
+		file += to_string(i);
+
+		ofstream fout(file + ".txt");
+
+		file = "";
+	}
 
 	return 0;
 }

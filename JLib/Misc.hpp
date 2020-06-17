@@ -1,7 +1,7 @@
 // Misc.hpp
 // Justyn Durnford
 // Created on 6/11/2020
-// Last updated on 6/11/2020
+// Last updated on 6/13/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -23,5 +23,14 @@ std::string reverse_str(const std::string& str);
 std::string to_hex(unsigned long long i);
 
 void erase(std::string& str, unsigned long long begin, unsigned long long end);
+
+template <typename Type>
+void clamp(Type& t, const Type& a, const Type& b)
+{
+	if (t < a)
+		t = a;
+	else if (t > b)
+		t = b;
+}
 
 #endif // MISC_HPP

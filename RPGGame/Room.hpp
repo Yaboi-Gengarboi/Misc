@@ -2,12 +2,12 @@
 // Room.hpp
 // Justyn Durnford
 // Created on 6/5/2020
-// Last updated on 6/10/2020
+// Last updated on 6/11/2020
 
 #ifndef ROOM_HPP
 #define ROOM_HPP
 
-#include "Matrix.hpp"
+#include "UChar_Matrix.hpp"
 
 #include <string>
 #include <vector>

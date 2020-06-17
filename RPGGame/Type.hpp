@@ -22,7 +22,6 @@ struct Type
 };
 
 bool operator == (const std::shared_ptr<Type>& t1, const std::shared_ptr<Type>& t2);
-
 bool operator != (const std::shared_ptr<Type>& t1, const std::shared_ptr<Type>& t2);
 
 extern std::shared_ptr<Type> Normal;

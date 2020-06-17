@@ -1,5 +1,5 @@
 NUM |    NAME    | T1 | T2 |   A1          |     A2        | M/F |  EG   | HP  | AT  | DE  | SA  | SD  | SP  | HGT  | WGT  | EXP | EHP | EAT | EDE | ESA | ESD | ESP | EVO |
-001 |            |    |    |               |               |     |       |     |     |     |     |     |     |      |      |     |     |     |     |     |     |     |
+001 | Bulbasaur  |    |    |               |               |     |       |     |     |     |     |     |     |      |      |     |     |     |     |     |     |     |
 002 |                      |               |               |
 003 |                      |               |               |
 004 |                      |               |               |
@@ -34,12 +34,12 @@ NUM |    NAME    | T1 | T2 |   A1          |     A2        | M/F |  EG   | HP  |
 034 |                      |               |               |
 035 |                      |               |               |
 036 |                      |               |               |
-037 |   Vulpix   | 09 | 17 | DROUGHT       | FLASH_FIRE    | .25 | FIELD | 040 | 045 | 040 | 060 | 065 | 065 | 00.6 | 09.9 | 060 |  0  |  0  |  0  |  1  |  0  |  1  | 038 |
+037 | Vulpix     | 09 | 17 | DROUGHT       | FLASH_FIRE    | .25 | FIELD | 040 | 045 | 040 | 060 | 065 | 065 | 00.6 | 09.9 | 060 |  0  |  0  |  0  |  1  |  0  |  1  | 038 |
 038 | Ninetales  | 09 | 17 | DROUGHT       | FLASH_FIRE    | .25 | FIELD | 073 | 060 | 075 | 088 | 100 | 114 | 01.1 | 19.9 | 177 |  0  |  0  |  0  |  1  |  0  |  2  | -1  |
 039 | Jigglypuff | 00 | 17 | CUTE_CHARM    | MAGIC_GUARD   |     |       |                                                                                           | 040 |
 040 | Wigglytuff | 00 | 17 | CUTE_CHARM    | MAGIC_GUARD   |     |       |                                                                                           | -1  |
-041 |   Zubat    | 03 | 02 |                                                                                                                                         | 042 |
-042 |   Golbat   | 03 | 02 |                                                                                                                                         |     |
+041 | Zubat      | 03 | 02 |                                                                                                                                         | 042 |
+042 | Golbat     | 03 | 02 |                                                                                                                                         |     |
 043 |
 044 |
 045 |
