@@ -140,26 +140,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Ability.hpp" />
-    <ClInclude Include="Effect.hpp" />
-    <ClInclude Include="Enviornment.hpp" />
-    <ClInclude Include="UChar_Matrix.hpp" />
-    <ClInclude Include="Room.hpp" />
-    <ClInclude Include="Timer.hpp" />
-    <ClInclude Include="Misc.hpp" />
-    <ClInclude Include="Move.hpp" />
-    <ClInclude Include="Pokemon.hpp" />
-    <ClInclude Include="Type.hpp" />
+    <ClInclude Include="Ability.h" />
+    <ClInclude Include="Battle.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="Pokemon.h" />
+    <ClInclude Include="Type.h" />
+    <ClInclude Include="Weather.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ability.cpp" />
-    <ClCompile Include="Enviornment.cpp" />
-    <ClCompile Include="UChar_Matrix.cpp" />
     <ClCompile Include="Move.cpp" />
-    <ClCompile Include="Room.cpp" />
-    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="main_file.cpp" />
-    <ClCompile Include="Misc.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="Type.cpp" />
   </ItemGroup>

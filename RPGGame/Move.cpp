@@ -2,9 +2,9 @@
 // Move.cpp
 // Justyn Durnford
 // Created on 5/23/2020
-// Last updated on 6/15/2020
+// Last updated on 6/20/2020
 
-#include "Move.hpp"
+#include "Move.h"
 
 #include <string>
 using std::string;

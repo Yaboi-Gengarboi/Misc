@@ -1,0 +1,2 @@
+Analytic
+The power of the Pokemon's moves are increased by 30% if it moves last.

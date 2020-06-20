@@ -15,34 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Type.hpp">
+    <ClInclude Include="Ability.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Pokemon.hpp">
+    <ClInclude Include="Pokemon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ability.hpp">
+    <ClInclude Include="Type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Enviornment.hpp">
+    <ClInclude Include="Move.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Move.hpp">
+    <ClInclude Include="Battle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Misc.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Effect.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Room.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UChar_Matrix.hpp">
+    <ClInclude Include="Weather.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -56,25 +44,10 @@
     <ClCompile Include="Ability.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Enviornment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Misc.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Move.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Room.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UChar_Matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -2,9 +2,9 @@
 // Type.cpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 6/15/2020
+// Last updated on 6/20/2020
 
-#include "Type.hpp"
+#include "Type.h"
 
 #include <string>
 using std::string;
@@ -13,7 +13,7 @@ using std::string;
 using std::shared_ptr;
 using std::make_shared;
 
-Type::Type() { /* See Type.hpp for default values */ }
+Type::Type() { /* See Type.h for default values. */ }
 
 Type::Type(const string& name, unsigned char id)
 {
@@ -21,18 +21,28 @@ Type::Type(const string& name, unsigned char id)
     _id = id;
 }
 
-Type::~Type() { /* Destructor */ }
+Type::~Type() { /* Destructor. */ }
+
+string Type::name() const
+{
+    return _name;
+}
+
+unsigned char Type::id() const
+{
+    return _id;
+}
 
 bool operator == (const shared_ptr<Type>& t1, const shared_ptr<Type>& t2)
 {
-    if (t1->_id == t2->_id)
+    if (t1->id() == t2->id())
         return true;
     return false;
 }
 
 bool operator != (const shared_ptr<Type>& t1, const shared_ptr<Type>& t2)
 {
-    if (t1->_id != t2->_id)
+    if (t1->id() != t2->id())
         return true;
     return false;
 }
