@@ -155,6 +155,7 @@
     <ClCompile Include="Characteristic.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="main_file.cpp" />
+    <ClCompile Include="Move_Kind.cpp" />
     <ClCompile Include="Nature.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="Type.cpp" />

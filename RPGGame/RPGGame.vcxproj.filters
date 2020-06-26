@@ -65,5 +65,8 @@
     <ClCompile Include="Characteristic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Move_Kind.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
