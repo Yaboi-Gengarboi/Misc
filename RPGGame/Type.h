@@ -36,8 +36,10 @@ class Type
     unsigned char id() const;
 };
 
-// Equality operators
+// Returns true ONLY IF t1.id() == t2.id()
 bool operator == (const Type& t1, const Type& t2);
+
+// Returns true ONLY IF t1.id() != t2.id()
 bool operator != (const Type& t1, const Type& t2);
 
 extern std::vector<Type> type_list;

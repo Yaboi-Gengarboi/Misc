@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ability.cpp" />
+    <ClCompile Include="Characteristic.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="main_file.cpp" />
     <ClCompile Include="Nature.cpp" />

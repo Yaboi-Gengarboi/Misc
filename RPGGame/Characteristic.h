@@ -24,7 +24,7 @@ class Characteristic
 {
 	std::string _desc = "";
 	unsigned char _id = 0;
-	unsigned char _stat = 0;
+	unsigned char _goodStat = 0;
 
 	public:
 
@@ -32,7 +32,7 @@ class Characteristic
 	Characteristic();
 
 	// Primary constructor.
-	Characteristic(const std::string& desc, unsigned char id, unsigned char stat);
+	Characteristic(const std::string& desc, unsigned char id, unsigned char goodStat);
 
 	// Destructor.
 	~Characteristic();
@@ -43,12 +43,14 @@ class Characteristic
 	// Returns _id.
 	unsigned char id() const;
 
-	// Returns _stat.
-	unsigned char stat() const;
+	// Returns _goodStat.
+	unsigned char goodStat() const;
 };
 
-// Equality operators
+// Returns true ONLY IF c1.id() == c2.id()
 bool operator == (const Characteristic& c1, const Characteristic& c2);
+
+// Returns true ONLY IF c1.id() != c2.id()
 bool operator != (const Characteristic& c1, const Characteristic& c2);
 
 std::vector<Characteristic> characteristic_list;

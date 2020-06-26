@@ -45,8 +45,10 @@ class Nature
 	unsigned char badStat() const;
 };
 
-// Equality operators
+// Returns true ONLY IF n1.id() == n2.id()
 bool operator == (const Nature& n1, const Nature& n2);
+
+// Returns true ONLY IF n1.id() != n2.id()
 bool operator != (const Nature& n1, const Nature& n2);
 
 extern std::vector<Nature> nature_list;
