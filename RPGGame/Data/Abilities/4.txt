@@ -1,2 +1,0 @@
-Air Lock
-The Pokemon clears the weather upon entering battle and prevents the weather from being changed.

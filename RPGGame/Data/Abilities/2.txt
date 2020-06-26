@@ -1,3 +1,0 @@
-Aerilate
-Changes Normal-type moves into Flying-type moves and increases their power by 20%.
-NULL

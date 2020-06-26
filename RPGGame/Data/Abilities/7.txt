@@ -1,3 +1,0 @@
-Arena Trap
-Prevents opposing pokemon from fleeing or switching out. Ineffective against Flying-type pokemon, Ghost-type pokemon, and pokemon with the Levitate ability.
-Doubles the chance of encountering wild pokemon.

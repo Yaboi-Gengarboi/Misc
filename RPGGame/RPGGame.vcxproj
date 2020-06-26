@@ -142,7 +142,9 @@
   <ItemGroup>
     <ClInclude Include="Ability.h" />
     <ClInclude Include="Battle.h" />
+    <ClInclude Include="Characteristic.h" />
     <ClInclude Include="Move.h" />
+    <ClInclude Include="Nature.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="Type.h" />
     <ClInclude Include="Weather.h" />
@@ -151,6 +153,7 @@
     <ClCompile Include="Ability.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="main_file.cpp" />
+    <ClCompile Include="Nature.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="Type.cpp" />
   </ItemGroup>

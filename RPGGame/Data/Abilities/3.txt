@@ -1,2 +1,0 @@
-Aftermath
-Damages an attacking Pokemon by half of their maximum HP when a direct attack causes the Pokemon to faint.

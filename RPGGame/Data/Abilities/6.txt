@@ -1,2 +1,0 @@
-Anger Point
-Raises the Pokemon's Attack stat to the maximum when hit by a critical hit.

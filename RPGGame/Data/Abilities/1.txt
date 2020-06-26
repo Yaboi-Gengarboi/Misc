@@ -1,3 +1,0 @@
-Adaptability
-Increases the power of moves with a different type than the user by 50%.
-NULL

@@ -2,16 +2,15 @@
 // Type.cpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 6/20/2020
+// Last updated on 6/21/2020
 
 #include "Type.h"
 
 #include <string>
 using std::string;
 
-#include <memory>
-using std::shared_ptr;
-using std::make_shared;
+#include <vector>
+using std::vector;
 
 Type::Type() { /* See Type.h for default values. */ }
 
@@ -33,59 +32,64 @@ unsigned char Type::id() const
     return _id;
 }
 
-bool operator == (const shared_ptr<Type>& t1, const shared_ptr<Type>& t2)
+bool operator == (const Type& t1, const Type& t2)
 {
-    if (t1->id() == t2->id())
+    if (t1.id() == t2.id())
         return true;
     return false;
 }
 
-bool operator != (const shared_ptr<Type>& t1, const shared_ptr<Type>& t2)
+bool operator != (const Type& t1, const Type& t2)
 {
-    if (t1->id() != t2->id())
+    if (t1.id() != t2.id())
         return true;
     return false;
 }
 
-shared_ptr<Type> Normal = make_shared<Type>("Normal", 0);
-shared_ptr<Type> Fighting = make_shared<Type>("Fighting", 1);
-shared_ptr<Type> Flying = make_shared<Type>("Flying", 2);
-shared_ptr<Type> Poison = make_shared<Type>("Poison", 3);
-shared_ptr<Type> Ground = make_shared<Type>("Ground", 4);
-shared_ptr<Type> Rock = make_shared<Type>("Rock", 5);
-shared_ptr<Type> Bug = make_shared<Type>("Bug", 6);
-shared_ptr<Type> Ghost = make_shared<Type>("Ghost", 7);
-shared_ptr<Type> Steel = make_shared<Type>("Steel", 8);
-shared_ptr<Type> Fire = make_shared<Type>("Fire", 9);
-shared_ptr<Type> Water = make_shared<Type>("Water", 10);
-shared_ptr<Type> Grass = make_shared<Type>("Grass", 11);
-shared_ptr<Type> Electric = make_shared<Type>("Electric", 12);
-shared_ptr<Type> Psychic = make_shared<Type>("Psychic", 13);
-shared_ptr<Type> Ice = make_shared<Type>("Ice", 14);
-shared_ptr<Type> Dragon = make_shared<Type>("Dragon", 15);
-shared_ptr<Type> Dark = make_shared<Type>("Dark", 16);
-shared_ptr<Type> Fairy = make_shared<Type>("Fairy", 17);
-
-const float type_matchup[18][18] =
+vector<Type> type_list =
 {
-    /* 0  : Normal   */ { 1,   1,   1,   1,   1,  .5,   1,   0,  .5,   1,   1,   1,   1,   1,   1,   1,   1,   1 },
-    /* 1  : Fighting */ { 2,   1,  .5,  .5,   1,   2,  .5,   0,   2,   1,   1,   1,   1,  .5,   2,   1,   2,  .5 },
-    /* 2  : Flying   */ { 1,   2,   1,   1,   1,  .5,   2,   1,  .5,   1,   1,   2,  .5,   1,   1,   1,   1,   1 },
-    /* 3  : Poison   */ { 1,   1,   1,  .5,  .5,  .5,   1,  .5,   0,   1,   2,   2,   1,   1,   1,   1,   1,   2 },
-    /* 4  : Ground   */ { 1,   1,   0,   2,   1,   2,  .5,   1,   2,   2,   1,  .5,   2,   1,   1,   1,   1,   1 },
-    /* 5  : Rock     */ { 1,  .5,   2,   1,  .5,   1,   2,   1,  .5,   2,   1,   1,   1,   1,   2,   1,   1,   1 },
-    /* 6  : Bug      */ { 1,  .5,  .5,  .5,   1,   1,   1,  .5,  .5,  .5,   1,   1,   1,   2,   1,   1,   2,   2 },
-    /* 7  : Ghost    */ { 0,   1,   1,   1,   1,  .5,   1,   2,   1,   1,   1,   1,   1,   2,   1,   1,  .5,   1 },
-    /* 8  : Steel    */ { 1,   1,   1,   1,   1,   2,   1,   1,  .5,  .5,  .5,   1,  .5,   1,   2,   1,   1,   2 },
-    /* 9  : Fire     */ { 1,   1,   1,   1,   1,  .5,   2,   1,   2,  .5,  .5,   2,   1,   1,   2,  .5,   1,   1 },
-    /* 10 : Water    */ { 1,   1,   1,   1,   2,   2,   1,   1,   1,   2,  .5,  .5,   1,   1,  .5,  .5,   1,   1 },
-    /* 11 : Grass    */ { 1,   1,  .5,  .5,   2,   2,   1,   1,  .5,  .5,   2,  .5,   1,   1,   1,  .5,   1,   1 },
-    /* 12 : Electric */ { 1,   1,   2,   1,   0,   1,   1,   1,   1,   1,   2,  .5,  .5,   1,   1,  .5,   1,   1 },
-    /* 13 : Psychic  */ { 1,   2,   1,   2,   1,   1,  .5,   1,  .5,   1,   1,   1,   1,  .5,   1,   1,   0,   1 },
-    /* 14 : Ice      */ { 1,   1,   2,   1,   2,   1,   1,   1,  .5,  .5,   1,   2,   1,   1,  .5,   2,   1,   1 },
-    /* 15 : Dragon   */ { 1,   1,   1,   1,   1,  .5,   1,   1,  .5,   1,   1,   1,   1,   1,   1,   2,   1,   0 },
-    /* 16 : Dark     */ { 1,  .5,   1,   1,   1,  .5,  .5,   2,   1,   1,   1,   1,   1,   2,   1,   1,  .5,  .5 },
-    /* 17 : Fairy    */ { 1,   2,   1,  .5,   1,   1,  .5,   1,  .5,  .5,   1,   1,   1,   1,   1,   2,   2,   1 }
+    Type("Normal", 0),
+    Type("Fighting", 1),
+    Type("Flying", 2),
+    Type("Poison", 3),
+    Type("Ground", 4),
+    Type("Rock", 5),
+    Type("Bug", 6),
+    Type("Ghost", 7),
+    Type("Steel", 8),
+    Type("Fire", 9),
+    Type("Water", 10),
+    Type("Grass", 11),
+    Type("Electric", 12),
+    Type("Psychic", 13),
+    Type("Ice", 14),
+    Type("Dragon", 15),
+    Type("Dark", 16),
+    Type("Fairy", 17),
+    Type("Null", 18)
+};
+
+const float type_matchup[19][19] =
+{
+    /* 0  : Normal   */ { 1,   1,   1,   1,   1,  .5,   1,   0,  .5,   1,   1,   1,   1,   1,   1,   1,   1,   1,  1 },
+    /* 1  : Fighting */ { 2,   1,  .5,  .5,   1,   2,  .5,   0,   2,   1,   1,   1,   1,  .5,   2,   1,   2,  .5,  1 },
+    /* 2  : Flying   */ { 1,   2,   1,   1,   1,  .5,   2,   1,  .5,   1,   1,   2,  .5,   1,   1,   1,   1,   1,  1 },
+    /* 3  : Poison   */ { 1,   1,   1,  .5,  .5,  .5,   1,  .5,   0,   1,   2,   2,   1,   1,   1,   1,   1,   2,  1 },
+    /* 4  : Ground   */ { 1,   1,   0,   2,   1,   2,  .5,   1,   2,   2,   1,  .5,   2,   1,   1,   1,   1,   1,  1 },
+    /* 5  : Rock     */ { 1,  .5,   2,   1,  .5,   1,   2,   1,  .5,   2,   1,   1,   1,   1,   2,   1,   1,   1,  1 },
+    /* 6  : Bug      */ { 1,  .5,  .5,  .5,   1,   1,   1,  .5,  .5,  .5,   1,   1,   1,   2,   1,   1,   2,   2,  1 },
+    /* 7  : Ghost    */ { 0,   1,   1,   1,   1,  .5,   1,   2,   1,   1,   1,   1,   1,   2,   1,   1,  .5,   1,  1 },
+    /* 8  : Steel    */ { 1,   1,   1,   1,   1,   2,   1,   1,  .5,  .5,  .5,   1,  .5,   1,   2,   1,   1,   2,  1 },
+    /* 9  : Fire     */ { 1,   1,   1,   1,   1,  .5,   2,   1,   2,  .5,  .5,   2,   1,   1,   2,  .5,   1,   1,  1 },
+    /* 10 : Water    */ { 1,   1,   1,   1,   2,   2,   1,   1,   1,   2,  .5,  .5,   1,   1,  .5,  .5,   1,   1,  1 },
+    /* 11 : Grass    */ { 1,   1,  .5,  .5,   2,   2,   1,   1,  .5,  .5,   2,  .5,   1,   1,   1,  .5,   1,   1,  1 },
+    /* 12 : Electric */ { 1,   1,   2,   1,   0,   1,   1,   1,   1,   1,   2,  .5,  .5,   1,   1,  .5,   1,   1,  1 },
+    /* 13 : Psychic  */ { 1,   2,   1,   2,   1,   1,  .5,   1,  .5,   1,   1,   1,   1,  .5,   1,   1,   0,   1,  1 },
+    /* 14 : Ice      */ { 1,   1,   2,   1,   2,   1,   1,   1,  .5,  .5,   1,   2,   1,   1,  .5,   2,   1,   1,  1 },
+    /* 15 : Dragon   */ { 1,   1,   1,   1,   1,  .5,   1,   1,  .5,   1,   1,   1,   1,   1,   1,   2,   1,   0,  1 },
+    /* 16 : Dark     */ { 1,  .5,   1,   1,   1,  .5,  .5,   2,   1,   1,   1,   1,   1,   2,   1,   1,  .5,  .5,  1 },
+    /* 17 : Fairy    */ { 1,   2,   1,  .5,   1,   1,  .5,   1,  .5,  .5,   1,   1,   1,   1,   1,   2,   2,   1,  1 },
+    /* 18 : Null     */ { 1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  1 }
 
     // Poison -> Water: 1 -> 2
     // Bug -> Grass: 2 -> 1

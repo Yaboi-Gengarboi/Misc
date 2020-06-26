@@ -2,13 +2,13 @@
 // Ability.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 6/20/2020
+// Last updated on 6/22/2020
 
 #ifndef ABILITY_H
 #define ABILITY_H
 
 #include <string>
-#include <memory>
+#include <vector>
 
 //
 //
@@ -20,15 +20,14 @@ class Ability
 	std::string _desc = "";
 	std::string _partyDesc = "";
 
-	void loadAbility();
-
 	public:
 
 	// Default constructor.
 	Ability();
 
 	// Primary Cconstructor.
-	Ability(unsigned char id);
+	Ability(unsigned char id, const std::string& name,
+			const std::string& desc, const std::string& partyDesc);
 
 	// Destructor.
 	~Ability();
@@ -47,5 +46,7 @@ class Ability
 };
 
 void load_Abilities();
+
+extern std::vector<Ability> ability_list;
 
 #endif // ABILITY_H

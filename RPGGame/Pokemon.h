@@ -2,7 +2,7 @@
 // Pokemon.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 6/20/2020
+// Last updated on 6/26/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
@@ -23,12 +23,12 @@ class Ability;
 class Pokemon
 {
 	std::string _name = "";
-	unsigned short _natIndex = -1;
-	unsigned short _regIndex = -1;
-	std::shared_ptr<Type> _type1 = nullptr;
-	std::shared_ptr<Type> _type2 = nullptr;
-	std::shared_ptr<Ability> _ability1 = nullptr;
-	std::shared_ptr<Ability> _ability2 = nullptr;
+	unsigned short _natIndex = 0;
+	unsigned short _regIndex = 0;
+	unsigned char _type1 = 18;
+	unsigned char _type2 = 18;
+	unsigned char _ability1 = 0;
+	unsigned char _ability2 = 0;
 	float _genderRatio = 0;
 	// std::shared_ptr<Egg_Group> _eg1 = nullptr;
 	// std::shared_ptr<Egg_Group> _eg2 = nullptr;
@@ -59,17 +59,17 @@ class Pokemon
 	// Returns _regIndex.
 	unsigned short regIndex() const;
 
-	// Returns _type1.
-	std::shared_ptr<Type> type1() const;
+	// Returns type_list[_type1].
+	Type& type1() const;
 
-	// Returns _type2.
-	std::shared_ptr<Type> type2() const;
+	// Returns type_list[_type2].
+	Type& type2() const;
 
-	// Returns _ability1.
-	std::shared_ptr<Ability> ability1() const;
+	// Returns ability_list[_ability1].
+	Ability& ability1() const;
 
-	// Returns _ability2.
-	std::shared_ptr<Ability> ability2() const;
+	// Returns ability_list[_ability2].
+	Ability& ability2() const;
 
 	// Returns _genderRatio.
 	float genderRatio() const;

@@ -2,7 +2,7 @@
 // Pokemon.cpp
 // Justyn Durnford
 // Created on 5/15/2020
-// Last updated on 6/20/2020
+// Last updated on 6/21/2020
 
 #include "Pokemon.h"
 
@@ -20,7 +20,6 @@ using std::array;
 
 #include <memory>
 using std::shared_ptr;
-using std::make_shared;
 
 #include <fstream>
 using std::ifstream;
@@ -54,24 +53,24 @@ unsigned short Pokemon::regIndex() const
 	return _regIndex;
 }
 
-shared_ptr<Type> Pokemon::type1() const
+Type& Pokemon::type1() const
 {
-	return _type1;
+	return type_list[_type1];
 }
 
-shared_ptr<Type> Pokemon::type2() const
+Type& Pokemon::type2() const
 {
-	return _type2;
+	return type_list[_type2];
 }
 
-shared_ptr<Ability> Pokemon::ability1() const
+Ability& Pokemon::ability1() const
 {
-	return _ability1;
+	return ability_list[_ability1];
 }
 
-shared_ptr<Ability> Pokemon::ability2() const
+Ability& Pokemon::ability2() const
 {
-	return _ability2;
+	return ability_list[_ability2];
 }
 
 float Pokemon::genderRatio() const

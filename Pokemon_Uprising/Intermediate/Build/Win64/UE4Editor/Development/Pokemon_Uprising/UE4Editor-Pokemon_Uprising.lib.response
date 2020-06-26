@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Pokemon_Uprising.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Misc Repository\Pokemon_Uprising\Intermediate\Build\Win64\Pokemon_UprisingEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"E:\Misc Repository\Pokemon_Uprising\Intermediate\Build\Win64\UE4Editor\Development\Pokemon_Uprising\Type.cpp.obj"
+"E:\Misc Repository\Pokemon_Uprising\Intermediate\Build\Win64\UE4Editor\Development\Pokemon_Uprising\Pokemon_Uprising.cpp.obj"
+"E:\Misc Repository\Pokemon_Uprising\Intermediate\Build\Win64\UE4Editor\Development\Pokemon_Uprising\Default.rc2.res"
+/OUT:"E:\Misc Repository\Pokemon_Uprising\Intermediate\Build\Win64\UE4Editor\Development\Pokemon_Uprising\UE4Editor-Pokemon_Uprising.lib"
+/INCLUDE:IMPLEMENT_MODULE_Pokemon_Uprising
