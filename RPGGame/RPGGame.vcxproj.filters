@@ -39,6 +39,9 @@
     <ClInclude Include="Characteristic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Move_Kind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Type.cpp">

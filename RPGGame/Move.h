@@ -2,7 +2,7 @@
 // Move.h
 // Justyn Durnford
 // Created on 4/20/2020
-// Last updated on 6/20/2020
+// Last updated on 6/26/2020
 
 #ifndef MOVE_H
 #define MOVE_H
@@ -10,7 +10,7 @@
 #include "Type.h"
 
 #include <string>
-#include <memory>
+#include <vector>
 
 struct Move_Kind
 {

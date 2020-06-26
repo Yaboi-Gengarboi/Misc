@@ -144,6 +144,7 @@
     <ClInclude Include="Battle.h" />
     <ClInclude Include="Characteristic.h" />
     <ClInclude Include="Move.h" />
+    <ClInclude Include="Move_Kind.h" />
     <ClInclude Include="Nature.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="Type.h" />
