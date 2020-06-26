@@ -12,14 +12,15 @@ using std::string;
 #include <vector>
 using std::vector;
 
-Move_Kind::Move_Kind() {}
+Move_Kind::Move_Kind() { /* See Move_Kind.h for default values. */ }
 
 Move_Kind::Move_Kind(const string& name, unsigned char id)
 {
-
+	_name = name;
+	_id = id;
 }
 
-Move_Kind::~Move_Kind() {}
+Move_Kind::~Move_Kind() { /* Destructor. */ }
 
 string Move_Kind::name() const
 {
