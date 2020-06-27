@@ -8,46 +8,63 @@
 #define MOVE_H
 
 #include "Type.h"
+class Type;
+
+#include "Move_Kind.h"
+class Move_Kind;
 
 #include <string>
 #include <vector>
 
-struct Move_Kind
+//
+//
+//
+class Move
 {
 	std::string _name = "";
-	unsigned char _id = 0;
-
-	Move_Kind();
-	Move_Kind(const std::string& name, unsigned char id);
-
-	~Move_Kind();
-};
-
-extern std::shared_ptr<Move_Kind> Physical;
-extern std::shared_ptr<Move_Kind> Special;
-extern std::shared_ptr<Move_Kind> Status;
-
-struct Move
-{
-	std::string _name = "";
-	std::shared_ptr<Type> _type = nullptr;
-
+	unsigned char _kind = 0;
+	unsigned char _type = 0;
 	unsigned short _id = 0;
 	unsigned char _pp = 0;
-	unsigned char _priority = 0;
-	// RANGE
-	
-	Move();
-	Move(const std::string& name, const std::shared_ptr<Type>& type, unsigned short id,
-		 unsigned char pp, unsigned char priority);
+	char _priority = 0;
 
+	public:
+	
+	// Default constructor.
+	Move();
+
+	// Primary constructor.
+	Move(const std::string& name, unsigned char kind, unsigned char type,
+		 unsigned short id, unsigned char pp, char priority);
+
+	// Destructor.
 	~Move();
+
+	// Returns _name.
+	std::string name() const;
+
+	// Returns move_kind_list[_kind].
+	Move_Kind& kind() const;
+
+	// Returns type_list[_type].
+	Type& type() const;
+
+	// Returns _id.
+	unsigned short id() const;
+
+	// Returns _pp.
+	unsigned char pp() const;
+
+	// Returns _priority.
+	char priority() const;
 };
 
-extern std::shared_ptr<Move> Pound;
-void _Pound();
+// Returns true ONLY IF m1.id() == m2.id()
+bool operator == (const Move& m1, const Move& m2);
 
-extern std::shared_ptr<Move> Accelerock;
-void _Accelerock();
+// Returns true ONLY IF m1.id() != m2.id()
+bool operator != (const Move& m1, const Move& m2);
+
+extern std::vector<Move> move_list;
 
 #endif // MOVE_H
