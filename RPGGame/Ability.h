@@ -2,7 +2,7 @@
 // Ability.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 6/22/2020
+// Last updated on 6/29/2020
 
 #ifndef ABILITY_H
 #define ABILITY_H
@@ -18,7 +18,6 @@ class Ability
 	unsigned char _id = -1;
 	std::string _name = "";
 	std::string _desc = "";
-	std::string _partyDesc = "";
 
 	public:
 
@@ -26,8 +25,7 @@ class Ability
 	Ability();
 
 	// Primary Cconstructor.
-	Ability(unsigned char id, const std::string& name,
-			const std::string& desc, const std::string& partyDesc);
+	Ability(unsigned char id, const std::string& name, const std::string& desc);
 
 	// Destructor.
 	~Ability();
@@ -40,9 +38,6 @@ class Ability
 
 	// Returns _desc.
 	std::string desc() const;
-
-	// Returns _partyDesc.
-	std::string partyDesc() const;
 };
 
 void load_Abilities();

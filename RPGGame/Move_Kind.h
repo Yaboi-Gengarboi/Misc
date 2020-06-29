@@ -44,6 +44,6 @@ bool operator == (const Move_Kind& m1, const Move_Kind& m2);
 // Returns true ONLY IF m1.id() != m2.id()
 bool operator != (const Move_Kind& m1, const Move_Kind& m2);
 
-std::vector<Move_Kind> move_kind_list;
+extern std::vector<Move_Kind> move_kind_list;
 
 #endif // MOVE_KIND_H

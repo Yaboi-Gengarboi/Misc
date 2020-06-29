@@ -2,7 +2,7 @@
 // main.cpp
 // Justyn Durnford
 // Created on 4/27/2020
-// Last updated on 6/22/2020
+// Last updated on 6/29/2020
 
 #include "Ability.h"
 
@@ -24,16 +24,14 @@ using std::to_string;
 
 int main()
 {
-
-	/*load_Abilities();
+	load_Abilities();
 
 	for (unsigned char c = 0; c < ability_list.size(); ++c)
 	{
 		cout << ability_list[c].name() << endl;
 		cout << ability_list[c].desc() << endl;
-		cout << ability_list[c].partyDesc() << endl;
 		cout << endl;
-	}*/
+	}
 
 	return 0;
 }

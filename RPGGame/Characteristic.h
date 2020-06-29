@@ -2,7 +2,7 @@
 // Characteristic.h
 // Justyn Durnford
 // Created on 6/26/2020
-// Last updated on 6/26/2020
+// Last updated on 6/29/2020
 
 #ifndef CHARACTERISTIC_H
 #define CHARACTERISTIC_H
@@ -53,6 +53,6 @@ bool operator == (const Characteristic& c1, const Characteristic& c2);
 // Returns true ONLY IF c1.id() != c2.id()
 bool operator != (const Characteristic& c1, const Characteristic& c2);
 
-std::vector<Characteristic> characteristic_list;
+extern std::vector<Characteristic> characteristic_list;
 
 #endif // CHARACTERISTIC_H
