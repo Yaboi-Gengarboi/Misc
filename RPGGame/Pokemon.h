@@ -2,7 +2,7 @@
 // Pokemon.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 6/26/2020
+// Last updated on 6/29/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
@@ -23,8 +23,7 @@ class Ability;
 class Pokemon
 {
 	std::string _name = "";
-	unsigned short _natIndex = 0;
-	unsigned short _regIndex = 0;
+	unsigned short _index = 0;
 	unsigned char _type1 = 18;
 	unsigned char _type2 = 18;
 	unsigned char _ability1 = 0;
@@ -45,7 +44,7 @@ class Pokemon
 	Pokemon();
 
 	// Primary constructor.
-	Pokemon(unsigned short natIndex);
+	Pokemon(unsigned short index);
 
 	// Destructor.
 	~Pokemon();
@@ -53,11 +52,8 @@ class Pokemon
 	// Returns _name.
 	std::string name() const;
 
-	// Returns _natIndex.
-	unsigned short natIndex() const;
-
-	// Returns _regIndex.
-	unsigned short regIndex() const;
+	// Returns _index.
+	unsigned short index() const;
 
 	// Returns type_list[_type1].
 	Type& type1() const;

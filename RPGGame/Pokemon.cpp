@@ -2,7 +2,7 @@
 // Pokemon.cpp
 // Justyn Durnford
 // Created on 5/15/2020
-// Last updated on 6/21/2020
+// Last updated on 6/29/2020
 
 #include "Pokemon.h"
 
@@ -18,9 +18,6 @@ using std::string;
 #include <array>
 using std::array;
 
-#include <memory>
-using std::shared_ptr;
-
 #include <fstream>
 using std::ifstream;
 
@@ -31,9 +28,9 @@ void Pokemon::loadPokemon()
 
 Pokemon::Pokemon() { /* See Pokemon.h for default values. */ }
 
-Pokemon::Pokemon(unsigned short natIndex)
+Pokemon::Pokemon(unsigned short index)
 {
-	_natIndex = natIndex;
+	_index = index;
 }
 
 Pokemon::~Pokemon() { /* Destructor. */ }
@@ -43,14 +40,9 @@ string Pokemon::name() const
 	return _name;
 }
 
-unsigned short Pokemon::natIndex() const
+unsigned short Pokemon::index() const
 {
-	return _natIndex;
-}
-
-unsigned short Pokemon::regIndex() const
-{
-	return _regIndex;
+	return _index;
 }
 
 Type& Pokemon::type1() const
