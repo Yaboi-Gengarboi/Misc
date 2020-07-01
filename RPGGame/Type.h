@@ -2,7 +2,7 @@
 // Type.h
 // Justyn Durnford
 // Created on 4/7/2020
-// Last updated on 6/26/2020
+// Last updated on 6/30/2020
 
 #ifndef TYPE_H
 #define TYPE_H
@@ -16,7 +16,7 @@
 class Type
 {
     std::string _name = "";
-    unsigned char _id = 0;
+    unsigned char _index = 0;
 
     public:
 
@@ -24,7 +24,7 @@ class Type
     Type();
 
     // Primary constructor.
-    Type(const std::string& name, unsigned char id);
+    Type(const std::string& name, unsigned char index);
 
     // Destructor.
     ~Type();
@@ -32,14 +32,14 @@ class Type
     // Returns _name.
     std::string name() const;
 
-    // Returns _id.
-    unsigned char id() const;
+    // Returns _index.
+    unsigned char index() const;
 };
 
-// Returns true ONLY IF t1.id() == t2.id()
+// Returns true ONLY IF t1.index() == t2.index()
 bool operator == (const Type& t1, const Type& t2);
 
-// Returns true ONLY IF t1.id() != t2.id()
+// Returns true ONLY IF t1.index() != t2.index()
 bool operator != (const Type& t1, const Type& t2);
 
 extern std::vector<Type> type_list;

@@ -149,6 +149,7 @@
     <ClInclude Include="Nature.h" />
     <ClInclude Include="Player_Pokemon.h" />
     <ClInclude Include="Pokemon.h" />
+    <ClInclude Include="Trainer.h" />
     <ClInclude Include="Type.h" />
     <ClInclude Include="Weather.h" />
   </ItemGroup>

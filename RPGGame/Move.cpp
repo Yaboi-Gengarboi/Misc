@@ -2,15 +2,18 @@
 // Move.cpp
 // Justyn Durnford
 // Created on 5/23/2020
-// Last updated on 6/26/2020
+// Last updated on 7/1/2020
 
 #include "Move.h"
+
+#include "Move_Kind.h"
+class Move_Kind;
 
 #include "Type.h"
 class Type;
 
-#include "Move_Kind.h"
-class Move_Kind;
+#include "Fraction.h"
+class Fraction;
 
 #include <string>
 using std::string;
@@ -20,27 +23,37 @@ using std::vector;
 
 Move::Move() { /* See Move.h for default values. */ }
 
-Move::Move(const string& name, unsigned char kind, unsigned char type,
-		   unsigned short id, unsigned char pp, char priority)
+Move::Move(unsigned short index, const string& name, const string& desc,
+		   unsigned char type, unsigned char kind, unsigned short power, unsigned char pp,
+		   const Fraction& accuracy, const Fraction& additionalChance, char priority)
 {
+	_index = index;
 	_name = name;
-	_kind = kind;
+	_desc = desc;
 	_type = type;
-	_id = id;
+	_kind = kind;
+	_power = power;
 	_pp = pp;
+	_accuracy = accuracy;
+	_additionalChance = additionalChance;
 	_priority = priority;
 }
 
 Move::~Move() { /* Destructor. */ }
+
+unsigned short Move::index() const
+{
+	return _index;
+}
 
 string Move::name() const
 {
 	return _name;
 }
 
-Move_Kind& Move::kind() const
+string Move::desc() const
 {
-	return move_kind_list[_kind];
+	return _desc;
 }
 
 Type& Move::type() const
@@ -48,14 +61,29 @@ Type& Move::type() const
 	return type_list[_type];
 }
 
-unsigned short Move::id() const
+Move_Kind& Move::kind() const
 {
-	return _id;
+	return move_kind_list[_kind];
+}
+
+unsigned short Move::power() const
+{
+	return _power;
 }
 
 unsigned char Move::pp() const
 {
 	return _pp;
+}
+
+Fraction Move::accuracy() const
+{
+	return _accuracy;
+}
+
+Fraction Move::additionalChance() const
+{
+	return _additionalChance;
 }
 
 char Move::priority() const
@@ -65,16 +93,17 @@ char Move::priority() const
 
 bool operator == (const Move& m1, const Move& m2)
 {
-	if (m1.id() == m2.id())
+	if (m1.index() == m2.index())
 		return true;
 	return false;
 }
 
 bool operator != (const Move& m1, const Move& m2)
 {
-	if (m1.id() != m2.id())
+	if (m1.index() != m2.index())
 		return true;
 	return false;
 }
 
 vector<Move> move_list;
+vector<bool> move_contact_list;

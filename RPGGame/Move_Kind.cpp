@@ -1,8 +1,8 @@
 // RPGGame
-// Move.cpp
+// Move_Kind.cpp
 // Justyn Durnford
 // Created on 6/26/2020
-// Last updated on 6/26/2020
+// Last updated on 6/30/2020
 
 #include "Move_Kind.h"
 
@@ -14,10 +14,10 @@ using std::vector;
 
 Move_Kind::Move_Kind() { /* See Move_Kind.h for default values. */ }
 
-Move_Kind::Move_Kind(const string& name, unsigned char id)
+Move_Kind::Move_Kind(const string& name, unsigned char index)
 {
 	_name = name;
-	_id = id;
+	_index = index;
 }
 
 Move_Kind::~Move_Kind() { /* Destructor. */ }
@@ -27,21 +27,21 @@ string Move_Kind::name() const
 	return _name;
 }
 
-unsigned char Move_Kind::id() const
+unsigned char Move_Kind::index() const
 {
-	return _id;
+	return _index;
 }
 
 bool operator == (const Move_Kind& m1, const Move_Kind& m2)
 {
-	if (m1.id() == m2.id())
+	if (m1.index() == m2.index())
 		return true;
 	return false;
 }
 
 bool operator != (const Move_Kind& m1, const Move_Kind& m2)
 {
-	if (m1.id() != m2.id())
+	if (m1.index() != m2.index())
 		return true;
 	return false;
 }

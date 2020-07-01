@@ -2,7 +2,7 @@
 // Fraction.h
 // Justyn Durnford
 // Created on 6/29/2020
-// Last updated on 6/29/2020
+// Last updated on 6/30/2020
 
 #ifndef FRACTION_H
 #define FRACTION_H
@@ -27,6 +27,9 @@ class Fraction
 
 	// Copy constructor.
 	Fraction(const Fraction& fr);
+
+	// String constructor.
+	Fraction(const std::string& str);
 
 	// Destructor.
 	~Fraction();
@@ -54,6 +57,9 @@ class Fraction
 
 	// Returns a std::string representation of the Fraction.
 	std::string toString() const;
+
+	Fraction& operator = (const Fraction& fr);
+	Fraction& operator = (int i);
 
 	Fraction& operator += (const Fraction& fr);
 	Fraction& operator += (int i);

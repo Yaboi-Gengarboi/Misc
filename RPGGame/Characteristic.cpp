@@ -2,7 +2,7 @@
 // Characteristic.cpp
 // Justyn Durnford
 // Created on 6/26/2020
-// Last updated on 6/26/2020
+// Last updated on 6/30/2020
 
 #include "Characteristic.h"
 
@@ -14,10 +14,10 @@ using std::vector;
 
 Characteristic::Characteristic() { /* See Characteristic.h for default values. */ }
 
-Characteristic::Characteristic(const string& desc, unsigned char id, unsigned char goodStat)
+Characteristic::Characteristic(const string& desc, unsigned char index, unsigned char goodStat)
 {
 	_desc = desc;
-	_id = id;
+	_index = id;
 	_goodStat = goodStat;
 }
 
@@ -28,9 +28,9 @@ string Characteristic::desc() const
 	return _desc;
 }
 
-unsigned char Characteristic::id() const
+unsigned char Characteristic::index() const
 {
-	return _id;
+	return _index;
 }
 
 unsigned char Characteristic::goodStat() const
@@ -40,14 +40,14 @@ unsigned char Characteristic::goodStat() const
 
 bool operator == (const Characteristic& c1, const Characteristic& c2)
 {
-	if (c1.id() == c2.id())
+	if (c1.index() == c2.index())
 		return true;
 	return false;
 }
 
 bool operator != (const Characteristic& c1, const Characteristic& c2)
 {
-	if (c1.id() != c2.id())
+	if (c1.index() != c2.index())
 		return true;
 	return false;
 }

@@ -19,18 +19,18 @@ using std::vector;
 
 Ability::Ability() { /* See Ability.h for default values. */ }
 
-Ability::Ability(unsigned char id, const string& name, const string& desc)
+Ability::Ability(unsigned char index, const string& name, const string& desc)
 {
-	_id = id;
+	_index = index;
 	_name = name;
 	_desc = desc;
 }
 
 Ability::~Ability() { /* Destructor. */ }
 
-unsigned char Ability::id() const
+unsigned char Ability::index() const
 {
-	return _id;
+	return _index;
 }
 
 string Ability::name() const

@@ -48,6 +48,9 @@
     <ClInclude Include="Player_Pokemon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Trainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Type.cpp">

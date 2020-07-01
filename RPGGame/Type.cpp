@@ -2,7 +2,7 @@
 // Type.cpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 6/21/2020
+// Last updated on 6/30/2020
 
 #include "Type.h"
 
@@ -14,10 +14,10 @@ using std::vector;
 
 Type::Type() { /* See Type.h for default values. */ }
 
-Type::Type(const string& name, unsigned char id)
+Type::Type(const string& name, unsigned char index)
 {
     _name = name;
-    _id = id;
+    _index = index;
 }
 
 Type::~Type() { /* Destructor. */ }
@@ -27,21 +27,21 @@ string Type::name() const
     return _name;
 }
 
-unsigned char Type::id() const
+unsigned char Type::index() const
 {
-    return _id;
+    return _index;
 }
 
 bool operator == (const Type& t1, const Type& t2)
 {
-    if (t1.id() == t2.id())
+    if (t1.index() == t2.index())
         return true;
     return false;
 }
 
 bool operator != (const Type& t1, const Type& t2)
 {
-    if (t1.id() != t2.id())
+    if (t1.index() != t2.index())
         return true;
     return false;
 }

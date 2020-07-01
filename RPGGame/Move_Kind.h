@@ -1,8 +1,8 @@
 // RPGGame
-// Move.h
+// Move_Kind.h
 // Justyn Durnford
 // Created on 6/26/2020
-// Last updated on 6/26/2020
+// Last updated on 6/30/2020
 
 #ifndef MOVE_KIND_H
 #define MOVE_KIND_H
@@ -18,7 +18,7 @@
 class Move_Kind
 {
 	std::string _name = "";
-	unsigned char _id = 0;
+	unsigned char _index = 0;
 
 	public:
 
@@ -26,7 +26,7 @@ class Move_Kind
 	Move_Kind();
 
 	// Primary constructor.
-	Move_Kind(const std::string& name, unsigned char id);
+	Move_Kind(const std::string& name, unsigned char index);
 
 	// Destructor.
 	~Move_Kind();
@@ -34,14 +34,14 @@ class Move_Kind
 	// Returns _name.
 	std::string name() const;
 	
-	// Returns _id.
-	unsigned char id() const;
+	// Returns _index.
+	unsigned char index() const;
 };
 
-// Returns true ONLY IF m1.id() == m2.id()
+// Returns true ONLY IF m1.index() == m2.index()
 bool operator == (const Move_Kind& m1, const Move_Kind& m2);
 
-// Returns true ONLY IF m1.id() != m2.id()
+// Returns true ONLY IF m1.index() != m2.index()
 bool operator != (const Move_Kind& m1, const Move_Kind& m2);
 
 extern std::vector<Move_Kind> move_kind_list;

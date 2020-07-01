@@ -2,7 +2,7 @@
 // Characteristic.h
 // Justyn Durnford
 // Created on 6/26/2020
-// Last updated on 6/29/2020
+// Last updated on 6/30/2020
 
 #ifndef CHARACTERISTIC_H
 #define CHARACTERISTIC_H
@@ -23,7 +23,7 @@
 class Characteristic
 {
 	std::string _desc = "";
-	unsigned char _id = 0;
+	unsigned char _index = 0;
 	unsigned char _goodStat = 0;
 
 	public:
@@ -32,7 +32,7 @@ class Characteristic
 	Characteristic();
 
 	// Primary constructor.
-	Characteristic(const std::string& desc, unsigned char id, unsigned char goodStat);
+	Characteristic(const std::string& desc, unsigned char index, unsigned char goodStat);
 
 	// Destructor.
 	~Characteristic();
@@ -41,16 +41,16 @@ class Characteristic
 	std::string desc() const;
 
 	// Returns _id.
-	unsigned char id() const;
+	unsigned char index() const;
 
 	// Returns _goodStat.
 	unsigned char goodStat() const;
 };
 
-// Returns true ONLY IF c1.id() == c2.id()
+// Returns true ONLY IF c1.index() == c2.index()
 bool operator == (const Characteristic& c1, const Characteristic& c2);
 
-// Returns true ONLY IF c1.id() != c2.id()
+// Returns true ONLY IF c1.index() != c2.index()
 bool operator != (const Characteristic& c1, const Characteristic& c2);
 
 extern std::vector<Characteristic> characteristic_list;

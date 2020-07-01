@@ -2,13 +2,17 @@
 // Fraction.cpp
 // Justyn Durnford
 // Created on 6/29/2020
-// Last updated on 6/29/2020
+// Last updated on 6/30/2020
 
 #include "Fraction.h"
 
 #include <string>
 using std::string;
 using std::to_string;
+using std::stoi;
+
+#include <stdexcept>
+using std::invalid_argument;
 
 Fraction::Fraction() { /* See Fraction.h for default values. */ }
 
@@ -22,6 +26,16 @@ Fraction::Fraction(const Fraction& fr)
 {
 	_numerator = fr.numerator();
 	_denominator = fr.denominator();
+}
+
+Fraction::Fraction(const string& str)
+{
+	try
+	{
+		_numerator = stoi(str.substr(0, str.find('/')));
+		_denominator = stoi(str.substr(str.find('/') + 1));
+	}
+	catch (const invalid_argument& ia) { /* See Fraction.h for default values. */ }
 }
 
 Fraction::~Fraction() { /* Destructor. */ }
@@ -68,6 +82,22 @@ string Fraction::toString() const
 	str += " / ";
 	str += to_string(_denominator);
 	return str;
+}
+
+Fraction& Fraction::operator = (const Fraction& fr)
+{
+	_numerator = fr.numerator();
+	_denominator = fr.denominator();
+
+	return *this;
+}
+
+Fraction& Fraction::operator = (int i)
+{
+	_numerator = i;
+	_denominator = 1;
+
+	return *this;
 }
 
 Fraction& Fraction::operator += (const Fraction& fr)
