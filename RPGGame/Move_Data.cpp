@@ -66,3 +66,16 @@ vector<Move_Kind> move_kind_list =
 	Move_Kind("Special", 1),
 	Move_Kind("Status", 2)
 };
+
+vector<Move_Range> move_range_list =
+{
+	Move_Range("Hits a single adjacent opponent.", 0),
+	Move_Range("Hits all adjacent opponents.", 1),
+	Move_Range("Hits a single opponent.", 2),
+	Move_Range("Hits all opponents.", 3),
+	Move_Range("Hits a single adjacent ally.", 4),
+	Move_Range("Hits all adjacent allies.", 5),
+	Move_Range("Hits an ally.", 6),
+	Move_Range("Hits all allies.", 7),
+	Move_Range("Hits all other pokemon.", 8)
+};
