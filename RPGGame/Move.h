@@ -7,8 +7,9 @@
 #ifndef MOVE_H
 #define MOVE_H
 
-#include "Move_Kind.h"
-class Move_Kind;
+#include "Move_Data.h"
+struct Move_Kind;
+struct Move_Range;
 
 #include "Type.h"
 class Type;
@@ -24,13 +25,14 @@ class Fraction;
 //
 class Move
 {
-	unsigned short _index = 0;
 	std::string _name = "";
 	std::string _desc = "";
+	unsigned short _index = 0;
 	unsigned char _type = 0;
 	unsigned char _kind = 0;
 	unsigned short _power = 0;
 	unsigned char _pp = 0;
+	unsigned char _range = 0;
 	Fraction _accuracy;
 	Fraction _additionalChance;
 	char _priority = 0;
@@ -41,21 +43,22 @@ class Move
 	Move();
 
 	// Primary constructor.
-	Move(unsigned short index, const std::string& name, const std::string& desc,
-		 unsigned char type, unsigned char kind, unsigned short power, unsigned char pp,
-		 const Fraction& accuracy, const Fraction& additionalChance, char priority);
+	Move(const std::string& name, const std::string& desc, unsigned short index,
+		 unsigned char type, unsigned char kind, unsigned short power,
+		 unsigned char pp, unsigned char range, const Fraction& accuracy,
+		 const Fraction& additionalChance, char priority);
 
 	// Destructor.
 	~Move();
-
-	// Returns _id.
-	unsigned short index() const;
 
 	// Returns _name.
 	std::string name() const;
 
 	// Returns _desc.
 	std::string desc() const;
+
+	// Returns _id.
+	unsigned short index() const;
 
 	// Returns type_list[_type].
 	Type& type() const;
@@ -68,6 +71,9 @@ class Move
 
 	// Returns _pp.
 	unsigned char pp() const;
+
+	// Returns move_range_list[_range].
+	Move_Range& range() const;
 
 	// Returns _accuracy.
 	Fraction accuracy() const;

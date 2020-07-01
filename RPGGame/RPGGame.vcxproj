@@ -145,7 +145,7 @@
     <ClInclude Include="Characteristic.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Move.h" />
-    <ClInclude Include="Move_Kind.h" />
+    <ClInclude Include="Move_Data.h" />
     <ClInclude Include="Nature.h" />
     <ClInclude Include="Player_Pokemon.h" />
     <ClInclude Include="Pokemon.h" />
@@ -159,7 +159,7 @@
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="main_file.cpp" />
-    <ClCompile Include="Move_Kind.cpp" />
+    <ClCompile Include="Move_Data.cpp" />
     <ClCompile Include="Nature.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="Type.cpp" />

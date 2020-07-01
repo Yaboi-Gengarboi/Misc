@@ -6,8 +6,9 @@
 
 #include "Move.h"
 
-#include "Move_Kind.h"
-class Move_Kind;
+#include "Move_Data.h"
+struct Move_Kind;
+struct Move_Range;
 
 #include "Type.h"
 class Type;
@@ -23,28 +24,25 @@ using std::vector;
 
 Move::Move() { /* See Move.h for default values. */ }
 
-Move::Move(unsigned short index, const string& name, const string& desc,
-		   unsigned char type, unsigned char kind, unsigned short power, unsigned char pp,
-		   const Fraction& accuracy, const Fraction& additionalChance, char priority)
+Move::Move(const string& name, const string& desc, unsigned short index,
+		   unsigned char type, unsigned char kind, unsigned short power,
+		   unsigned char pp, unsigned char range, const Fraction& accuracy,
+		   const Fraction& additionalChance, char priority)
 {
-	_index = index;
 	_name = name;
 	_desc = desc;
+	_index = index;
 	_type = type;
 	_kind = kind;
 	_power = power;
 	_pp = pp;
+	_range = range;
 	_accuracy = accuracy;
 	_additionalChance = additionalChance;
 	_priority = priority;
 }
 
 Move::~Move() { /* Destructor. */ }
-
-unsigned short Move::index() const
-{
-	return _index;
-}
 
 string Move::name() const
 {
@@ -54,6 +52,11 @@ string Move::name() const
 string Move::desc() const
 {
 	return _desc;
+}
+
+unsigned short Move::index() const
+{
+	return _index;
 }
 
 Type& Move::type() const
@@ -74,6 +77,11 @@ unsigned short Move::power() const
 unsigned char Move::pp() const
 {
 	return _pp;
+}
+
+Move_Range& Move::range() const
+{
+	return move_range_list[_range];
 }
 
 Fraction Move::accuracy() const

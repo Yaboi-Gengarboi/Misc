@@ -1,10 +1,11 @@
 Absorb
-Grass
-Special
+The user restores their HP by up to half the damage dealt to the target.
+11
+1
 20
-1/1
 25
-User recovers half the HP inflicted on opponent.
+1/1
+0/0
 0
 
 Accelerock
@@ -16,9 +17,8 @@ Physical
 User attacks first.
 1
 
-Acid	Poison	Special 	40 	100 	30 		May lower opponent's Special Defense. 	10
+Acid	        Poison	Special 	40 	100 	30 		May lower opponent's Special Defense. 	10
 Acid Armor	Poison	Status 	— 	— 	20 		Sharply raises user's Defense. 	—
-Acid Downpour	Poison	— 	— 	— 	1 		Poison type Z-Move. 	—
 Acid Spray	Poison	Special 	40 	100 	20 		Sharply lowers opponent's Special Defense. 	100
 Acrobatics	Flying	Physical 	55 	100 	15 	TM78 	Stronger when the user does not have a held item. 	—
 Acupressure	Normal	Status 	— 	— 	30 		Sharply raises a random stat. 	—
@@ -28,10 +28,8 @@ After You	Normal	Status 	— 	— 	15 		Gives target priority in the next turn. 
 Agility	        Psychic	Status 	— 	— 	30 		Sharply raises user's Speed. 	—
 Air Cutter	Flying	Special 	60 	95 	25 		High critical hit ratio. 	—
 Air Slash	Flying	Special 	75 	95 	15 	TM95 	May cause flinching. 	30
-All-Out Pummeling	Fighting	— 	— 	— 	1 		Fighting type Z-Move. 	—
 Ally Switch	Psychic	Status 	— 	— 	15 		User switches with opposite teammate. 	—
-Amnesia	Psychic	Status 	— 	— 	20 		Sharply raises user's Special Defense. 	—
-Anchor Shot	Steel	Physical 	80 	100 	20 		The user entangles the target with its anchor chain while attacking. The target becomes unable to flee. 	—
+Amnesia	        Psychic	Status 	— 	— 	20 		Sharply raises user's Special Defense. 	—
 Ancient Power	Rock	Special 	60 	100 	5 		May raise all user's stats at once. 	10
 Apple Acid	Grass	Special 	80 	100 	10 		Lowers target's Special Defense. 	100
 Aqua Jet	Water	Physical 	40 	100 	20 		User attacks first. 	—
