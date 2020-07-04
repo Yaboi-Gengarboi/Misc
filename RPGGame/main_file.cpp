@@ -2,9 +2,11 @@
 // main.cpp
 // Justyn Durnford
 // Created on 4/27/2020
-// Last updated on 6/29/2020
+// Last updated on 7/3/2020
 
 #include "Ability.h"
+
+#include "File_Handling.h"
 
 #include <iostream>
 using std::cout;
@@ -26,12 +28,7 @@ int main()
 {
 	load_Abilities();
 
-	for (unsigned char c = 0; c < ability_list.size(); ++c)
-	{
-		cout << ability_list[c].name() << endl;
-		cout << ability_list[c].desc() << endl;
-		cout << endl;
-	}
+	
 
 	return 0;
 }

@@ -1,7 +1,7 @@
 // test_file.cpp
 // Justyn P. Durnford
 // Created on 1/18/2020
-// Last updated on 6/11/2020
+// Last updated on 7/3/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -24,9 +24,20 @@ void println(const string& str)
 	cout << str << endl;
 }
 
+void println(double d)
+{
+	cout << d << endl;
+}
+
+void println(long long ll)
+{
+	cout << ll << endl;
+}
+
 int main(int argc, char** argv)
 {
-	println(to_hex(20));
+	println(ft_to_m(3, 7));
+	println(lb_to_kg(43.9f));
 
 	return 0;
 }

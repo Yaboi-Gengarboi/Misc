@@ -1,7 +1,7 @@
 // Color.hpp
 // Justyn Durnford
 // Created on 4/17/2020
-// Last updated on 6/11/2020
+// Last updated on 7/3/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -27,7 +27,6 @@ class Color
 
 	Color();
 	Color(unsigned char r, unsigned char g, unsigned char b);
-	Color(unsigned char c_arr[3]);
 	Color(unsigned char r, unsigned char g, unsigned char b, unsigned char alpha);
 	Color(unsigned char c_arr[4]);
 	Color(const Color& c);
@@ -55,7 +54,6 @@ class Color
 	std::string toHex() const;
 
 	Color& operator = (const Color& fr);
-	Color& operator = (unsigned char c_arr[3]);
 	Color& operator = (unsigned char c_arr[4]);
 };
 

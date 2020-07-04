@@ -2,7 +2,7 @@
 // Type.h
 // Justyn Durnford
 // Created on 4/7/2020
-// Last updated on 6/30/2020
+// Last updated on 7/3/2020
 
 #ifndef TYPE_H
 #define TYPE_H
@@ -44,6 +44,6 @@ bool operator != (const Type& t1, const Type& t2);
 
 extern std::vector<Type> type_list;
 
-extern const float type_matchup[19][19];
+extern const float type_matchup[18][18];
 
 #endif // TYPE_H

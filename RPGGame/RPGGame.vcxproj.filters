@@ -51,6 +51,12 @@
     <ClInclude Include="Move_Data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Egg_Group.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="File_Handling.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Type.cpp">
@@ -78,6 +84,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Move_Data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Egg_Group.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="File_Handling.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

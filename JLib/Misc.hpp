@@ -1,7 +1,7 @@
 // Misc.hpp
 // Justyn Durnford
 // Created on 6/11/2020
-// Last updated on 6/13/2020
+// Last updated on 7/3/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -32,5 +32,9 @@ void clamp(Type& t, const Type& a, const Type& b)
 	else if (t > b)
 		t = b;
 }
+
+float ft_to_m(unsigned int ft, unsigned char in);
+
+float lb_to_kg(float lb);
 
 #endif // MISC_HPP

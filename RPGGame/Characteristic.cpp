@@ -2,7 +2,7 @@
 // Characteristic.cpp
 // Justyn Durnford
 // Created on 6/26/2020
-// Last updated on 6/30/2020
+// Last updated on 7/3/2020
 
 #include "Characteristic.h"
 
@@ -17,7 +17,7 @@ Characteristic::Characteristic() { /* See Characteristic.h for default values. *
 Characteristic::Characteristic(const string& desc, unsigned char index, unsigned char goodStat)
 {
 	_desc = desc;
-	_index = id;
+	_index = index;
 	_goodStat = goodStat;
 }
 

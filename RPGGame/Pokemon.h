@@ -2,7 +2,7 @@
 // Pokemon.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 6/29/2020
+// Last updated on 7/3/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
@@ -12,6 +12,9 @@ class Type;
 
 #include "Ability.h"
 class Ability;
+
+#include "Egg_Group.h"
+class Egg_Group;
 
 #include <string>
 #include <memory>
@@ -23,14 +26,15 @@ class Ability;
 class Pokemon
 {
 	std::string _name = "";
+	std::string _desc = "";
 	unsigned short _index = 0;
-	unsigned char _type1 = 18;
-	unsigned char _type2 = 18;
+	unsigned char _type1 = 0;
+	unsigned char _type2 = 0;
 	unsigned char _ability1 = 0;
 	unsigned char _ability2 = 0;
 	float _genderRatio = 0;
-	// std::shared_ptr<Egg_Group> _eg1 = nullptr;
-	// std::shared_ptr<Egg_Group> _eg2 = nullptr;
+	unsigned char _eg1 = 0;
+	unsigned char _eg2 = 0;
 	float _height = 0;
 	float _weight = 0;
 	std::array<unsigned char, 6> _evYield = { 0, 0, 0, 0, 0, 0 };
@@ -52,6 +56,9 @@ class Pokemon
 	// Returns _name.
 	std::string name() const;
 
+	// Returns _desc.
+	std::string desc() const;
+
 	// Returns _index.
 	unsigned short index() const;
 
@@ -70,11 +77,11 @@ class Pokemon
 	// Returns _genderRatio.
 	float genderRatio() const;
 
-	// Returns _eg1.
-	// std::shared_ptr<Egg_Group> eg1() const;
+	// Returns egg_group_list[_eg1].
+	Egg_Group& eg1() const;
 
-	// Returns _eg2.
-	// std::shared_ptr<Egg_Group> eg2() const;
+	// Returns egg_group_list[_eg2].
+	Egg_Group& eg2() const;
 
 	// Returns _height.
 	float height() const;

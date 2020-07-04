@@ -1,7 +1,7 @@
 // Color.cpp
 // Justyn Durnford
 // Created on 6/11/2020
-// Last updated on 6/11/2020
+// Last updated on 7/3/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -22,13 +22,6 @@ Color::Color(unsigned char r, unsigned char g, unsigned char b)
 	_r = r;
 	_g = g;
 	_b = b;
-}
-
-Color::Color(unsigned char c_arr[3])
-{
-	_r = c_arr[0];
-	_g = c_arr[1];
-	_b = c_arr[2];
 }
 
 Color::Color(unsigned char r, unsigned char g, unsigned char b, unsigned char alpha)
@@ -99,25 +92,24 @@ void Color::setAlpha(unsigned char alpha)
 
 string Color::toString() const
 {
+	string str("");
 
+	return str;
 }
 
 string Color::toHex() const
 {
+	string hexstr("");
 
+	return hexstr;
 }
 
 Color& Color::operator = (const Color& fr)
 {
-
-}
-
-Color& Color::operator = (unsigned char c_arr[3])
-{
-
+	return *this;
 }
 
 Color& Color::operator = (unsigned char c_arr[4])
 {
-
+	return *this;
 }

@@ -143,6 +143,8 @@
     <ClInclude Include="Ability.h" />
     <ClInclude Include="Battle.h" />
     <ClInclude Include="Characteristic.h" />
+    <ClInclude Include="Egg_Group.h" />
+    <ClInclude Include="File_Handling.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Move_Data.h" />
@@ -156,6 +158,8 @@
   <ItemGroup>
     <ClCompile Include="Ability.cpp" />
     <ClCompile Include="Characteristic.cpp" />
+    <ClCompile Include="Egg_Group.cpp" />
+    <ClCompile Include="File_Handling.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="main_file.cpp" />

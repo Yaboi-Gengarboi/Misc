@@ -1,15 +1,10 @@
-// Misc.cpp
+// RPGGame
+// File_Handling.cpp
 // Justyn Durnford
-// Created on 6/11/2020
+// Created on 7/3/2020
 // Last updated on 7/3/2020
 
-// This program is free software. It comes without any warranty, to
-// the extent permitted by applicable law. You can redistribute it
-// and/or modify it under the terms of the Do What The Fuck You Want
-// To Public License, Version 2, as published by Sam Hocevar. See
-// http://www.wtfpl.net/ for more details.
-
-#include "Misc.hpp"
+#include "File_Handling.h"
 
 #include <string>
 using std::string;
@@ -20,18 +15,6 @@ string reverse_str(const string& str)
 
 	for (unsigned long long i = str.size(); i > 0; --i)
 		newstr += str[i - 1];
-
-	return newstr;
-}
-
-string replace(const string& str, const string& find, const string& repl)
-{
-	string newstr = "";
-
-	while (str.find(find) != -1)
-	{
-
-	}
 
 	return newstr;
 }
@@ -85,12 +68,9 @@ string to_hex(unsigned long long i)
 	return reverse_str(hexstr);
 }
 
-float ft_to_m(unsigned int ft, unsigned char in)
+string to_hex(float f)
 {
-	return (ft + ( in / 12.0f )) * 0.3048f;
-}
+	int* pf = (int*)&f;
 
-float lb_to_kg(float lb)
-{
-	return lb * 0.453592f;
+	return to_hex((unsigned long long)*pf);
 }
