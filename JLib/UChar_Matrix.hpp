@@ -1,7 +1,7 @@
 // UChar_Matrix.hpp
 // Justyn Durnford
 // Created on 6/8/2020
-// Last updated on 6/11/2020
+// Last updated on 7/22/2020
 
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -27,33 +27,28 @@
 class UChar_Matrix
 {
 	unsigned char** _matrix = nullptr;
-	unsigned int* _row = nullptr;
-	unsigned int* _col = nullptr;
+	unsigned long long* _row = nullptr;
+	unsigned long long* _col = nullptr;
 
 	void alloc();
 	void dealloc();
-	void realloc(unsigned int row, unsigned int col);
 
 	public:
 
-	UChar_Matrix();
-	UChar_Matrix(unsigned int row, unsigned int col);
-	UChar_Matrix(unsigned int row, unsigned int col, unsigned char init_val);
+	UChar_Matrix(unsigned long long row, unsigned long long col);
+	UChar_Matrix(unsigned long long row, unsigned long long col, unsigned char init_val);
 	UChar_Matrix(const UChar_Matrix& mat);
-	UChar_Matrix(unsigned int row, unsigned int col, const UChar_Matrix& mat);
-	// UChar_Matrix& operator = (const Matrix& mat);
+	UChar_Matrix(unsigned long long row, unsigned long long col, const UChar_Matrix& mat);
+	UChar_Matrix& operator = (const UChar_Matrix& mat);
 
 	~UChar_Matrix();
 
-	unsigned char at(unsigned int row, unsigned int col) const;
+	unsigned char at(unsigned long long row, unsigned long long col) const;
 
-	void set(unsigned int row, unsigned int col, unsigned char uc);
+	void set(unsigned long long row, unsigned long long col, unsigned char uc);
 
-	unsigned int row() const;
-	unsigned int col() const;
-
-	void setRow(unsigned int row);
-	void setCol(unsigned int col);
+	unsigned long long row() const;
+	unsigned long long col() const;
 
 	std::string toString() const;
 };

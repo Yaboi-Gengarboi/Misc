@@ -54,7 +54,7 @@
     <ClInclude Include="Egg_Group.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="File_Handling.h">
+    <ClInclude Include="Initialize.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -89,7 +89,7 @@
     <ClCompile Include="Egg_Group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="File_Handling.cpp">
+    <ClCompile Include="Initialize.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

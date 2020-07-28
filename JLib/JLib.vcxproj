@@ -138,7 +138,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bool_Matrix.h" />
     <ClInclude Include="Color.hpp" />
+    <ClInclude Include="Float_Matrix.h" />
     <ClInclude Include="Fraction.hpp" />
     <ClInclude Include="Big_Int.hpp" />
     <ClInclude Include="UChar_Matrix.hpp" />
@@ -149,7 +151,9 @@
     <ClInclude Include="Vector3f.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bool_Matrix.cpp" />
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Float_Matrix.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="Big_Int.cpp" />
     <ClCompile Include="UChar_Matrix.cpp" />

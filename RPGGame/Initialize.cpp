@@ -1,13 +1,21 @@
 // RPGGame
-// File_Handling.cpp
+// Initialize.cpp
 // Justyn Durnford
 // Created on 7/3/2020
-// Last updated on 7/3/2020
+// Last updated on 7/19/2020
 
-#include "File_Handling.h"
+#include "Initialize.h"
 
 #include <string>
 using std::string;
+using std::to_string;
+using std::getline;
+
+#include <fstream>
+using std::ifstream;
+
+#include <vector>
+using std::vector;
 
 string reverse_str(const string& str)
 {
@@ -73,4 +81,36 @@ string to_hex(float f)
 	int* pf = (int*)&f;
 
 	return to_hex((unsigned long long)*pf);
+}
+
+bool load_abilities()
+{
+	ifstream fin("Data/Abilities.txt");
+	string name("");
+	string desc("");
+
+	for (unsigned char c = 0; c < 179; ++c)
+	{
+		getline(fin, name);
+		getline(fin, desc);
+
+		ability_list.push_back(Ability(c, name, desc));
+	}
+
+	return true;
+}
+
+bool load_moves()
+{
+	return true;
+}
+
+bool load_pokemon()
+{
+	return true;
+}
+
+bool load_player_pokemon()
+{
+	return true;
 }

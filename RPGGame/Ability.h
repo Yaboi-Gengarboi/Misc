@@ -2,7 +2,7 @@
 // Ability.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 6/30/2020
+// Last updated on 7/19/2020
 
 #ifndef ABILITY_H
 #define ABILITY_H
@@ -39,8 +39,6 @@ class Ability
 	// Returns _desc.
 	std::string desc() const;
 };
-
-void load_Abilities();
 
 extern std::vector<Ability> ability_list;
 

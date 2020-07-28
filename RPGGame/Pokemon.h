@@ -2,10 +2,13 @@
 // Pokemon.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 7/3/2020
+// Last updated on 7/16/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
+
+#include "Fraction.h"
+class Fraction;
 
 #include "Type.h"
 class Type;
@@ -17,7 +20,6 @@ class Ability;
 class Egg_Group;
 
 #include <string>
-#include <memory>
 #include <array>
 
 //
@@ -32,15 +34,13 @@ class Pokemon
 	unsigned char _type2 = 0;
 	unsigned char _ability1 = 0;
 	unsigned char _ability2 = 0;
-	float _genderRatio = 0;
+	Fraction _maleRatio;
 	unsigned char _eg1 = 0;
 	unsigned char _eg2 = 0;
 	float _height = 0;
 	float _weight = 0;
 	std::array<unsigned char, 6> _evYield = { 0, 0, 0, 0, 0, 0 };
 	std::array<unsigned char, 6> _baseStats = { 0, 0, 0, 0, 0, 0 };
-
-	void loadPokemon();
 
 	public:
 
@@ -74,8 +74,8 @@ class Pokemon
 	// Returns ability_list[_ability2].
 	Ability& ability2() const;
 
-	// Returns _genderRatio.
-	float genderRatio() const;
+	// Returns _maleRatio.
+	Fraction maleRatio() const;
 
 	// Returns egg_group_list[_eg1].
 	Egg_Group& eg1() const;

@@ -2,7 +2,7 @@
 // Move.h
 // Justyn Durnford
 // Created on 4/20/2020
-// Last updated on 7/1/2020
+// Last updated on 7/8/2020
 
 #ifndef MOVE_H
 #define MOVE_H
@@ -30,7 +30,7 @@ class Move
 	unsigned short _index = 0;
 	unsigned char _type = 0;
 	unsigned char _kind = 0;
-	unsigned short _power = 0;
+	unsigned char _power = 0;
 	unsigned char _pp = 0;
 	unsigned char _range = 0;
 	Fraction _accuracy;
@@ -44,7 +44,7 @@ class Move
 
 	// Primary constructor.
 	Move(const std::string& name, const std::string& desc, unsigned short index,
-		 unsigned char type, unsigned char kind, unsigned short power,
+		 unsigned char type, unsigned char kind, unsigned char power,
 		 unsigned char pp, unsigned char range, const Fraction& accuracy,
 		 const Fraction& additionalChance, char priority);
 
@@ -67,7 +67,7 @@ class Move
 	Move_Kind& kind() const;
 
 	// Returns _power.
-	unsigned short power() const;
+	unsigned char power() const;
 
 	// Returns _pp.
 	unsigned char pp() const;

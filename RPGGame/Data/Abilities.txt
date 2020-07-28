@@ -69,7 +69,7 @@ The Pokemon turns the ground into Electric Terrain for 8 turns upon entering bat
 Fairy Aura
 Raises the power of all pokemons' Dark-type moves by 33.33%.
 Filter
-Reduces the damage taken from supereffective moves by 30%.
+Halves the damage taken from supereffective moves.
 Flame Body
 Opposing pokemon have a 50% chance of being burned upon landing a direct attack on the Pokemon. Prevents the Pokemon from being frozen.
 Flare Boost
@@ -278,6 +278,8 @@ Snow Warning
 The Pokemon changes the weather to hail for 8 turns upon entering battle.
 Solar Power
 In sunny weather, the Pokemon's Special Attack stat is increased by 50%, but it takes damage equal to 12.5% of its maximum HP every turn.
+Solid Rock
+Halves the damage taken from moves that are not suppereffective.
 Soundproof
 Protects the Pokemon from sound-based moves.
 Specialist
@@ -302,8 +304,6 @@ Sturdy
 Prevents the Pokemon from fainting after being hit by 1 move, leaving it with just 1 HP left. Protects the Pokemon from OHKO moves.
 Suction Cups
 Prevents the Pokemon from being forcefully switched out.
-Super Filter
-Decreases the damage taken from supereffective moves by 35%.
 Super Luck
 Increases the chance that the Pokemon lands a critical hit by 1 stage.
 Swarm

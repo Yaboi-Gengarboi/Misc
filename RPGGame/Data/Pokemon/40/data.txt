@@ -1,0 +1,18 @@
+Vulpix
+During the daytime, when the temperature raises, it releases flames from its mouth to prevent its body from getting too hot.
+9
+17
+29
+38
+1/4
+4
+-1
+0.6
+9.9
+000101
+40
+40
+40
+50
+65
+65

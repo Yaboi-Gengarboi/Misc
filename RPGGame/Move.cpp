@@ -2,7 +2,7 @@
 // Move.cpp
 // Justyn Durnford
 // Created on 5/23/2020
-// Last updated on 7/1/2020
+// Last updated on 7/8/2020
 
 #include "Move.h"
 
@@ -25,7 +25,7 @@ using std::vector;
 Move::Move() { /* See Move.h for default values. */ }
 
 Move::Move(const string& name, const string& desc, unsigned short index,
-		   unsigned char type, unsigned char kind, unsigned short power,
+		   unsigned char type, unsigned char kind, unsigned char power,
 		   unsigned char pp, unsigned char range, const Fraction& accuracy,
 		   const Fraction& additionalChance, char priority)
 {
@@ -69,7 +69,7 @@ Move_Kind& Move::kind() const
 	return move_kind_list[_kind];
 }
 
-unsigned short Move::power() const
+unsigned char Move::power() const
 {
 	return _power;
 }

@@ -2,15 +2,9 @@
 // Pokemon.cpp
 // Justyn Durnford
 // Created on 5/15/2020
-// Last updated on 6/29/2020
+// Last updated on 7/16/2020
 
 #include "Pokemon.h"
-
-#include "Type.h"
-class Type;
-
-#include "Ability.h"
-class Ability;
 
 #include <string>
 using std::string;
@@ -20,11 +14,6 @@ using std::array;
 
 #include <fstream>
 using std::ifstream;
-
-void Pokemon::loadPokemon()
-{
-
-}
 
 Pokemon::Pokemon() { /* See Pokemon.h for default values. */ }
 
@@ -38,6 +27,11 @@ Pokemon::~Pokemon() { /* Destructor. */ }
 string Pokemon::name() const
 {
 	return _name;
+}
+
+string Pokemon::desc() const
+{
+	return _desc;
 }
 
 unsigned short Pokemon::index() const
@@ -65,20 +59,20 @@ Ability& Pokemon::ability2() const
 	return ability_list[_ability2];
 }
 
-float Pokemon::genderRatio() const
+Fraction Pokemon::maleRatio() const
 {
-	return _genderRatio;
+	return _maleRatio;
 }
 
-// shared_ptr<Egg_Group> eg1() const
-// {
-//     return _eg1;
-// }
+Egg_Group& Pokemon::eg1() const
+{
+     return egg_group_list[_eg1];
+}
 
-// shared_ptr<Egg_Group> eg2() const
-// {
-//     return _eg2;
-// }
+Egg_Group& Pokemon::eg2() const
+{
+    return egg_group_list[_eg2];
+}
 
 float Pokemon::height() const
 {
@@ -148,9 +142,4 @@ unsigned char Pokemon::baseSpDef() const
 unsigned char Pokemon::baseSpe() const
 {
 	return _baseStats[5];
-}
-
-void load_pokemon()
-{
-
 }

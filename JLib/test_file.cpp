@@ -36,8 +36,5 @@ void println(long long ll)
 
 int main(int argc, char** argv)
 {
-	println(ft_to_m(3, 7));
-	println(lb_to_kg(43.9f));
-
 	return 0;
 }
