@@ -42,6 +42,9 @@ class Character
 	// Adds a subaction to add to _subList with the given parameters.
 	void addSubaction(const std::string& name, unsigned short id);
 
+	// Returns the size of _sublist.
+	const unsigned long long subListSize() const;
+
 	// Returns true if a._id == b._id.
 	bool friend operator == (const Character& a, const Character& b);
 

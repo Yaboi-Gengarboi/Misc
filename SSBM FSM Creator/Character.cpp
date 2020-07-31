@@ -43,6 +43,11 @@ void Character::addSubaction(const std::string& name, unsigned short id)
 	_subList[id] = Subaction(name, id);
 }
 
+const unsigned long long Character::subListSize() const
+{
+	return (unsigned long long)_subList.size();
+}
+
 bool operator == (const Character& a, const Character& b)
 {
 	if (a._id == b._id)

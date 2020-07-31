@@ -12,23 +12,9 @@
 #include <string>
 using std::string;
 using std::to_string;
-using std::stoi;
-using std::stof;
 
 #include <vector>
 using std::vector;
-
-#include <map>
-using std::map;
-
-#include <sstream>
-using std::ostringstream;
-
-#include <stdexcept>
-using std::invalid_argument;
-
-#include <iostream>
-using std::hex;
 
 FSM::FSM() { /* See FSM.h for default values. */ }
 
