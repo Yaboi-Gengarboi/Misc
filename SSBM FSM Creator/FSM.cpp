@@ -2,9 +2,12 @@
 // FSM.cpp
 // Justyn Durnford
 // Created on 12/18/2019
-// Last updated on 6/3/2020
+// Last updated on 7/30/2020
 
-#include "FSM.hpp"
+#include "FSM.h"
+#include "Subaction.h"
+#include "Character.h"
+#include "Tools.h"
 
 #include <string>
 using std::string;
@@ -15,6 +18,9 @@ using std::stof;
 #include <vector>
 using std::vector;
 
+#include <map>
+using std::map;
+
 #include <sstream>
 using std::ostringstream;
 
@@ -24,83 +30,7 @@ using std::invalid_argument;
 #include <iostream>
 using std::hex;
 
-//////////////////////////////////////////////////////////////////////
-//                             SUBACTION                            //
-//////////////////////////////////////////////////////////////////////
-
-Subaction::Subaction() {}
-
-Subaction::Subaction(const string& name, unsigned short id)
-{
-	_name = name;
-	_id = id;
-}
-
-Subaction::~Subaction() {}
-
-bool operator == (const Subaction& a, const Subaction& b)
-{
-	if (a._id != b._id)
-		return false;
-
-	if (a._name != b._name)
-		return false;
-
-	return true;
-}
-
-bool operator != (const Subaction& a, const Subaction& b)
-{
-	if (a._id != b._id)
-		return true;
-
-	if (a._name != b._name)
-		return true;
-
-	return false;
-}
-
-//////////////////////////////////////////////////////////////////////
-//                             CHARACTER                            //
-//////////////////////////////////////////////////////////////////////
-
-Character::Character() {}
-
-Character::Character(const string& name, unsigned char id)
-{
-	_name = name;
-	_id = id;
-}
-
-Character::~Character() {}
-
-bool operator == (const Character& a, const Character& b)
-{
-	if (a._id != b._id)
-		return false;
-
-	if (a._name != b._name)
-		return false;
-
-	return true;
-}
-
-bool operator != (const Character& a, const Character& b)
-{
-	if (a._id != b._id)
-		return true;
-
-	if (a._name != b._name)
-		return true;
-
-	return false;
-}
-
-//////////////////////////////////////////////////////////////////////
-//                                FSM                               //
-//////////////////////////////////////////////////////////////////////
-
-FSM::FSM() { /* Default Constructor */ }
+FSM::FSM() { /* See FSM.h for default values. */ }
 
 FSM::FSM(const Character& character, unsigned char frame,
 	const Subaction& subaction, float multiplier)
@@ -113,9 +43,9 @@ FSM::FSM(const Character& character, unsigned char frame,
 
 FSM::~FSM() { /* Destructor */ }
 
-Character FSM::character() const
+const Character& FSM::character() const
 {
-	return _character;
+	return character_list[_character.id()];
 }
 
 unsigned char FSM::frame() const
@@ -123,9 +53,9 @@ unsigned char FSM::frame() const
 	return _frame;
 }
 
-Subaction FSM::subaction() const
+const Subaction& FSM::subaction() const
 {
-	return _subaction;
+	return _character.subList(_subaction.id());
 }
 
 float FSM::multiplier() const
@@ -133,9 +63,9 @@ float FSM::multiplier() const
 	return _multiplier;
 }
 
-void FSM::setCharacter(const Character& ch)
+void FSM::setCharacter(const Character& character)
 {
-	_character = ch;
+	_character = character;
 }
 
 void FSM::setFrame(unsigned char frame)
@@ -143,9 +73,9 @@ void FSM::setFrame(unsigned char frame)
 	_frame = frame;
 }
 
-void FSM::setSubaction(const Subaction& sub)
+void FSM::setSubaction(const Subaction& subaction)
 {
-	_subaction = sub;
+	_subaction = subaction;
 }
 
 void FSM::setMultiplier(float multiplier)
@@ -165,8 +95,8 @@ string FSM::toString() const
 {
 	string str = "";
 
-	str += _character._name + ", ";
-	str += _subaction._name + ", ";
+	str += _character.name() + ", ";
+	str += _subaction.name() + ", ";
 	str += "x" + to_string(_multiplier);
 	str += " @ frame " + to_string(_frame);
 
@@ -176,29 +106,26 @@ string FSM::toString() const
 string FSM::toHex() const
 {
 	string hex_str = "";
-	ostringstream hex_str_stream;
 
-	if (_character._id < 16)
-		hex_str_stream << "0";
-	hex_str_stream << hex << _character._id;
+	if (_character.id() < 0x10)
+		hex_str += '0';
+	hex_str += to_hex(_character.id());
 
-	if (_frame < 16)
-		hex_str_stream << "0";
-	hex_str_stream << hex << _frame;
+	if (_frame < 0x10)
+		hex_str += '0';
+	hex_str += to_hex(_frame);
 
-	hex_str_stream << 8;
-	if (_subaction._id < 256)
-		hex_str_stream << "0";
-	if (_subaction._id < 16)
-		hex_str_stream << "0";
-	hex_str_stream << hex << _subaction._id;
+	hex_str += '8';
 
-	hex_str_stream << " ";
+	if (_subaction.id() < 0x10)
+		hex_str += '0';
+	if (_subaction.id() < 0x100)
+		hex_str += '0';
+	hex_str += to_hex(_subaction.id());
 
-	int* pMult = (int*)&_multiplier;
-	hex_str_stream << hex << *pMult;
+	hex_str += ' ';
 
-	hex_str = hex_str_stream.str();
+	hex_str += to_hex(_multiplier);
 
 	return hex_str;
 }
@@ -206,6 +133,9 @@ string FSM::toHex() const
 bool operator == (const FSM& a, const FSM& b)
 {
 	if (a._character != b._character)
+		return false;
+
+	if (a._frame != b._frame)
 		return false;
 
 	if (a._subaction != b._subaction)
@@ -219,69 +149,13 @@ bool operator != (const FSM& a, const FSM& b)
 	if (a._character != b._character)
 		return true;
 
+	if (a._frame != b._frame)
+		return true;
+
 	if (a._subaction != b._subaction)
 		return true;
 
 	return false;
-}
-
-string reverse_str(const string& str)
-{
-	string newstr = "";
-
-	for (unsigned long long i = str.size(); i > 0; --i)
-		newstr += str[i - 1];
-
-	return newstr;
-}
-
-string to_hex(unsigned long long i)
-{
-	string hexstr = "";
-	unsigned char rem = 0;
-
-	if (i == 0)
-		return "0";
-
-	while (i != 0)
-	{
-		rem = i % 16;
-
-		switch (rem)
-		{
-			case 10:
-				hexstr += 'a';
-				break;
-
-			case 11:
-				hexstr += 'b';
-				break;
-
-			case 12:
-				hexstr += 'c';
-				break;
-
-			case 13:
-				hexstr += 'd';
-				break;
-
-			case 14:
-				hexstr += 'e';
-				break;
-
-			case 15:
-				hexstr += 'f';
-				break;
-
-			default:
-				hexstr += rem + 48;
-				break;
-		}
-
-		i /= 16;
-	}
-
-	return reverse_str(hexstr);
 }
 
 vector<Character> character_list =

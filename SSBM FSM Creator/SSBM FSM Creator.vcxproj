@@ -138,11 +138,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="FSM.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Subaction.cpp" />
+    <ClCompile Include="Tools.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FSM.hpp" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="FSM.h" />
+    <ClInclude Include="Subaction.h" />
+    <ClInclude Include="Tools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
