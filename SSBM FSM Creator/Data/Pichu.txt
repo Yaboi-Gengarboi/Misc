@@ -1,68 +1,68 @@
-0x29 Spot Dodge
-0x2a Forward Roll
-0x2b Back Roll
-0x2c Air Dodge
-0x2e Jab 1
-0x34 Dash Attack
-0x35 Side Tilt High
-0x37 Side Tilt Middle
-0x39 Side Tilt Low
-0x3a Up Tilt
-0x3b Down Tilt
-0x3e Side Smash Middle
-0x42 Up Smash
-0x43 Down Smash
-0x44 Neutral Aerial
-0x45 Foward Aerial
-0x46 Back Aerial
-0x47 Up Aerial
-0x49 Down Aerial
-0xc7 Neutral Tech
-0xc8 Forward Tech
-0xc9 Back Tech
-0xca Wall Tech
-0xcb Wall Jump Tech
-0xcc Ceiling Tech
-0xdb Ledge Getup Slow
-0xdc Ledge Getup Fast
-0xdd Ledge Attack Slow
-0xde Ledge Attack Fast
-0xdf Ledge Roll Slow
-0xe0 Ledge Roll Fast
-0xe1 Ledge Jump 1 Slow
-0xe2 Ledge Jump 2 Slow
-0xe3 Ledge Jump 1 Fast
-0xe4 Ledge Jump 2 Fast
-0xef Left Taunt
-0xf0 Right Taunt
-0xf2 Grab
-0xf3 Dash Grab
-0xf7 Forward Throw
-0xf8 Back Throw
-0xf9 Up Throw
-0xfa Down Throw
-0x127 Thunder Jolt (Ground)
-0x128 Thunder Jolt (Aerial)
-0x129 Skull Bash Start (Ground)
-0x12a Skull Bash Charge (Ground)
-0x12b Skull Bash 1 (Ground)
-0x12c Skull Bash 2 (Ground)
-0x12d Skull Bash End (Ground)
-0x12e Skull Bash Start (Aerial)
-0x12f Skull Bash Charge (Aerial)
-0x130 Skull Bash (Aerial)
-0x131 Skull Bash End (Aerial)
-0x132 Quick Attack Start 1 (Ground)
-0x133 Quick Attack Start 2 (Ground)
-0x134 Quick Attack End (Ground)
-0x135 Quick Attack Start 1 (Aerial)
-0x136 Quick Attack Start 2 (Aerial)
-0x137 Quick Attack End (Aerial)
-0x138 Thunder Start (Ground)
-0x139 Thunder Loop 1 (Ground)
-0x13a Thunder Loop 2 (Ground)
-0x13b Thunder End (Ground)
-0x13c Thunder Start (Aerial)
-0x13d Thunder Loop 1 (Aerial)
-0x13e Thunder Loop 2 (Aerial)
-0x13f Thunder End (Aerial)
+29 Spot Dodge
+2a Forward Roll
+2b Back Roll
+2c Air Dodge
+2e Jab 1
+34 Dash Attack
+35 Side Tilt High
+37 Side Tilt Middle
+39 Side Tilt Low
+3a Up Tilt
+3b Down Tilt
+3e Side Smash Middle
+42 Up Smash
+43 Down Smash
+44 Neutral Aerial
+45 Foward Aerial
+46 Back Aerial
+47 Up Aerial
+49 Down Aerial
+c7 Neutral Tech
+c8 Forward Tech
+c9 Back Tech
+ca Wall Tech
+cb Wall Jump Tech
+cc Ceiling Tech
+db Ledge Getup Slow
+dc Ledge Getup Fast
+dd Ledge Attack Slow
+de Ledge Attack Fast
+df Ledge Roll Slow
+e0 Ledge Roll Fast
+e1 Ledge Jump 1 Slow
+e2 Ledge Jump 2 Slow
+e3 Ledge Jump 1 Fast
+e4 Ledge Jump 2 Fast
+ef Left Taunt
+f0 Right Taunt
+f2 Grab
+f3 Dash Grab
+f7 Forward Throw
+f8 Back Throw
+f9 Up Throw
+fa Down Throw
+127 Thunder Jolt (Ground)
+128 Thunder Jolt (Aerial)
+129 Skull Bash Start (Ground)
+12a Skull Bash Charge (Ground)
+12b Skull Bash 1 (Ground)
+12c Skull Bash 2 (Ground)
+12d Skull Bash End (Ground)
+12e Skull Bash Start (Aerial)
+12f Skull Bash Charge (Aerial)
+130 Skull Bash (Aerial)
+131 Skull Bash End (Aerial)
+132 Quick Attack Start 1 (Ground)
+133 Quick Attack Start 2 (Ground)
+134 Quick Attack End (Ground)
+135 Quick Attack Start 1 (Aerial)
+136 Quick Attack Start 2 (Aerial)
+137 Quick Attack End (Aerial)
+138 Thunder Start (Ground)
+139 Thunder Loop 1 (Ground)
+13a Thunder Loop 2 (Ground)
+13b Thunder End (Ground)
+13c Thunder Start (Aerial)
+13d Thunder Loop 1 (Aerial)
+13e Thunder Loop 2 (Aerial)
+13f Thunder End (Aerial)

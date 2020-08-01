@@ -1,65 +1,65 @@
-0x29 Spot Dodge
-0x2a Forward Roll
-0x2b Back Roll
-0x2c Air Dodge
-0x2e Jab 1
-0x2f Jab 2
-0x34 Dash Attack
-0x35 Side Tilt High
-0x37 Side Tilt Middle
-0x39 Side Tilt Low
-0x3a Up Tilt
-0x3b Down Tilt
-0x3e Side Smash Middle
-0x42 Up Smash
-0x43 Down Smash
-0x44 Neutral Aerial
-0x45 Foward Aerial
-0x46 Back Aerial
-0x47 Up Aerial
-0x49 Down Aerial
-0xc7 Neutral Tech
-0xc8 Forward Tech
-0xc9 Back Tech
-0xca Wall Tech
-0xcb Wall Jump Tech
-0xcc Ceiling Tech
-0xdb Ledge Getup Slow
-0xdc Ledge Getup Fast
-0xdd Ledge Attack Slow
-0xde Ledge Attack Fast
-0xdf Ledge Roll Slow
-0xe0 Ledge Roll Fast
-0xe1 Ledge Jump 1 Slow
-0xe2 Ledge Jump 2 Slow
-0xe3 Ledge Jump 1 Fast
-0xe4 Ledge Jump 2 Fast
-0xef Left Taunt
-0xf0 Right Taunt
-0xf2 Grab
-0xf3 Dash Grab
-0xf7 Forward Throw
-0xf8 Back Throw
-0xf9 Up Throw
-0xfa Down Throw
-0x127 Fire Breath Start (Ground)
-0x128 Fire Breath Loop (Ground)
-0x129 Fire Breath End (Ground)
-0x12a Fire Breath Start (Aerial)
-0x12b Fire Breath Loop (Aerial)
-0x12c Fire Breath End (Aerial)
-0x12d Koopa Claw Start (Ground)
-0x12e Koopa Claw Hit 1 (Ground)
-0x12f Koopa Claw Hit 2 (Ground)
-0x130 Koopa Claw Foward Throw (Ground)
-0x131 Koopa Claw Back Throw (Ground)
-0x132 Koopa Claw Start (Aerial)
-0x133 Koopa Claw Hit 1 (Aerial)
-0x134 Koopa Claw Hit 2 (Aerial)
-0x135 Koopa Claw Foward Throw (Aerial)
-0x136 Koopa Claw Back Throw (Aerial)
-0x137 Whirling Fortress (Ground)
-0x138 Whirling Fortress (Aerial)
-0x139 Bowser Bomb (Ground)
-0x13a Bowser Bomb (Aerial)
-0x13b Bowser Bomb Landing
+29 Spot Dodge
+2a Forward Roll
+2b Back Roll
+2c Air Dodge
+2e Jab 1
+2f Jab 2
+34 Dash Attack
+35 Side Tilt High
+37 Side Tilt Middle
+39 Side Tilt Low
+3a Up Tilt
+3b Down Tilt
+3e Side Smash Middle
+42 Up Smash
+43 Down Smash
+44 Neutral Aerial
+45 Foward Aerial
+46 Back Aerial
+47 Up Aerial
+49 Down Aerial
+c7 Neutral Tech
+c8 Forward Tech
+c9 Back Tech
+ca Wall Tech
+cb Wall Jump Tech
+cc Ceiling Tech
+db Ledge Getup Slow
+dc Ledge Getup Fast
+dd Ledge Attack Slow
+de Ledge Attack Fast
+df Ledge Roll Slow
+e0 Ledge Roll Fast
+e1 Ledge Jump 1 Slow
+e2 Ledge Jump 2 Slow
+e3 Ledge Jump 1 Fast
+e4 Ledge Jump 2 Fast
+ef Left Taunt
+f0 Right Taunt
+f2 Grab
+f3 Dash Grab
+f7 Forward Throw
+f8 Back Throw
+f9 Up Throw
+fa Down Throw
+127 Fire Breath Start (Ground)
+128 Fire Breath Loop (Ground)
+129 Fire Breath End (Ground)
+12a Fire Breath Start (Aerial)
+12b Fire Breath Loop (Aerial)
+12c Fire Breath End (Aerial)
+12d Koopa Claw Start (Ground)
+12e Koopa Claw Hit 1 (Ground)
+12f Koopa Claw Hit 2 (Ground)
+130 Koopa Claw Foward Throw (Ground)
+131 Koopa Claw Back Throw (Ground)
+132 Koopa Claw Start (Aerial)
+133 Koopa Claw Hit 1 (Aerial)
+134 Koopa Claw Hit 2 (Aerial)
+135 Koopa Claw Foward Throw (Aerial)
+136 Koopa Claw Back Throw (Aerial)
+137 Whirling Fortress (Ground)
+138 Whirling Fortress (Aerial)
+139 Bowser Bomb (Ground)
+13a Bowser Bomb (Aerial)
+13b Bowser Bomb Landing

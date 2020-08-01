@@ -1,72 +1,72 @@
-0x29 Spot Dodge
-0x2a Forward Roll
-0x2b Back Roll
-0x2c Air Dodge
-0x2e Jab 1
-0x31 Rapid Jab Start
-0x32 Rapid Jab Loop
-0x33 Rapid Jab End
-0x34 Dash Attack
-0x37 Side Tilt Middle
-0x3a Up Tilt
-0x3b Down Tilt
-0x3e Side Smash Middle
-0x42 Up Smash
-0x43 Down Smash
-0x44 Neutral Aerial
-0x45 Foward Aerial
-0x46 Back Aerial
-0x47 Up Aerial
-0x49 Down Aerial
-0xc7 Neutral Tech
-0xc8 Forward Tech
-0xc9 Back Tech
-0xca Wall Tech
-0xcb Wall Jump Tech
-0xcc Ceiling Tech
-0xdb Ledge Getup Slow
-0xdc Ledge Getup Fast
-0xdd Ledge Attack Slow
-0xde Ledge Attack Fast
-0xdf Ledge Roll Slow
-0xe0 Ledge Roll Fast
-0xe1 Ledge Jump 1 Slow
-0xe2 Ledge Jump 2 Slow
-0xe3 Ledge Jump 1 Fast
-0xe4 Ledge Jump 2 Fast
-0xef Left Taunt
-0xf0 Right Taunt
-0xf2 Grab
-0xf3 Dash Grab
-0xf7 Forward Throw
-0xf8 Back Throw
-0xf9 Up Throw
-0xfa Down Throw
-0x127 Chef (Ground)
-0x128 Chef (Aerial)
-0x129 Judge 1 (Ground)
-0x12a Judge 2 (Ground)
-0x12b Judge 3 (Ground)
-0x12c Judge 4 (Ground)
-0x12d Judge 5 (Ground)
-0x12e Judge 6 (Ground)
-0x12f Judge 7 (Ground)
-0x130 Judge 8 (Ground)
-0x131 Judge 9 (Ground)
-0x132 Judge 1 (Aerial)
-0x133 Judge 2 (Aerial)
-0x134 Judge 3 (Aerial)
-0x135 Judge 4 (Aerial)
-0x136 Judge 5 (Aerial)
-0x137 Judge 6 (Aerial)
-0x138 Judge 7 (Aerial)
-0x139 Judge 8 (Aerial)
-0x13a Judge 9 (Aerial)
-0x13b Fire (Ground)
-0x13c Fire (Aerial)
-0x13d Oil Panic (Ground)
-0x13e Oil Panic Absorb (Ground)
-0x13f Oil Panic Release (Ground)
-0x140 Oil Panic (Aerial)
-0x141 Oil Panic Absorb (Aerial)
-0x142 Oil Panic Release (Aerial)
+29 Spot Dodge
+2a Forward Roll
+2b Back Roll
+2c Air Dodge
+2e Jab 1
+31 Rapid Jab Start
+32 Rapid Jab Loop
+33 Rapid Jab End
+34 Dash Attack
+37 Side Tilt Middle
+3a Up Tilt
+3b Down Tilt
+3e Side Smash Middle
+42 Up Smash
+43 Down Smash
+44 Neutral Aerial
+45 Foward Aerial
+46 Back Aerial
+47 Up Aerial
+49 Down Aerial
+c7 Neutral Tech
+c8 Forward Tech
+c9 Back Tech
+ca Wall Tech
+cb Wall Jump Tech
+cc Ceiling Tech
+db Ledge Getup Slow
+dc Ledge Getup Fast
+dd Ledge Attack Slow
+de Ledge Attack Fast
+df Ledge Roll Slow
+e0 Ledge Roll Fast
+e1 Ledge Jump 1 Slow
+e2 Ledge Jump 2 Slow
+e3 Ledge Jump 1 Fast
+e4 Ledge Jump 2 Fast
+ef Left Taunt
+f0 Right Taunt
+f2 Grab
+f3 Dash Grab
+f7 Forward Throw
+f8 Back Throw
+f9 Up Throw
+fa Down Throw
+127 Chef (Ground)
+128 Chef (Aerial)
+129 Judge 1 (Ground)
+12a Judge 2 (Ground)
+12b Judge 3 (Ground)
+12c Judge 4 (Ground)
+12d Judge 5 (Ground)
+12e Judge 6 (Ground)
+12f Judge 7 (Ground)
+130 Judge 8 (Ground)
+131 Judge 9 (Ground)
+132 Judge 1 (Aerial)
+133 Judge 2 (Aerial)
+134 Judge 3 (Aerial)
+135 Judge 4 (Aerial)
+136 Judge 5 (Aerial)
+137 Judge 6 (Aerial)
+138 Judge 7 (Aerial)
+139 Judge 8 (Aerial)
+13a Judge 9 (Aerial)
+13b Fire (Ground)
+13c Fire (Aerial)
+13d Oil Panic (Ground)
+13e Oil Panic Absorb (Ground)
+13f Oil Panic Release (Ground)
+140 Oil Panic (Aerial)
+141 Oil Panic Absorb (Aerial)
+142 Oil Panic Release (Aerial)

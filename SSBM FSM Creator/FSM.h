@@ -2,7 +2,7 @@
 // FSM.h
 // Justyn P. Durnford
 // Created on 12/17/2019
-// Last updated on 7/30/2020
+// Last updated on 7/31/2020
 
 #ifndef FSM_H
 #define FSM_H
@@ -77,7 +77,5 @@ class FSM
 	//   a.subaction != b.subaction OR
 	bool friend operator != (const FSM& a, const FSM& b);
 };
-
-extern std::vector<Character> character_list;
 
 #endif // FSM_H

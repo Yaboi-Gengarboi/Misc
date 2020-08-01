@@ -2,12 +2,26 @@
 // Tools.cpp
 // Justyn Durnford
 // Created on 7/29/2020
-// Last updated on 7/30/2020
+// Last updated on 7/31/2020
 
 #include "Tools.h"
 
 #include <string>
 using std::string;
+using std::stoi;
+
+unsigned long long pow(int i, int p)
+{
+	unsigned long long result = 1;
+
+	if (p >= 0)
+	{
+		for (int q = 0; q < p; ++q)
+			result *= i;
+	}
+
+	return result;
+}
 
 string reverse_str(const string& str)
 {
@@ -72,4 +86,45 @@ string to_hex(float f)
 {
 	int* pf = (int*)&f;
 	return to_hex(*pf);
+}
+
+int hex_to_int(const std::string& hexstr)
+{
+	int result = 0;
+
+	for (unsigned char i = 0; i < hexstr.size(); ++i)
+	{
+		switch (hexstr[i])
+		{
+			case 'a':
+				result += 10 * pow(16, hexstr.size() - i - 1);
+			break;
+
+			case 'b':
+				result += 11 * pow(16, hexstr.size() - i - 1);
+			break;
+
+			case 'c':
+				result += 12 * pow(16, hexstr.size() - i - 1);
+			break;
+
+			case 'd':
+				result += 13 * pow(16, hexstr.size() - i - 1);
+			break;
+
+			case 'e':
+				result += 14 * pow(16, hexstr.size() - i - 1);
+			break;
+
+			case 'f':
+				result += 15 * pow(16, hexstr.size() - i - 1);
+			break;
+
+			default:
+				result += (hexstr[i] - 48) * pow(16, hexstr.size() - i - 1);
+			break;
+		}
+	}
+
+	return result;
 }

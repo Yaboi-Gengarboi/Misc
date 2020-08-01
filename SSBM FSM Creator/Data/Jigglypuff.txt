@@ -1,71 +1,71 @@
-0x29 Spot Dodge
-0x2a Forward Roll
-0x2b Back Roll
-0x2c Air Dodge
-0x2e Jab 1
-0x2f Jab 2
-0x34 Dash Attack
-0x35 Side Tilt High
-0x37 Side Tilt Middle
-0x39 Side Tilt Low
-0x3a Up Tilt
-0x3b Down Tilt
-0x3e Side Smash Middle
-0x42 Up Smash
-0x43 Down Smash
-0x44 Neutral Aerial
-0x45 Foward Aerial
-0x46 Back Aerial
-0x47 Up Aerial
-0x49 Down Aerial
-0xc7 Neutral Tech
-0xc8 Forward Tech
-0xc9 Back Tech
-0xca Wall Tech
-0xcb Wall Jump Tech
-0xcc Ceiling Tech
-0xdb Ledge Getup Slow
-0xdc Ledge Getup Fast
-0xdd Ledge Attack Slow
-0xde Ledge Attack Fast
-0xdf Ledge Roll Slow
-0xe0 Ledge Roll Fast
-0xe1 Ledge Jump 1 Slow
-0xe2 Ledge Jump 2 Slow
-0xe3 Ledge Jump 1 Fast
-0xe4 Ledge Jump 2 Fast
-0xef Left Taunt
-0xf0 Right Taunt
-0xf2 Grab
-0xf3 Dash Grab
-0xf7 Forward Throw
-0xf8 Back Throw
-0xf9 Up Throw
-0xfa Down Throw
-0x12c Rollout Start Right (Ground)
-0x12d Rollout Start Left (Ground)
-0x12e Rollout 1 (Ground)
-0x12f Rollout 2 (Ground)
-0x130 Rollout 3 (Ground)
-0x131 Rollout 4 (Ground)
-0x132 Rollout End Right (Ground)
-0x133 Rollout End Left (Ground)
-0x134 Rollout Start Right (Aerial)
-0x135 Rollout Start Left (Aerial)
-0x136 Rollout 1 (Aerial)
-0x137 Rollout 2 (Aerial)
-0x138 Rollout 3 (Aerial)
-0x139 Rollout 4 (Aerial)
-0x13a Rollout End Right (Aerial)
-0x13b Rollout End Left (Aerial)
-0x13c Rollout 5
-0x13d Pound (Ground)
-0x13e Pound (Aerial)
-0x13f Sing Left (Ground)
-0x140 Sing Left (Aerial)
-0x141 Sing Right (Ground)
-0x142 Sing Right (Aerial)
-0x143 Rest Left (Ground)
-0x144 Rest Left (Aerial)
-0x145 Rest Right (Ground)
-0x146 Rest Right (Aerial)
+29 Spot Dodge
+2a Forward Roll
+2b Back Roll
+2c Air Dodge
+2e Jab 1
+2f Jab 2
+34 Dash Attack
+35 Side Tilt High
+37 Side Tilt Middle
+39 Side Tilt Low
+3a Up Tilt
+3b Down Tilt
+3e Side Smash Middle
+42 Up Smash
+43 Down Smash
+44 Neutral Aerial
+45 Foward Aerial
+46 Back Aerial
+47 Up Aerial
+49 Down Aerial
+c7 Neutral Tech
+c8 Forward Tech
+c9 Back Tech
+ca Wall Tech
+cb Wall Jump Tech
+cc Ceiling Tech
+db Ledge Getup Slow
+dc Ledge Getup Fast
+dd Ledge Attack Slow
+de Ledge Attack Fast
+df Ledge Roll Slow
+e0 Ledge Roll Fast
+e1 Ledge Jump 1 Slow
+e2 Ledge Jump 2 Slow
+e3 Ledge Jump 1 Fast
+e4 Ledge Jump 2 Fast
+ef Left Taunt
+f0 Right Taunt
+f2 Grab
+f3 Dash Grab
+f7 Forward Throw
+f8 Back Throw
+f9 Up Throw
+fa Down Throw
+12c Rollout Start Right (Ground)
+12d Rollout Start Left (Ground)
+12e Rollout 1 (Ground)
+12f Rollout 2 (Ground)
+130 Rollout 3 (Ground)
+131 Rollout 4 (Ground)
+132 Rollout End Right (Ground)
+133 Rollout End Left (Ground)
+134 Rollout Start Right (Aerial)
+135 Rollout Start Left (Aerial)
+136 Rollout 1 (Aerial)
+137 Rollout 2 (Aerial)
+138 Rollout 3 (Aerial)
+139 Rollout 4 (Aerial)
+13a Rollout End Right (Aerial)
+13b Rollout End Left (Aerial)
+13c Rollout 5
+13d Pound (Ground)
+13e Pound (Aerial)
+13f Sing Left (Ground)
+140 Sing Left (Aerial)
+141 Sing Right (Ground)
+142 Sing Right (Aerial)
+143 Rest Left (Ground)
+144 Rest Left (Aerial)
+145 Rest Right (Ground)
+146 Rest Right (Aerial)
