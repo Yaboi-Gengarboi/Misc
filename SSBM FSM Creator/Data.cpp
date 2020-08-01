@@ -7,6 +7,7 @@
 #include "Data.h"
 #include "Subaction.h"
 #include "Character.h"
+#include "Tools.h"
 
 #include <string>
 using std::string;
@@ -24,14 +25,15 @@ void init_characters()
 	string subaction_name = "";
 	unsigned short subaction_id = 0;
 
-	for (unsigned char i = 0; i < character_list.size(); ++i)
+	// Load character data
+	for (unsigned short i = 0; i < character_list.size(); ++i)
 	{
 		ifstream fin("Data/" + character_list[i].name() + ".txt");
 
 		while (fin.good())
 		{
 			getline(fin, line);
-			subaction_id = stoi(line.substr(0, line.find(' ')));
+			subaction_id = hex_to_int(line.substr(0, line.find(' ')));
 			subaction_name = line.substr(line.find(' ') + 1);
 			character_list[i].addSubaction(subaction_name, subaction_id);
 		}

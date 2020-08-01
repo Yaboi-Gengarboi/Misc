@@ -11,11 +11,9 @@ The power of the Pokemon's moves are increased by 30%, but it always moves last.
 Anger Point
 Raises the Pokemon's Attack stat to the maximum when hit by a critical hit.
 Arena Trap
-Prevents opposing pokemon from fleeing or switching out. Ineffective against Flying-type pokemon, Ghost-type pokemon, Dark-type pokemon, and pokemon with the Levitate ability.
+Prevents opposing pokemon from fleeing or switching out. Ineffective against Flying-type pokemon, Ghost-type pokemon, and pokemon with the Levitate ability.
 Aroma Veil
 Protects the team from Attract, Disable, Encore, Heal Block, Taunt and Torment.
-Aura Break
-Reverses the effects of Aura.
 Bad Dreams
 Damages sleeping pokemon by 12.5% of their maximum HP every turn.
 Battle Armor
@@ -29,7 +27,7 @@ Protects the Pokemon from bullet, ball and cannon moves.
 Cheek Pouch
 Upon eating a berry, the Pokemon's health is restored by 50% of its maximum HP.
 Chlorophyll
-Doubles the Pokemon's Speed stat in sunny weather.
+Increases the Pokemon's Speed stat by 50% in sunny weather.
 Clear Body
 Protects the Pokemon from opposing pokemons' stat-lowering moves and abilities.
 Color Change
@@ -46,8 +44,6 @@ Cute Charm
 Opposing pokemon have a 50% chance to become infatuated when they land a direct attack on the Pokemon.
 Damp
 Prevents any pokemon in battle from using Self-Destruct, Explosion, Final Gambit, Healing Wish or Memento.
-Dark Aura
-Raises the power of all pokemons' Dark-type moves by 33.33%.
 Defeatist
 Doubles the Attack and Special Attack stats when the Pokemon is above half HP, but halves them when below half HP.
 Defiant
@@ -66,8 +62,6 @@ Effect Spore
 Opposing pokemon have a 30% chance of being slept, poisoned or paralyzed upon landing a direct attack on the Pokemon.
 Electric Surge
 The Pokemon turns the ground into Electric Terrain for 8 turns upon entering battle.
-Fairy Aura
-Raises the power of all pokemons' Dark-type moves by 33.33%.
 Filter
 Halves the damage taken from supereffective moves.
 Flame Body
@@ -109,7 +103,7 @@ Provides a 50% chance of restoring a used berry at the end of every turn. This c
 Healer
 Allies have a 50% chance of being cured of a status condition every turn.
 Heatproof
-Halves the damage taken from Fire-type moves and the burned status condition.
+Halves the damage taken from Fire-type moves and provides immunity to the burned status condition.
 Honey Gather
 The Pokemon may find honey after a battle if it has no held item. The chance it finds honey corresponds to its level.
 Huge Power
@@ -147,7 +141,7 @@ Prevents the Pokemon's Accuracy stat from being lowered. Allows the Pokemon to i
 Klutz
 Raises the Attack and Special Attack stats by 50%, but the Pokemon is unable to use items.
 Leaf Guard
-Prevents the Pokemon from status conditions in sunny or rainy weather.
+Protects the Pokemon from status conditions in sunny or rainy weather.
 Levitate
 The Pokemon is immune to Ground-type moves.
 Lightning Rod
@@ -200,8 +194,6 @@ Overgrow
 Raises the power of Grass-type moves by 33.33%.
 Own Tempo
 Protects the Pokemon from confusion, infatuation and the moves Captivate and Taunt.
-Parental Bond
-Allows the Pokemon to strike twice with a single damaging move, with the second hit dealing half the damage of the first. Does not work with moves that normally hit multiple times or multiple targets.
 Photosynthesis
 Restores 6.25% of the Pokemon's maximum HP every turn in sunny weather.
 Pickup
@@ -245,7 +237,7 @@ Allows the Pokemon to always flee wild battles or switch out.
 Sand Force
 Increases the power of Rock-type, Steel-type and Ground-type moves by 30% in sandstorm weather. Protects the Pokemon from sandstorm damage.
 Sand Rush
-Doubles the Pokemon's Speed stat in sandstorm weather. Protects the Pokemon from sandstorm damage.
+Increases the Pokemon's Speed stat by 50% in sandstorm weather. Protects the Pokemon from sandstorm damage.
 Sand Stream
 The Pokemon changes the weather to sandstorm weather for 8 turns upon entering battle.
 Sand Veil
@@ -254,8 +246,6 @@ Sap Sipper
 When the Pokemon is hit by a Grass-type attack, rather than taking damage, the Pokemon's Special Attack stat is increased by 1 stage.
 Scrappy
 Allows the Pokemon to hit Ghost-type pokemon with Normal-type and Fighting-type moves.
-Serene Grace
-Doubles the chance of moves inflicting additional effects.
 Shadow Tag
 Prevents opposing pokemon from fleeing or switching out. Ineffective against Ghost-type pokemon, Dark-type pokemon, and opposing pokemon with Shadow Tag.
 Shed Skin
@@ -282,10 +272,8 @@ Solid Rock
 Halves the damage taken from moves that are not suppereffective.
 Soundproof
 Protects the Pokemon from sound-based moves.
-Specialist
-Increases the power of moves with the same type as the Pokemon by 33.33%.
 Speed Boost
-The Pokemon's Speed stat is increased by 1 stage at the end of every turn.
+The Pokemon's Speed stat is increased by 1 stage upon attacking.
 Stance Change
 The Pokemon changes from Shield Form to Blade Form upon using a damaging move, and changes from Blade Form to Shield Form upon using King's Shield.
 Static
@@ -305,13 +293,13 @@ Prevents the Pokemon from fainting after being hit by 1 move, leaving it with ju
 Suction Cups
 Prevents the Pokemon from being forcefully switched out.
 Super Luck
-Increases the chance that the Pokemon lands a critical hit by 1 stage.
+Doubles the Pokemon's luck.
 Swarm
 Raises the power of Bug-type moves by 33.33%.
 Sweet Veil
 Prevents the Pokemon and its allies from falling asleep.
 Swift Swim
-Doubles the Pokemon's Speed stat in rain.
+Increases the Pokemon's Speed stat by 50% in rain.
 Symbiosis
 When an ally uses an item, the Pokemon gives its own item to the ally.
 Synchronize
