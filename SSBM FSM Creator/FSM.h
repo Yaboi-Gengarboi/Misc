@@ -2,7 +2,7 @@
 // FSM.h
 // Justyn P. Durnford
 // Created on 12/17/2019
-// Last updated on 7/31/2020
+// Last updated on 8/2/2020
 
 #ifndef FSM_H
 #define FSM_H
@@ -32,13 +32,13 @@ class FSM
 	// Destructor.
 	~FSM();
 
-	// Returns character_list[_character.id()].
+	// Returns _character.
 	const Character& character() const;
 
 	// Returns _frame.
 	unsigned char frame() const;
 
-	// Returns _character.subList(_subaction.id()).
+	// Returns _subaction.
 	const Subaction& subaction() const;
 
 	// Returns _multiplier.
@@ -77,5 +77,7 @@ class FSM
 	//   a.subaction != b.subaction OR
 	bool friend operator != (const FSM& a, const FSM& b);
 };
+
+bool compareFSMs(const FSM& a, const FSM& b);
 
 #endif // FSM_H

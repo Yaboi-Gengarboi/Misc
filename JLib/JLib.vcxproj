@@ -143,6 +143,7 @@
     <ClInclude Include="Float_Matrix.h" />
     <ClInclude Include="Fraction.hpp" />
     <ClInclude Include="Big_Int.hpp" />
+    <ClInclude Include="Hex.h" />
     <ClInclude Include="UChar_Matrix.hpp" />
     <ClInclude Include="Misc.hpp" />
     <ClInclude Include="Point3f.hpp" />

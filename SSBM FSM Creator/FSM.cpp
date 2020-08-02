@@ -2,7 +2,7 @@
 // FSM.cpp
 // Justyn Durnford
 // Created on 12/18/2019
-// Last updated on 7/31/2020
+// Last updated on 8/2/2020
 
 #include "FSM.h"
 #include "Subaction.h"
@@ -32,7 +32,7 @@ FSM::~FSM() { /* Destructor */ }
 
 const Character& FSM::character() const
 {
-	return character_list[_character.id()];
+	return _character;
 }
 
 unsigned char FSM::frame() const
@@ -42,7 +42,7 @@ unsigned char FSM::frame() const
 
 const Subaction& FSM::subaction() const
 {
-	return _character.subList(_subaction.id());
+	return _subaction;
 }
 
 float FSM::multiplier() const
@@ -140,6 +140,20 @@ bool operator != (const FSM& a, const FSM& b)
 		return true;
 
 	if (a._subaction != b._subaction)
+		return true;
+
+	return false;
+}
+
+bool compareFSMs(const FSM& a, const FSM& b)
+{
+	if (a.character().id() > b.character().id())
+		return true;
+
+	if (a.frame() < b.frame())
+		return true;
+
+	if (a.subaction().id() > b.subaction().id())
 		return true;
 
 	return false;

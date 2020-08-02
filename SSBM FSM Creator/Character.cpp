@@ -2,7 +2,7 @@
 // Character.cpp
 // Justyn Durnford
 // Created on 7/29/2020
-// Last updated on 8/1/2020
+// Last updated on 8/2/2020
 
 #include "Character.h"
 #include "Subaction.h"
@@ -33,20 +33,14 @@ unsigned short Character::id() const
 	return _id;
 }
 
-const Subaction& Character::subList(unsigned short id) const
+const map<unsigned short, Subaction>& Character::subList() const
 {
-	return _subList.at(id);
+	return _subList;
 }
 
 void Character::addSubaction(const std::string& name, unsigned short id)
 {
 	_subList[id] = Subaction(name, id);
-	_size = id;
-}
-
-const unsigned short Character::subListSize() const
-{
-	return _size;
 }
 
 bool operator == (const Character& a, const Character& b)
