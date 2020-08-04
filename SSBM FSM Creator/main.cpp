@@ -30,17 +30,8 @@ using std::stof;
 #include <vector>
 using std::vector;
 
-#include <fstream>
-using std::ifstream;
-using std::ofstream;
-
 #include <stdexcept>
 using std::invalid_argument;
-
-#include <iostream>
-using std::cout;
-using std::endl;
-
 struct GUI
 {
 	Fl_Window* window = nullptr;
@@ -57,6 +48,11 @@ struct GUI
 	Fl_Button* load_fsms_button = nullptr;
 	Fl_Multiline_Output* fsm_output = nullptr;
 	Fl_Multiline_Output* eng_output = nullptr;
+
+	Fl_Window* second_window = nullptr;
+	Fl_Multiline_Output* second_output = nullptr;
+	Fl_Button* yes_button = nullptr;
+	Fl_Button* no_button = nullptr;
 };
 
 struct DATA
@@ -69,50 +65,12 @@ struct DATA
 
 GUI gui;
 DATA data;
-
-vector<FSM> fsm_list;
+bool is_fsm_file_read = false;
 
 /*void DEBUG()
 {
 	
 }*/
-
-void swapFSMs(FSM& a, FSM& b)
-{
-	FSM c = a;
-	a = b;
-	b = c;
-}
-
-void sortFSMs()
-{
-	if (fsm_list.size() < 2)
-		return;
-
-	bool loop = true;
-
-	while (loop)
-	{
-		loop = false;
-
-		for (unsigned long long i = 0; i < fsm_list.size() - 1; ++i)
-		{
-
-			if (compareFSMs(fsm_list[i], fsm_list[i + 1]))
-			{
-				swapFSMs(fsm_list[i], fsm_list[i + 1]);
-				loop = true;
-				break;
-			}
-			else if (fsm_list[i] == fsm_list[i + 1])
-			{
-				fsm_list.erase(fsm_list.begin() + i);
-				loop = true;
-				break;
-			}
-		}
-	}
-}
 
 void set_subaction_list(Fl_Widget* widget)
 {
@@ -140,22 +98,12 @@ void set_subaction_list(Fl_Widget* widget)
 	}
 }
 
-void showFSMs()
+void show_fsms()
 {
-	string fsm_out;
-	string eng_out;
+	vector<string> str_vec = fsm_list_strings();
 
-	for (unsigned long long i = 0; i < fsm_list.size(); ++i)
-	{
-		if (i % 2 == 0 && i != 0)
-			fsm_out += '\n';
-		else if (i != 0)
-			fsm_out += ' ';
-		
-		fsm_out += fsm_list[i].toHex();
-	}
-
-	gui.fsm_output->value(fsm_out.c_str());
+	gui.fsm_output->value(str_vec[0].c_str());
+	gui.eng_output->value(str_vec[1].c_str());
 }
 
 void make_fsm(Fl_Widget* widget)
@@ -227,19 +175,28 @@ void make_fsm(Fl_Widget* widget)
 	}
 	else return;
 
-	fsm_list.push_back(FSM(data.character, data.frame, data.subaction, data.multiplier));
-	
-	sortFSMs();
-	showFSMs();
+	add_fsm(data.character, data.frame, data.subaction, data.multiplier);
+	sort_fsm_list();
+	show_fsms();
+}
 
+void save_fsms(Fl_Widget* widget)
+{
+	if (!is_fsm_file_read && !is_fsm_file_empty())
+	{
+		gui.second_output->value("There are unloaded FSMs. Would you like to ignore and overwrite them?");
 
+		gui.second_window->show();
+	}
+
+	write_fsms();
 }
 
 int main()
 {
 	init_characters();
 
-	gui.window = new Fl_Window(700, 600, "SSBM FSM Creator");
+	gui.window = new Fl_Window(750, 600, "SSBM FSM Creator");
 
 	gui.character_label = new Fl_Output(20, 50, 180, 30);
 	gui.character_label->value("Character");
@@ -258,21 +215,30 @@ int main()
 	gui.frame_label->value("Frame");
 	gui.frame_input = new Fl_Input(480, 80, 100, 30);
 
-	gui.multiplier_label = new Fl_Output(580, 50, 100, 30);
+	gui.multiplier_label = new Fl_Output(580, 50, 150, 30);
 	gui.multiplier_label->value("Multiplier");
-	gui.multiplier_input = new Fl_Input(580, 80, 100, 30);
+	gui.multiplier_input = new Fl_Input(580, 80, 150, 30);
 
 	gui.make_fsm_button = new Fl_Button(20, 10, 100, 30, "Make FSM");
 	gui.make_fsm_button->callback(make_fsm);
 
 	gui.save_fsms_button = new Fl_Button(130, 10, 100, 30, "Save FSMs");
+	gui.save_fsms_button->callback(save_fsms);
+
 	gui.load_fsms_button = new Fl_Button(240, 10, 100, 30, "Load FSMs");
 
-	gui.fsm_output = new Fl_Multiline_Output(20, 110, 330, 470);
-	gui.eng_output = new Fl_Multiline_Output(350, 110, 330, 470);
+	gui.fsm_output = new Fl_Multiline_Output(20, 110, 280, 470);
+	gui.fsm_output->textfont(FL_HELVETICA);
+
+	gui.eng_output = new Fl_Multiline_Output(300, 110, 430, 470);
 
 	gui.window->end();
 	gui.window->show();
+
+	gui.second_window = new Fl_Window(300, 200);
+	gui.second_output = new Fl_Multiline_Output(10, 10, 280, 100);
+
+	gui.second_window->end();
 
 	return Fl::run();
 }

@@ -2,7 +2,7 @@
 // Tools.cpp
 // Justyn Durnford
 // Created on 7/29/2020
-// Last updated on 7/31/2020
+// Last updated on 8/2/2020
 
 #include "Tools.h"
 
@@ -48,27 +48,27 @@ string to_hex(int i)
 		switch (rem)
 		{
 			case 10:
-				hexstr += 'a';
+				hexstr += 'A';
 				break;
 
 			case 11:
-				hexstr += 'b';
+				hexstr += 'B';
 				break;
 
 			case 12:
-				hexstr += 'c';
+				hexstr += 'C';
 				break;
 
 			case 13:
-				hexstr += 'd';
+				hexstr += 'D';
 				break;
 
 			case 14:
-				hexstr += 'e';
+				hexstr += 'E';
 				break;
 
 			case 15:
-				hexstr += 'f';
+				hexstr += 'F';
 				break;
 
 			default:
@@ -96,27 +96,27 @@ int hex_to_int(const std::string& hexstr)
 	{
 		switch (hexstr[i])
 		{
-			case 'a':
+			case 'A':
 				result += 10 * pow(16, hexstr.size() - i - 1);
 			break;
 
-			case 'b':
+			case 'B':
 				result += 11 * pow(16, hexstr.size() - i - 1);
 			break;
 
-			case 'c':
+			case 'C':
 				result += 12 * pow(16, hexstr.size() - i - 1);
 			break;
 
-			case 'd':
+			case 'D':
 				result += 13 * pow(16, hexstr.size() - i - 1);
 			break;
 
-			case 'e':
+			case 'E':
 				result += 14 * pow(16, hexstr.size() - i - 1);
 			break;
 
-			case 'f':
+			case 'F':
 				result += 15 * pow(16, hexstr.size() - i - 1);
 			break;
 

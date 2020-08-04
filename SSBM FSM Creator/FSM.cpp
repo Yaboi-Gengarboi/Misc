@@ -84,8 +84,8 @@ string FSM::toString() const
 
 	str += _character.name() + ", ";
 	str += _subaction.name() + ", ";
-	str += "x" + to_string(_multiplier);
-	str += " @ frame " + to_string(_frame);
+	str += "x" + to_string(_multiplier) + ", @ ";
+	str += to_string(_frame);
 
 	return str;
 }
@@ -150,10 +150,10 @@ bool compareFSMs(const FSM& a, const FSM& b)
 	if (a.character().id() > b.character().id())
 		return true;
 
-	if (a.frame() < b.frame())
+	if (a.subaction().id() > b.subaction().id())
 		return true;
 
-	if (a.subaction().id() > b.subaction().id())
+	if (a.frame() < b.frame())
 		return true;
 
 	return false;

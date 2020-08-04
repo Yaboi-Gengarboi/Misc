@@ -2,7 +2,7 @@
 // Type.cpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 7/25/2020
+// Last updated on 8/2/2020
 
 #include "Type.h"
 
@@ -89,6 +89,7 @@ const float type_matchup[18][18] =
     /* 16 : Dark     */ { 1,  .5,   1,   1,   1,   1,   1,   2,   1,   1,   1,   1,   1,   2,   1,   1,  .5,  .5 },
     /* 17 : Fairy    */ { 1,   2,   1,  .5,   1,   1,  .5,   1,  .5,  .5,   1,   1,   1,   1,   1,   2,   2,   1 }
 
+    // Flying -> Rock: 1 -> .5
     // Poison -> Water: 1 -> 2
     // Bug -> Grass: 2 -> 1
     // Bug -> Fairy: .5 -> 2
