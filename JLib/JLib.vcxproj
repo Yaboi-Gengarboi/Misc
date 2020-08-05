@@ -157,6 +157,7 @@
     <ClCompile Include="Float_Matrix.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="Big_Int.cpp" />
+    <ClCompile Include="Hex.cpp" />
     <ClCompile Include="UChar_Matrix.cpp" />
     <ClCompile Include="Misc.cpp" />
     <ClCompile Include="Point3f.cpp" />

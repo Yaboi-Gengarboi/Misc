@@ -1,44 +1,82 @@
 // Hex.h
 // Justyn Durnford
 // Created on 8/1/2020
-// Last updated on 8/1/2020
+// Last updated on 8/4/2020
 
 #ifndef HEX_H
 #define HEX_H
 
 #include <string>
 
-class Hex_Int
+class Hex_Long
 {
-	long int _value = 0;
+	long _value = 0;
 	std::string _hexstr = "";
 
 	public:
 
-	// Default constructor.
-	Hex_Int();
+	// _value = 0
+	// _hexstr = ""
+	Hex_Long();
 
-	// long int constructor.
-	Hex_Int(const long int& value);
+	// _value = value
+	// _hexstr = to_hex(_value)
+	Hex_Long(const long& value);
 
-	// std::string constructor.
-	Hex_Int(const std::string& hexstr);
+	// _value = hex_to_int(_hexstr)
+	// _hexstr = hexstr
+	// 
+	Hex_Long(const std::string& hexstr);
+
+	// _value = i
+	// _hexstr = to_hex(_value)
+	Hex_Long operator = (long i);
+
+	// _value = to_long(_hexstr)
+	// _hexstr = str
+	// 
+	Hex_Long operator = (const std::string& str);
 
 	// Destructor.
-	~Hex_Int();
+	~Hex_Long();
 
 	// Returns _value.
 	long int value() const;
 
-	// Returns _heexstr.
+	// Returns _hexstr.
 	std::string hexstr() const;
 
 	// Sets _value to value and adjusts _hexstr appropriately.
-	void setValue(const long int& value);
+	void setValue(const long& value);
 
 	// Sets _hexstr to hexstr and adjusts _value appropriately.
+	//
 	void setValue(const std::string& hexstr);
+
+
+
 };
+
+// 
+Hex_Long operator + (const Hex_Long& hi1, const Hex_Long& hi2);
+
+// Returns true if hi1._value == hi2._value.
+bool operator == (const Hex_Long& hi1, const Hex_Long& hi2);
+
+// Returns true if hi._value == i.
+bool operator == (const Hex_Long& hi, const long& i);
+
+// Returns true if hi._hexstr == str.
+bool operator == (const Hex_Long& hi, const std::string& str);
+
+// Returns true if hi1._value != hi2._value.
+bool operator != (const Hex_Long& hi1, const Hex_Long& hi2);
+
+// Returns true if hi._value != i.
+bool operator != (const Hex_Long& hi, const long& i);
+
+// Returns true if hi._hexstr != str.
+bool operator != (const Hex_Long& hi, const std::string& str);
 
 class Hex_Float
 {
@@ -62,7 +100,7 @@ class Hex_Float
 	// Returns _value.
 	long int value() const;
 
-	// Returns _heexstr.
+	// Returns _hexstr.
 	std::string hexstr() const;
 
 	// Sets _value to value and adjusts _hexstr appropriately.
@@ -72,12 +110,12 @@ class Hex_Float
 	void setValue(const std::string& hexstr);
 };
 
-std::string to_hex(const long int& i);
+std::string to_hex(long i);
 
-std::string to_hex(const float& f);
+std::string to_hex(float f);
 
-long int hex_to_int(const std::string& hexstr);
+long to_long(const std::string& hexstr);
 
-float hex_to_float(const std::string& hexstr);
+float to_float(const std::string& hexstr);
 
 #endif // HEX_H
