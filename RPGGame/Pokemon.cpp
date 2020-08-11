@@ -2,7 +2,7 @@
 // Pokemon.cpp
 // Justyn Durnford
 // Created on 5/15/2020
-// Last updated on 7/16/2020
+// Last updated on 8/11/2020
 
 #include "Pokemon.h"
 
@@ -12,14 +12,11 @@ using std::string;
 #include <array>
 using std::array;
 
-#include <fstream>
-using std::ifstream;
-
 Pokemon::Pokemon() { /* See Pokemon.h for default values. */ }
 
-Pokemon::Pokemon(unsigned short index)
+Pokemon::Pokemon(unsigned short id)
 {
-	_index = index;
+	_id = id;
 }
 
 Pokemon::~Pokemon() { /* Destructor. */ }
@@ -34,9 +31,9 @@ string Pokemon::desc() const
 	return _desc;
 }
 
-unsigned short Pokemon::index() const
+unsigned short Pokemon::id() const
 {
-	return _index;
+	return _id;
 }
 
 Type& Pokemon::type1() const

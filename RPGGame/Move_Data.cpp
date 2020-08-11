@@ -2,7 +2,7 @@
 // Move_Kind.cpp
 // Justyn Durnford
 // Created on 6/26/2020
-// Last updated on 7/1/2020
+// Last updated on 8/11/2020
 
 #include "Move_Data.h"
 
@@ -14,48 +14,48 @@ using std::vector;
 
 Move_Kind::Move_Kind() { /* See Move_Data.h for default values. */ }
 
-Move_Kind::Move_Kind(const string& name, unsigned char index)
+Move_Kind::Move_Kind(const string& name, unsigned char id)
 {
 	_name = name;
-	_index = index;
+	_id = id;
 }
 
 Move_Kind::~Move_Kind() { /* Destructor. */ }
 
 Move_Range::Move_Range() { /* See Move_Data.h for default values. */ }
 
-Move_Range::Move_Range(const string& desc, unsigned char index)
+Move_Range::Move_Range(const string& desc, unsigned char id)
 {
 	_desc = desc;
-	_index = index;
+	_id = id;
 }
 
 Move_Range::~Move_Range() { /* Destructor. */ }
 
 bool operator == (const Move_Kind& m1, const Move_Kind& m2)
 {
-	if (m1._index == m2._index)
+	if (m1._id == m2._id)
 		return true;
 	return false;
 }
 
 bool operator != (const Move_Kind& m1, const Move_Kind& m2)
 {
-	if (m1._index != m2._index)
+	if (m1._id != m2._id)
 		return true;
 	return false;
 }
 
 bool operator == (const Move_Range& m1, const Move_Range& m2)
 {
-	if (m1._index == m2._index)
+	if (m1._id == m2._id)
 		return true;
 	return false;
 }
 
 bool operator != (const Move_Range& m1, const Move_Range& m2)
 {
-	if (m1._index != m2._index)
+	if (m1._id != m2._id)
 		return true;
 	return false;
 }

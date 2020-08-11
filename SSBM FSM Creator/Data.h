@@ -2,7 +2,7 @@
 // Data.h
 // Justyn Durnford
 // Created on 7/31/2020
-// Last updated on 8/2/2020
+// Last updated on 8/8/2020
 
 #ifndef DATA_H
 #define DATA_H
@@ -18,7 +18,7 @@ extern std::vector<Character> character_list;
 
 extern std::vector<std::vector<FSM>> fsm_list;
 
-void init_characters();
+bool init_characters();
 
 void add_fsm(const Character& character, unsigned char frame, const Subaction& subaction, float multiplier);
 
@@ -30,7 +30,7 @@ std::vector<std::string> fsm_list_strings();
 
 bool is_fsm_file_empty();
 
-void read_fsms();
+bool read_fsms();
 
 void write_fsms();
 

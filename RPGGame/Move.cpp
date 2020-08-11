@@ -2,7 +2,7 @@
 // Move.cpp
 // Justyn Durnford
 // Created on 5/23/2020
-// Last updated on 7/8/2020
+// Last updated on 8/11/2020
 
 #include "Move.h"
 
@@ -24,14 +24,14 @@ using std::vector;
 
 Move::Move() { /* See Move.h for default values. */ }
 
-Move::Move(const string& name, const string& desc, unsigned short index,
+Move::Move(const string& name, const string& desc, unsigned short id,
 		   unsigned char type, unsigned char kind, unsigned char power,
 		   unsigned char pp, unsigned char range, const Fraction& accuracy,
 		   const Fraction& additionalChance, char priority)
 {
 	_name = name;
 	_desc = desc;
-	_index = index;
+	_id = id;
 	_type = type;
 	_kind = kind;
 	_power = power;
@@ -54,9 +54,9 @@ string Move::desc() const
 	return _desc;
 }
 
-unsigned short Move::index() const
+unsigned short Move::id() const
 {
-	return _index;
+	return _id;
 }
 
 Type& Move::type() const
@@ -101,14 +101,14 @@ char Move::priority() const
 
 bool operator == (const Move& m1, const Move& m2)
 {
-	if (m1.index() == m2.index())
+	if (m1.id() == m2.id())
 		return true;
 	return false;
 }
 
 bool operator != (const Move& m1, const Move& m2)
 {
-	if (m1.index() != m2.index())
+	if (m1.id() != m2.id())
 		return true;
 	return false;
 }

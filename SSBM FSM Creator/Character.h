@@ -2,7 +2,7 @@
 // Character.h
 // Justyn Durnford
 // Created on 7/29/2020
-// Last updated on 8/2/2020
+// Last updated on 8/8/2020
 
 #ifndef CHARACTER_H
 #define CHARACTER_H
@@ -15,7 +15,7 @@
 class Character
 {
 	std::string _name = "";
-	unsigned char _id = 0;
+	unsigned char _id = -1;
 
 	std::map<unsigned short, Subaction> _subList;
 

@@ -2,7 +2,7 @@
 // Nature.h
 // Justyn Durnford
 // Created on 6/25/2020
-// Last updated on 6/30/2020
+// Last updated on 8/11/2020
 
 #ifndef NATURE_H
 #define NATURE_H
@@ -15,8 +15,8 @@
 //
 class Nature
 {
-	std::string _name = "";
-	unsigned char _index = 0;
+	std::string _name;
+	unsigned char _id = 0;
 	unsigned char _goodStat = 0;
 	unsigned char _badStat = 0;
 
@@ -26,7 +26,7 @@ class Nature
 	Nature();
 
 	// Primary constructor.
-	Nature(const std::string& name, unsigned char index,
+	Nature(const std::string& name, unsigned char id,
 		   unsigned char goodStat, unsigned char badStat);
 
 	// Destructor.
@@ -36,7 +36,7 @@ class Nature
 	std::string name() const;
 
 	// Returns _id.
-	unsigned char index() const;
+	unsigned char id() const;
 
 	// Returns _goodStat.
 	unsigned char goodStat() const;
@@ -45,10 +45,10 @@ class Nature
 	unsigned char badStat() const;
 };
 
-// Returns true ONLY IF n1.index() == n2.index()
+// Returns true ONLY IF n1.id() == n2.id()
 bool operator == (const Nature& n1, const Nature& n2);
 
-// Returns true ONLY IF n1.index() != n2.index()
+// Returns true ONLY IF n1.id() != n2.id()
 bool operator != (const Nature& n1, const Nature& n2);
 
 extern std::vector<Nature> nature_list;

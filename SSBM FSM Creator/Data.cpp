@@ -2,7 +2,7 @@
 // Data.cpp
 // Justyn Durnford
 // Created on 7/31/2020
-// Last updated on 8/2/2020
+// Last updated on 8/8/2020
 
 #include "Data.h"
 #include "Subaction.h"
@@ -11,6 +11,8 @@
 
 #include <string>
 using std::string;
+using std::stoi;
+using std::stof;
 
 #include <vector>
 using std::vector;
@@ -18,6 +20,9 @@ using std::vector;
 #include <fstream>
 using std::ifstream;
 using std::ofstream;
+
+#include <stdexcept>
+using std::invalid_argument;
 
 vector<Character> character_list =
 {
@@ -34,7 +39,7 @@ vector<Character> character_list =
 
 vector<vector<FSM>> fsm_list(0x1a);
 
-void init_characters()
+bool init_characters()
 {
 	string line = "";
 	string subaction_name = "";
@@ -45,6 +50,9 @@ void init_characters()
 	{
 		ifstream fin("Data/" + character_list[i].name() + ".txt");
 
+		if (fin.bad())
+			return false;
+
 		while (fin.good())
 		{
 			getline(fin, line);
@@ -53,6 +61,8 @@ void init_characters()
 			character_list[i].addSubaction(subaction_name, subaction_id);
 		}
 	}
+
+	return true;
 }
 
 void add_fsm(const Character& character, unsigned char frame, const Subaction& subaction, float multiplier)
@@ -110,24 +120,27 @@ vector<string> fsm_list_strings()
 	vector<string> str_vec = { "", "" };
 	unsigned long long count = 0;
 
-	for (unsigned char i = 0; i < fsm_list.size(); ++i)
+	if (fsm_list.size() != 0)
 	{
-		for (unsigned long long p = 0; p < fsm_list[i].size(); ++p)
+		for (unsigned char i = 0; i < fsm_list.size(); ++i)
 		{
+			for (unsigned long long p = 0; p < fsm_list[i].size(); ++p)
+			{
 
-			if (count % 2 == 0 && count != 0)
-				str_vec[0] += '\n';
-			else if (count != 0)
-				str_vec[0] += ' ';
+				if (count % 2 == 0 && count != 0)
+					str_vec[0] += '\n';
+				else if (count != 0)
+					str_vec[0] += ' ';
 
-			str_vec[0] += fsm_list[i][p].toHex();
+				str_vec[0] += fsm_list[i][p].toHex();
 
-			if (count != 0)
-				str_vec[1] += '\n';
+				if (count != 0)
+					str_vec[1] += '\n';
 
-			str_vec[1] += fsm_list[i][p].toString();
+				str_vec[1] += fsm_list[i][p].toString();
 
-			++count;
+				++count;
+			}
 		}
 	}
 
@@ -141,20 +154,104 @@ bool is_fsm_file_empty()
 	return fin.eof();
 }
 
-void read_fsms()
+bool read_fsms()
 {
 	ifstream fin("Data/FSM_file.txt");
 	string line;
 
-	while (fin.good())
+	Character character;
+	Subaction subaction;
+	float multiplier = -1;
+	unsigned short frame = -1;
+
+	unsigned long long pos_begin = 0;
+	unsigned long long pos_end = 0;
+
+	if (fin.bad())
+		return false;
+
+	if (fin.eof())
+		return true;
+
+	while (line != "\n")
+		getline(fin, line);
+
+	getline(fin, line);
+
+	while (!fin.eof())
 	{
 		getline(fin, line);
+
+		pos_end = line.find(',');
+		for (unsigned char i = 0; i < character_list.size(); ++i)
+		{
+			if (range_substr(line, pos_begin, pos_end) == character_list[i].name())
+			{
+				character = character_list[i];
+				break;
+			}
+		}
+
+		if (character.id() == -1)
+			return false;
+
+		pos_begin = pos_end;
+		pos_end = line.find(", x", pos_begin);
+		auto iter = character.subList().begin();
+		while (iter != character.subList().end())
+		{
+			if (range_substr(line, pos_begin, pos_end) == iter->second.name())
+			{
+				subaction = iter->second;
+				break;
+			}
+			++iter;
+		}
+
+		if (subaction.id() == -1)
+			return false;
+
+		pos_begin = pos_end;
+		pos_end = line.find(", @ ");
+		try
+		{
+			multiplier = stof(range_substr(line, pos_begin, pos_end));
+		}
+		catch (const invalid_argument& ia)
+		{
+			return false;
+		}
+
+		if (multiplier <= 0)
+			return false;
+
+		pos_begin = pos_end;
+		try
+		{
+			int i = stoi(line.substr(pos_begin));
+
+			if (i >= 0 && i <= 255)
+				frame = unsigned char(i);
+		}
+		catch (const invalid_argument& ia)
+		{
+			return false;
+		}
+
+		add_fsm(character, frame, subaction, multiplier);
 	}
+
+	return true;
 }
 
 void write_fsms()
 {
 	vector<string> str_vec = fsm_list_strings();
 	ofstream fout("Data/FSM_file.txt", ofstream::out | ofstream::trunc);
-	fout << str_vec[0] << "\n\n";
+
+	if (fsm_list.size() != 0)
+	{
+		fout << str_vec[0] << "\n\n";
+		fout << str_vec[1];
+	}
 }

@@ -128,3 +128,12 @@ int hex_to_int(const std::string& hexstr)
 
 	return result;
 }
+
+string range_substr(const string& str, unsigned long long pos_begin, unsigned long long pos_end)
+{
+	string new_str;
+
+	new_str = str.substr(pos_begin, pos_end - pos_begin);
+
+	return new_str;
+}

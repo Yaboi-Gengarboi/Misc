@@ -2,7 +2,7 @@
 // Move_Data.h
 // Justyn Durnford
 // Created on 6/26/2020
-// Last updated on 7/1/2020
+// Last updated on 8/11/2020
 
 #ifndef MOVE_DATA_H
 #define MOVE_DATA_H
@@ -17,14 +17,14 @@
 // damaging effects.
 struct Move_Kind
 {
-	std::string _name = "";
-	unsigned char _index = 0;
+	std::string _name;
+	unsigned char _id = 0;
 
 	// Default constructor.
 	Move_Kind();
 
 	// Primary constructor.
-	Move_Kind(const std::string& name, unsigned char index);
+	Move_Kind(const std::string& name, unsigned char id);
 
 	// Destructor.
 	~Move_Kind();
@@ -36,7 +36,7 @@ struct Move_Kind
 struct Move_Range
 {
 	std::string _desc = "";
-	unsigned char _index = 0;
+	unsigned char _id = 0;
 
 	public:
 
@@ -44,22 +44,22 @@ struct Move_Range
 	Move_Range();
 
 	// Primary constructor.
-	Move_Range(const std::string& name, unsigned char index);
+	Move_Range(const std::string& name, unsigned char id);
 
 	// Destructor.
 	~Move_Range();
 };
 
-// Returns true ONLY IF m1._index == m2._index
+// Returns true ONLY IF m1._id == m2._id
 bool operator == (const Move_Kind& m1, const Move_Kind& m2);
 
-// Returns true ONLY IF m1._index != m2._index
+// Returns true ONLY IF m1._id != m2._id
 bool operator != (const Move_Kind& m1, const Move_Kind& m2);
 
-// Returns true ONLY IF m1._index == m2._index
+// Returns true ONLY IF m1._id == m2._id
 bool operator == (const Move_Range& m1, const Move_Range& m2);
 
-// Returns true ONLY IF m1._index != m2._index
+// Returns true ONLY IF m1._id != m2._id
 bool operator != (const Move_Range& m1, const Move_Range& m2);
 
 extern std::vector<Move_Kind> move_kind_list;

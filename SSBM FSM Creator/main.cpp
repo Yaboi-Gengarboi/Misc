@@ -2,7 +2,7 @@
 // main.cpp
 // Justyn Durnford
 // Created on 5/4/2020
-// Last updated on 8/2/2020
+// Last updated on 8/8/2020
 
 #define WIN32
 
@@ -32,6 +32,7 @@ using std::vector;
 
 #include <stdexcept>
 using std::invalid_argument;
+
 struct GUI
 {
 	Fl_Window* window = nullptr;

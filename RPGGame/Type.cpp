@@ -2,7 +2,7 @@
 // Type.cpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 8/2/2020
+// Last updated on 8/11/2020
 
 #include "Type.h"
 
@@ -14,10 +14,10 @@ using std::vector;
 
 Type::Type() { /* See Type.h for default values. */ }
 
-Type::Type(const string& name, unsigned char index)
+Type::Type(const string& name, unsigned char id)
 {
     _name = name;
-    _index = index;
+    _id = id;
 }
 
 Type::~Type() { /* Destructor. */ }
@@ -27,21 +27,21 @@ string Type::name() const
     return _name;
 }
 
-unsigned char Type::index() const
+unsigned char Type::id() const
 {
-    return _index;
+    return _id;
 }
 
 bool operator == (const Type& t1, const Type& t2)
 {
-    if (t1.index() == t2.index())
+    if (t1.id() == t2.id())
         return true;
     return false;
 }
 
 bool operator != (const Type& t1, const Type& t2)
 {
-    if (t1.index() != t2.index())
+    if (t1.id() != t2.id())
         return true;
     return false;
 }
@@ -94,9 +94,11 @@ const float type_matchup[18][18] =
     // Bug -> Grass: 2 -> 1
     // Bug -> Fairy: .5 -> 2
     // Ghost -> Rock: 1 -> .5
+    // Ghost -> Steel: .5 -> 1
     // Water -> Ice: 1 -> .5
     // Grass -> Bug: .5 -> 1
     // Ice -> Water: .5 -> 1
+    // Dark -> Rock: 1 -> .5
     // Dark -> Steel: .5 -> 1
     // Fairy -> Bug: 1 -> .5
 };

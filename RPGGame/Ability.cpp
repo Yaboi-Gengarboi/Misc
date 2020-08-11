@@ -2,7 +2,7 @@
 // Ability.cpp
 // Justyn Durnford
 // Created on 5/15/2020
-// Last updated on 7/19/2020
+// Last updated on 8/11/2020
 
 #include "Ability.h"
 
@@ -14,18 +14,18 @@ using std::vector;
 
 Ability::Ability() { /* See Ability.h for default values. */ }
 
-Ability::Ability(unsigned char index, const string& name, const string& desc)
+Ability::Ability(unsigned char id, const string& name, const string& desc)
 {
-	_index = index;
+	_id = id;
 	_name = name;
 	_desc = desc;
 }
 
 Ability::~Ability() { /* Destructor. */ }
 
-unsigned char Ability::index() const
+unsigned char Ability::id() const
 {
-	return _index;
+	return _id;
 }
 
 string Ability::name() const

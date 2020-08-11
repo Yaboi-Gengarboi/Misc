@@ -2,7 +2,7 @@
 // Subaction.h
 // Justyn Durnford
 // Created on 7/29/2020
-// Last updated on 7/30/2020
+// Last updated on 8/8/2020
 
 #ifndef SUBACTION_H
 #define SUBACTION_H
@@ -12,7 +12,7 @@
 class Subaction
 {
 	std::string _name = "";
-	unsigned short _id = 0;
+	unsigned short _id = -1;
 
 	public:
 

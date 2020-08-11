@@ -2,7 +2,7 @@
 // Player_Pokemon.h
 // Justyn Durnford
 // Created on 6/29/2020
-// Last updated on 6/29/2020
+// Last updated on 8/11/2020
 
 #ifndef PLAYER_POKEMON_H
 #define PLAYER_POKEMON_H
@@ -24,7 +24,7 @@ using std::array;
 //
 class Player_Pokemon
 {
-	std::string _nickname = "";
+	std::string _nickname;
 	unsigned short _index = 0;
 	unsigned char _level = 1;
 	unsigned long _experience = 0;

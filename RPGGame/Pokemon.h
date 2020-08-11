@@ -2,7 +2,7 @@
 // Pokemon.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 7/16/2020
+// Last updated on 8/11/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
@@ -27,9 +27,9 @@ class Egg_Group;
 //
 class Pokemon
 {
-	std::string _name = "";
-	std::string _desc = "";
-	unsigned short _index = 0;
+	std::string _name;
+	std::string _desc;
+	unsigned short _id = 0;
 	unsigned char _type1 = 0;
 	unsigned char _type2 = 0;
 	unsigned char _ability1 = 0;
@@ -48,7 +48,7 @@ class Pokemon
 	Pokemon();
 
 	// Primary constructor.
-	Pokemon(unsigned short index);
+	Pokemon(unsigned short id);
 
 	// Destructor.
 	~Pokemon();
@@ -59,8 +59,8 @@ class Pokemon
 	// Returns _desc.
 	std::string desc() const;
 
-	// Returns _index.
-	unsigned short index() const;
+	// Returns _id.
+	unsigned short id() const;
 
 	// Returns type_list[_type1].
 	Type& type1() const;
@@ -125,7 +125,5 @@ class Pokemon
 	// Returns _baseStats[5].
 	unsigned char baseSpe() const;
 };
-
-void load_Pokemon();
 
 #endif // POKEMON_HPP

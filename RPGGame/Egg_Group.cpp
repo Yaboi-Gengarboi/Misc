@@ -2,7 +2,7 @@
 // Egg_Group.cpp
 // Justyn Durnford
 // Created on 7/1/2020
-// Last updated on 7/3/2020
+// Last updated on 8/11/2020
 
 #include "Egg_Group.h"
 
@@ -14,10 +14,10 @@ using std::vector;
 
 Egg_Group::Egg_Group() { /* See Egg_Group.h for default values. */ }
 
-Egg_Group::Egg_Group(const string& name, unsigned char index)
+Egg_Group::Egg_Group(const string& name, unsigned char id)
 {
 	_name = name;
-	_index = index;
+	_id = id;
 }
 
 Egg_Group::~Egg_Group() { /* Destructor. */ }
@@ -27,9 +27,9 @@ string Egg_Group::name() const
 	return _name;
 }
 
-unsigned char Egg_Group::index() const
+unsigned char Egg_Group::id() const
 {
-	return _index;
+	return _id;
 }
 
 vector<Egg_Group> egg_group_list =

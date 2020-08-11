@@ -2,7 +2,7 @@
 // Egg_Group.h
 // Justyn Durnford
 // Created on 7/1/2020
-// Last updated on 7/1/2020
+// Last updated on 8/11/2020
 
 #ifndef EGG_GROUP
 #define EGG_GROUP
@@ -15,8 +15,8 @@
 //
 class Egg_Group
 {
-	std::string _name = "";
-	unsigned char _index = 0;
+	std::string _name;
+	unsigned char _id = 0;
 
 	public:
 
@@ -24,7 +24,7 @@ class Egg_Group
 	Egg_Group();
 
 	// Primary constructor.
-	Egg_Group(const std::string& name, unsigned char index);
+	Egg_Group(const std::string& name, unsigned char id);
 
 	// Destructor.
 	~Egg_Group();
@@ -32,8 +32,8 @@ class Egg_Group
 	// Returns _name.
 	std::string name() const;
 
-	// Returns _index.
-	unsigned char index() const;
+	// Returns _id.
+	unsigned char id() const;
 };
 
 extern std::vector<Egg_Group> egg_group_list;

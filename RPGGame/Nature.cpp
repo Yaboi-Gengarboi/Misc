@@ -2,7 +2,7 @@
 // Nature.cpp
 // Justyn Durnford
 // Created on 6/25/2020
-// Last updated on 6/30/2020
+// Last updated on 8/11/2020
 
 #include "Nature.h"
 
@@ -14,11 +14,11 @@ using std::vector;
 
 Nature::Nature() { /* See Nature.h for default values. */ }
 
-Nature::Nature(const string& name, unsigned char index,
+Nature::Nature(const string& name, unsigned char id,
 			   unsigned char goodStat, unsigned char badStat)
 {
 	_name = name;
-	_index = index;
+	_id = id;
 	_goodStat = goodStat;
 	_badStat = badStat;
 }
@@ -30,9 +30,9 @@ string Nature::name() const
 	return _name;
 }
 
-unsigned char Nature::index() const
+unsigned char Nature::id() const
 {
-	return _index;
+	return _id;
 }
 
 unsigned char Nature::goodStat() const
@@ -47,14 +47,14 @@ unsigned char Nature::badStat() const
 
 bool operator == (const Nature& n1, const Nature& n2)
 {
-	if (n1.index() == n2.index())
+	if (n1.id() == n2.id())
 		return true;
 	return false;
 }
 
 bool operator != (const Nature& n1, const Nature& n2)
 {
-	if (n1.index() != n2.index())
+	if (n1.id() != n2.id())
 		return true;
 	return false;
 }

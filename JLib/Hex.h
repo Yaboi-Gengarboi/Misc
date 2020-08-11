@@ -1,7 +1,7 @@
 // Hex.h
 // Justyn Durnford
 // Created on 8/1/2020
-// Last updated on 8/4/2020
+// Last updated on 8/5/2020
 
 #ifndef HEX_H
 #define HEX_H
@@ -53,30 +53,48 @@ class Hex_Long
 	//
 	void setValue(const std::string& hexstr);
 
+	Hex_Long& operator += (const long& l);
+	Hex_Long& operator += (const Hex_Long& hl);
 
+	Hex_Long& operator -= (const long& l);
+	Hex_Long& operator -= (const Hex_Long& hl);
 
+	Hex_Long& operator *= (const long& l);
+	Hex_Long& operator *= (const Hex_Long& hl);
+
+	Hex_Long& operator /= (const long& l);
+	Hex_Long& operator /= (const Hex_Long& hl);
 };
 
-// 
-Hex_Long operator + (const Hex_Long& hi1, const Hex_Long& hi2);
+Hex_Long operator + (const Hex_Long& hl1, const Hex_Long& hl2);
+Hex_Long operator + (const Hex_Long& hl1, const long& l);
 
-// Returns true if hi1._value == hi2._value.
-bool operator == (const Hex_Long& hi1, const Hex_Long& hi2);
+Hex_Long operator - (const Hex_Long& hl1, const Hex_Long& hl2);
+Hex_Long operator - (const Hex_Long& hl1, const long& l);
 
-// Returns true if hi._value == i.
-bool operator == (const Hex_Long& hi, const long& i);
+Hex_Long operator * (const Hex_Long& hl1, const Hex_Long& hl2);
+Hex_Long operator * (const Hex_Long& hl1, const long& l);
 
-// Returns true if hi._hexstr == str.
-bool operator == (const Hex_Long& hi, const std::string& str);
+Hex_Long operator / (const Hex_Long& hl1, const Hex_Long& hl2);
+Hex_Long operator / (const Hex_Long& hl1, const long& l);
 
-// Returns true if hi1._value != hi2._value.
-bool operator != (const Hex_Long& hi1, const Hex_Long& hi2);
+// Returns true if hl1._value == hl2._value.
+bool operator == (const Hex_Long& hl1, const Hex_Long& hl2);
 
-// Returns true if hi._value != i.
-bool operator != (const Hex_Long& hi, const long& i);
+// Returns true if hl._value == i.
+bool operator == (const Hex_Long& hl, const long& i);
 
-// Returns true if hi._hexstr != str.
-bool operator != (const Hex_Long& hi, const std::string& str);
+// Returns true if hl._hexstr == str.
+bool operator == (const Hex_Long& hl, const std::string& str);
+
+// Returns true if hl1._value != hl2._value.
+bool operator != (const Hex_Long& hl1, const Hex_Long& hl2);
+
+// Returns true if hl._value != i.
+bool operator != (const Hex_Long& hl, const long& i);
+
+// Returns true if hl._hexstr != str.
+bool operator != (const Hex_Long& hl, const std::string& str);
 
 class Hex_Float
 {
