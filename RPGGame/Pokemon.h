@@ -2,7 +2,7 @@
 // Pokemon.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 8/11/2020
+// Last updated on 8/14/2020
 
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
@@ -30,8 +30,8 @@ class Pokemon
 	std::string _name;
 	std::string _desc;
 	unsigned short _id = 0;
-	unsigned char _type1 = 0;
-	unsigned char _type2 = 0;
+	unsigned char _type1 = -1;
+	unsigned char _type2 = -1;
 	unsigned char _ability1 = 0;
 	unsigned char _ability2 = 0;
 	Fraction _maleRatio;

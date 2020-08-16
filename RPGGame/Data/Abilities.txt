@@ -220,6 +220,8 @@ Quick Feet
 Doubles the Speed stat when the Pokemon is affected by a status condition. Ignores the speed reduction of paralysis.
 Rain Dish
 Restores 6.25% of the Pokemon's maximum HP every turn in rain.
+Rainy Day
+Nullifies the effects of all pokemons' luck while in battle.
 Rattled
 Increases the Pokemon's Speed stat by 1 stage when hit by a Ghost-type, Dark-type or Bug-type move.
 Refrigerate

@@ -1,0 +1,4 @@
+00148044 3F800000 000D8044 40600000
+
+Captain Falcon, Neutral Aerial, x1.000000, @ 20
+Captain Falcon, Neutral Aerial, x3.500000, @ 13

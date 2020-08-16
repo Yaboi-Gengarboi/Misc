@@ -2,7 +2,7 @@
 // Data.cpp
 // Justyn Durnford
 // Created on 7/31/2020
-// Last updated on 8/8/2020
+// Last updated on 8/14/2020
 
 #include "Data.h"
 #include "Subaction.h"
@@ -173,7 +173,7 @@ bool read_fsms()
 	if (fin.eof())
 		return true;
 
-	while (line != "\n")
+	while (!line.empty())
 		getline(fin, line);
 
 	getline(fin, line);

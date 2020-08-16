@@ -1,35 +1,32 @@
 // RPGGame
-// Initialize.cpp
+// Data.cpp
 // Justyn Durnford
-// Created on 7/3/2020
-// Last updated on 8/12/2020
+// Created on 8/14/2020
+// Last updated on 8/14/2020
 
-#include "Initialize.h"
+#include "Data.h"
 
-#include <string>
-using std::string;
-using std::to_string;
-using std::getline;
+#include "Pokemon.h"
+class Pokemon;
+
+#include "Player_Pokemon.h"
+class Player_Pokemon;
 
 #include <fstream>
 using std::ifstream;
 
+#include <string>
+using std::string;
+
 #include <vector>
 using std::vector;
 
-string reverse_str(const string& str)
+vector<Ability> ability_list;
+vector<Pokemon> pokemon_list;
+
+string to_hex(long i)
 {
-	string newstr = "";
-
-	for (unsigned long long i = str.size(); i > 0; --i)
-		newstr += str[i - 1];
-
-	return newstr;
-}
-
-string to_hex(unsigned long long i)
-{
-	string hexstr = "";
+	string hexstr;
 	unsigned char rem = 0;
 
 	if (i == 0)
@@ -42,45 +39,44 @@ string to_hex(unsigned long long i)
 		switch (rem)
 		{
 			case 10:
-				hexstr += 'a';
+				hexstr.insert(0, 1, 'A');
 				break;
 
 			case 11:
-				hexstr += 'b';
+				hexstr.insert(0, 1, 'B');
 				break;
 
 			case 12:
-				hexstr += 'c';
+				hexstr.insert(0, 1, 'C');
 				break;
 
 			case 13:
-				hexstr += 'd';
+				hexstr.insert(0, 1, 'D');
 				break;
 
 			case 14:
-				hexstr += 'e';
+				hexstr.insert(0, 1, 'E');
 				break;
 
 			case 15:
-				hexstr += 'f';
+				hexstr.insert(0, 1, 'F');
 				break;
 
 			default:
-				hexstr += rem + 48;
+				hexstr.insert(0, 1, rem + 48);
 				break;
 		}
 
 		i /= 16;
 	}
 
-	return reverse_str(hexstr);
+	return hexstr;
 }
 
 string to_hex(float f)
 {
-	int* pf = (int*)&f;
-
-	return to_hex((unsigned long long)*pf);
+	long* pf = (long*)&f;
+	return to_hex(*pf);
 }
 
 bool load_abilities()
@@ -89,6 +85,9 @@ bool load_abilities()
 	unsigned char id = 0;
 	string name;
 	string desc;
+
+	if (!fin)
+		return false;
 
 	while (!fin.eof())
 	{
@@ -99,20 +98,23 @@ bool load_abilities()
 		ability_list.push_back(Ability(id, name, desc));
 	}
 
+	if (id != 100)
+		return false;
+
 	return true;
 }
 
 bool load_moves()
 {
-	return true;
+	return false;
 }
 
 bool load_pokemon()
 {
-	return true;
+	return false;
 }
 
 bool load_player_pokemon()
 {
-	return true;
+	return false;
 }

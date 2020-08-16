@@ -143,29 +143,34 @@
     <ClInclude Include="Ability.h" />
     <ClInclude Include="Battle.h" />
     <ClInclude Include="Characteristic.h" />
+    <ClInclude Include="Data.h" />
     <ClInclude Include="Egg_Group.h" />
     <ClInclude Include="Initialize.h" />
-    <ClInclude Include="Fraction.h" />
+    <ClInclude Include="MiscInfo.h" />
     <ClInclude Include="Move.h" />
-    <ClInclude Include="Move_Data.h" />
     <ClInclude Include="Nature.h" />
     <ClInclude Include="Player_Pokemon.h" />
     <ClInclude Include="Pokemon.h" />
+    <ClInclude Include="Random.h" />
     <ClInclude Include="Trainer.h" />
     <ClInclude Include="Type.h" />
     <ClInclude Include="Weather.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ability.cpp" />
+    <ClCompile Include="Battle.cpp" />
     <ClCompile Include="Characteristic.cpp" />
+    <ClCompile Include="Data.cpp" />
     <ClCompile Include="Egg_Group.cpp" />
     <ClCompile Include="Initialize.cpp" />
-    <ClCompile Include="Fraction.cpp" />
+    <ClCompile Include="MiscInfo.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="main_file.cpp" />
     <ClCompile Include="Move_Data.cpp" />
     <ClCompile Include="Nature.cpp" />
+    <ClCompile Include="Player_Pokemon.cpp" />
     <ClCompile Include="Pokemon.cpp" />
+    <ClCompile Include="Random.cpp" />
     <ClCompile Include="Type.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

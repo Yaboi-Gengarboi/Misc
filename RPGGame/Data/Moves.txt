@@ -26,7 +26,7 @@ Has a 30% chance to make the target flinch.
 10
 2
 1/1
-3/10
+300
 0
 Acid
 Has a 50% chance of lowering the targets' 1 Defense by 1 stage.
@@ -609,7 +609,19 @@ Power-Up Punch	Fighting	0	40 	100 	20 		Raises Attack. 	100
 Precipice Blades	Ground	0	120 	85 	10 		Hits all adjacent opponents. 	—
 Present	0	0	— 	90 	15 		Either deals damage or heals. 	—
 Prismatic Laser	Psychic	1 	160 	100 	10 		The user shoots powerful lasers using the power of a prism. The user can't move on the next turn. 	—
-Protect	0	Status 	— 	— 	10 	TM25 	Protects the user, but may fail if used consecutively. 	—
+
+Protect	       
+Protects the user from all attacks, but it may fail if used consecutively.
+0	
+2
+0
+10
+0
+0
+4
+
+ 	— 	— 	10 	TM25 	Protects the user, but may fail if used consecutively. 	—
+
 Psybeam	Psychic	1 	65 	100 	20 		May confuse opponent. 	10
 Psych Up	0	Status 	— 	— 	10 		Copies the opponent's stat changes. 	—
 Psychic	Psychic	1 	90 	100 	10 		May lower opponent's 1 Defense. 	10

@@ -2,7 +2,7 @@
 // Type.cpp
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 8/11/2020
+// Last updated on 8/14/2020
 
 #include "Type.h"
 
@@ -68,7 +68,7 @@ vector<Type> type_list =
     Type("Fairy", 17),
 };
 
-const float type_matchup[18][18] =
+const float type_matchups[18][18] =
 {
     /* 0  : Normal   */ { 1,   1,   1,   1,   1,  .5,   1,   0,  .5,   1,   1,   1,   1,   1,   1,   1,   1,   1 },
     /* 1  : Fighting */ { 2,   1,  .5,  .5,   1,   2,  .5,   0,   2,   1,   1,   1,   1,  .5,   2,   1,   2,  .5 },
@@ -83,22 +83,22 @@ const float type_matchup[18][18] =
     /* 10 : Water    */ { 1,   1,   1,   1,   2,   2,   1,   1,   1,   2,  .5,  .5,   1,   1,  .5,  .5,   1,   1 },
     /* 11 : Grass    */ { 1,   1,  .5,  .5,   2,   2,   1,   1,  .5,  .5,   2,  .5,   1,   1,   1,  .5,   1,   1 },
     /* 12 : Electric */ { 1,   1,   2,   1,   0,   1,   1,   1,   1,   1,   2,  .5,  .5,   1,   1,  .5,   1,   1 },
-    /* 13 : Psychic  */ { 1,   2,   1,   2,   1,   1,   1,   1,  .5,   1,   1,   1,   1,  .5,   1,   1,   0,   1 },
+    /* 13 : Psychic  */ { 1,   2,   1,   2,   1,  .5,   1,   1,   1,   1,   1,   1,   1,  .5,   1,   1,   0,   1 },
     /* 14 : Ice      */ { 1,   1,   2,   1,   2,   1,   1,   1,  .5,  .5,   1,   2,   1,   1,  .5,   2,   1,   1 },
     /* 15 : Dragon   */ { 1,   1,   1,   1,   1,   1,   1,   1,  .5,   1,   1,   1,   1,   1,   1,   2,   1,   0 },
     /* 16 : Dark     */ { 1,  .5,   1,   1,   1,   1,   1,   2,   1,   1,   1,   1,   1,   2,   1,   1,  .5,  .5 },
     /* 17 : Fairy    */ { 1,   2,   1,  .5,   1,   1,  .5,   1,  .5,  .5,   1,   1,   1,   1,   1,   2,   2,   1 }
 
-    // Flying -> Rock: 1 -> .5
-    // Poison -> Water: 1 -> 2
-    // Bug -> Grass: 2 -> 1
-    // Bug -> Fairy: .5 -> 2
-    // Ghost -> Rock: 1 -> .5
-    // Ghost -> Steel: .5 -> 1
-    // Water -> Ice: 1 -> .5
-    // Grass -> Bug: .5 -> 1
-    // Ice -> Water: .5 -> 1
-    // Dark -> Rock: 1 -> .5
-    // Dark -> Steel: .5 -> 1
-    // Fairy -> Bug: 1 -> .5
+    // Flying -> Rock:     x1 -> x0.5
+    // Poison -> Water:    x1 -> x2
+    // Bug -> Grass:       x2 -> x1
+    // Bug -> Fairy:     x0.5 -> x2
+    // Ghost -> Rock:      x1 -> x0.5
+    // Water -> Ice:       x1 -> x0.5
+    // Grass -> Bug:     x0.5 -> x1
+    // Psychic -> Rock:    x1 -> x0.5
+    // Psychic -> Steel: x0.5 -> x1
+    // Ice -> Water:     x0.5 -> x1
+    // Dark -> Steel:    x0.5 -> x1
+    // Fairy -> Bug:       x1 -> x0.5
 };

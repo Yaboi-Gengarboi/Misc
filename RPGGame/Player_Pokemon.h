@@ -2,22 +2,22 @@
 // Player_Pokemon.h
 // Justyn Durnford
 // Created on 6/29/2020
-// Last updated on 8/11/2020
+// Last updated on 8/14/2020
 
 #ifndef PLAYER_POKEMON_H
 #define PLAYER_POKEMON_H
 
-#include "Pokemon.h"
+#include "Characteristic.h"
+class Characteristic;
 
 #include "Nature.h"
+class Nature;
 
-#include "Characteristic.h"
-
-#include <string>
-using std::string;
+#include "Pokemon.h"
+class Pokemon;
 
 #include <array>
-using std::array;
+#include <string>
 
 //
 //
@@ -40,6 +40,8 @@ class Player_Pokemon
 	Player_Pokemon();
 
 	~Player_Pokemon();
+
+	const Pokemon& pokemon() const;
 };
 
 #endif // PLAYER_POKEMON_H

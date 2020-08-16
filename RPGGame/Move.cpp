@@ -2,19 +2,12 @@
 // Move.cpp
 // Justyn Durnford
 // Created on 5/23/2020
-// Last updated on 8/11/2020
+// Last updated on 8/16/2020
 
 #include "Move.h"
 
-#include "Move_Data.h"
-struct Move_Kind;
-struct Move_Range;
-
 #include "Type.h"
 class Type;
-
-#include "Fraction.h"
-class Fraction;
 
 #include <string>
 using std::string;
@@ -22,12 +15,29 @@ using std::string;
 #include <vector>
 using std::vector;
 
+Move_Kind::Move_Kind() { /* See Move_Data.h for default values. */ }
+
+Move_Kind::Move_Kind(const string& name, unsigned char id)
+{
+	_name = name;
+	_id = id;
+}
+
+Move_Kind::~Move_Kind() { /* Destructor. */ }
+
+vector<Move_Kind> move_kind_list =
+{
+	Move_Kind("Physical", 0),
+	Move_Kind("Special", 1),
+	Move_Kind("Status", 2)
+};
+
 Move::Move() { /* See Move.h for default values. */ }
 
 Move::Move(const string& name, const string& desc, unsigned short id,
 		   unsigned char type, unsigned char kind, unsigned char power,
-		   unsigned char pp, unsigned char range, const Fraction& accuracy,
-		   const Fraction& additionalChance, char priority)
+		   unsigned char pp, unsigned short accuracy, unsigned short additionalChance,
+		   char priority)
 {
 	_name = name;
 	_desc = desc;
@@ -36,7 +46,6 @@ Move::Move(const string& name, const string& desc, unsigned short id,
 	_kind = kind;
 	_power = power;
 	_pp = pp;
-	_range = range;
 	_accuracy = accuracy;
 	_additionalChance = additionalChance;
 	_priority = priority;
@@ -79,17 +88,12 @@ unsigned char Move::pp() const
 	return _pp;
 }
 
-Move_Range& Move::range() const
-{
-	return move_range_list[_range];
-}
-
-Fraction Move::accuracy() const
+unsigned short Move::accuracy() const
 {
 	return _accuracy;
 }
 
-Fraction Move::additionalChance() const
+unsigned short Move::additionalChance() const
 {
 	return _additionalChance;
 }
@@ -97,6 +101,20 @@ Fraction Move::additionalChance() const
 char Move::priority() const
 {
 	return _priority;
+}
+
+bool operator == (const Move_Kind& m1, const Move_Kind& m2)
+{
+	if (m1._id == m2._id)
+		return true;
+	return false;
+}
+
+bool operator != (const Move_Kind& m1, const Move_Kind& m2)
+{
+	if (m1._id != m2._id)
+		return true;
+	return false;
 }
 
 bool operator == (const Move& m1, const Move& m2)
@@ -112,6 +130,13 @@ bool operator != (const Move& m1, const Move& m2)
 		return true;
 	return false;
 }
+
+vector<Move_Kind> move_kind_list =
+{
+	Move_Kind("Physical", 0),
+	Move_Kind("Special", 1),
+	Move_Kind("Status", 2)
+};
 
 vector<Move> move_list;
 vector<bool> move_contact_list;

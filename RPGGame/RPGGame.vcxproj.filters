@@ -39,22 +39,25 @@
     <ClInclude Include="Characteristic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Fraction.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Player_Pokemon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Trainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Move_Data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Egg_Group.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Initialize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MiscInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -80,9 +83,6 @@
     <ClCompile Include="Characteristic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Fraction.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Move_Data.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -90,6 +90,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Initialize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Battle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player_Pokemon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MiscInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
