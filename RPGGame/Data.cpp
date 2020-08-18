@@ -2,7 +2,7 @@
 // Data.cpp
 // Justyn Durnford
 // Created on 8/14/2020
-// Last updated on 8/14/2020
+// Last updated on 8/17/2020
 
 #include "Data.h"
 
@@ -98,7 +98,7 @@ bool load_abilities()
 		ability_list.push_back(Ability(id, name, desc));
 	}
 
-	if (id != 100)
+	if (id != 175)
 		return false;
 
 	return true;

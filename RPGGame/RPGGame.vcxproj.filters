@@ -48,9 +48,6 @@
     <ClInclude Include="Egg_Group.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Initialize.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Random.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -83,13 +80,7 @@
     <ClCompile Include="Characteristic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Move_Data.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Egg_Group.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Initialize.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Random.cpp">

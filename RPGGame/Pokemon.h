@@ -2,16 +2,10 @@
 // Pokemon.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 8/14/2020
+// Last updated on 8/17/2020
 
-#ifndef POKEMON_HPP
-#define POKEMON_HPP
-
-#include "Fraction.h"
-class Fraction;
-
-#include "Type.h"
-class Type;
+#ifndef POKEMON_H
+#define POKEMON_H
 
 #include "Ability.h"
 class Ability;
@@ -19,8 +13,11 @@ class Ability;
 #include "Egg_Group.h"
 class Egg_Group;
 
+#include "Type.h"
+class Type;
+
 #include <string>
-#include <array>
+#include <vector>
 
 //
 //
@@ -34,13 +31,13 @@ class Pokemon
 	unsigned char _type2 = -1;
 	unsigned char _ability1 = 0;
 	unsigned char _ability2 = 0;
-	Fraction _maleRatio;
+	unsigned short _maleRatio = 0;
 	unsigned char _eg1 = 0;
 	unsigned char _eg2 = 0;
 	float _height = 0;
 	float _weight = 0;
-	std::array<unsigned char, 6> _evYield = { 0, 0, 0, 0, 0, 0 };
-	std::array<unsigned char, 6> _baseStats = { 0, 0, 0, 0, 0, 0 };
+	std::vector<unsigned char> _evYield = { 0, 0, 0, 0, 0, 0 };
+	std::vector<unsigned char> _baseStats = { 0, 0, 0, 0, 0, 0 };
 
 	public:
 
@@ -75,7 +72,7 @@ class Pokemon
 	Ability& ability2() const;
 
 	// Returns _maleRatio.
-	Fraction maleRatio() const;
+	unsigned short maleRatio() const;
 
 	// Returns egg_group_list[_eg1].
 	Egg_Group& eg1() const;
@@ -126,4 +123,4 @@ class Pokemon
 	unsigned char baseSpe() const;
 };
 
-#endif // POKEMON_HPP
+#endif // POKEMON_H

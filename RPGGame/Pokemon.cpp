@@ -2,15 +2,26 @@
 // Pokemon.cpp
 // Justyn Durnford
 // Created on 5/15/2020
-// Last updated on 8/11/2020
+// Last updated on 8/17/2020
 
 #include "Pokemon.h"
+
+#include "Ability.h"
+class Ability;
+
+#include "Data.h"
+
+#include "Egg_Group.h"
+class Egg_Group;
+
+#include "Type.h"
+class Type;
 
 #include <string>
 using std::string;
 
-#include <array>
-using std::array;
+#include <vector>
+using std::vector;
 
 Pokemon::Pokemon() { /* See Pokemon.h for default values. */ }
 
@@ -56,7 +67,7 @@ Ability& Pokemon::ability2() const
 	return ability_list[_ability2];
 }
 
-Fraction Pokemon::maleRatio() const
+unsigned short Pokemon::maleRatio() const
 {
 	return _maleRatio;
 }

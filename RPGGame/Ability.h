@@ -2,7 +2,7 @@
 // Ability.h
 // Justyn Durnford
 // Created on 4/12/2020
-// Last updated on 8/11/2020
+// Last updated on 8/17/2020
 
 #ifndef ABILITY_H
 #define ABILITY_H
@@ -15,9 +15,9 @@
 //
 class Ability
 {
-	unsigned char _id = 0;
 	std::string _name;
 	std::string _desc;
+	unsigned char _id = 0;
 
 	public:
 
@@ -30,16 +30,14 @@ class Ability
 	// Destructor.
 	~Ability();
 
-	// Returns _id.
-	unsigned char id() const;
-
 	// Returns _name.
 	std::string name() const;
 
 	// Returns _desc.
 	std::string desc() const;
-};
 
-extern std::vector<Ability> ability_list;
+	// Returns _id.
+	unsigned char id() const;
+};
 
 #endif // ABILITY_H

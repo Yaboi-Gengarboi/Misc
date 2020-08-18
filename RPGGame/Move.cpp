@@ -25,13 +25,6 @@ Move_Kind::Move_Kind(const string& name, unsigned char id)
 
 Move_Kind::~Move_Kind() { /* Destructor. */ }
 
-vector<Move_Kind> move_kind_list =
-{
-	Move_Kind("Physical", 0),
-	Move_Kind("Special", 1),
-	Move_Kind("Status", 2)
-};
-
 Move::Move() { /* See Move.h for default values. */ }
 
 Move::Move(const string& name, const string& desc, unsigned short id,

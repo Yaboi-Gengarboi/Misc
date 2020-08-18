@@ -274,6 +274,8 @@ Solid Rock
 Halves the damage taken from moves that are not suppereffective.
 Soundproof
 Protects the Pokemon from sound-based moves.
+Specialist
+Raises the power of moves with the same type as the user by 33.33%.
 Speed Boost
 The Pokemon's Speed stat is increased by 1 stage upon attacking.
 Stance Change
