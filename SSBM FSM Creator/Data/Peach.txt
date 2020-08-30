@@ -1,59 +1,59 @@
-29 Spot Dodge
-2a Forward Roll
-2b Back Roll
-2c Air Dodge
-2e Jab 1
-2f Jab 2
-34 Dash Attack
-37 Side Tilt Middle
-3a Up Tilt
-3b Down Tilt
-3c Side Smash High
-3e Side Smash Middle
-40 Side Smash Low
-42 Up Smash
-43 Down Smash
-44 Neutral Aerial
-45 Foward Aerial
-46 Back Aerial
-47 Up Aerial
-49 Down Aerial
-c7 Neutral Tech
-c8 Forward Tech
-c9 Back Tech
-ca Wall Tech
-cb Wall Jump Tech
-cc Ceiling Tech
-db Ledge Getup Slow
-dc Ledge Getup Fast
-dd Ledge Attack Slow
-de Ledge Attack Fast
-df Ledge Roll Slow
-e0 Ledge Roll Fast
-e1 Ledge Jump 1 Slow
-e2 Ledge Jump 2 Slow
-e3 Ledge Jump 1 Fast
-e4 Ledge Jump 2 Fast
-ef Left Taunt
-f0 Right Taunt
-f2 Grab
-f3 Dash Grab
-f7 Forward Throw
-f8 Back Throw
-f9 Up Throw
-fa Down Throw
-12a Side Smash 1
-12b Side Smash 2
-12c Side Smash 3
-12d Toad Counter (Ground)
-12e Peach Bomber Start (Ground)
-12f Peach Bomber End (Ground)
-130 Peach Bomber Jump
-131 Peach Bomber Start (Aerial)
-132 Peach Bomber End 1 (Aerial)
-133 Peach Bomber End 2 (Aerial)
-134 Peach Parasol Start (Ground)
-135 Peach Parasol End (Ground)
-136 Peach Parasol Start (Aerial)
-137 Peach Parasol End (Aerial)
-138 Vegetable
+41  Spot Dodge
+42  Forward Roll
+43  Back Roll
+44  Air Dodge
+46  Jab 1
+47  Jab 2
+52  Dash Attack
+55  Side Tilt Middle
+58  Up Tilt
+59  Down Tilt
+60  Side Smash High
+62  Side Smash Middle
+64  Side Smash Low
+66  Up Smash
+67  Down Smash
+68  Neutral Aerial
+69  Foward Aerial
+70  Back Aerial
+71  Up Aerial
+72  Down Aerial
+199 Neutral Tech
+200 Forward Tech
+201 Back Tech
+202 Wall Tech
+203 Wall Jump Tech
+204 Ceiling Tech
+219 Ledge Getup Slow
+220 Ledge Getup Fast
+221 Ledge Attack Slow
+222 Ledge Attack Fast
+223 Ledge Roll Slow
+224 Ledge Roll Fast
+225 Ledge Jump 1 Slow
+226 Ledge Jump 2 Slow
+227 Ledge Jump 1 Fast
+228 Ledge Jump 2 Fast
+239 Left Taunt
+240 Right Taunt
+242 Grab
+243 Dash Grab
+247 Forward Throw
+248 Back Throw
+249 Up Throw
+250 Down Throw
+298 Side Smash 1
+299 Side Smash 2
+300 Side Smash 3
+301 Toad Counter (Ground)
+302 Peach Bomber Start (Ground)
+303 Peach Bomber End (Ground)
+304 Peach Bomber Jump
+305 Peach Bomber Start (Aerial)
+306 Peach Bomber End 1 (Aerial)
+307 Peach Bomber End 2 (Aerial)
+308 Peach Parasol Start (Ground)
+309 Peach Parasol End (Ground)
+310 Peach Parasol Start (Aerial)
+311 Peach Parasol End (Aerial)
+312 Vegetable

@@ -1,67 +1,67 @@
-29 Spot Dodge
-2a Forward Roll
-2b Back Roll
-2c Air Dodge
-2e Jab 1
-2f Jab 2
-31 Rapid Jab Start
-32 Rapid Jab Loop
-33 Rapid Jab End
-34 Dash Attack
-37 Side Tilt Middle
-3a Up Tilt
-3b Down Tilt
-3e Side Smash Middle
-42 Up Smash
-43 Down Smash
-44 Neutral Aerial
-45 Foward Aerial
-46 Back Aerial
-47 Up Aerial
-49 Down Aerial
-c7 Neutral Tech
-c8 Forward Tech
-c9 Back Tech
-ca Wall Tech
-cb Wall Jump Tech
-cc Ceiling Tech
-db Ledge Getup Slow
-dc Ledge Getup Fast
-dd Ledge Attack Slow
-de Ledge Attack Fast
-df Ledge Roll Slow
-e0 Ledge Roll Fast
-e1 Ledge Jump 1 Slow
-e2 Ledge Jump 2 Slow
-e3 Ledge Jump 1 Fast
-e4 Ledge Jump 2 Fast
-ef Left Taunt
-f0 Right Taunt
-f2 Grab
-f3 Dash Grab
-f7 Forward Throw
-f8 Back Throw
-f9 Up Throw
-fa Down Throw
-127 Needle Storm Start (Ground)
-128 Needle Storm Charging Loop (Ground)
-129 Needle Storm Cancel (Ground)
-12a Needle Storm Shoot (Ground)
-12b Needle Storm Start (Aerial)
-12c Needle Storm Charging Loop (Aerial)
-12d Needle Storm Cancel (Aerial)
-12e Needle Storm Shoot (Aerial)
-12f Chain Start (Ground)
-130 Chain End (Ground)
-131 Chain (Ground)
-132 Chain Start (Aerial)
-133 Chain End (Aerial)
-134 Chain (Aerial)
-135 Vanish Start (Ground)
-136 Vanish (Ground)
-137 Vanish Start (Aerial)
-138 Vanish (Aerial)
-139 Transform 1 (Ground)
-13a Transform 2 (Ground)
-13b Transform 1 (Aerial)
-13c Transform 2 (Aerial)
+41  Spot Dodge
+42  Forward Roll
+43  Back Roll
+44  Air Dodge
+46  Jab 1
+47  Jab 2
+49  Rapid Jab Start
+50  Rapid Jab Loop
+51  Rapid Jab End
+52  Dash Attack
+55  Side Tilt Middle
+58  Up Tilt
+59  Down Tilt
+62  Side Smash Middle
+66  Up Smash
+67  Down Smash
+68  Neutral Aerial
+69  Foward Aerial
+70  Back Aerial
+71  Up Aerial
+72  Down Aerial
+199 Neutral Tech
+200 Forward Tech
+201 Back Tech
+202 Wall Tech
+203 Wall Jump Tech
+204 Ceiling Tech
+219 Ledge Getup Slow
+220 Ledge Getup Fast
+221 Ledge Attack Slow
+222 Ledge Attack Fast
+223 Ledge Roll Slow
+224 Ledge Roll Fast
+225 Ledge Jump 1 Slow
+226 Ledge Jump 2 Slow
+227 Ledge Jump 1 Fast
+228 Ledge Jump 2 Fast
+239 Left Taunt
+240 Right Taunt
+242 Grab
+243 Dash Grab
+247 Forward Throw
+248 Back Throw
+249 Up Throw
+250 Down Throw
+295 Needle Storm Start (Ground)
+296 Needle Storm Charging Loop (Ground)
+297 Needle Storm Cancel (Ground)
+298 Needle Storm Shoot (Ground)
+299 Needle Storm Start (Aerial)
+300 Needle Storm Charging Loop (Aerial)
+301 Needle Storm Cancel (Aerial)
+302 Needle Storm Shoot (Aerial)
+303 Chain Start (Ground)
+304 Chain End (Ground)
+305 Chain (Ground)
+306 Chain Start (Aerial)
+307 Chain End (Aerial)
+308 Chain (Aerial)
+309 Vanish Start (Ground)
+310 Vanish (Ground)
+311 Vanish Start (Aerial)
+312 Vanish (Aerial)
+313 Transform 1 (Ground)
+314 Transform 2 (Ground)
+315 Transform 1 (Aerial)
+316 Transform 2 (Aerial)

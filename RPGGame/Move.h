@@ -2,7 +2,7 @@
 // Move.h
 // Justyn Durnford
 // Created on 4/20/2020
-// Last updated on 8/16/2020
+// Last updated on 8/17/2020
 
 #ifndef MOVE_H
 #define MOVE_H
@@ -32,6 +32,8 @@ struct Move_Kind
 	// Destructor.
 	~Move_Kind();
 };
+
+extern std::vector<Move_Kind> move_kind_list;
 
 //
 //
@@ -105,11 +107,5 @@ bool operator == (const Move& m1, const Move& m2);
 
 // Returns true ONLY IF m1.id() != m2.id()
 bool operator != (const Move& m1, const Move& m2);
-
-extern std::vector<Move_Kind> move_kind_list;
-extern std::vector<Move> move_list;
-extern std::vector<bool> move_contact_list;
-
-
 
 #endif // MOVE_H

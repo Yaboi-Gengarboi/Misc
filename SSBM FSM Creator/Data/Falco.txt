@@ -1,73 +1,73 @@
-29 Spot Dodge
-2a Forward Roll
-2b Back Roll
-2c Air Dodge
-2e Jab 1
-2f Jab 2
-31 Rapid Jab Start
-32 Rapid Jab Loop
-33 Rapid Jab End
-34 Dash Attack
-35 Side Tilt High
-37 Side Tilt Middle
-39 Side Tilt Low
-3a Up Tilt
-3b Down Tilt
-3e Side Smash Middle
-42 Up Smash
-43 Down Smash
-44 Neutral Aerial
-45 Foward Aerial
-46 Back Aerial
-47 Up Aerial
-49 Down Aerial
-c7 Neutral Tech
-c8 Forward Tech
-c9 Back Tech
-ca Wall Tech
-cb Wall Jump Tech
-cc Ceiling Tech
-db Ledge Getup Slow
-dc Ledge Getup Fast
-dd Ledge Attack Slow
-de Ledge Attack Fast
-df Ledge Roll Slow
-e0 Ledge Roll Fast
-e1 Ledge Jump 1 Slow
-e2 Ledge Jump 2 Slow
-e3 Ledge Jump 1 Fast
-e4 Ledge Jump 2 Fast
-ef Left Taunt
-f0 Right Taunt
-f2 Grab
-f3 Dash Grab
-f7 Forward Throw
-f8 Back Throw
-f9 Up Throw
-fa Down Throw
-127 Blaster Start (Ground)
-128 Blaster Loop (Ground)
-129 Blaster End (Ground)
-12a Blaster Start (Aerial)
-12b Blaster Loop (Aerial)
-12c Blaster End (Aerial)
-12d Falco Phantasm Start (Ground)
-12e Falco Phantasm (Ground)
-12f Falco Phantasm End (Ground)
-130 Falco Phantasm Start (Aerial)
-131 Falco Phantasm (Aerial)
-132 Falco Phantasm End (Aerial)
-133 Fire Bird Start (Ground)
-134 Fire Bird Start (Aerial)
-135 Fire Bird
-136 Fire Bird Landing
-137 Fire Bird Fall
-138 Fire Bird Bounce
-139 Reflector Start (Ground)
-13a Reflector Loop (Ground)
-13b Reflector Reflect (Ground)
-13c Reflector End (Ground)
-13d Reflector Start (Aerial)
-13e Reflector Loop (Aerial)
-13f Reflector Reflect (Aerial)
-140 Reflector End (Aerial)
+41  Spot Dodge
+42  Forward Roll
+43  Back Roll
+44  Air Dodge
+46  Jab 1
+47  Jab 2
+49  Rapid Jab Start
+50  Rapid Jab Loop
+51  Rapid Jab End
+52  Dash Attack
+53  Side Tilt High
+55  Side Tilt Middle
+57  Side Tilt Low
+58  Up Tilt
+59  Down Tilt
+62  Side Smash Middle
+66  Up Smash
+67  Down Smash
+68  Neutral Aerial
+69  Foward Aerial
+70  Back Aerial
+71  Up Aerial
+72  Down Aerial
+199 Neutral Tech
+200 Forward Tech
+201 Back Tech
+202 Wall Tech
+203 Wall Jump Tech
+204 Ceiling Tech
+219 Ledge Getup Slow
+220 Ledge Getup Fast
+221 Ledge Attack Slow
+222 Ledge Attack Fast
+223 Ledge Roll Slow
+224 Ledge Roll Fast
+225 Ledge Jump 1 Slow
+226 Ledge Jump 2 Slow
+227 Ledge Jump 1 Fast
+228 Ledge Jump 2 Fast
+239 Left Taunt
+240 Right Taunt
+242 Grab
+243 Dash Grab
+247 Forward Throw
+248 Back Throw
+249 Up Throw
+250 Down Throw
+295 Blaster Start (Ground)
+296 Blaster Loop (Ground)
+297 Blaster End (Ground)
+298 Blaster Start (Aerial)
+299 Blaster Loop (Aerial)
+300 Blaster End (Aerial)
+301 Falco Phantasm Start (Ground)
+302 Falco Phantasm (Ground)
+303 Falco Phantasm End (Ground)
+304 Falco Phantasm Start (Aerial)
+305 Falco Phantasm (Aerial)
+306 Falco Phantasm End (Aerial)
+307 Fire Bird Start (Ground)
+308 Fire Bird Start (Aerial)
+309 Fire Bird
+310 Fire Bird Landing
+311 Fire Bird Fall
+312 Fire Bird Bounce
+313 Reflector Start (Ground)
+314 Reflector Loop (Ground)
+315 Reflector Reflect (Ground)
+316 Reflector End (Ground)
+317 Reflector Start (Aerial)
+318 Reflector Loop (Aerial)
+319 Reflector Reflect (Aerial)
+320 Reflector End (Aerial)

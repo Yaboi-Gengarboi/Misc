@@ -2,7 +2,7 @@
 // Data.cpp
 // Justyn Durnford
 // Created on 7/31/2020
-// Last updated on 8/14/2020
+// Last updated on 8/20/2020
 
 #include "Data.h"
 #include "Subaction.h"
@@ -34,10 +34,10 @@ vector<Character> character_list =
 	{ "Jigglypuff", 0xf }, { "Samus", 0x10 }, { "Yoshi", 0x11 },
 	{ "Zelda", 0x12 }, { "Sheik", 0x13 }, { "Falco", 0x14 },
 	{ "Young Link", 0x15 }, { "Dr. Mario", 0x16 }, { "Roy", 0x17 },
-	{ "Pichu", 0x18 }, { "Ganondorf", 0x19 }
+	{ "Pichu", 0x18 }, { "Ganondorf", 0x19 }, { "All", 0xff }
 };
 
-vector<vector<FSM>> fsm_list(0x1a);
+vector<vector<FSM>> fsm_list(0x1b);
 
 bool init_characters()
 {
@@ -56,8 +56,8 @@ bool init_characters()
 		while (fin.good())
 		{
 			getline(fin, line);
-			subaction_id = hex_to_int(line.substr(0, line.find(' ')));
-			subaction_name = line.substr(line.find(' ') + 1);
+			subaction_id = stoi(line.substr(0, line.find(' ')));
+			subaction_name = line.substr(4);
 			character_list[i].addSubaction(subaction_name, subaction_id);
 		}
 	}
@@ -67,7 +67,11 @@ bool init_characters()
 
 void add_fsm(const Character& character, unsigned char frame, const Subaction& subaction, float multiplier)
 {
-	fsm_list[character.id()].push_back(FSM(character, frame, subaction, multiplier));
+	if (character != character_list[0x1a])
+		fsm_list[character.id()].push_back(FSM(character, frame, subaction, multiplier));
+
+	else
+		fsm_list[0x1a].push_back(FSM(character, frame, subaction, multiplier));
 }
 
 void swap_fsms(FSM& a, FSM& b)

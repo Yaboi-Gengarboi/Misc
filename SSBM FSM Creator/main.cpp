@@ -2,7 +2,7 @@
 // main.cpp
 // Justyn Durnford
 // Created on 5/4/2020
-// Last updated on 8/8/2020
+// Last updated on 8/20/2020
 
 #define WIN32
 
@@ -32,6 +32,14 @@ using std::vector;
 
 #include <stdexcept>
 using std::invalid_argument;
+
+#include <fstream>
+using std::ifstream;
+using std::ofstream;
+
+#include <iostream>
+using std::cout;
+using std::endl;
 
 struct GUI
 {
@@ -197,7 +205,7 @@ int main()
 {
 	init_characters();
 
-	gui.window = new Fl_Window(750, 600, "SSBM FSM Creator");
+	gui.window = new Fl_Window(760, 600, "SSBM FSM Creator");
 
 	gui.character_label = new Fl_Output(20, 50, 180, 30);
 	gui.character_label->value("Character");
@@ -208,17 +216,17 @@ int main()
 	}
 	gui.character_choice->callback(set_subaction_list);
 
-	gui.subaction_label = new Fl_Output(200, 50, 280, 30);
+	gui.subaction_label = new Fl_Output(200, 50, 290, 30);
 	gui.subaction_label->value("Subaction");
-	gui.subaction_choice = new Fl_Input_Choice(200, 80, 280, 30);
+	gui.subaction_choice = new Fl_Input_Choice(200, 80, 290, 30);
 
-	gui.frame_label = new Fl_Output(480, 50, 100, 30);
+	gui.frame_label = new Fl_Output(490, 50, 100, 30);
 	gui.frame_label->value("Frame");
-	gui.frame_input = new Fl_Input(480, 80, 100, 30);
+	gui.frame_input = new Fl_Input(490, 80, 100, 30);
 
-	gui.multiplier_label = new Fl_Output(580, 50, 150, 30);
+	gui.multiplier_label = new Fl_Output(590, 50, 150, 30);
 	gui.multiplier_label->value("Multiplier");
-	gui.multiplier_input = new Fl_Input(580, 80, 150, 30);
+	gui.multiplier_input = new Fl_Input(590, 80, 150, 30);
 
 	gui.make_fsm_button = new Fl_Button(20, 10, 100, 30, "Make FSM");
 	gui.make_fsm_button->callback(make_fsm);
@@ -228,10 +236,10 @@ int main()
 
 	gui.load_fsms_button = new Fl_Button(240, 10, 100, 30, "Load FSMs");
 
-	gui.fsm_output = new Fl_Multiline_Output(20, 110, 280, 470);
+	gui.fsm_output = new Fl_Multiline_Output(20, 110, 290, 470);
 	gui.fsm_output->textfont(FL_HELVETICA);
 
-	gui.eng_output = new Fl_Multiline_Output(300, 110, 430, 470);
+	gui.eng_output = new Fl_Multiline_Output(310, 110, 430, 470);
 
 	gui.window->end();
 	gui.window->show();

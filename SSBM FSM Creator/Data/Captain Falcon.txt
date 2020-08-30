@@ -1,66 +1,66 @@
-29 Spot Dodge
-2a Forward Roll
-2b Back Roll
-2c Air Dodge
-2e Jab 1
-2f Jab 2
-30 Jab 3
-31 Rapid Jab Start
-32 Rapid Jab Loop
-33 Rapid Jab End
-34 Dash Attack
-35 Side Tilt High
-37 Side Tilt Middle
-39 Side Tilt Low
-3a Up Tilt
-3b Down Tilt
-3c Side Smash High
-3e Side Smash Middle
-40 Side Smash Low
-42 Up Smash
-43 Down Smash
-44 Neutral Aerial
-45 Foward Aerial
-46 Back Aerial
-47 Up Aerial
-49 Down Aerial
-c7 Neutral Tech
-c8 Forward Tech
-c9 Back Tech
-ca Wall Tech
-cb Wall Jump Tech
-cc Ceiling Tech
-db Ledge Getup Slow
-dc Ledge Getup Fast
-dd Ledge Attack Slow
-de Ledge Attack Fast
-df Ledge Roll Slow
-e0 Ledge Roll Fast
-e1 Ledge Jump 1 Slow
-e2 Ledge Jump 2 Slow
-e3 Ledge Jump 1 Fast
-e4 Ledge Jump 2 Fast
-ef Left Taunt
-f0 Right Taunt
-f2 Grab
-f3 Dash Grab
-f7 Forward Throw
-f8 Back Throw
-f9 Up Throw
-fa Down Throw
-12d Falcon Punch (Ground)
-12e Falcon Punch (Aerial)
-12f Raptor Boost Start (Ground)
-130 Raptor Boost (Ground)
-131 Raptor Boost Start (Aerial)
-132 Raptor Boost (Aerial)
-133 Falcon Dive (Ground)
-134 Falcon Dive (Aerial)
-135 Falcon Dive Grab
-136 Falcon Dive Release
-137 Falcon Kick (Ground)
-138 Falcon Kick End (Ground)
-139 Falcon Kick (Aerial)
-13a Falcon Kick Aerial Landing
-13b Falcon Kick (Ground End in Air)
-13c Falcon Kick (Aerial End in Air)
+41  Spot Dodge
+42  Forward Roll
+43  Back Roll
+44  Air Dodge
+46  Jab 1
+47  Jab 2
+48  Jab 3
+49  Rapid Jab Start
+50  Rapid Jab Loop
+51  Rapid Jab End
+52  Dash Attack
+53  Side Tilt High
+55  Side Tilt Middle
+57  Side Tilt Low
+58  Up Tilt
+59  Down Tilt
+60  Side Smash High
+62  Side Smash Middle
+64  Side Smash Low
+66  Up Smash
+67  Down Smash
+68  Neutral Aerial
+69  Foward Aerial
+70  Back Aerial
+71  Up Aerial
+72  Down Aerial
+199 Neutral Tech
+200 Forward Tech
+201 Back Tech
+202 Wall Tech
+203 Wall Jump Tech
+204 Ceiling Tech
+219 Ledge Getup Slow
+220 Ledge Getup Fast
+221 Ledge Attack Slow
+222 Ledge Attack Fast
+223 Ledge Roll Slow
+224 Ledge Roll Fast
+225 Ledge Jump 1 Slow
+226 Ledge Jump 2 Slow
+227 Ledge Jump 1 Fast
+228 Ledge Jump 2 Fast
+239 Left Taunt
+240 Right Taunt
+242 Grab
+243 Dash Grab
+247 Forward Throw
+248 Back Throw
+249 Up Throw
+250 Down Throw
+301 Falcon Punch (Ground)
+302 Falcon Punch (Aerial)
+303 Raptor Boost Start (Ground)
+304 Raptor Boost (Ground)
+305 Raptor Boost Start (Aerial)
+306 Raptor Boost (Aerial)
+307 Falcon Dive (Ground)
+308 Falcon Dive (Aerial)
+309 Falcon Dive Grab
+310 Falcon Dive Release
+311 Falcon Kick (Ground)
+312 Falcon Kick End (Ground)
+313 Falcon Kick (Aerial)
+314 Falcon Kick Aerial Landing
+315 Falcon Kick (Ground End in Air)
+316 Falcon Kick (Aerial End in Air)

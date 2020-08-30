@@ -38,7 +38,7 @@ class Bool_Matrix
 	Bool_Matrix(unsigned long long row, unsigned long long col, bool init_val);
 	Bool_Matrix(const Bool_Matrix& mat);
 	Bool_Matrix(unsigned long long row, unsigned long long col, const Bool_Matrix& mat);
-	Bool_Matrix& operator = (const Bool_Matrix& mat);
+	Bool_Matrix& operator = (const Bool_Matrix& mat) = default;
 
 	~Bool_Matrix();
 

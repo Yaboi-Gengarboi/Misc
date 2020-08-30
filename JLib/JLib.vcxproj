@@ -140,8 +140,9 @@
   <ItemGroup>
     <ClInclude Include="Bool_Matrix.h" />
     <ClInclude Include="Color.hpp" />
+    <ClInclude Include="File_Manager.h" />
     <ClInclude Include="Float_Matrix.h" />
-    <ClInclude Include="Fraction.hpp" />
+    <ClInclude Include="Fraction.h" />
     <ClInclude Include="Big_Int.hpp" />
     <ClInclude Include="Hex.h" />
     <ClInclude Include="UChar_Matrix.hpp" />
@@ -149,11 +150,12 @@
     <ClInclude Include="Point3f.hpp" />
     <ClInclude Include="Timer.hpp" />
     <ClInclude Include="JLib.hpp" />
-    <ClInclude Include="Vector3f.hpp" />
+    <ClInclude Include="Vector3D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bool_Matrix.cpp" />
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="File_Manager.cpp" />
     <ClCompile Include="Float_Matrix.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="Big_Int.cpp" />
@@ -162,7 +164,7 @@
     <ClCompile Include="Misc.cpp" />
     <ClCompile Include="Point3f.cpp" />
     <ClCompile Include="Timer.cpp" />
-    <ClCompile Include="Vector3f.cpp" />
+    <ClCompile Include="Vector3D.cpp" />
     <ClCompile Include="test_file.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

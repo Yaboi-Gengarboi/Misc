@@ -3,14 +3,20 @@
 43  Back Roll
 44  Air Dodge
 46  Jab 1
+47  Jab 2
+48  Jab 3
 49  Rapid Jab Start
 50  Rapid Jab Loop
 51  Rapid Jab End
 52  Dash Attack
+53  Side Tilt High
 55  Side Tilt Middle
+57  Side Tilt Low
 58  Up Tilt
 59  Down Tilt
+60  Side Smash High
 62  Side Smash Middle
+64  Side Smash Low
 66  Up Smash
 67  Down Smash
 68  Neutral Aerial
@@ -42,31 +48,3 @@
 248 Back Throw
 249 Up Throw
 250 Down Throw
-295 Chef (Ground)
-296 Chef (Aerial)
-297 Judge 1 (Ground)
-298 Judge 2 (Ground)
-299 Judge 3 (Ground)
-300 Judge 4 (Ground)
-301 Judge 5 (Ground)
-302 Judge 6 (Ground)
-303 Judge 7 (Ground)
-304 Judge 8 (Ground)
-305 Judge 9 (Ground)
-306 Judge 1 (Aerial)
-307 Judge 2 (Aerial)
-308 Judge 3 (Aerial)
-309 Judge 4 (Aerial)
-310 Judge 5 (Aerial)
-311 Judge 6 (Aerial)
-312 Judge 7 (Aerial)
-313 Judge 8 (Aerial)
-314 Judge 9 (Aerial)
-315 Fire (Ground)
-316 Fire (Aerial)
-317 Oil Panic (Ground)
-318 Oil Panic Absorb (Ground)
-319 Oil Panic Release (Ground)
-320 Oil Panic (Aerial)
-321 Oil Panic Absorb (Aerial)
-322 Oil Panic Release (Aerial)

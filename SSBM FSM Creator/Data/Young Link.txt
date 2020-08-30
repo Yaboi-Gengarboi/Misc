@@ -1,65 +1,65 @@
-29 Spot Dodge
-2a Forward Roll
-2b Back Roll
-2c Air Dodge
-2e Jab 1
-2f Jab 2
-30 Jab 3
-31 Rapid Jab Start
-32 Rapid Jab Loop
-33 Rapid Jab End
-34 Dash Attack
-37 Side Tilt Middle
-3a Up Tilt
-3b Down Tilt
-3e Side Smash Middle
-42 Up Smash
-43 Down Smash
-44 Neutral Aerial
-45 Foward Aerial
-46 Back Aerial
-47 Up Aerial
-49 Down Aerial
-c7 Neutral Tech
-c8 Forward Tech
-c9 Back Tech
-ca Wall Tech
-cb Wall Jump Tech
-cc Ceiling Tech
-db Ledge Getup Slow
-dc Ledge Getup Fast
-dd Ledge Attack Slow
-de Ledge Attack Fast
-df Ledge Roll Slow
-e0 Ledge Roll Fast
-e1 Ledge Jump 1 Slow
-e2 Ledge Jump 2 Slow
-e3 Ledge Jump 1 Fast
-e4 Ledge Jump 2 Fast
-ef Left Taunt
-f0 Right Taunt
-f2 Grab
-f3 Dash Grab
-f7 Forward Throw
-f8 Back Throw
-f9 Up Throw
-fa Down Throw
-127 Side Smash 2
-128 Bow Start (Ground)
-129 Bow Loop (Ground)
-12a Bow Shoot (Ground)
-12b Bow Start (Aerial)
-12c Bow Loop (Aerial)
-12d Bow Shoot (Aerial)
-12e Boomerang 1 (Ground)
-12f Boomerang 2 (Ground)
-130 Boomerang 1 2 (Ground)
-131 Boomerang 1 (Aerial)
-132 Boomerang 2 (Aerial)
-133 Boomerang 1 2 (Aerial)
-134 Hero Spin (Ground)
-135 Hero Spin (Aerial)
-136 Bomb (Ground)
-137 Bomb (Aerial)
-138 Aerial Hook Shot
-139 Aerial Hook Shot Hit
+41  Spot Dodge
+42  Forward Roll
+43  Back Roll
+44  Air Dodge
+46  Jab 1
+47  Jab 2
+48  Jab 3
+49  Rapid Jab Start
+50  Rapid Jab Loop
+51  Rapid Jab End
+52  Dash Attack
+55  Side Tilt Middle
+58  Up Tilt
+59  Down Tilt
+62  Side Smash Middle
+66  Up Smash
+67  Down Smash
+68  Neutral Aerial
+69  Foward Aerial
+70  Back Aerial
+71  Up Aerial
+72  Down Aerial
+199 Neutral Tech
+200 Forward Tech
+201 Back Tech
+202 Wall Tech
+203 Wall Jump Tech
+204 Ceiling Tech
+219 Ledge Getup Slow
+220 Ledge Getup Fast
+221 Ledge Attack Slow
+222 Ledge Attack Fast
+223 Ledge Roll Slow
+224 Ledge Roll Fast
+225 Ledge Jump 1 Slow
+226 Ledge Jump 2 Slow
+227 Ledge Jump 1 Fast
+228 Ledge Jump 2 Fast
+239 Left Taunt
+240 Right Taunt
+242 Grab
+243 Dash Grab
+247 Forward Throw
+248 Back Throw
+249 Up Throw
+250 Down Throw
+295 Side Smash 2
+296 Bow Start (Ground)
+297 Bow Loop (Ground)
+298 Bow Shoot (Ground)
+299 Bow Start (Aerial)
+300 Bow Loop (Aerial)
+301 Bow Shoot (Aerial)
+302 Boomerang 1 (Ground)
+303 Boomerang 2 (Ground)
+304 Boomerang 1 2 (Ground)
+305 Boomerang 1 (Aerial)
+306 Boomerang 2 (Aerial)
+307 Boomerang 1 2 (Aerial)
+308 Hero Spin (Ground)
+309 Hero Spin (Aerial)
+310 Bomb (Ground)
+311 Bomb (Aerial)
+312 Aerial Hook Shot
+313 Aerial Hook Shot Hit

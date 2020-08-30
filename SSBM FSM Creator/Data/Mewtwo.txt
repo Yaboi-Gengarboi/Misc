@@ -1,65 +1,65 @@
-29 Spot Dodge
-2a Forward Roll
-2b Back Roll
-2c Air Dodge
-2e Jab 1
-31 Rapid Jab Start
-32 Rapid Jab Loop
-33 Rapid Jab End
-34 Dash Attack
-35 Side Tilt High
-37 Side Tilt Middle
-39 Side Tilt Low
-3a Up Tilt
-3b Down Tilt
-3e Side Smash Middle
-42 Up Smash
-43 Down Smash
-44 Neutral Aerial
-45 Foward Aerial
-46 Back Aerial
-47 Up Aerial
-49 Down Aerial
-c7 Neutral Tech
-c8 Forward Tech
-c9 Back Tech
-ca Wall Tech
-cb Wall Jump Tech
-cc Ceiling Tech
-db Ledge Getup Slow
-dc Ledge Getup Fast
-dd Ledge Attack Slow
-de Ledge Attack Fast
-df Ledge Roll Slow
-e0 Ledge Roll Fast
-e1 Ledge Jump 1 Slow
-e2 Ledge Jump 2 Slow
-e3 Ledge Jump 1 Fast
-e4 Ledge Jump 2 Fast
-ef Left Taunt
-f0 Right Taunt
-f2 Grab
-f3 Dash Grab
-f7 Forward Throw
-f8 Back Throw
-f9 Up Throw
-fa Down Throw
-127 Shadow Ball Start (Ground)
-128 Shadow Ball Charging Loop (Ground)
-129 Shadow Ball Charged Loop (Ground)
-12a Shadow Ball Cancel (Ground)
-12b Shadow Ball End (Ground)
-12c Shadow Ball Start (Aerial)
-12d Shadow Ball Charging Loop (Aerial)
-12e Shadow Ball Charged Loop (Aerial)
-12f Shadow Ball Cancel (Aerial)
-130 Shadow Ball End (Aerial)
-131 Confusion (Ground)
-132 Confusion (Aerial)
-133 Teleport Start (Ground)
-134 Teleport (Ground)
-135 Teleport Lost (Ground)
-136 Teleport Start (Aerial)
-137 Teleport (Aerial)
-138 Disable (Ground)
-139 Disable (Aerial)
+41  Spot Dodge
+42  Forward Roll
+43  Back Roll
+44  Air Dodge
+46  Jab 1
+49  Rapid Jab Start
+50  Rapid Jab Loop
+51  Rapid Jab End
+52  Dash Attack
+53  Side Tilt High
+55  Side Tilt Middle
+57  Side Tilt Low
+58  Up Tilt
+59  Down Tilt
+62  Side Smash Middle
+66  Up Smash
+67  Down Smash
+68  Neutral Aerial
+69  Foward Aerial
+70  Back Aerial
+71  Up Aerial
+72  Down Aerial
+199 Neutral Tech
+200 Forward Tech
+201 Back Tech
+202 Wall Tech
+203 Wall Jump Tech
+204 Ceiling Tech
+219 Ledge Getup Slow
+220 Ledge Getup Fast
+221 Ledge Attack Slow
+222 Ledge Attack Fast
+223 Ledge Roll Slow
+224 Ledge Roll Fast
+225 Ledge Jump 1 Slow
+226 Ledge Jump 2 Slow
+227 Ledge Jump 1 Fast
+228 Ledge Jump 2 Fast
+239 Left Taunt
+240 Right Taunt
+242 Grab
+243 Dash Grab
+247 Forward Throw
+248 Back Throw
+249 Up Throw
+250 Down Throw
+295 Shadow Ball Start (Ground)
+296 Shadow Ball Charging Loop (Ground)
+297 Shadow Ball Charged Loop (Ground)
+298 Shadow Ball Cancel (Ground)
+299 Shadow Ball End (Ground)
+300 Shadow Ball Start (Aerial)
+301 Shadow Ball Charging Loop (Aerial)
+302 Shadow Ball Charged Loop (Aerial)
+303 Shadow Ball Cancel (Aerial)
+304 Shadow Ball End (Aerial)
+305 Confusion (Ground)
+306 Confusion (Aerial)
+307 Teleport Start (Ground)
+308 Teleport (Ground)
+309 Teleport Lost (Ground)
+310 Teleport Start (Aerial)
+311 Teleport (Aerial)
+312 Disable (Ground)
+313 Disable (Aerial)

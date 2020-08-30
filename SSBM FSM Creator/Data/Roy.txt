@@ -1,73 +1,74 @@
-29 Spot Dodge
-2a Forward Roll
-2b Back Roll
-2c Air Dodge
-2e Jab 1
-34 Dash Attack
-37 Side Tilt Middle
-3a Up Tilt
-3b Down Tilt
-3e Side Smash Middle
-42 Up Smash
-43 Down Smash
-44 Neutral Aerial
-45 Foward Aerial
-46 Back Aerial
-47 Up Aerial
-49 Down Aerial
-c7 Neutral Tech
-c8 Forward Tech
-c9 Back Tech
-ca Wall Tech
-cb Wall Jump Tech
-cc Ceiling Tech
-db Ledge Getup Slow
-dc Ledge Getup Fast
-dd Ledge Attack Slow
-de Ledge Attack Fast
-df Ledge Roll Slow
-e0 Ledge Roll Fast
-e1 Ledge Jump 1 Slow
-e2 Ledge Jump 2 Slow
-e3 Ledge Jump 1 Fast
-e4 Ledge Jump 2 Fast
-ef Left Taunt
-f0 Right Taunt
-f2 Grab
-f3 Dash Grab
-f7 Forward Throw
-f8 Back Throw
-f9 Up Throw
-fa Down Throw
-127 Flare Blade Start (Ground)
-128 Flare Blade Loop (Ground)
-129 Flare Blade End 1 (Ground)
-12a Flare Blade End 2 (Ground)
-12b Flare Blade Start (Aerial)
-12c Flare Blade Loop (Aerial)
-12d Flare Blade End 1 (Aerial)
-12e Flare Blade End 2 (Aerial)
-12f Double-Edge Dance 1 (Ground)
-130 Double-Edge Dance 2 (High) (Ground)
-131 Double-Edge Dance 2 (Middle) (Ground)
-132 Double-Edge Dance 3 (High) (Ground)
-133 Double-Edge Dance 3 (Middle) (Ground)
-134 Double-Edge Dance 3 (Low) (Ground)
-135 Double-Edge Dance 4 (High) (Ground)
-136 Double-Edge Dance 4 (Middle) (Ground)
-137 Double-Edge Dance 4 (Low) (Ground)
-138 Double-Edge Dance 1 (Aerial)
-139 Double-Edge Dance 2 (High) (Aerial)
-13a Double-Edge Dance 2 (Middle) (Aerial)
-13b Double-Edge Dance 3 (High) (Aerial)
-13c Double-Edge Dance 3 (Middle) (Aerial)
-13d Double-Edge Dance 3 (Low) (Aerial)
-13e Double-Edge Dance 4 (High) (Aerial)
-13f Double-Edge Dance 4 (Middle) (Aerial)
-140 Double-Edge Dance 4 (Low) (Aerial)
-141 Blazer (Ground)
-142 Blazer (Aerial)
-143 Counter (Ground)
-144 Counter Hit (Ground)
-145 Counter (Aerial)
-146 Counter Hit (Aerial)
+41  Spot Dodge
+42  Forward Roll
+43  Back Roll
+44  Air Dodge
+46  Jab 1
+47  Jab 2
+52  Dash Attack
+55  Side Tilt Middle
+58  Up Tilt
+59  Down Tilt
+62  Side Smash Middle
+66  Up Smash
+67  Down Smash
+68  Neutral Aerial
+69  Foward Aerial
+70  Back Aerial
+71  Up Aerial
+72  Down Aerial
+199 Neutral Tech
+200 Forward Tech
+201 Back Tech
+202 Wall Tech
+203 Wall Jump Tech
+204 Ceiling Tech
+219 Ledge Getup Slow
+220 Ledge Getup Fast
+221 Ledge Attack Slow
+222 Ledge Attack Fast
+223 Ledge Roll Slow
+224 Ledge Roll Fast
+225 Ledge Jump 1 Slow
+226 Ledge Jump 2 Slow
+227 Ledge Jump 1 Fast
+228 Ledge Jump 2 Fast
+239 Left Taunt
+240 Right Taunt
+242 Grab
+243 Dash Grab
+247 Forward Throw
+248 Back Throw
+249 Up Throw
+250 Down Throw
+295 Flare Blade Start (Ground)
+296 Flare Blade Loop (Ground)
+297 Flare Blade End 1 (Ground)
+298 Flare Blade End 2 (Ground)
+299 Flare Blade Start (Aerial)
+300 Flare Blade Loop (Aerial)
+301 Flare Blade End 1 (Aerial)
+302 Flare Blade End 2 (Aerial)
+303 Double-Edge Dance 1 (Ground)
+304 Double-Edge Dance 2 (High) (Ground)
+305 Double-Edge Dance 2 (Middle) (Ground)
+306 Double-Edge Dance 3 (High) (Ground)
+307 Double-Edge Dance 3 (Middle) (Ground)
+308 Double-Edge Dance 3 (Low) (Ground)
+309 Double-Edge Dance 4 (High) (Ground)
+310 Double-Edge Dance 4 (Middle) (Ground)
+311 Double-Edge Dance 4 (Low) (Ground)
+312 Double-Edge Dance 1 (Aerial)
+313 Double-Edge Dance 2 (High) (Aerial)
+314 Double-Edge Dance 2 (Middle) (Aerial)
+315 Double-Edge Dance 3 (High) (Aerial)
+316 Double-Edge Dance 3 (Middle) (Aerial)
+317 Double-Edge Dance 3 (Low) (Aerial)
+318 Double-Edge Dance 4 (High) (Aerial)
+319 Double-Edge Dance 4 (Middle) (Aerial)
+320 Double-Edge Dance 4 (Low) (Aerial)
+321 Blazer (Ground)
+322 Blazer (Aerial)
+323 Counter (Ground)
+324 Counter Hit (Ground)
+325 Counter (Aerial)
+326 Counter Hit (Aerial)

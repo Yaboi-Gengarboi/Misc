@@ -18,16 +18,10 @@
     <ClInclude Include="JLib.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Fraction.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Timer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Point3f.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector3f.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Color.hpp">
@@ -51,6 +45,15 @@
     <ClInclude Include="Hex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="File_Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test_file.cpp">
@@ -63,9 +66,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Point3f.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector3f.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Misc.cpp">
@@ -87,6 +87,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Hex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="File_Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

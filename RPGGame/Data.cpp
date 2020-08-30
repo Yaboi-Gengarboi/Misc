@@ -6,6 +6,9 @@
 
 #include "Data.h"
 
+#include "Move.h"
+class Move;
+
 #include "Pokemon.h"
 class Pokemon;
 
@@ -23,6 +26,8 @@ using std::vector;
 
 vector<Ability> ability_list;
 vector<Pokemon> pokemon_list;
+vector<Move> move_list;
+vector<bool> move_contact_list;
 
 string to_hex(long i)
 {

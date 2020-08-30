@@ -1,66 +1,66 @@
-29 Spot Dodge
-2a Forward Roll
-2b Back Roll
-2c Air Dodge
-2e Jab 1
-2f Jab 2
-34 Dash Attack
-35 Side Tilt High
-37 Side Tilt Middle
-39 Side Tilt Low
-3a Up Tilt
-3b Down Tilt
-3e Side Smash Middle
-42 Up Smash
-43 Down Smash
-44 Neutral Aerial
-45 Foward Aerial
-46 Back Aerial
-47 Up Aerial
-49 Down Aerial
-c7 Neutral Tech
-c8 Forward Tech
-c9 Back Tech
-ca Wall Tech
-cb Wall Jump Tech
-cc Ceiling Tech
-db Ledge Getup Slow
-dc Ledge Getup Fast
-dd Ledge Attack Slow
-de Ledge Attack Fast
-df Ledge Roll Slow
-e0 Ledge Roll Fast
-e1 Ledge Jump 1 Slow
-e2 Ledge Jump 2 Slow
-e3 Ledge Jump 1 Fast
-e4 Ledge Jump 2 Fast
-ef Left Taunt
-f0 Right Taunt
-f2 Grab
-f3 Dash Grab
-f7 Forward Throw
-f8 Back Throw
-f9 Up Throw
-fa Down Throw
-13b Cargo Foward Throw
-13c Cargo Back Throw
-13d Cargo Up Throw
-13e Cargo Down Throw
-13f Giant Punch Start (Ground)
-140 Giant Punch Loop (Ground)
-141 Giant Punch Cancel (Ground)
-142 Giant Punch (Ground)
-143 Giant Punch (2)(Ground)
-144 Giant Punch Start (Aerial)
-145 Giant Punch Loop (Aerial)
-146 Giant Punch Cancel (Aerial)
-147 Giant Punch (Aerial)
-148 Giant Punch (2)(Aerial)
-149 Headbutt (Ground)
-14a Headbutt (Aerial)
-14b Spinning Kong (Ground)
-14c Spinning Kong (Aerial)
-14d Hand Slap (Start)
-14e Hand Slap Loop
-14f Hand Slap End
-150 Hand Slap End 2
+41  Spot Dodge
+42  Forward Roll
+43  Back Roll
+44  Air Dodge
+46  Jab 1
+47  Jab 2
+52  Dash Attack
+53  Side Tilt High
+55  Side Tilt Middle
+57  Side Tilt Low
+58  Up Tilt
+59  Down Tilt
+62  Side Smash Middle
+66  Up Smash
+67  Down Smash
+68  Neutral Aerial
+69  Foward Aerial
+70  Back Aerial
+71  Up Aerial
+72  Down Aerial
+199 Neutral Tech
+200 Forward Tech
+201 Back Tech
+202 Wall Tech
+203 Wall Jump Tech
+204 Ceiling Tech
+219 Ledge Getup Slow
+220 Ledge Getup Fast
+221 Ledge Attack Slow
+222 Ledge Attack Fast
+223 Ledge Roll Slow
+224 Ledge Roll Fast
+225 Ledge Jump 1 Slow
+226 Ledge Jump 2 Slow
+227 Ledge Jump 1 Fast
+228 Ledge Jump 2 Fast
+239 Left Taunt
+240 Right Taunt
+242 Grab
+243 Dash Grab
+247 Forward Throw
+248 Back Throw
+249 Up Throw
+250 Down Throw
+315 Cargo Foward Throw
+316 Cargo Back Throw
+317 Cargo Up Throw
+318 Cargo Down Throw
+319 Giant Punch Start (Ground)
+320 Giant Punch Loop (Ground)
+321 Giant Punch Cancel (Ground)
+322 Giant Punch (Ground)
+323 Giant Punch (2)(Ground)
+324 Giant Punch Start (Aerial)
+325 Giant Punch Loop (Aerial)
+326 Giant Punch Cancel (Aerial)
+327 Giant Punch (Aerial)
+328 Giant Punch (2)(Aerial)
+329 Headbutt (Ground)
+330 Headbutt (Aerial)
+331 Spinning Kong (Ground)
+332 Spinning Kong (Aerial)
+333 Hand Slap (Start)
+334 Hand Slap Loop
+335 Hand Slap End
+336 Hand Slap End 2

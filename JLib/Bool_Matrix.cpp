@@ -88,11 +88,6 @@ Bool_Matrix::Bool_Matrix(unsigned long long row, unsigned long long col, const B
 	}
 }
 
-Bool_Matrix& Bool_Matrix::operator = (const Bool_Matrix& mat)
-{
-
-}
-
 Bool_Matrix::~Bool_Matrix()
 {
 	dealloc();

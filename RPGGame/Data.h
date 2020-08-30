@@ -2,13 +2,16 @@
 // Data.h
 // Justyn Durnford
 // Created on 8/14/2020
-// Last updated on 8/14/2020
+// Last updated on 8/17/2020
 
 #ifndef DATA_H
 #define DATA_H
 
 #include "Ability.h"
 class Ability;
+
+#include "Move.h"
+class Move;
 
 #include "Pokemon.h"
 class Pokemon;
@@ -21,6 +24,8 @@ class Player_Pokemon;
 
 extern std::vector<Ability> ability_list;
 extern std::vector<Pokemon> pokemon_list;
+extern std::vector<Move> move_list;
+extern std::vector<bool> move_contact_list;
 
 std::string to_hex(long i);
 

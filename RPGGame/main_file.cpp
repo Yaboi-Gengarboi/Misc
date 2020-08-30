@@ -2,7 +2,7 @@
 // main.cpp
 // Justyn Durnford
 // Created on 4/27/2020
-// Last updated on 8/17/2020
+// Last updated on 8/18/2020
 
 #include "Ability.h"
 #include "Data.h"
@@ -16,10 +16,6 @@ using std::endl;
 using std::string;
 using std::to_string;
 using std::getline;
-
-#include <fstream>
-using std::ifstream;
-using std::ofstream;
 
 #include <string>
 using std::to_string;
