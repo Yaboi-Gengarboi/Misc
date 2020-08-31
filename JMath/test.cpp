@@ -20,14 +20,16 @@ using std::out_of_range;
 
 int main()
 {
-	Vector3D u(0, 0, -4);
-	Vector3D v(0, 4, 0);
+	Vector3D v(6, 0, 0);
+	Vector3D u(4, -2, 0);
 
-	cout << u << endl;
 	cout << v << endl;
+	cout << u << endl;
 	cout << endl;
 
-	cout << cross_product(u, v) << endl;
+	Vector3D w = cross_product(v, u);
+	cout << w << endl;
+	cout << w.magnitude() << endl;
 
 	return 0;
 }
