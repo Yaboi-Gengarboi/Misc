@@ -1,7 +1,7 @@
 // Vector3D.cpp
 // Justyn P. Durnford
-// Created on 1/20/2020
-// Last updated on 2020-08-29
+// Created on 2020-01-20
+// Last updated on 2020-08-30
 // Source file for the Vector3D class
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -9,7 +9,7 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#include "Point3f.hpp"
+#include "Point3D.h"
 #include "Vector3D.h"
 
 #include <ostream>
@@ -38,18 +38,18 @@ Vector3D::Vector3D(const double v_arr[3])
 	_z = v_arr[2];
 }
 
-Vector3D::Vector3D(const Point3f& pt)
+Vector3D::Vector3D(const Point3D& p)
 {
-	_x = pt.x();
-	_y = pt.y();
-	_z = pt.z();
+	_x = p.x();
+	_y = p.y();
+	_z = p.z();
 }
 
-Vector3D::Vector3D(const Point3f& pt1, const Point3f& pt2)
+Vector3D::Vector3D(const Point3D& p, const Point3D& q)
 {
-	_x = pt2.x() - pt1.x();
-	_y = pt2.y() - pt1.y();
-	_z = pt2.z() - pt1.z();
+	_x = q.x() - p.x();
+	_y = q.y() - p.y();
+	_z = q.z() - p.z();
 }
 
 double Vector3D::x() const
@@ -96,11 +96,11 @@ void Vector3D::setAll(const double v_arr[3])
 	_z = v_arr[2];
 }
 
-void Vector3D::setAll(const Point3f& pt)
+void Vector3D::setAll(const Point3D& p)
 {
-	_x = pt.x();
-	_y = pt.y();
-	_z = pt.z();
+	_x = p.x();
+	_y = p.y();
+	_z = p.z();
 }
 
 void Vector3D::setAll(const Vector3D& v)
@@ -218,19 +218,17 @@ ostream& operator << (ostream& os, const Vector3D& v)
 
 double dot_product(const Vector3D& v, const Vector3D& u)
 {
-	return (v.x() * u.x()) + (v.y() * u.y()) + (v.z() * u.z());
+	return (v.x() * u.x() + v.y() * u.y() + v.z() * u.z());
 }
 
 Vector3D cross_product(const Vector3D& v, const Vector3D& u)
 {
-	Vector3D vec;
-
-	return vec;
+	return Vector3D(v.y() * u.z() - v.z() * u.y(), v.z() * u.x() - v.x() * u.z(), v.x() * u.y() - v.y() * u.x());
 }
 
 double angle_between(const Vector3D& v, const Vector3D& u)
 {
-	return acos(dot_product(v, u) / (v.magnitude() * u.magnitude()));
+	return acos(dot_product(v, u) / ( v.magnitude() * u.magnitude() ));
 }
 
 bool are_parallel(const Vector3D& v, const Vector3D& u)
@@ -248,10 +246,10 @@ bool are_normal(const Vector3D& v, const Vector3D& u)
 
 double scalar_proj(const Vector3D& v, const Vector3D& u)
 {
-	return (dot_product(v, u) / v.magnitude());
+	return ( dot_product(v, u) / v.magnitude() );
 }
 
 Vector3D vector_proj(const Vector3D& v, const Vector3D& u)
 {
-	return v * (dot_product(v, u) / dot_product(v, v));
+	return v * ( dot_product(v, u) / dot_product(v, v) );
 }

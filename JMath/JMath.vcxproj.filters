@@ -15,20 +15,40 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="JMath.hpp">
+    <ClInclude Include="Fraction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JPoint.hpp">
+    <ClInclude Include="JMath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JFraction.hpp">
+    <ClInclude Include="Point3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JVector.hpp">
+    <ClInclude Include="Vector3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JMatrix.hpp">
+    <ClInclude Include="Matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Point3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fraction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
