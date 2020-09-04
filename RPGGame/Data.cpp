@@ -2,7 +2,7 @@
 // Data.cpp
 // Justyn Durnford
 // Created on 8/14/2020
-// Last updated on 8/17/2020
+// Last updated on 9/3/2020
 
 #include "Data.h"
 
@@ -15,11 +15,16 @@ class Pokemon;
 #include "Player_Pokemon.h"
 class Player_Pokemon;
 
+#include <cstddef>
+using std::size_t;
+
 #include <fstream>
 using std::ifstream;
 
 #include <string>
 using std::string;
+using std::to_string;
+using std::stol;
 
 #include <vector>
 using std::vector;
@@ -29,7 +34,7 @@ vector<Pokemon> pokemon_list;
 vector<Move> move_list;
 vector<bool> move_contact_list;
 
-string to_hex(long i)
+string long_to_hex(long i)
 {
 	string hexstr;
 	unsigned char rem = 0;
@@ -68,7 +73,7 @@ string to_hex(long i)
 				break;
 
 			default:
-				hexstr.insert(0, 1, rem + 48);
+				hexstr.insert(0, to_string(rem));
 				break;
 		}
 
@@ -78,10 +83,39 @@ string to_hex(long i)
 	return hexstr;
 }
 
-string to_hex(float f)
+string float_to_hex(float f)
 {
 	long* pf = (long*)&f;
-	return to_hex(*pf);
+	return long_to_hex(*pf);
+}
+
+string eng_to_hex(const string& str)
+{
+	string hexstr;
+
+	for (size_t i = 0; i < str.size(); ++i)
+	{
+		hexstr += long_to_hex(str[i]);
+	}
+
+	return hexstr;
+}
+
+long hex_to_long(const string& str)
+{
+	return stol(str, nullptr, 16);
+}
+
+string hex_to_eng(const string& str)
+{
+	string engstr;
+
+	for (size_t i = 0; i < str.size() - 1; i += 2)
+	{
+		engstr += hex_to_long(str.substr(i, 2));
+	}
+
+	return engstr;
 }
 
 bool load_abilities()

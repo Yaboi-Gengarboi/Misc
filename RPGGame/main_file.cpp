@@ -17,13 +17,19 @@ using std::string;
 using std::to_string;
 using std::getline;
 
-#include <string>
-using std::to_string;
-
 int main()
 {
-	if (load_abilities())
-		cout << ability_list.size() << endl;
+	string hexstr = long_to_hex(217);
+	cout << hexstr << endl;
+
+	long i = hex_to_long(hexstr);
+	cout << i << endl;
+
+	string hexstr2 = eng_to_hex("Fuck you Thomas");
+	cout << hexstr2 << endl;
+
+	string engstr = hex_to_eng(hexstr2);
+	cout << engstr << endl;
 
 	return 0;
 }
