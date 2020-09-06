@@ -1,35 +1,43 @@
-// test.cpp
-// Justyn Durnford
-// Created on 2020-08-30
-// Last updated on 2020-08-30
-// Test file for classes
-// This program is free software. It comes without any warranty, to
-// the extent permitted by applicable law. You can redistribute it
-// and/or modify it under the terms of the Do What The Fuck You Want
-// To Public License, Version 2, as published by Sam Hocevar. See
-// http://www.wtfpl.net/ for more details.
+/* 
+test.cpp
+Justyn Durnford
+Created on 2020-08-30
+Last updated on 2020-09-06
+Test file for classes
 
-#include "JMath.h"
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non - commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain.We make this dedication for the benefit
+of the public at largeand to the detriment of our heirsand
+successors.We intend this dedication to be an overt act of
+relinquishment in perpetuity of all presentand future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+For more information, please refer to < http://unlicense.org/>
+*/
+
+#include "Fraction.h"
 
 #include <iostream>
 using std::cout;
 using std::endl;
 
-#include <stdexcept>
-using std::out_of_range;
-
 int main()
 {
-	Vector3D u(-1, 0, 2);
-	Vector3D w(2, 2, 0);
-
-	cout << u << endl;
-	cout << w << endl;
-	cout << endl;
-
-	Vector3D v = cross_product(u, w);
-	cout << v << endl;
-	cout << v.magnitude() << endl;
-
 	return 0;
 }

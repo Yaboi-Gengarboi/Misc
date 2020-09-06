@@ -1,13 +1,35 @@
-// Vector3D.cpp
-// Justyn P. Durnford
-// Created on 2020-01-20
-// Last updated on 2020-08-30
-// Source file for the Vector3D class
-// This program is free software. It comes without any warranty, to
-// the extent permitted by applicable law. You can redistribute it
-// and/or modify it under the terms of the Do What The Fuck You Want
-// To Public License, Version 2, as published by Sam Hocevar. See
-// http://www.wtfpl.net/ for more details.
+/*
+Vector3D.cpp
+Justyn P. Durnford
+Created on 2020-01-20
+Last updated on 2020 - 09 - 06
+Source file for the Vector3D class
+
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non - commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain.We make this dedication for the benefit
+of the public at largeand to the detriment of our heirsand
+successors.We intend this dedication to be an overt act of
+relinquishment in perpetuity of all presentand future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+For more information, please refer to <http://unlicense.org/>
+*/
 
 #include "Point3D.h"
 #include "Vector3D.h"
@@ -24,32 +46,45 @@ using std::pow;
 using std::sqrt;
 using std::acos;
 
+void Vector3D::setValues(double x, double y, double z, char set)
+{
+	switch (set)
+	{
+		case 0:
+			_x = x;
+			break;
+		case 1:
+			_y = y;
+			break;
+		case 2:
+			_z = z;
+			break;
+		default:
+			_x = x;
+			_y = y;
+			_z = z;
+			break;
+	}
+}
+
 Vector3D::Vector3D(double x, double y, double z)
 {
-	_x = x;
-	_y = y;
-	_z = z;
+	setValues(x, y, z, 3);
 }
 
 Vector3D::Vector3D(const double v_arr[3])
 {
-	_x = v_arr[0];
-	_y = v_arr[1];
-	_z = v_arr[2];
+	setValues(v_arr[0], v_arr[1], v_arr[2], 3);
 }
 
 Vector3D::Vector3D(const Point3D& p)
 {
-	_x = p.x();
-	_y = p.y();
-	_z = p.z();
+	setValues(p.x(), p.y(), p.z(), 3);
 }
 
 Vector3D::Vector3D(const Point3D& p, const Point3D& q)
 {
-	_x = q.x() - p.x();
-	_y = q.y() - p.y();
-	_z = q.z() - p.z();
+	setValues(q.x() - p.x(), q.y() - p.y(), q.z() - p.z(), 3);
 }
 
 double Vector3D::x() const
@@ -69,45 +104,47 @@ double Vector3D::z() const
 
 void Vector3D::setX(double x)
 {
-	_x = x;
+	setValues(x, 0, 0, 0);
 }
 
 void Vector3D::setY(double y)
 {
-	_y = y;
+	setValues(0, y, 0, 1);
 }
 
 void Vector3D::setZ(double z)
 {
-	_z = z;
+	setValues(0, 0, z, 2);
 }
 
 void Vector3D::setAll(double x, double y, double z)
 {
-	_x = x;
-	_y = y;
-	_z = z;
+	setValues(x, y, z, 3);
 }
 
 void Vector3D::setAll(const double v_arr[3])
 {
-	_x = v_arr[0];
-	_y = v_arr[1];
-	_z = v_arr[2];
+	setValues(v_arr[0], v_arr[1], v_arr[2], 3);
 }
 
 void Vector3D::setAll(const Point3D& p)
 {
-	_x = p.x();
-	_y = p.y();
-	_z = p.z();
+	setValues(p.x(), p.y(), p.z(), 3);
 }
 
 void Vector3D::setAll(const Vector3D& v)
 {
-	_x = v.x();
-	_y = v.y();
-	_z = v.z();
+	setValues(v.x(), v.y(), v.z(), 3);
+}
+
+void Vector3D::clear()
+{
+	setValues(0, 0, 0, 3);
+}
+
+Vector3D Vector3D::copy() const
+{
+	return Vector3D(_x, _y, _z);
 }
 
 double Vector3D::magnitude() const

@@ -1,13 +1,35 @@
-// Vector3D.h
-// Justyn P. Durnford
-// Created on 2020-01-18
-// Last updated on 2020-08-29
-// Header file for the Vector3D class
-// This program is free software. It comes without any warranty, to
-// the extent permitted by applicable law. You can redistribute it
-// and/or modify it under the terms of the Do What The Fuck You Want
-// To Public License, Version 2, as published by Sam Hocevar. See
-// http://www.wtfpl.net/ for more details.
+/*
+Vector3D.h
+Justyn P. Durnford
+Created on 2020-01-18
+Last updated on 2020-09-06
+Header file for the Vector3D class
+
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non - commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain.We make this dedication for the benefit
+of the public at largeand to the detriment of our heirsand
+successors.We intend this dedication to be an overt act of
+relinquishment in perpetuity of all presentand future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+For more information, please refer to <http://unlicense.org/>
+*/
 
 #ifndef VECTOR3D_H
 #define VECTOR3D_H
@@ -23,6 +45,11 @@ class Vector3D
 	double _x = 0;
 	double _y = 0;
 	double _z = 0;
+
+	// Sets _x to x if set == 0 or 3
+	// Sets _y to y if set == 1 or 3
+	// Sets _z to z if set == 2 or 3
+	void setValues(double x, double y, double z, char set);
 
 	public:
 
