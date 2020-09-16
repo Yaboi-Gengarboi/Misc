@@ -9,7 +9,7 @@
 // To Public License, Version 2, as published by Sam Hocevar. See
 // http://www.wtfpl.net/ for more details.
 
-#include "Point3f.hpp"
+#include "Point3D.h"
 #include "Vector3D.h"
 
 #include <ostream>
@@ -24,32 +24,45 @@ using std::pow;
 using std::sqrt;
 using std::acos;
 
+void Vector3D::setValues(double x, double y, double z, char set)
+{
+	switch (set)
+	{
+		case 0:
+			_x = x;
+			break;
+		case 1:
+			_y = y;
+			break;
+		case 2:
+			_z = z;
+			break;
+		default:
+			_x = x;
+			_y = y;
+			_z = z;
+			break;
+	}
+}
+
 Vector3D::Vector3D(double x, double y, double z)
 {
-	_x = x;
-	_y = y;
-	_z = z;
+	setValues(x, y, z, 3);
 }
 
 Vector3D::Vector3D(const double v_arr[3])
 {
-	_x = v_arr[0];
-	_y = v_arr[1];
-	_z = v_arr[2];
+	setValues(v_arr[0], v_arr[1], v_arr[2], 3);
 }
 
-Vector3D::Vector3D(const Point3f& pt)
+Vector3D::Vector3D(const Point3D& p)
 {
-	_x = pt.x();
-	_y = pt.y();
-	_z = pt.z();
+	setValues(p.x(), p.y(), p.z(), 3);
 }
 
-Vector3D::Vector3D(const Point3f& pt1, const Point3f& pt2)
+Vector3D::Vector3D(const Point3D& p, const Point3D& q)
 {
-	_x = pt2.x() - pt1.x();
-	_y = pt2.y() - pt1.y();
-	_z = pt2.z() - pt1.z();
+	setValues(q.x() - p.x(), q.y() - p.y(), q.z() - p.z(), 3);
 }
 
 double Vector3D::x() const
@@ -69,45 +82,42 @@ double Vector3D::z() const
 
 void Vector3D::setX(double x)
 {
-	_x = x;
+	setValues(x, 0, 0, 0);
 }
 
 void Vector3D::setY(double y)
 {
-	_y = y;
+	setValues(0, y, 0, 1);
 }
 
 void Vector3D::setZ(double z)
 {
-	_z = z;
+	setValues(0, 0, z, 2);
 }
 
 void Vector3D::setAll(double x, double y, double z)
 {
-	_x = x;
-	_y = y;
-	_z = z;
+	setValues(x, y, z, 3);
 }
 
 void Vector3D::setAll(const double v_arr[3])
 {
-	_x = v_arr[0];
-	_y = v_arr[1];
-	_z = v_arr[2];
+	setValues(v_arr[0], v_arr[1], v_arr[2], 3);
 }
 
-void Vector3D::setAll(const Point3f& pt)
+void Vector3D::setAll(const Point3D& p)
 {
-	_x = pt.x();
-	_y = pt.y();
-	_z = pt.z();
+	setValues(p.x(), p.y(), p.z(), 3);
 }
 
 void Vector3D::setAll(const Vector3D& v)
 {
-	_x = v.x();
-	_y = v.y();
-	_z = v.z();
+	setValues(v.x(), v.y(), v.z(), 3);
+}
+
+void Vector3D::clear()
+{
+	setValues(0, 0, 0, 3);
 }
 
 double Vector3D::magnitude() const
@@ -218,19 +228,17 @@ ostream& operator << (ostream& os, const Vector3D& v)
 
 double dot_product(const Vector3D& v, const Vector3D& u)
 {
-	return (v.x() * u.x()) + (v.y() * u.y()) + (v.z() * u.z());
+	return ( v.x() * u.x() + v.y() * u.y() + v.z() * u.z() );
 }
 
 Vector3D cross_product(const Vector3D& v, const Vector3D& u)
 {
-	Vector3D vec;
-
-	return vec;
+	return Vector3D(v.y() * u.z() - v.z() * u.y(), v.z() * u.x() - v.x() * u.z(), v.x() * u.y() - v.y() * u.x());
 }
 
 double angle_between(const Vector3D& v, const Vector3D& u)
 {
-	return acos(dot_product(v, u) / (v.magnitude() * u.magnitude()));
+	return acos(dot_product(v, u) / ( v.magnitude() * u.magnitude() ));
 }
 
 bool are_parallel(const Vector3D& v, const Vector3D& u)
@@ -240,7 +248,7 @@ bool are_parallel(const Vector3D& v, const Vector3D& u)
 
 bool are_normal(const Vector3D& v, const Vector3D& u)
 {
-	if (dot_product(v, u) == PI / 2)
+	if (dot_product(v, u) == JLib::PI / 2)
 		return true;
 
 	return false;
@@ -248,10 +256,10 @@ bool are_normal(const Vector3D& v, const Vector3D& u)
 
 double scalar_proj(const Vector3D& v, const Vector3D& u)
 {
-	return (dot_product(v, u) / v.magnitude());
+	return ( dot_product(v, u) / v.magnitude() );
 }
 
 Vector3D vector_proj(const Vector3D& v, const Vector3D& u)
 {
-	return v * (dot_product(v, u) / dot_product(v, v));
+	return v * ( dot_product(v, u) / dot_product(v, v) );
 }

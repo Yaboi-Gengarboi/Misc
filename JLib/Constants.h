@@ -1,7 +1,8 @@
-// test_file.cpp
-// Justyn P. Durnford
-// Created on 2020-01-18
+// Constants.h
+// Justyn Durnford
+// Created on 2020-08-30
 // Last updated on 2020-09-16
+// Header file defining constants
 // This is free and unencumbered software released into the public domain.
 // Anyone is free to copy, modify, publish, use, compile, sell, or
 // distribute this software, either in source code form or as a compiled
@@ -23,18 +24,15 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 // For more information, please refer to http://unlicense.org/
 
-#include "Fraction.h"
-#include "Point3D.h"
-#include "Vector3D.h"
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
 
-#include <iostream>
-using std::cout;
-using std::endl;
-
-#include <string>
-using std::string;
-
-int main(int argc, char** argv)
+namespace JLib
 {
-	return 0;
+	const double E = 2.71828182845904523536;
+	const double PI = 3.14159265358979323846;
+	const double SQRT2 = 1.41421356237309504880;
+	const double SQRT3 = 1.73205080756887729352;
 }
+
+#endif // !CONSTANTS_H

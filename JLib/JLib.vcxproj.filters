@@ -21,9 +21,6 @@
     <ClInclude Include="Timer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Point3f.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Color.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -54,6 +51,12 @@
     <ClInclude Include="Vector3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Point3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test_file.cpp">
@@ -63,9 +66,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Point3f.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Misc.cpp">
@@ -93,6 +93,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Vector3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Point3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

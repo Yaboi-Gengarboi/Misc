@@ -44,16 +44,16 @@ class Fraction
 
 	public:
 
-	// Automatic Constructors.
+	// Constructors.
 	Fraction() = default;
 	Fraction(const Fraction& fr) = default;
-	Fraction& operator = (const Fraction& fr) = default;
 	Fraction(Fraction&& fr) = default;
-	Fraction& operator = (Fraction&& fr) = default;
-
-	// Manual Constructors.
 	Fraction(int numer, int denom);
 	Fraction(int fr_arr[2]);
+
+	// Assignment operators.
+	Fraction& operator = (const Fraction& fr) = default;
+	Fraction& operator = (Fraction&& fr) = default;
 	Fraction& operator = (int i);
 
 	// Destructor.
