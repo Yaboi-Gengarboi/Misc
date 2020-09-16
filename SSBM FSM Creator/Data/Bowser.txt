@@ -42,12 +42,12 @@
 248 Back Throw
 249 Up Throw
 250 Down Throw
-127 Fire Breath Start (Ground)
-128 Fire Breath Loop (Ground)
-129 Fire Breath End (Ground)
-12a Fire Breath Start (Aerial)
-12b Fire Breath Loop (Aerial)
-12c Fire Breath End (Aerial)
+295 Fire Breath Start (Ground)
+296 Fire Breath Loop (Ground)
+297 Fire Breath End (Ground)
+298 Fire Breath Start (Aerial)
+299 Fire Breath Loop (Aerial)
+300 Fire Breath End (Aerial)
 301 Koopa Claw Start (Ground)
 302 Koopa Claw Hit 1 (Ground)
 303 Koopa Claw Hit 2 (Ground)

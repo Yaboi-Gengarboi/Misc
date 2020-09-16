@@ -1,18 +1,13 @@
 // RPGGame
 // Ability.cpp
 // Justyn Durnford
-// Created on 5/15/2020
-// Last updated on 8/17/2020
+// Created on 2020-05-15
+// Last updated on 2020-09-06
 
 #include "Ability.h"
 
 #include <string>
 using std::string;
-
-#include <vector>
-using std::vector;
-
-Ability::Ability() { /* See Ability.h for default values. */ }
 
 Ability::Ability(unsigned char id, const string& name, const string& desc)
 {
@@ -20,8 +15,6 @@ Ability::Ability(unsigned char id, const string& name, const string& desc)
 	_name = name;
 	_desc = desc;
 }
-
-Ability::~Ability() { /* Destructor. */ }
 
 string Ability::name() const
 {

@@ -1,14 +1,13 @@
 // RPGGame
 // Ability.h
 // Justyn Durnford
-// Created on 4/12/2020
-// Last updated on 8/17/2020
+// Created on 2020-04-12
+// Last updated on 2020-09-06
 
 #ifndef ABILITY_H
 #define ABILITY_H
 
 #include <string>
-#include <vector>
 
 //
 //
@@ -21,22 +20,26 @@ class Ability
 
 	public:
 
-	// Default constructor.
-	Ability();
+	// Default constructor
+	Ability() = default;
+	Ability(const Ability& po) = delete;
+	Ability& operator = (const Ability& po) = delete;
+	Ability(Ability&& po) = delete;
+	Ability& operator = (Ability&& po) = delete;
 
-	// Primary Cconstructor.
+	// Primary Cconstructor
 	Ability(unsigned char id, const std::string& name, const std::string& desc);
 
-	// Destructor.
-	~Ability();
+	// Destructor
+	~Ability() = default;
 
-	// Returns _name.
+	// Returns _name
 	std::string name() const;
 
-	// Returns _desc.
+	// Returns _desc
 	std::string desc() const;
 
-	// Returns _id.
+	// Returns _id
 	unsigned char id() const;
 };
 

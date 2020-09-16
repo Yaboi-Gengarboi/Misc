@@ -1,8 +1,8 @@
 // RPGGame
 // Type.cpp
 // Justyn Durnford
-// Created on 4/12/2020
-// Last updated on 8/14/2020
+// Created on 2020-04-12
+// Last updated on 2020-09-12
 
 #include "Type.h"
 
@@ -12,15 +12,11 @@ using std::string;
 #include <vector>
 using std::vector;
 
-Type::Type() { /* See Type.h for default values. */ }
-
 Type::Type(const string& name, unsigned char id)
 {
     _name = name;
     _id = id;
 }
-
-Type::~Type() { /* Destructor. */ }
 
 string Type::name() const
 {
@@ -59,7 +55,7 @@ vector<Type> type_list =
     Type("Steel", 8),
     Type("Fire", 9),
     Type("Water", 10),
-    Type("Grass", 11),
+    Type("Plant", 11),
     Type("Electric", 12),
     Type("Psychic", 13),
     Type("Ice", 14),
@@ -68,7 +64,7 @@ vector<Type> type_list =
     Type("Fairy", 17),
 };
 
-const float type_matchups[18][18] =
+const float type_matchups[18][18] = 
 {
     /* 0  : Normal   */ { 1,   1,   1,   1,   1,  .5,   1,   0,  .5,   1,   1,   1,   1,   1,   1,   1,   1,   1 },
     /* 1  : Fighting */ { 2,   1,  .5,  .5,   1,   2,  .5,   0,   2,   1,   1,   1,   1,  .5,   2,   1,   2,  .5 },
@@ -81,7 +77,7 @@ const float type_matchups[18][18] =
     /* 8  : Steel    */ { 1,   1,   1,   1,   1,   2,   1,   1,  .5,  .5,  .5,   1,  .5,   1,   2,   1,   1,   2 },
     /* 9  : Fire     */ { 1,   1,   1,   1,   1,  .5,   2,   1,   2,  .5,  .5,   2,   1,   1,   2,  .5,   1,   1 },
     /* 10 : Water    */ { 1,   1,   1,   1,   2,   2,   1,   1,   1,   2,  .5,  .5,   1,   1,  .5,  .5,   1,   1 },
-    /* 11 : Grass    */ { 1,   1,  .5,  .5,   2,   2,   1,   1,  .5,  .5,   2,  .5,   1,   1,   1,  .5,   1,   1 },
+    /* 11 : Plant    */ { 1,   1,  .5,  .5,   2,   2,   1,   1,  .5,  .5,   2,  .5,   1,   1,   1,  .5,   1,   1 },
     /* 12 : Electric */ { 1,   1,   2,   1,   0,   1,   1,   1,   1,   1,   2,  .5,  .5,   1,   1,  .5,   1,   1 },
     /* 13 : Psychic  */ { 1,   2,   1,   2,   1,  .5,   1,   1,   1,   1,   1,   1,   1,  .5,   1,   1,   0,   1 },
     /* 14 : Ice      */ { 1,   1,   2,   1,   2,   1,   1,   1,  .5,  .5,   1,   2,   1,   1,  .5,   2,   1,   1 },
@@ -91,11 +87,11 @@ const float type_matchups[18][18] =
 
     // Flying -> Rock:     x1 -> x0.5
     // Poison -> Water:    x1 -> x2
-    // Bug -> Grass:       x2 -> x1
+    // Bug -> Plant:       x2 -> x1
     // Bug -> Fairy:     x0.5 -> x2
     // Ghost -> Rock:      x1 -> x0.5
     // Water -> Ice:       x1 -> x0.5
-    // Grass -> Bug:     x0.5 -> x1
+    // Grass -> Plant:     x0.5 -> x1
     // Psychic -> Rock:    x1 -> x0.5
     // Psychic -> Steel: x0.5 -> x1
     // Ice -> Water:     x0.5 -> x1

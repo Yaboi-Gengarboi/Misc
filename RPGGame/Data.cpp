@@ -1,8 +1,8 @@
 // RPGGame
 // Data.cpp
 // Justyn Durnford
-// Created on 8/14/2020
-// Last updated on 9/3/2020
+// Created on 2020-08-14
+// Last updated on 2020-09-12
 
 #include "Data.h"
 
@@ -98,7 +98,7 @@ string eng_to_hex(const string& str)
 		hexstr += long_to_hex(str[i]);
 	}
 
-	return hexstr;
+	return hexstr + "00";
 }
 
 long hex_to_long(const string& str)
@@ -109,11 +109,16 @@ long hex_to_long(const string& str)
 string hex_to_eng(const string& str)
 {
 	string engstr;
+	string hexsubstr;
+	std::size_t i = 0;
 
-	for (size_t i = 0; i < str.size() - 1; i += 2)
+	do
 	{
-		engstr += hex_to_long(str.substr(i, 2));
+		hexsubstr = str.substr(i, 2);
+		engstr += hex_to_long(hexsubstr);
+		i += 2;
 	}
+	while (hexsubstr != "00");
 
 	return engstr;
 }

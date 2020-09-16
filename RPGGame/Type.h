@@ -1,8 +1,8 @@
 // RPGGame
 // Type.h
 // Justyn Durnford
-// Created on 4/7/2020
-// Last updated on 8/14/2020
+// Created on 2020-04-07
+// Last updated on 2020-09-12
 
 #ifndef TYPE_H
 #define TYPE_H
@@ -16,14 +16,15 @@
 class Type
 {
     std::string _name;
-    unsigned char _id = 0;
+    unsigned char _id = -1;
 
     public:
 
-    // Default constructor.
-    // _name = ""
-    // _id = 0
-    Type();
+    Type() = default;
+    Type(const Type& type) = delete;
+    Type(Type&& type) = delete;
+    Type& operator = (const Type& type) = delete;
+    Type& operator = (Type&& type) = delete;
 
     // Primary constructor.
     // _name = name
@@ -31,7 +32,7 @@ class Type
     Type(const std::string& name, unsigned char id);
 
     // Destructor.
-    ~Type();
+    ~Type() = default;
 
     // Returns _name.
     std::string name() const;
