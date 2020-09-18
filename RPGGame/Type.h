@@ -2,43 +2,45 @@
 // Type.h
 // Justyn Durnford
 // Created on 2020-04-07
-// Last updated on 2020-09-12
+// Last updated on 2020-09-17
 
 #ifndef TYPE_H
 #define TYPE_H
 
+#include <array>
 #include <string>
-#include <vector>
+
+#include "Matrix.h"
 
 // Types are elemental properties of moves and Pokemon. Each move has 1 designated type
 // while a Pokemon may have 1 or 2 types. Each type has varying effectiveness against 
 // Pokemon of opposing types. There are 18 different types.
 class Type
 {
-    std::string _name;
     unsigned char _id = -1;
+    std::string _name;
 
     public:
 
     Type() = default;
-    Type(const Type& type) = delete;
-    Type(Type&& type) = delete;
-    Type& operator = (const Type& type) = delete;
-    Type& operator = (Type&& type) = delete;
+    Type(const Type& type) = default;
+    Type(Type&& type) = default;
+    Type& operator = (const Type& type) = default;
+    Type& operator = (Type&& type) = default;
 
     // Primary constructor.
-    // _name = name
     // _id = id
-    Type(const std::string& name, unsigned char id);
+    // _name = name
+    Type(unsigned char id, const std::string& name);
 
     // Destructor.
     ~Type() = default;
 
-    // Returns _name.
-    std::string name() const;
-
     // Returns _id.
     unsigned char id() const;
+
+    // Returns _name.
+    std::string name() const;
 };
 
 // Returns true ONLY IF t1.id() == t2.id()
@@ -47,8 +49,8 @@ bool operator == (const Type& t1, const Type& t2);
 // Returns true ONLY IF t1.id() != t2.id()
 bool operator != (const Type& t1, const Type& t2);
 
-extern std::vector<Type> type_list;
+extern std::array<Type, 18> type_arr;
 
-extern const float type_matchups[18][18];
+extern Matrix<float> type_matchups;
 
 #endif // TYPE_H

@@ -70,7 +70,7 @@ unsigned short Move::id() const
 
 Type& Move::type() const
 {
-	return type_list[_type];
+	return type_arr[_type];
 }
 
 Move_Kind& Move::kind() const

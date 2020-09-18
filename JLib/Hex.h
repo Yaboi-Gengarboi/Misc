@@ -1,12 +1,31 @@
 // Hex.h
 // Justyn Durnford
-// Created on 8/1/2020
-// Last updated on 8/5/2020
+// Created on 8/1/2020 2020-08-01
+// Last updated on 8/5/2020 2020-08-05
+// Header file for Hex classes
 
 #ifndef HEX_H
 #define HEX_H
 
 #include <string>
+
+class Hex_Char
+{
+	char _value = 0;
+	std::string _hexstr;
+
+	public:
+
+	Hex_Char() = default;
+	Hex_Char(const Hex_Char& hc) = default;
+	Hex_Char(Hex_Char&& hc) = default;
+	Hex_Char(char value);
+
+	Hex_Char& operator = (const Hex_Char& hc) = default;
+	Hex_Char& operator = (Hex_Char&& hc) = default;
+
+	~Hex_Char() = default;
+};
 
 class Hex_Long
 {

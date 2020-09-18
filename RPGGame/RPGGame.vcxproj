@@ -145,6 +145,7 @@
     <ClInclude Include="Characteristic.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="Egg_Group.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="MiscInfo.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Nature.h" />

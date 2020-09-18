@@ -2,7 +2,7 @@
 // Ability.h
 // Justyn Durnford
 // Created on 2020-04-12
-// Last updated on 2020-09-06
+// Last updated on 2020-09-17
 
 #ifndef ABILITY_H
 #define ABILITY_H
@@ -22,10 +22,10 @@ class Ability
 
 	// Default constructor
 	Ability() = default;
-	Ability(const Ability& po) = delete;
-	Ability& operator = (const Ability& po) = delete;
-	Ability(Ability&& po) = delete;
-	Ability& operator = (Ability&& po) = delete;
+	Ability(const Ability& po) = default;
+	Ability& operator = (const Ability& po) = default;
+	Ability(Ability&& po) = default;
+	Ability& operator = (Ability&& po) = default;
 
 	// Primary Cconstructor
 	Ability(unsigned char id, const std::string& name, const std::string& desc);

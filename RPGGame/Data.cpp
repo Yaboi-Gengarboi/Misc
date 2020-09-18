@@ -40,7 +40,7 @@ string long_to_hex(long i)
 	unsigned char rem = 0;
 
 	if (i == 0)
-		return "0";
+		return "00";
 
 	while (i != 0)
 	{
@@ -79,6 +79,9 @@ string long_to_hex(long i)
 
 		i /= 16;
 	}
+
+	if (hexstr.size() % 2 != 0)
+		hexstr = '0' + hexstr;
 
 	return hexstr;
 }

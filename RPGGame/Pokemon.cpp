@@ -49,12 +49,12 @@ unsigned short Pokemon::id() const
 
 Type& Pokemon::type1() const
 {
-	return type_list[_type1];
+	return type_arr[_type1];
 }
 
 Type& Pokemon::type2() const
 {
-	return type_list[_type2];
+	return type_arr[_type2];
 }
 
 Ability& Pokemon::ability1() const

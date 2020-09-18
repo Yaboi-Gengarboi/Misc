@@ -20,10 +20,10 @@ class Type;
 
 float type_matchup(const Move& move, const Player_Pokemon& opponent)
 {
-	float multiplier = type_matchups[move.type().id()][opponent.pokemon().type1().id()];
+	float multiplier = type_matchups.at(move.type().id(), opponent.pokemon().type1().id());
 
 	if (opponent.pokemon().type2().id() != -1)
-		multiplier *= type_matchups[move.type().id()][opponent.pokemon().type2().id()];
+		multiplier *= type_matchups.at(move.type().id(), opponent.pokemon().type2().id());
 
 	return multiplier;
 }
