@@ -243,12 +243,15 @@ double angle_between(const Vector3D& v, const Vector3D& u)
 
 bool are_parallel(const Vector3D& v, const Vector3D& u)
 {
+	if (cross_product(v, u) == Vector3D(0, 0, 0))
+		return true;
+
 	return false;
 }
 
 bool are_normal(const Vector3D& v, const Vector3D& u)
 {
-	if (dot_product(v, u) == JLib::PI / 2)
+	if (dot_product(v, u) == 0)
 		return true;
 
 	return false;

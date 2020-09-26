@@ -153,10 +153,10 @@ Vector3D cross_product(const Vector3D& v, const Vector3D& u);
 // Returns the angle between v and u.
 double angle_between(const Vector3D& v, const Vector3D& u);
 
-// Returns true if 
+// Returns true if cross_product(v, u) == Vector3D(0, 0, 0)
 bool are_parallel(const Vector3D& v, const Vector3D& u);
 
-// Returns true if dot_product(v, u) == JLib::PI / 2.
+// Returns true if dot_product(v, u) == 0.
 bool are_normal(const Vector3D& v, const Vector3D& u);
 
 // Returns the scalar projection of v onto u.

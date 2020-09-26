@@ -152,6 +152,7 @@
     <ClInclude Include="Player_Pokemon.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="Random.h" />
+    <ClInclude Include="Terrain.h" />
     <ClInclude Include="Trainer.h" />
     <ClInclude Include="Type.h" />
     <ClInclude Include="Weather.h" />
@@ -169,7 +170,9 @@
     <ClCompile Include="Player_Pokemon.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="Random.cpp" />
+    <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="Type.cpp" />
+    <ClCompile Include="Weather.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,10 +2,13 @@
 // Ability.h
 // Justyn Durnford
 // Created on 2020-04-12
-// Last updated on 2020-09-17
+// Last updated on 2020-09-26
 
-#ifndef ABILITY_H
-#define ABILITY_H
+#ifndef ABILITY_H_INCLUDED
+#define ABILITY_H_INCLUDED
+
+#include "Battle.h"
+class Battle;
 
 #include <string>
 
@@ -14,33 +17,43 @@
 //
 class Ability
 {
+	unsigned char _id = 0;
 	std::string _name;
 	std::string _desc;
-	unsigned char _id = 0;
 
 	public:
 
-	// Default constructor
+	// Default constructor.
 	Ability() = default;
+
+	// Copy constructor.
 	Ability(const Ability& po) = default;
-	Ability& operator = (const Ability& po) = default;
+
+	// Move constructor.
 	Ability(Ability&& po) = default;
+
+	// Copy assignment.
+	Ability& operator = (const Ability& po) = default;
+
+	// Move assignment.
 	Ability& operator = (Ability&& po) = default;
 
-	// Primary Cconstructor
+	// Primary Cconstructor.
 	Ability(unsigned char id, const std::string& name, const std::string& desc);
 
-	// Destructor
+	// Destructor.
 	~Ability() = default;
 
-	// Returns _name
+	// Returns _id.
+	unsigned char id() const;
+
+	// Returns _name.
 	std::string name() const;
 
-	// Returns _desc
+	// Returns _desc.
 	std::string desc() const;
 
-	// Returns _id
-	unsigned char id() const;
+	void operator() (Battle& battle);
 };
 
-#endif // ABILITY_H
+#endif // ABILITY_H_INCLUDED

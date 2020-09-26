@@ -1,11 +1,13 @@
 // RPGGame
 // Battle.h
 // Justyn Durnford
-// Created on 6/20/2020
-// Last updated on 8/18/2020
+// Created on 2020-06-20
+// Last updated on 2020-09-26
 
-#ifndef BATTLE_H
-#define BATTLE_H
+#ifndef BATTLE_H_INCLUDED
+#define BATTLE_H_INCLUDED
+
+#include "Matrix.h"
 
 #include "Move.h"
 class Move;
@@ -16,19 +18,44 @@ class Pokemon;
 #include "Player_Pokemon.h"
 class Player_Pokemon;
 
-#include "Type.h"
-class Type;
+#include "Terrain.h"
+class Terrain;
 
-float type_matchup(const Move& move, const Player_Pokemon& opponent);
+#include "Weather.h"
+class Weather;
+
+#include <memory>
+#include <vector>
 
 //
 //
 //
 class Battle
 {
+	Matrix<Player_Pokemon> _teams;
+	std::shared_ptr<Weather> _weather;
+	std::shared_ptr<Terrain> _terrain;
 
+	public:
+
+	Battle() = default;
+	Battle(const Battle& battle) = delete;
+	Battle(Battle&& battle) = delete;
+
+	Battle(const std::vector<std::vector<Player_Pokemon>>& teams, const Weather& weather, const Terrain& terrain);
+
+	Battle& operator = (const Battle& battle) = delete;
+	Battle& operator = (Battle&& battle) = delete;
+
+	~Battle() = default;
+
+	Weather& weather() const;
+
+	Terrain& terrain() const;
+
+	void setWeather(const Weather& weather);
+
+	void setTerrain(const Terrain& terrain);
 };
 
-bool protect();
-
-#endif // BATTLE_H
+#endif // BATTLE_H_INCLUDED

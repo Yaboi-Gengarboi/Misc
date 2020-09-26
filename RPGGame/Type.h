@@ -2,15 +2,13 @@
 // Type.h
 // Justyn Durnford
 // Created on 2020-04-07
-// Last updated on 2020-09-17
+// Last updated on 2020-09-24
 
 #ifndef TYPE_H
 #define TYPE_H
 
 #include <array>
 #include <string>
-
-#include "Matrix.h"
 
 // Types are elemental properties of moves and Pokemon. Each move has 1 designated type
 // while a Pokemon may have 1 or 2 types. Each type has varying effectiveness against 
@@ -51,6 +49,6 @@ bool operator != (const Type& t1, const Type& t2);
 
 extern std::array<Type, 18> type_arr;
 
-extern Matrix<float> type_matchups;
+extern float type_matchups[18][18];
 
 #endif // TYPE_H

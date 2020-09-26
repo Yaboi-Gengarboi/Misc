@@ -1,11 +1,11 @@
 // RPGGame
 // Pokemon.h
 // Justyn Durnford
-// Created on 4/12/2020
-// Last updated on 8/17/2020
+// Created on 2020-04-12
+// Last updated on 2020-09-26
 
-#ifndef POKEMON_H
-#define POKEMON_H
+#ifndef POKEMON_H_INCLUDED
+#define POKEMON_H_INCLUDED
 
 #include "Ability.h"
 class Ability;
@@ -16,28 +16,29 @@ class Egg_Group;
 #include "Type.h"
 class Type;
 
+#include <array>
+#include <memory>
 #include <string>
-#include <vector>
 
 //
 //
 //
 class Pokemon
 {
+	unsigned short _id = 0;
 	std::string _name;
 	std::string _desc;
-	unsigned short _id = 0;
-	unsigned char _type1 = -1;
-	unsigned char _type2 = -1;
-	unsigned char _ability1 = 0;
-	unsigned char _ability2 = 0;
+	std::shared_ptr<Type> _type1;
+	std::shared_ptr<Type> _type1;
+	std::shared_ptr<Ability> _ability1;
+	std::shared_ptr<Ability> _ability2;
 	unsigned short _maleRatio = 0;
-	unsigned char _eg1 = 0;
-	unsigned char _eg2 = 0;
+	std::shared_ptr<Egg_Group> _eg1;
+	std::shared_ptr<Egg_Group> _eg2;
 	float _height = 0;
 	float _weight = 0;
-	std::vector<unsigned char> _evYield = { 0, 0, 0, 0, 0, 0 };
-	std::vector<unsigned char> _baseStats = { 0, 0, 0, 0, 0, 0 };
+	std::array<unsigned char, 6> _evYield = { 0, 0, 0, 0, 0, 0 };
+	std::array<unsigned char, 6> _baseStats = { 0, 0, 0, 0, 0, 0 };
 
 	public:
 
@@ -50,14 +51,14 @@ class Pokemon
 	// Destructor.
 	~Pokemon();
 
+	// Returns _id.
+	unsigned short id() const;
+
 	// Returns _name.
 	std::string name() const;
 
 	// Returns _desc.
 	std::string desc() const;
-
-	// Returns _id.
-	unsigned short id() const;
 
 	// Returns type_list[_type1].
 	Type& type1() const;
@@ -123,4 +124,4 @@ class Pokemon
 	unsigned char baseSpe() const;
 };
 
-#endif // POKEMON_H
+#endif // POKEMON_H_INCLUDED

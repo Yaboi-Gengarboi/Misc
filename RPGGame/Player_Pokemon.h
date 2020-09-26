@@ -1,11 +1,11 @@
 // RPGGame
 // Player_Pokemon.h
 // Justyn Durnford
-// Created on 6/29/2020
-// Last updated on 8/14/2020
+// Created on 2020-06-29
+// Last updated on 2020-09-26
 
-#ifndef PLAYER_POKEMON_H
-#define PLAYER_POKEMON_H
+#ifndef PLAYER_POKEMON_H_INCLUDED
+#define PLAYER_POKEMON_H_INCLUDED
 
 #include "Characteristic.h"
 class Characteristic;
@@ -17,6 +17,7 @@ class Nature;
 class Pokemon;
 
 #include <array>
+#include <memory>
 #include <string>
 
 //
@@ -24,16 +25,16 @@ class Pokemon;
 //
 class Player_Pokemon
 {
+	std::shared_ptr<Pokemon> _pokemon;
 	std::string _nickname;
-	unsigned short _index = 0;
 	unsigned char _level = 1;
 	unsigned long _experience = 0;
-	unsigned char _ability = 0;
-	unsigned char _gender = 0;
-	unsigned char _nature = 0;
-	unsigned char _characteristic = 0;
+	std::shared_ptr<Ability> _ability;
+	bool _isMale = true;
+	std::shared_ptr<Nature> _nature;
+	std::shared_ptr<Characteristic> _characteristic;
 	std::array<unsigned char, 6> _evs = { 0, 0, 0, 0, 0, 0 };
-	std::array<unsigned char, 6> _stats = { 0, 0, 0, 0, 0, 0 };
+	std::array<float, 6> _stats = { 0, 0, 0, 0, 0, 0 };
 
 	public:
 
@@ -44,4 +45,4 @@ class Player_Pokemon
 	const Pokemon& pokemon() const;
 };
 
-#endif // PLAYER_POKEMON_H
+#endif // PLAYER_POKEMON_H_INCLUDED

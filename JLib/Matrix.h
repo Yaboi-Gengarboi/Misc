@@ -1,7 +1,7 @@
 // Matrix.h
 // Justyn Durnford
 // Created on 2020-06-08
-// Last updated on 2020-07-22
+// Last updated on 2020-09-26
 // Header file for the Matrix template class
 // This is free and unencumbered software released into the public domain.
 // Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -27,6 +27,9 @@
 #ifndef MATRIX_H_INCLUDED
 #define MATRIX_H_INCLUDED
 
+#include <cstddef>
+#include <vector>
+
 // This class is able to function as a 
 //
 //
@@ -38,84 +41,79 @@ class Matrix
 	public:
 
 	using value_type = T;
-	using size_type = unsigned char;
+	using size_type = std::size_t;
 
 	private:
 
-	value_type** _matrix = nullptr;
-	size_type _row = 0;
-	size_type _col = 0;
-
-	void alloc(const size_type& row, const size_type& col)
-	{
-		_row = row;
-		_col = col;
-		_matrix = new value_type* [_row];
-
-		for (size_type r = 0; r < _row; ++r)
-		{
-			_matrix[r] = new value_type[_col];
-		}
-	}
-
-	void alloc(const size_type& row, const size_type& col, const value_type& val)
-	{
-		_row = row;
-		_col = col;
-		_matrix = new value_type * [_row];
-
-		for (size_type r = 0; r < _row; ++r)
-		{
-			_matrix[r] = new value_type[_col];
-			
-			for (size_type c = 0; c < _col; ++c)
-				_matrix[r][c] = val;
-		}
-	}
-
-	void dealloc()
-	{
-		for (size_type i = 0; i < _row; ++i)
-		{
-			delete[] _matrix[i];
-			_matrix[i] = nullptr;
-		}
-
-		delete[] _matrix;
-		_matrix = nullptr;
-	}
+	std::vector<std::vector<value_type>> _matrix;
+	size_type* _row = new size_type(0);
+	size_type* _col = new size_type(0);
 
 	public:
 
-	Matrix() = delete;
-	Matrix(const Matrix& m) = delete;
-	Matrix(Matrix&& m) = delete;
-	Matrix& operator = (const Matrix& m) = delete;
-	Matrix& operator = (Matrix&& m) = delete;
+	Matrix() = default;
 
 	Matrix(const size_type& row, const size_type& col)
 	{
-		alloc(row, col);
+		*_row = row;
+		*_col = col;
+
+		for (size_type r = 0; r < _row; ++r)
+		{
+			for (size_type c = 0; c < _col; ++c)
+			{
+				_matrix[r].push_back(value_type);
+			}
+		}
 	}
 
 	Matrix(const size_type& row, const size_type& col, const value_type& val)
 	{
-		alloc(row, col, val);
+		*_row = row;
+		*_col = col;
+
+		for (size_type r = 0; r < _row; ++r)
+		{
+			for (size_type c = 0; c < _col; ++c)
+			{
+				_matrix[r].push_back(val);
+			}
+		}
 	}
+
+	Matrix(const Matrix& matrix)
+	{
+		*_row = *( matrix._row );
+		*_col = *( matrix._col );
+		_matrix = matrix;
+	}
+
+	Matrix& operator = (const Matrix& matrix)
+	{
+		delete _row;
+		delete _col;
+		*_row = *( matrix._row );
+		*_col = *( matrix._col );
+		_matrix = matrix;
+	}
+
+	Matrix(Matrix&& matrix) = delete;
+	Matrix& operator = (Matrix&& matrix) = delete;
 
 	~Matrix()
 	{
-		dealloc();
+		delete _row;
+		delete _col;
 	}
 
-	value_type& at(const size_type& row const size_type& col)
+	value_type& at(const size_type& row, const size_type& col)
 	{
-		return &_matrix[row][col];
+		return _matrix[row][col];
 	}
 
 	const value_type& at(const size_type& row, const size_type& col) const
 	{
-		return &_matrix[row][col];
+		return _matrix[row][col];
 	}
 
 	void set(const size_type& row, const size_type& col, const value_type& val)
@@ -125,17 +123,22 @@ class Matrix
 
 	size_type rowSize() const
 	{
-		return _row;
+		return *_row;
 	}
 
 	size_type colSize() const
 	{
-		return _col;
+		return *_col;
 	}
 
 	bool empty() const
 	{
-		return _matrix == nullptr;
+		return _matrix.empty();
+	}
+
+	value_type operator () (const size_type& row, const size_type& col)
+	{
+		return _matrix[row][col];
 	}
 };
 

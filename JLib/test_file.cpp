@@ -36,5 +36,10 @@ using std::string;
 
 int main(int argc, char** argv)
 {
+	Vector3D n1(-2, 3, 4);
+	Vector3D n2(1, 1, 1);
+
+	cout << cross_product(n1, n2) << endl;
+
 	return 0;
 }
