@@ -2,14 +2,14 @@
 // Ability.cpp
 // Justyn Durnford
 // Created on 2020-05-15
-// Last updated on 2020-09-06
+// Last updated on 2020-09-28
 
 #include "Ability.h"
 
 #include <string>
 using std::string;
 
-Ability::Ability(unsigned char id, const string& name, const string& desc)
+Ability::Ability(unsigned char id, const char* name, const char* desc)
 {
 	_id = id;
 	_name = name;

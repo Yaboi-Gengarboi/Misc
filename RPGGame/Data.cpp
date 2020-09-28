@@ -2,37 +2,14 @@
 // Data.cpp
 // Justyn Durnford
 // Created on 2020-08-14
-// Last updated on 2020-09-12
+// Last updated on 2020-09-28
 
 #include "Data.h"
-
-#include "Move.h"
-class Move;
-
-#include "Pokemon.h"
-class Pokemon;
-
-#include "Player_Pokemon.h"
-class Player_Pokemon;
-
-#include <cstddef>
-using std::size_t;
-
-#include <fstream>
-using std::ifstream;
 
 #include <string>
 using std::string;
 using std::to_string;
 using std::stol;
-
-#include <vector>
-using std::vector;
-
-vector<Ability> ability_list;
-vector<Pokemon> pokemon_list;
-vector<Move> move_list;
-vector<bool> move_contact_list;
 
 string long_to_hex(long i)
 {
@@ -124,44 +101,4 @@ string hex_to_eng(const string& str)
 	while (hexsubstr != "00");
 
 	return engstr;
-}
-
-bool load_abilities()
-{
-	ifstream fin("Data/Abilities.txt");
-	unsigned char id = 0;
-	string name;
-	string desc;
-
-	if (!fin)
-		return false;
-
-	while (!fin.eof())
-	{
-		++id;
-		getline(fin, name);
-		getline(fin, desc);
-
-		ability_list.push_back(Ability(id, name, desc));
-	}
-
-	if (id != 175)
-		return false;
-
-	return true;
-}
-
-bool load_moves()
-{
-	return false;
-}
-
-bool load_pokemon()
-{
-	return false;
-}
-
-bool load_player_pokemon()
-{
-	return false;
 }

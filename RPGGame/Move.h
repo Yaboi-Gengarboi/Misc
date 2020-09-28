@@ -1,17 +1,18 @@
 // RPGGame
 // Move.h
 // Justyn Durnford
-// Created on 4/20/2020
-// Last updated on 8/17/2020
+// Created on 2020-04-20
+// Last updated on 2020-09-27
 
-#ifndef MOVE_H
-#define MOVE_H
+#ifndef MOVE_H_INCLUDED
+#define MOVE_H_INCLUDED
 
 #include "Type.h"
 class Type;
 
+#include <array>
+#include <memory>
 #include <string>
-#include <vector>
 
 // There are 3 kinds of moves: Physical, Special and Status. The
 // Physical moves use the Attack and Defense stats of pokemon,
@@ -20,31 +21,41 @@ class Type;
 // damaging effects.
 struct Move_Kind
 {
-	std::string _name;
 	unsigned char _id = 0;
+	std::string _name;
 
 	// Default constructor.
-	Move_Kind();
+	Move_Kind() = default;
+
+	// Copy constructor.
+	Move_Kind(const Move_Kind& move_kind) = default;
+
+	// Move constructor.
+	Move_Kind(Move_Kind&& move_kind) = default;
 
 	// Primary constructor.
-	Move_Kind(const std::string& name, unsigned char id);
+	Move_Kind(unsigned char id, const char* name);
+
+	// Copy assignment.
+	Move_Kind& operator = (const Move_Kind& move_kind) = default;
+
+	// Move assignment.
+	Move_Kind& operator = (Move_Kind&& move_kind) = default;
 
 	// Destructor.
-	~Move_Kind();
+	~Move_Kind() = default;
 };
-
-extern std::vector<Move_Kind> move_kind_list;
 
 //
 //
 //
 class Move
 {
+	unsigned short _id = 0;
 	std::string _name = "";
 	std::string _desc = "";
-	unsigned short _id = 0;
-	unsigned char _type = 0;
-	unsigned char _kind = 0;
+	std::shared_ptr<Type> _type;
+	std::shared_ptr<Move_Kind> _kind = 0;
 	unsigned char _power = 0;
 	unsigned char _pp = 0;
 	unsigned short _accuracy = 0;
@@ -54,16 +65,31 @@ class Move
 	public:
 	
 	// Default constructor.
-	Move();
+	Move() = default;
+
+	// Copy constructor.
+	Move(const Move& move) = default;
+
+	// Move constructor.
+	Move(Move&& move) = default;
 
 	// Primary constructor.
-	Move(const std::string& name, const std::string& desc, unsigned short id,
-		 unsigned char type, unsigned char kind, unsigned char power,
+	Move(unsigned short id, const char* name, const char* desc,
+		 const Type& type, const Move_Kind& kind, unsigned char power,
 		 unsigned char pp, unsigned short accuracy, unsigned short additionalChance, 
 		 char priority);
 
+	// Copy assignment.
+	Move& operator = (const Move& move) = default;
+
+	// Move assignment.
+	Move& operator = (Move&& move) = default;
+
 	// Destructor.
-	~Move();
+	~Move() = default;
+
+	// Returns _id.
+	unsigned short id() const;
 
 	// Returns _name.
 	std::string name() const;
@@ -71,14 +97,11 @@ class Move
 	// Returns _desc.
 	std::string desc() const;
 
-	// Returns _id.
-	unsigned short id() const;
+	// Returns _type.
+	std::shared_ptr<Type> type() const;
 
-	// Returns type_list[_type].
-	Type& type() const;
-
-	// Returns move_kind_list[_kind].
-	Move_Kind& kind() const;
+	// Returns _kind.
+	std::shared_ptr<Move_Kind> kind() const;
 
 	// Returns _power.
 	unsigned char power() const;
@@ -108,4 +131,7 @@ bool operator == (const Move& m1, const Move& m2);
 // Returns true ONLY IF m1.id() != m2.id()
 bool operator != (const Move& m1, const Move& m2);
 
-#endif // MOVE_H
+extern std::array<Move_Kind, 3> move_kind_arr;
+extern std::array<Move, 300> move_arr;
+
+#endif // MOVE_H_INCLUDED

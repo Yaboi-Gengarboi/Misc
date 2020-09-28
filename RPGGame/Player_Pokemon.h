@@ -2,10 +2,13 @@
 // Player_Pokemon.h
 // Justyn Durnford
 // Created on 2020-06-29
-// Last updated on 2020-09-26
+// Last updated on 2020-09-28
 
 #ifndef PLAYER_POKEMON_H_INCLUDED
 #define PLAYER_POKEMON_H_INCLUDED
+
+#include "Ability.h"
+class Ability;
 
 #include "Characteristic.h"
 class Characteristic;
@@ -38,11 +41,11 @@ class Player_Pokemon
 
 	public:
 
-	Player_Pokemon();
+	Player_Pokemon() = default;
 
-	~Player_Pokemon();
+	~Player_Pokemon() = default;
 
-	const Pokemon& pokemon() const;
+	std::shared_ptr<Pokemon> pokemon() const;
 };
 
 #endif // PLAYER_POKEMON_H_INCLUDED

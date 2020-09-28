@@ -2,7 +2,7 @@
 // Ability.h
 // Justyn Durnford
 // Created on 2020-04-12
-// Last updated on 2020-09-26
+// Last updated on 2020-09-27
 
 #ifndef ABILITY_H_INCLUDED
 #define ABILITY_H_INCLUDED
@@ -10,6 +10,7 @@
 #include "Battle.h"
 class Battle;
 
+#include <array>
 #include <string>
 
 //
@@ -38,8 +39,8 @@ class Ability
 	// Move assignment.
 	Ability& operator = (Ability&& po) = default;
 
-	// Primary Cconstructor.
-	Ability(unsigned char id, const std::string& name, const std::string& desc);
+	// Primary Constructor.
+	Ability(unsigned char id, const char* name, const char* desc);
 
 	// Destructor.
 	~Ability() = default;
@@ -55,5 +56,7 @@ class Ability
 
 	void operator() (Battle& battle);
 };
+
+extern std::array<Ability, 150> ability_arr;
 
 #endif // ABILITY_H_INCLUDED

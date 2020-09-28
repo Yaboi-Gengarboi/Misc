@@ -1,49 +1,37 @@
 // RPGGame
 // Move.cpp
 // Justyn Durnford
-// Created on 5/23/2020
-// Last updated on 8/16/2020
+// Created on 2020-05-23
+// Last updated on 2020-09-27
 
 #include "Move.h"
 
 #include "Type.h"
 class Type;
 
+#include <memory>
+using std::shared_ptr;
+using std::make_shared;
+
 #include <string>
 using std::string;
 
-#include <vector>
-using std::vector;
-
-Move_Kind::Move_Kind() { /* See Move_Data.h for default values. */ }
-
-Move_Kind::Move_Kind(const string& name, unsigned char id)
+Move_Kind::Move_Kind(unsigned char id, const char* name)
 {
-	_name = name;
 	_id = id;
+	_name = name;
 }
 
-Move_Kind::~Move_Kind() { /* Destructor. */ }
-
-vector<Move_Kind> move_kind_list =
-{
-	Move_Kind("Physical", 0),
-	Move_Kind("Special", 1),
-	Move_Kind("Status", 2)
-};
-
-Move::Move() { /* See Move.h for default values. */ }
-
-Move::Move(const string& name, const string& desc, unsigned short id,
-		   unsigned char type, unsigned char kind, unsigned char power,
+Move::Move(unsigned short id, const char* name, const char* desc,
+		   const Type& type, const Move_Kind& kind, unsigned char power,
 		   unsigned char pp, unsigned short accuracy, unsigned short additionalChance,
 		   char priority)
 {
+	_id = id;
 	_name = name;
 	_desc = desc;
-	_id = id;
-	_type = type;
-	_kind = kind;
+	_type = make_shared<Type>(type);
+	_kind = make_shared<Move_Kind>(kind);
 	_power = power;
 	_pp = pp;
 	_accuracy = accuracy;
@@ -51,7 +39,10 @@ Move::Move(const string& name, const string& desc, unsigned short id,
 	_priority = priority;
 }
 
-Move::~Move() { /* Destructor. */ }
+unsigned short Move::id() const
+{
+	return _id;
+}
 
 string Move::name() const
 {
@@ -63,19 +54,14 @@ string Move::desc() const
 	return _desc;
 }
 
-unsigned short Move::id() const
+shared_ptr<Type> Move::type() const
 {
-	return _id;
+	return _type;
 }
 
-Type& Move::type() const
+shared_ptr<Move_Kind> Move::kind() const
 {
-	return type_arr[_type];
-}
-
-Move_Kind& Move::kind() const
-{
-	return move_kind_list[_kind];
+	return _kind;
 }
 
 unsigned char Move::power() const

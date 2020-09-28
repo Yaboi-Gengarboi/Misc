@@ -1,30 +1,21 @@
 // RPGGame
 // Egg_Group.cpp
 // Justyn Durnford
-// Created on 7/1/2020
-// Last updated on 8/11/2020
+// Created on 2020-07-01
+// Last updated on 2020-09-28
 
 #include "Egg_Group.h"
+
+#include <array>
+using std::array;
 
 #include <string>
 using std::string;
 
-#include <vector>
-using std::vector;
-
-Egg_Group::Egg_Group() { /* See Egg_Group.h for default values. */ }
-
-Egg_Group::Egg_Group(const string& name, unsigned char id)
+Egg_Group::Egg_Group(unsigned char id, const char* name)
 {
 	_name = name;
 	_id = id;
-}
-
-Egg_Group::~Egg_Group() { /* Destructor. */ }
-
-string Egg_Group::name() const
-{
-	return _name;
 }
 
 unsigned char Egg_Group::id() const
@@ -32,21 +23,7 @@ unsigned char Egg_Group::id() const
 	return _id;
 }
 
-vector<Egg_Group> egg_group_list =
+string Egg_Group::name() const
 {
-	Egg_Group("Monster", 0),
-	Egg_Group("Water 1", 1),
-	Egg_Group("Bug", 2),
-	Egg_Group("Flying", 3),
-	Egg_Group("Field", 4),
-	Egg_Group("Fairy", 5),
-	Egg_Group("Grass", 6),
-	Egg_Group("Human-Like", 7),
-	Egg_Group("Water 3", 8),
-	Egg_Group("Mineral", 9),
-	Egg_Group("Amorphous", 10),
-	Egg_Group("Water 2", 11),
-	Egg_Group("Ditto", 12),
-	Egg_Group("Dragon", 13),
-	Egg_Group("Undiscovered", 14)
-};
+	return _name;
+}

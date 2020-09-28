@@ -1,42 +1,54 @@
 // RPGGame
 // Nature.h
 // Justyn Durnford
-// Created on 6/25/2020
-// Last updated on 8/11/2020
+// Created on 2020-06-25
+// Last updated on 2020-09-28
 
-#ifndef NATURE_H
-#define NATURE_H
+#ifndef NATURE_H_INCLUDED
+#define NATURE_H_INCLUDED
 
+#include <array>
 #include <string>
-#include <vector>
 
 //
 //
 //
 class Nature
 {
-	std::string _name;
 	unsigned char _id = 0;
+	std::string _name;
 	unsigned char _goodStat = 0;
 	unsigned char _badStat = 0;
 
 	public:
 
 	// Default constructor.
-	Nature();
+	Nature() = default;
+
+	// Copy constructor.
+	Nature(const Nature& nature) = default;
+
+	// Move constructor.
+	Nature(Nature&& nature) = default;
 
 	// Primary constructor.
-	Nature(const std::string& name, unsigned char id,
+	Nature(unsigned char id, const char* name,
 		   unsigned char goodStat, unsigned char badStat);
 
-	// Destructor.
-	~Nature();
+	// Copy assignment.
+	Nature& operator = (const Nature& nature) = default;
 
-	// Returns _name.
-	std::string name() const;
+	// Move assignment.
+	Nature& operator = (Nature&& nature) = default;
+
+	// Destructor.
+	~Nature() = default;
 
 	// Returns _id.
 	unsigned char id() const;
+
+	// Returns _name.
+	std::string name() const;
 
 	// Returns _goodStat.
 	unsigned char goodStat() const;
@@ -51,6 +63,6 @@ bool operator == (const Nature& n1, const Nature& n2);
 // Returns true ONLY IF n1.id() != n2.id()
 bool operator != (const Nature& n1, const Nature& n2);
 
-extern std::vector<Nature> nature_list;
+extern std::array<Nature, 25> nature_arr;
 
-#endif // NATURE_H
+#endif // NATURE_H_INCLUDED

@@ -1,15 +1,13 @@
 // RPGGame
 // Pokemon.cpp
 // Justyn Durnford
-// Created on 5/15/2020
-// Last updated on 8/17/2020
+// Created on 2020-05-15
+// Last updated on 2020-09-28
 
 #include "Pokemon.h"
 
 #include "Ability.h"
 class Ability;
-
-#include "Data.h"
 
 #include "Egg_Group.h"
 class Egg_Group;
@@ -17,20 +15,16 @@ class Egg_Group;
 #include "Type.h"
 class Type;
 
+#include <memory>
+using std::shared_ptr;
+
 #include <string>
 using std::string;
-
-#include <vector>
-using std::vector;
-
-Pokemon::Pokemon() { /* See Pokemon.h for default values. */ }
 
 Pokemon::Pokemon(unsigned short id)
 {
 	_id = id;
 }
-
-Pokemon::~Pokemon() { /* Destructor. */ }
 
 string Pokemon::name() const
 {
@@ -47,24 +41,24 @@ unsigned short Pokemon::id() const
 	return _id;
 }
 
-Type& Pokemon::type1() const
+shared_ptr<Type> Pokemon::type1() const
 {
-	return type_arr[_type1];
+	return _type1;
 }
 
-Type& Pokemon::type2() const
+shared_ptr<Type> Pokemon::type2() const
 {
-	return type_arr[_type2];
+	return _type2;
 }
 
-Ability& Pokemon::ability1() const
+shared_ptr<Ability> Pokemon::ability1() const
 {
-	return ability_list[_ability1];
+	return _ability1;
 }
 
-Ability& Pokemon::ability2() const
+shared_ptr<Ability> Pokemon::ability2() const
 {
-	return ability_list[_ability2];
+	return _ability2;
 }
 
 unsigned short Pokemon::maleRatio() const
@@ -72,14 +66,14 @@ unsigned short Pokemon::maleRatio() const
 	return _maleRatio;
 }
 
-Egg_Group& Pokemon::eg1() const
+shared_ptr<Egg_Group> Pokemon::eg1() const
 {
-     return egg_group_list[_eg1];
+     return _eg1;
 }
 
-Egg_Group& Pokemon::eg2() const
+shared_ptr<Egg_Group> Pokemon::eg2() const
 {
-    return egg_group_list[_eg2];
+    return _eg2;
 }
 
 float Pokemon::height() const

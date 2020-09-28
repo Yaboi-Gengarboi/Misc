@@ -2,7 +2,7 @@
 // Pokemon.h
 // Justyn Durnford
 // Created on 2020-04-12
-// Last updated on 2020-09-26
+// Last updated on 2020-09-28
 
 #ifndef POKEMON_H_INCLUDED
 #define POKEMON_H_INCLUDED
@@ -29,7 +29,7 @@ class Pokemon
 	std::string _name;
 	std::string _desc;
 	std::shared_ptr<Type> _type1;
-	std::shared_ptr<Type> _type1;
+	std::shared_ptr<Type> _type2;
 	std::shared_ptr<Ability> _ability1;
 	std::shared_ptr<Ability> _ability2;
 	unsigned short _maleRatio = 0;
@@ -43,13 +43,19 @@ class Pokemon
 	public:
 
 	// Default constructor.
-	Pokemon();
+	Pokemon() = default;
+
+	// Copy constructor.
+	Pokemon(const Pokemon& pokemon) = default;
+
+	// Move constructor.
+	Pokemon(Pokemon&& pokemon) = default;
 
 	// Primary constructor.
 	Pokemon(unsigned short id);
 
 	// Destructor.
-	~Pokemon();
+	~Pokemon() = default;
 
 	// Returns _id.
 	unsigned short id() const;
@@ -60,26 +66,26 @@ class Pokemon
 	// Returns _desc.
 	std::string desc() const;
 
-	// Returns type_list[_type1].
-	Type& type1() const;
+	// Returns _type1.
+	std::shared_ptr<Type> type1() const;
 
-	// Returns type_list[_type2].
-	Type& type2() const;
+	// Returns _type2.
+	std::shared_ptr<Type> type2() const;
 
-	// Returns ability_list[_ability1].
-	Ability& ability1() const;
+	// Returns _ability1.
+	std::shared_ptr<Ability> ability1() const;
 
-	// Returns ability_list[_ability2].
-	Ability& ability2() const;
+	// Returns _ability2.
+	std::shared_ptr<Ability> ability2() const;
 
 	// Returns _maleRatio.
 	unsigned short maleRatio() const;
 
-	// Returns egg_group_list[_eg1].
-	Egg_Group& eg1() const;
+	// Returns _eg1.
+	std::shared_ptr<Egg_Group> eg1() const;
 
-	// Returns egg_group_list[_eg2].
-	Egg_Group& eg2() const;
+	// Returns _eg2.
+	std::shared_ptr<Egg_Group> eg2() const;
 
 	// Returns _height.
 	float height() const;

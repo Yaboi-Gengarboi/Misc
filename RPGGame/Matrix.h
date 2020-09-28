@@ -1,7 +1,7 @@
 // Matrix.h
 // Justyn Durnford
 // Created on 2020-06-08
-// Last updated on 2020-09-25
+// Last updated on 2020-09-28
 // Header file for the Matrix template class
 // This is free and unencumbered software released into the public domain.
 // Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -28,6 +28,8 @@
 #define MATRIX_H_INCLUDED
 
 #include <cstddef>
+#include <stdexcept>
+#include <utility>
 #include <vector>
 
 // This class is able to function as a 
@@ -46,8 +48,21 @@ class Matrix
 	private:
 
 	std::vector<std::vector<value_type>> _matrix;
-	size_type* _row = new size_type(0);
-	size_type* _col = new size_type(0);
+	size_type* _row = nullptr;
+	size_type* _col = nullptr;
+
+	void mswap(Matrix& matrix)
+	{
+		std::swap(_row, matrix._row);
+		std::swap(_col, matrix._col);
+		std::swap(_matrix, matrix._matrix);
+	}
+
+	void checkBounds(const size_type& row, const size_type& col)
+	{
+		if (row > *_row || col > *_row || row < 0 || col < 0)
+			throw std::out_of_range("Invalid index passed");
+	}
 
 	public:
 
@@ -55,12 +70,12 @@ class Matrix
 
 	Matrix(const size_type& row, const size_type& col)
 	{
-		*_row = row;
-		*_col = col;
+		_row = new size_type(row);
+		_col = new size_type(col);
 
-		for (size_type r = 0; r < _row; ++r)
+		for (size_type r = 0; r < *_row; ++r)
 		{
-			for (size_type c = 0; c < _col; ++c)
+			for (size_type c = 0; c < *_col; ++c)
 			{
 				_matrix[r].push_back(value_type);
 			}
@@ -69,12 +84,12 @@ class Matrix
 
 	Matrix(const size_type& row, const size_type& col, const value_type& val)
 	{
-		*_row = row;
-		*_col = col;
+		_row = new size_type(row);
+		_col = new size_type(col);
 
-		for (size_type r = 0; r < _row; ++r)
+		for (size_type r = 0; r < *_row; ++r)
 		{
-			for (size_type c = 0; c < _col; ++c)
+			for (size_type c = 0; c < *_col; ++c)
 			{
 				_matrix[r].push_back(val);
 			}
@@ -83,42 +98,33 @@ class Matrix
 
 	Matrix(const Matrix& matrix)
 	{
-		*_row = *(matrix._row);
-		*_col = *(matrix._col);
-		_matrix = matrix;
+		_row = new size_type(matrix._row);
+		_col = new size_type(matrix._col);
+		_matrix = matrix._matrix;
+	}
+
+	Matrix(Matrix&& matrix)
+	{
+		mswap(matrix);
 	}
 
 	Matrix& operator = (const Matrix& matrix)
 	{
-		delete _row;
-		delete _col;
-		*_row = *( matrix._row );
-		*_col = *( matrix._col );
-		_matrix = matrix;
+		Matrix copy(matrix);
+		mswap(copy);
+		return *this;
 	}
 
-	Matrix(Matrix&& matrix) = delete;
-	Matrix& operator = (Matrix&& matrix) = delete;
+	Matrix& operator = (Matrix&& matrix)
+	{
+		mswap(matrix);
+		return *this;
+	}
 
-	~Matrix()
+	~Matrix() noexcept
 	{
 		delete _row;
 		delete _col;
-	}
-
-	value_type& at(const size_type& row, const size_type& col)
-	{
-		return _matrix[row][col];
-	}
-
-	const value_type& at(const size_type& row, const size_type& col) const
-	{
-		return _matrix[row][col];
-	}
-
-	void set(const size_type& row, const size_type& col, const value_type& val)
-	{
-		_matrix[row][col] = val;
 	}
 
 	size_type rowSize() const
@@ -136,9 +142,48 @@ class Matrix
 		return _matrix.empty();
 	}
 
-	value_type operator () (const size_type& row, const size_type& col)
+	value_type& at(const size_type& row, const size_type& col)
+	{
+		checkBounds(row, col);
+		return _matrix[row][col];
+	}
+
+	const value_type& at(const size_type& row, const size_type& col) const
+	{
+		checkBounds(row, col);
+		return _matrix[row][col];
+	}
+
+	value_type& operator () (const size_type& row, const size_type& col)
 	{
 		return _matrix[row][col];
+	}
+
+	const value_type& operator () (const size_type& row, const size_type& col) const
+	{
+		return _matrix[row][col];
+	}
+
+	std::vector<value_type>& row(const size_type& row)
+	{
+		checkBounds(row, *_col);
+		return _matrix[row];
+	}
+
+	const std::vector<value_type>& row(const size_type& row) const
+	{
+		checkBounds(row, *_col);
+		return _matrix[row];
+	}
+
+	std::vector<value_type>& operator [] (const size_type& row)
+	{
+		return _matrix[row];
+	}
+
+	const std::vector<value_type>& operator [] (const size_type& row) const
+	{
+		return _matrix[row];
 	}
 };
 

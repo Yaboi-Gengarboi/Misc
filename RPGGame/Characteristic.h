@@ -1,14 +1,14 @@
 // RPGGame
 // Characteristic.h
 // Justyn Durnford
-// Created on 6/26/2020
-// Last updated on 8/11/2020
+// Created on 2020-06-26
+// Last updated on 2020-09-28
 
-#ifndef CHARACTERISTIC_H
-#define CHARACTERISTIC_H
+#ifndef CHARACTERISTIC_H_INCLUDED
+#define CHARACTERISTIC_H_INCLUDED
 
+#include <array>
 #include <string>
-#include <vector>
 
 // Each Tame_Pokemon has a Characteristic. Characteristics are
 // nameless, and instead simply have a description. Every
@@ -22,26 +22,38 @@
 //
 class Characteristic
 {
-	std::string _desc;
 	unsigned char _id = 0;
+	std::string _desc;
 	unsigned char _goodStat = 0;
 
 	public:
 
 	// Default constructor. 
-	Characteristic();
+	Characteristic() = default;
+
+	// Copy constructor.
+	Characteristic(const Characteristic& characteristic) = default;
+
+	// Move constructor.
+	Characteristic(Characteristic&& characteristic) = default;
 
 	// Primary constructor.
-	Characteristic(const std::string& desc, unsigned char id, unsigned char goodStat);
+	Characteristic(unsigned char id, const char* desc, unsigned char goodStat);
+
+	// Copy assignment.
+	Characteristic& operator = (const Characteristic& characteristic) = default;
+
+	// Move assignment.
+	Characteristic& operator = (Characteristic&& characteristic) = default;
 
 	// Destructor.
-	~Characteristic();
-
-	// Returns _desc.
-	std::string desc() const;
+	~Characteristic() = default;
 
 	// Returns _id.
 	unsigned char id() const;
+
+	// Returns _desc.
+	std::string desc() const;
 
 	// Returns _goodStat.
 	unsigned char goodStat() const;
@@ -53,6 +65,6 @@ bool operator == (const Characteristic& c1, const Characteristic& c2);
 // Returns true ONLY IF c1.id() != c2.id()
 bool operator != (const Characteristic& c1, const Characteristic& c2);
 
-extern std::vector<Characteristic> characteristic_list;
+extern std::array<Characteristic, 30> characteristic_arr;
 
 #endif // CHARACTERISTIC_H

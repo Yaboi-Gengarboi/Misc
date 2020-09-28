@@ -20,10 +20,13 @@ class Pokemon;
 #include <array>
 using std::array;
 
+#include <memory>
+using std::shared_ptr;
+
 #include <string>
 using std::string;
 
-const Pokemon& Player_Pokemon::pokemon() const
+shared_ptr<Pokemon> Player_Pokemon::pokemon() const
 {
-	return pokemon_list[_index + 1];
+	return _pokemon;
 }
