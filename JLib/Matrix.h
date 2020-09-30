@@ -1,7 +1,7 @@
 // Matrix.h
 // Justyn Durnford
 // Created on 2020-06-08
-// Last updated on 2020-09-26
+// Last updated on 2020-09-29
 // Header file for the Matrix template class
 // This is free and unencumbered software released into the public domain.
 // Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -28,7 +28,8 @@
 #define MATRIX_H_INCLUDED
 
 #include <cstddef>
-#include <vector>
+#include <stdexcept>
+#include <utility>
 
 // This class is able to function as a 
 //
@@ -45,80 +46,95 @@ class Matrix
 
 	private:
 
-	std::vector<std::vector<value_type>> _matrix;
-	size_type* _row = new size_type(0);
-	size_type* _col = new size_type(0);
+	value_type** _matrix = nullptr;
+	size_type* _row = nullptr;
+	size_type* _col = nullptr;
+
+	void alloc(const size_type& row, const size_type& col)
+	{
+		_row = new size_type(row);
+		_col = new size_type(col);
+		_matrix = new value_type * [*_row];
+
+		for (size_type r = 0; r < *_row; ++r)
+			_matrix[r] = new value_type[*_col];
+	}
+
+	void dealloc() noexcept
+	{
+		for (size_type i = 0; i < *_row; ++i)
+			delete[] _matrix[i];
+
+		delete _row;
+		delete _col;
+		delete[] _matrix;
+	}
+
+	void mswap(Matrix& matrix)
+	{
+		std::swap(_row, matrix._row);
+		std::swap(_col, matrix._col);
+		std::swap(_matrix, matrix._matrix);
+	}
+
+	void checkBounds(const size_type& row, const size_type& col)
+	{
+		if (row > * _row || col > * _row || row < 0 || col < 0)
+			throw std::out_of_range("Invalid index passed");
+	}
 
 	public:
 
 	Matrix() = default;
 
+	Matrix(const Matrix& matrix)
+	{
+		alloc(matrix->row, matrix->col);
+
+		for (size_type r = 0; r < *_row; ++r)
+		{
+			for (size_type c = 0; c < *_col; ++c)
+				_matrix[r][c] = matrix(r, c);
+		}
+	}
+
+	Matrix(Matrix&& matrix)
+	{
+		mswap(matrix);
+	}
+
 	Matrix(const size_type& row, const size_type& col)
 	{
-		*_row = row;
-		*_col = col;
-
-		for (size_type r = 0; r < _row; ++r)
-		{
-			for (size_type c = 0; c < _col; ++c)
-			{
-				_matrix[r].push_back(value_type);
-			}
-		}
+		alloc(row, col);
 	}
 
 	Matrix(const size_type& row, const size_type& col, const value_type& val)
 	{
-		*_row = row;
-		*_col = col;
+		alloc(row, col);
 
-		for (size_type r = 0; r < _row; ++r)
+		for (size_type r = 0; r < *_row; ++r)
 		{
-			for (size_type c = 0; c < _col; ++c)
-			{
-				_matrix[r].push_back(val);
-			}
+			for (size_type c = 0; c < *_col; ++c)
+				_matrix[r][c] = val;
 		}
-	}
-
-	Matrix(const Matrix& matrix)
-	{
-		*_row = *( matrix._row );
-		*_col = *( matrix._col );
-		_matrix = matrix;
 	}
 
 	Matrix& operator = (const Matrix& matrix)
 	{
-		delete _row;
-		delete _col;
-		*_row = *( matrix._row );
-		*_col = *( matrix._col );
-		_matrix = matrix;
+		Matrix copy(matrix);
+		mswap(copy);
+		return *this;
 	}
 
-	Matrix(Matrix&& matrix) = delete;
-	Matrix& operator = (Matrix&& matrix) = delete;
-
-	~Matrix()
+	Matrix& operator = (Matrix&& matrix)
 	{
-		delete _row;
-		delete _col;
+		mswap(matrix);
+		return *this;
 	}
 
-	value_type& at(const size_type& row, const size_type& col)
+	~Matrix() noexcept
 	{
-		return _matrix[row][col];
-	}
-
-	const value_type& at(const size_type& row, const size_type& col) const
-	{
-		return _matrix[row][col];
-	}
-
-	void set(const size_type& row, const size_type& col, const value_type& val)
-	{
-		_matrix[row][col] = val;
+		dealloc();
 	}
 
 	size_type rowSize() const
@@ -133,12 +149,37 @@ class Matrix
 
 	bool empty() const
 	{
-		return _matrix.empty();
+		return _matrix == nullptr;
 	}
 
-	value_type operator () (const size_type& row, const size_type& col)
+	value_type& at(const size_type& row, const size_type& col)
+	{
+		checkBounds(row, col);
+		return _matrix[row][col];
+	}
+
+	const value_type& at(const size_type& row, const size_type& col) const
+	{
+		checkBounds(row, col);
+		return _matrix[row][col];
+	}
+
+	value_type& operator () (const size_type& row, const size_type& col)
 	{
 		return _matrix[row][col];
+	}
+
+	const value_type& operator () (const size_type& row, const size_type& col) const
+	{
+		return _matrix[row][col];
+	}
+
+	void setRow(const size_type& row, const value_type newrow[], const size_type& size)
+	{
+		checkBounds(row, size);
+
+		for (size_type c = 0; c < size; ++c)
+			_matrix[row][c] = newrow[c];
 	}
 };
 

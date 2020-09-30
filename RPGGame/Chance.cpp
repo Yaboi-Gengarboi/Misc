@@ -1,10 +1,13 @@
 // RPGGame
-// Random.cpp
+// Chance.cpp
 // Justyn Durnford
-// Created on 8/11/2020
-// Last updated on 8/16/2020
+// Created on 2020-08-11
+// Last updated on 2020-09-30
 
-#include "Random.h"
+#include "Chance.h"
+
+#include <array>
+using std::array;
 
 #include <random>
 using std::random_device;
@@ -26,3 +29,17 @@ bool chance(unsigned short value)
 		return true;
 	return false;
 }
+
+array<unsigned short, 10> protection_chance =
+{
+	1000,
+	500,
+	250,
+	125,
+	63,
+	32,
+	16,
+	8,
+	4,
+	2
+};

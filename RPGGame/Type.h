@@ -2,10 +2,12 @@
 // Type.h
 // Justyn Durnford
 // Created on 2020-04-07
-// Last updated on 2020-09-24
+// Last updated on 2020-09-28
 
-#ifndef TYPE_H
-#define TYPE_H
+#ifndef TYPE_H_INCLUDED
+#define TYPE_H_INCLUDED
+
+#include "Matrix.h"
 
 #include <array>
 #include <string>
@@ -15,7 +17,7 @@
 // Pokemon of opposing types. There are 18 different types.
 class Type
 {
-    unsigned char _id = -1;
+    unsigned char _id = 0;
     std::string _name;
 
     public:
@@ -48,7 +50,6 @@ bool operator == (const Type& t1, const Type& t2);
 bool operator != (const Type& t1, const Type& t2);
 
 extern std::array<Type, 18> type_arr;
-
-extern float type_matchups[18][18];
+extern Matrix<float> type_matchups;
 
 #endif // TYPE_H

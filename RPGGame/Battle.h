@@ -2,7 +2,7 @@
 // Battle.h
 // Justyn Durnford
 // Created on 2020-06-20
-// Last updated on 2020-09-26
+// Last updated on 2020-09-29
 
 #ifndef BATTLE_H_INCLUDED
 #define BATTLE_H_INCLUDED
@@ -49,13 +49,15 @@ class Battle
 
 	~Battle() = default;
 
-	Weather& weather() const;
+	std::shared_ptr<Weather> weather() const;
 
-	Terrain& terrain() const;
+	std::shared_ptr<Terrain> terrain() const;
 
 	void setWeather(const Weather& weather);
 
 	void setTerrain(const Terrain& terrain);
+
+	std::shared_ptr<Player_Pokemon> pokemon(const unsigned char& row, const unsigned char& col);
 };
 
 #endif // BATTLE_H_INCLUDED

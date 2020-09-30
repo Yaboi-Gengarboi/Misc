@@ -2,7 +2,7 @@
 // Ability.h
 // Justyn Durnford
 // Created on 2020-04-12
-// Last updated on 2020-09-27
+// Last updated on 2020-09-29
 
 #ifndef ABILITY_H_INCLUDED
 #define ABILITY_H_INCLUDED
@@ -57,6 +57,6 @@ class Ability
 	void operator() (Battle& battle);
 };
 
-extern std::array<Ability, 150> ability_arr;
+extern std::array<Ability, 194> ability_arr;
 
 #endif // ABILITY_H_INCLUDED

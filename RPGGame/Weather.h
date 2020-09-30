@@ -2,7 +2,7 @@
 // Weather.h
 // Justyn Durnford
 // Created on 2020-06-20
-// Last updated on 2020-09-24
+// Last updated on 2020-09-29
 
 #ifndef WEATHER_H_INCLUDED
 #define WEATHER_H_INCLUDED
@@ -12,7 +12,7 @@
 
 class Weather
 {
-	unsigned char _id;
+	unsigned char _id = 0;
 	std::string _beginStr;
 	std::string _endStr;
 
@@ -36,6 +36,6 @@ class Weather
 	std::string endStr() const;
 };
 
-extern std::array<Weather, 7> weather_arr;
+extern std::array<Weather, 6> weather_arr;
 
 #endif // WEATHER_H_INCLUDED

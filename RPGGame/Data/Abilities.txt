@@ -19,7 +19,7 @@ Damages sleeping pokemon by 12.5% of their maximum HP every turn.
 Battle Armor
 Protects the Pokemon from critical hits.
 Big Pecks
-Prevents the Defense stat from being lowered.
+When an opposing pokemon lowers one of the Pokemon's stats, the Pokemon's Defense stat is increased by 2 stages.
 Blaze
 Raises the power of Fire-type moves by 33.33%.
 Bulletproof

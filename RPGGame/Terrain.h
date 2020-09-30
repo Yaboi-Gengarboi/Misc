@@ -2,7 +2,7 @@
 // Terrain.h
 // Justyn Durnford
 // Created on 2020-09-24
-// Last updated on 2020-09-24
+// Last updated on 2020-09-29
 
 #ifndef TERRAIN_H_INCLUDED
 #define TERRAIN_H_INCLUDED
@@ -12,7 +12,7 @@
 
 class Terrain
 {
-	unsigned char _id;
+	unsigned char _id = 0;
 	std::string _beginStr;
 	std::string _endStr;
 

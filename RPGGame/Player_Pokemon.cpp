@@ -1,15 +1,13 @@
 // RPGGame
 // Player_Pokemon.cpp
 // Justyn Durnford
-// Created on 8/14/2020
-// Last updated on 8/14/2020
+// Created on 2020-08-14
+// Last updated on 2020-09-30
 
 #include "Player_Pokemon.h"
 
 #include "Characteristic.h"
 class Characteristic;
-
-#include "Data.h"
 
 #include "Nature.h"
 class Nature;
