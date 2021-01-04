@@ -1,3 +1,0 @@
-E:\Misc Repository\Pokemon_Uprising\Source\Pokemon_Uprising\Pokemon_Uprising.Build.cs
-E:\Misc Repository\Pokemon_Uprising\Source\Pokemon_Uprising.Target.cs
-E:\Misc Repository\Pokemon_Uprising\Source\Pokemon_UprisingEditor.Target.cs

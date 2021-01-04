@@ -1,2 +1,0 @@
-E:\Misc Repository\Pokemon_Uprising\Intermediate\Build\Win64\UE4Editor\Development\Pokemon_Uprising\Definitions.Pokemon_Uprising.h
-E:\Misc Repository\Pokemon_Uprising\Source\Pokemon_Uprising\Public\Type.h

@@ -1,7 +1,8 @@
-// test_file.cpp
-// Justyn P. Durnford
-// Created on 2020-01-18
-// Last updated on 2020-10-07
+// Root.h
+// Justyn Durnford
+// Created on 2020-10-01
+// Last updated on 2020-10-01
+// Source file for the Root class
 // This is free and unencumbered software released into the public domain.
 // Anyone is free to copy, modify, publish, use, compile, sell, or
 // distribute this software, either in source code form or as a compiled
@@ -23,22 +24,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 // For more information, please refer to http://unlicense.org/
 
-#include "Fraction.h"
-#include "Pair.h"
-#include "Point3D.h"
-#include "Vector3D.h"
-
-#include <iostream>
-using std::cout;
-using std::endl;
+#include "Root.h"
 
 #include <string>
-using std::string;
-
-int main(int argc, char** argv)
-{
-	long l = 0;
-	cout << sizeof(l) << endl;
-
-	return 0;
-}
+	

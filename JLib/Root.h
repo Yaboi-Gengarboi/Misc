@@ -1,7 +1,8 @@
-// test_file.cpp
-// Justyn P. Durnford
-// Created on 2020-01-18
-// Last updated on 2020-10-07
+// Root.h
+// Justyn Durnford
+// Created on 2020-10-01
+// Last updated on 2020-10-01
+// Header file for the Root class
 // This is free and unencumbered software released into the public domain.
 // Anyone is free to copy, modify, publish, use, compile, sell, or
 // distribute this software, either in source code form or as a compiled
@@ -23,22 +24,59 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 // For more information, please refer to http://unlicense.org/
 
-#include "Fraction.h"
-#include "Pair.h"
-#include "Point3D.h"
-#include "Vector3D.h"
+#ifndef ROOT_H_INCLUDED
+#define ROOT_H_INCLUDED
 
-#include <iostream>
-using std::cout;
-using std::endl;
-
+#include <ostream>
 #include <string>
-using std::string;
 
-int main(int argc, char** argv)
+class Root
 {
-	long l = 0;
-	cout << sizeof(l) << endl;
+	unsigned int _number = 0;
+	int _root = 0;
 
-	return 0;
-}
+	void setValues(unsigned int number, int power, char set);
+
+	public:
+
+	// Default constructor.
+	Root() = default;
+
+	// Copy constructor.
+	Root(const Root& rt) = default;
+
+	// Move constructor.
+	Root(Root&& rt) = default;
+
+	// Primary constructor.
+	Root(unsigned int number, int power);
+
+	// Copy assignment.
+	Root& operator = (const Root& rt) = default;
+
+	// Move assignment.
+	Root& operator = (Root&& rt) = default;
+
+	// Destructor.
+	~Root() = default;
+
+	// Returns _number.
+	unsigned int number() const;
+
+	// Returns _power.
+	int power() const;
+
+	// Sets _number to number.
+	void setNumber(unsigned int number);
+
+	// Sets _power to power.
+	void setPower(int power);
+
+	// Returns std::pow(_number, 1 / _power).
+	double toDouble() const;
+
+	// 
+	std::string toString() const;
+};
+
+#endif // ROOT_H_INCLUDED

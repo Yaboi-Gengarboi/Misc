@@ -1,7 +1,7 @@
 // Vector3D.cpp
 // Justyn P. Durnford
 // Created on 1/20/2020
-// Last updated on 2020-08-29
+// Last updated on 2020-09-30
 // Source file for the Vector3D class
 // This program is free software. It comes without any warranty, to
 // the extent permitted by applicable law. You can redistribute it
@@ -123,6 +123,11 @@ void Vector3D::clear()
 double Vector3D::magnitude() const
 {
 	return sqrt(pow(_x, 2) + pow(_y, 2) + pow(_z, 2));
+}
+
+Vector3D Vector3D::unitVector() const
+{
+	return Vector3D(*this / magnitude());
 }
 
 string Vector3D::toString() const

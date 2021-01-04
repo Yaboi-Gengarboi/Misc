@@ -140,13 +140,16 @@
   <ItemGroup>
     <ClInclude Include="Color.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="Equation.h" />
     <ClInclude Include="File_Manager.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Big_Int.hpp" />
     <ClInclude Include="Hex.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Misc.hpp" />
+    <ClInclude Include="Pair.h" />
     <ClInclude Include="Point3D.h" />
+    <ClInclude Include="Root.h" />
     <ClInclude Include="Timer.hpp" />
     <ClInclude Include="JLib.hpp" />
     <ClInclude Include="Vector3D.h" />
@@ -159,6 +162,7 @@
     <ClCompile Include="Hex.cpp" />
     <ClCompile Include="Misc.cpp" />
     <ClCompile Include="Point3D.cpp" />
+    <ClCompile Include="Root.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Vector3D.cpp" />
     <ClCompile Include="test_file.cpp" />

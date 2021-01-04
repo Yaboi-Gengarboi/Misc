@@ -1,7 +1,7 @@
 // Vector3D.h
 // Justyn P. Durnford
 // Created on 2020-01-18
-// Last updated on 2020-09-16
+// Last updated on 2020-09-30
 // Header file for the Vector3D class
 // This is free and unencumbered software released into the public domain.
 // Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -24,8 +24,8 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 // For more information, please refer to http://unlicense.org/
 
-#ifndef VECTOR3D_H
-#define VECTOR3D_H
+#ifndef VECTOR3D_H_INCLUDED
+#define VECTOR3D_H_INCLUDED
 
 #include "Constants.h"
 #include "Point3D.h"
@@ -106,6 +106,9 @@ class Vector3D
 	// Returns the magnitude of the Vector3D.
 	double magnitude() const;
 
+	// Returns a unit vector pointing in the same direction as this Vector3D.
+	Vector3D unitVector() const;
+
 	// Returns a std::string representation of the Vector3D
 	// in the format "<_x, _y, _z>".
 	std::string toString() const;
@@ -165,4 +168,4 @@ double scalar_proj(const Vector3D& v, const Vector3D& u);
 // Returns the vector projection of v onto u.
 Vector3D vector_proj(const Vector3D& v, const Vector3D& u);
 
-#endif // VECTOR3D_H
+#endif // VECTOR3D_H_INCLUDED
