@@ -2,7 +2,7 @@
 // main.cpp
 // Justyn Durnford
 // Created on 2020-05-04
-// Last updated on 2021-01-04
+// Last updated on 2021-01-05
 
 #define WIN32
 
@@ -32,11 +32,6 @@ struct GUI
 	Fl_Button* load_fsms_button = nullptr;
 	Fl_Multiline_Output* fsm_output = nullptr;
 	Fl_Multiline_Output* eng_output = nullptr;
-
-	Fl_Window* second_window = nullptr;
-	Fl_Multiline_Output* second_output = nullptr;
-	Fl_Button* yes_button = nullptr;
-	Fl_Button* no_button = nullptr;
 };
 
 struct DATA
@@ -49,7 +44,6 @@ struct DATA
 
 GUI gui;
 DATA data;
-bool is_fsm_file_read = false;
 
 /*void DEBUG()
 {
@@ -160,7 +154,7 @@ void make_fsm(Fl_Widget* widget)
 		{
 			float f = stof(multiplier_str);
 
-			if (f > 0)
+			if (f >= 0)
 				data.multiplier = f;
 			else return;
 		}
@@ -178,30 +172,13 @@ void make_fsm(Fl_Widget* widget)
 
 void save_fsms(Fl_Widget* widget)
 {
-	if (!is_fsm_file_read && !is_fsm_file_empty())
-	{
-		gui.second_output->value("There are unloaded FSMs. Would you like to ignore and overwrite them?");
-
-		gui.second_window->show();
-	}
-
 	write_fsms();
-}
-
-void load_fsms(Fl_Widget* widget)
-{
-	if (is_fsm_file_read)
-		return;
-
-	if (read_fsms())
-		show_fsms();
-
-	is_fsm_file_read = true;
 }
 
 int main()
 {
 	init_characters();
+	read_fsms();
 
 	gui.window = new Fl_Window(760, 600, "SSBM FSM Creator");
 
@@ -232,9 +209,6 @@ int main()
 	gui.save_fsms_button = new Fl_Button(130, 10, 100, 30, "Save FSMs");
 	gui.save_fsms_button->callback(save_fsms);
 
-	gui.load_fsms_button = new Fl_Button(240, 10, 100, 30, "Load FSMs");
-	gui.load_fsms_button->callback(load_fsms);
-
 	gui.fsm_output = new Fl_Multiline_Output(20, 110, 290, 470);
 	gui.fsm_output->textfont(FL_HELVETICA);
 
@@ -243,10 +217,7 @@ int main()
 	gui.window->end();
 	gui.window->show();
 
-	gui.second_window = new Fl_Window(300, 200);
-	gui.second_output = new Fl_Multiline_Output(10, 10, 280, 100);
-
-	gui.second_window->end();
+	show_fsms();
 
 	return Fl::run();
 }

@@ -2,7 +2,7 @@
 // Data.cpp
 // Justyn Durnford
 // Created on 2020-07-31
-// Last updated on 2021-01-04
+// Last updated on 2021-01-05
 
 #include "Data.h"
 
@@ -166,7 +166,7 @@ bool read_fsms()
 			return false;
 		}
 
-		if (multiplier <= 0)
+		if (multiplier < 0)
 			return false;
 
 		pos_begin = pos_end + 4;

@@ -2,7 +2,7 @@
 // FSM.cpp
 // Justyn Durnford
 // Created on 2019-12-18
-// Last updated on 2021-01-04
+// Last updated on 2021-01-05
 // Source file for the FSM struct.
 
 #include "FSM.h"
@@ -46,7 +46,10 @@ string FSM::toHex() const
 
 	hex_str += ' ';
 
-	hex_str += to_hex(multiplier);
+	if (multiplier == 0.0f)
+		hex_str += "FFFFFFFF";
+	else
+		hex_str += to_hex(multiplier);
 
 	return hex_str;
 }
@@ -57,16 +60,20 @@ strong_ordering compare(const FSM& A, const FSM& B)
 		return strong_ordering::less;
 	else if (A.character.id > B.character.id)
 		return strong_ordering::greater;
-
-	if (A.frame > B.frame)
-		return strong_ordering::less;
-	else if (A.frame < B.frame)
-		return strong_ordering::greater;
-
-	if (A.subaction.id < B.subaction.id)
-		return strong_ordering::less;
-	if (A.subaction.id > B.subaction.id)
-		return strong_ordering::greater;
+	else
+	{
+		if (A.subaction.id < B.subaction.id)
+			return strong_ordering::less;
+		if (A.subaction.id > B.subaction.id)
+			return strong_ordering::greater;
+		else
+		{
+			if (A.frame > B.frame)
+				return strong_ordering::less;
+			else if (A.frame < B.frame)
+				return strong_ordering::greater;
+		}
+	}
 
 	return strong_ordering::equal;
 }

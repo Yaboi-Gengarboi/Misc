@@ -1,6 +1,18 @@
+0011803A 3F800000 0000803A 3F9B6DB9
 00148044 3F800000 000D8044 40600000
+0034812D 3F800000 0000812D 40000000
+0034812E 3F800000 0000812E 40000000
+000F812F 3F800000 0000812F 3FC00000
 
 --------------------------------------------------
 
+Captain Falcon, Up Tilt, x1.000000, @ 17
+Captain Falcon, Up Tilt, x1.214286, @ 0
 Captain Falcon, Neutral Aerial, x1.000000, @ 20
 Captain Falcon, Neutral Aerial, x3.500000, @ 13
+Captain Falcon, Falcon Punch (Ground), x1.000000, @ 52
+Captain Falcon, Falcon Punch (Ground), x2.000000, @ 0
+Captain Falcon, Falcon Punch (Aerial), x1.000000, @ 52
+Captain Falcon, Falcon Punch (Aerial), x2.000000, @ 0
+Captain Falcon, Raptor Boost Start (Ground), x1.000000, @ 15
+Captain Falcon, Raptor Boost Start (Ground), x1.500000, @ 0
