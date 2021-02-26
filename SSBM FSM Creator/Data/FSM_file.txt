@@ -1,8 +1,12 @@
 0011803A 3F800000 0000803A 3F9B6DB9
 00148044 3F800000 000D8044 40600000
-0034812D 3F800000 0000812D 40000000
-0034812E 3F800000 0000812E 40000000
+0034812D 3F800000 0000812D 3FA66666
+0034812E 3F800000 0000812E 3FA66666
 000F812F 3F800000 0000812F 3FC00000
+0F2E813D 3F800000 0F0C813D 3F9B6DB9
+0F2E813E 3F800000 0F0C813E 3F9B6DB9
+0F1B8143 3FB26666 0F1B8144 3FB26666
+0F1B8145 3FB26666 0F1B8146 3FB26666
 
 --------------------------------------------------
 
@@ -11,8 +15,16 @@ Captain Falcon, Up Tilt, x1.214286, @ 0
 Captain Falcon, Neutral Aerial, x1.000000, @ 20
 Captain Falcon, Neutral Aerial, x3.500000, @ 13
 Captain Falcon, Falcon Punch (Ground), x1.000000, @ 52
-Captain Falcon, Falcon Punch (Ground), x2.000000, @ 0
+Captain Falcon, Falcon Punch (Ground), x1.300000, @ 0
 Captain Falcon, Falcon Punch (Aerial), x1.000000, @ 52
-Captain Falcon, Falcon Punch (Aerial), x2.000000, @ 0
+Captain Falcon, Falcon Punch (Aerial), x1.300000, @ 0
 Captain Falcon, Raptor Boost Start (Ground), x1.000000, @ 15
 Captain Falcon, Raptor Boost Start (Ground), x1.500000, @ 0
+Jigglypuff, Pound (Ground), x1.000000, @ 46
+Jigglypuff, Pound (Ground), x1.214286, @ 12
+Jigglypuff, Pound (Aerial), x1.000000, @ 46
+Jigglypuff, Pound (Aerial), x1.214286, @ 12
+Jigglypuff, Rest Left (Ground), x1.393750, @ 27
+Jigglypuff, Rest Left (Aerial), x1.393750, @ 27
+Jigglypuff, Rest Right (Ground), x1.393750, @ 27
+Jigglypuff, Rest Right (Aerial), x1.393750, @ 27
